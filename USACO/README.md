@@ -1,6 +1,6 @@
 # [USACO](https://train.usaco.org/usacogate)
-
 Username: cowtony1
+
 Password: 19900525
 
 # Template
@@ -9,7 +9,6 @@ Password: 19900525
 ID:cowtony1
 PROG:clocks
 LANG:C++
-
 */
 #include<iostream>
 #include<fstream>
