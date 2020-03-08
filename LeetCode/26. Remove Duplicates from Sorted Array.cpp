@@ -4,19 +4,16 @@ public:
         if (nums.size() == 0)
             return 0;
         
-        int result = 1;
-        int preVal = nums[0];
-        
+        int index = 1;
         for (int i = 1; i < nums.size(); i++)
         {
-            if (nums[i] == preVal)
+            if (nums.at(i) != nums.at(i - 1))
             {
-                nums.erase(nums.begin() + i);
-                i--;
+                nums[index] = nums[i];
+                index++;
             }
-            preVal = nums[i];
         }
         
-        return nums.size();
+        return index;
     }
 };
