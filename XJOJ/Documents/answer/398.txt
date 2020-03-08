@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <map>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    int i,j,k,t1,t2,t3,n;
+    map<string,int> m;
+    double d1,d2,d3;
+    string s;
+    char ts[50];
+    string::iterator ii;
+    map<string,int>::iterator jj;
+    m.clear();
+    t1=0;
+    while (cin.getline(ts,50))
+    {
+        s=string(ts);
+      //  if (s=="$$$") break;
+        ++t1;
+        if (m.find(s)!=m.end())
+        {
+            ++m[s];
+        }
+        else 
+        {
+            m[s]=1;
+        }
+    }
+    for (jj=m.begin();jj!=m.end();++jj)
+    {
+        d1=(*jj).second/double(t1)*1000000;
+        d2=round(d1)/double(10000);
+        printf("%s %.4lf\n",(*jj).first.c_str(),d2);
+    }
+  //  system("pause");
+    return 0;
+}

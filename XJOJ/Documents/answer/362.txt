@@ -1,0 +1,62 @@
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+using namespace std;
+
+int max_n[1005][3005];
+int c_get[1005][3005];
+int w[1005];
+int up_w[1005];
+int N;
+
+int main()
+{
+    int i,j,k,t1,t2,t3;
+    memset(max_n,0,sizeof(max_n));
+    memset(w,0,sizeof(w));
+    memset(up_w,0,sizeof(up_w));
+    memset(c_get,0,sizeof(c_get));
+    scanf("%d",&N);
+    for (i=0;i!=N;++i)
+    {
+        scanf("%d%d",&w[i],&up_w[i]);
+    }
+    for (i=0;i!=N;++i)
+        c_get[i][0]=1;
+    for (j=N-1;j!=0;--j)
+    {
+        for (i=0;i!=3005;++i)
+        {
+            if (up_w[j-1]>=i+w[j] && max_n[j-1][i+w[j]]<max_n[j][i]+1 && c_get[j][i]==1) {max_n[j-1][i+w[j]]=max_n[j][i]+1;c_get[j-1][i+w[j]]=1;}
+            if (up_w[j-1]<i+w[j] && max_n[j-1][i+w[j]]<max_n[j][i]+1 && c_get[j][i]==1 && i+w[j]<3005) {max_n[j-1][i+w[j]]=max_n[j][i]+1;c_get[j-1][i+w[j]]=0;}
+            if (up_w[j-1]>=i && max_n[j-1][i]<max_n[j][i]) {max_n[j-1][i]=max_n[j][i];c_get[j-1][i]=1;}
+            if (up_w[j-1]<i && max_n[j-1][i]<max_n[j][i]) {max_n[j-1][i]=max_n[j][i];c_get[j-1][i]=0;}
+        }
+    }
+/*    for (i=0;i!=N;++i)
+    {
+        for (j=0;j!=up_w[i]+1;++j)
+        {
+            cout<<c_get[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    for (i=0;i!=N;++i)
+    {
+        for (j=0;j!=up_w[i]+1;++j)
+        {
+            cout<<max_n[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+*/
+    t3=0;
+    for (i=0;i!=N;++i)
+        for (j=0;j!=up_w[i]+1;++j)
+        {
+            if (t3<max_n[i][j]+1) t3=max_n[i][j]+1;
+        }
+    printf("%d\n",t3);
+    return 0;
+}

@@ -1,0 +1,45 @@
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int re[205];
+int in[205];
+
+int get(int s,int e)
+{
+    if (s>=e-1) return 0;
+    int i,j,k,t1,t2,t3;
+    j=s;
+    for (i=s;i<=e;i+=2)
+    {
+        in[j]=re[i];
+        ++j;
+    }
+    for (i=s+1;i<=e;i+=2)
+    {
+        in[j]=re[i];
+        ++j;
+    }
+    for (i=s;i!=e+1;++i)
+    {
+        re[i]=in[i];
+    }
+    get(s,s+(e-s)/2);
+    get(s+(e-s)/2+1,e);
+    return 0;
+}
+
+int main()
+{
+    int i,j,k,t1,t2,t3;
+    scanf("%d",&t1);
+    for (i=1;i!=t1+1;++i)
+    {
+        re[i]=i;
+    }
+    get(1,t1);
+    for (i=1;i!=t1;++i)
+        printf("%d ",re[i]);
+    printf("%d\n",re[t1]);
+}

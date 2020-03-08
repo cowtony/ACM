@@ -1,0 +1,131 @@
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <cmath>
+using namespace std;
+
+int stack[10005];
+int stack_t;
+double under_left_x;
+double under_left_y;
+
+struct point
+{
+    double x,y;
+};
+
+point all_p[10005];
+
+double cc(int a,int b,int c)
+{
+    double d1,d2,d3,d4;
+    d1=all_p[b].x-all_p[a].x;
+    d2=all_p[b].y-all_p[a].y;
+    d3=all_p[c].x-all_p[a].x;
+    d4=all_p[c].y-all_p[a].y;
+    return (d1*d4-d2*d3);
+}
+
+bool operator<(const point& a,const point& b)
+{
+    double d1,d2,d3,d4;
+    d1=a.x-under_left_x;
+    d2=a.y-under_left_y;
+    d3=b.x-under_left_x;
+    d4=b.y-under_left_y;
+    return (d1*d4-d2*d3>0);
+}
+
+int pop(int a)
+{
+    --stack_t;
+    return stack[stack_t];
+}
+
+int push(int a)
+{
+    stack[stack_t]=a;
+    ++stack_t;
+    return stack[stack_t-1];
+}
+
+int pop_second()
+{
+    int a=stack[stack_t-2];
+    stack[stack_t-2]=stack[stack_t-1];
+    --stack_t;
+    return a;
+}
+
+int top()
+{
+    if (stack_t<1) return -1;
+    return stack[stack_t-1];
+}
+
+int second()
+{
+    if (stack_t<2) return -1;
+    return stack[stack_t-2];
+}
+
+int third()
+{
+    if (stack_t<3) return -1;
+    return stack[stack_t-3];
+}
+
+int p_swap(int a,int b)
+{
+    point temp=all_p[a];
+    all_p[a]=all_p[b];
+    all_p[b]=temp;
+    return 1;
+}
+
+double p_distance(int a,int b)
+{
+    return (sqrt((all_p[a].x-all_p[b].x)*(all_p[a].x-all_p[b].x)+(all_p[a].y-all_p[b].y)*(all_p[a].y-all_p[b].y)));
+}
+
+int main()
+{
+   int i,j,k,t1,t2,t3,n;
+   double d1,d2,d3,d4,d5,d6;
+   d5=2000005;
+   d6=2000005;
+   scanf("%d",&n);
+   for (i=0;i!=n;++i)
+   {
+       scanf("%lf%lf",&d1,&d2);
+       d1+=1000000;
+       d2+=1000000;
+       all_p[i].x=d1;
+       all_p[i].y=d2;
+       if (d2<d6) {d5=d1;d6=d2;t3=i;}
+       else if (d2==d6 && d1<d5) {d5=d1;t3=i;}
+   }
+   under_left_x=d5;
+   under_left_y=d6;
+   p_swap(0,t3);
+   sort(&all_p[1],&all_p[n]);
+   stack_t=0;
+   push(0);
+   push(1);
+   for (i=2;i!=n;++i)
+   {
+       push(i);
+       while (cc(second(),top(),third())<0 && stack_t>2)
+       {
+           pop_second();
+       }
+   }
+   d1=0;
+   for (i=1;i!=stack_t;++i)
+   {
+       d1+=p_distance(stack[i-1],stack[i]);
+   }
+   d1+=p_distance(stack[stack_t-1],stack[0]);
+   t1=round(d1*100);
+   printf("%d.%d%d\n",t1/100,t1%100/10,t1%10);
+}

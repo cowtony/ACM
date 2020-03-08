@@ -1,0 +1,57 @@
+#include <iostream>
+#include <algorithm>
+#include <cstdio>
+#include <cstring>
+
+using namespace std;
+
+struct item
+{
+    int t,s;
+};
+
+bool operator<(const item& a,const item& b)
+{
+    if (a.s!=b.s) return (a.s>b.s);
+    return (a.t<b.t);
+}
+
+item all_i[505];
+int re[505];
+
+int main()
+{
+   int i,j,k,t1,t2,t3,n,m,K;
+   scanf("%d%d",&m,&n);
+   for (i=0;i!=n;++i)
+   {
+       scanf("%d",&t1);
+       all_i[i].t=t1;
+   } 
+   for (i=0;i!=n;++i)
+   {
+       scanf("%d",&t1);
+       all_i[i].s=t1;
+   }   
+   sort(&all_i[0],&all_i[n]);
+   memset(re,-1,sizeof(re));
+   for (i=0;i!=n;++i)
+   {
+       j=all_i[i].t;
+       while (j!=0 && re[j]!=-1)
+       {
+           --j;
+       }
+       if (j==0)
+       {
+          m-=all_i[i].s;
+          continue;
+       }
+       else
+       {
+           re[j]=i;
+       }
+   }
+   printf("%d\n",m);
+
+}

@@ -1,0 +1,66 @@
+#include <iostream>
+#include <cstring>
+#include <cstdio>
+#include <deque>
+using namespace std;
+
+int min_d[105][105];
+int qs,qe;
+int way[105][105];
+int M,N,P,re=0;
+deque<int> qp,qd;
+
+int go(int p,int d)
+{
+    int i,j,k,t1,t2,t3;
+  //  cout<<p<<" "<<d<<endl;
+    if ((d%M)==P && d>=P && p==N) {re=1;return 1;}
+    if (p==N) return 0;
+    for (i=1;i!=N+1;++i)
+    {
+        if (way[p][i]!=0)
+        {
+            if (d+way[p][i]>=P && min_d[i][(d%M+way[p][i])%M]>d+way[p][i])
+            {
+                min_d[i][(d%M+way[p][i])%M]=d+way[p][i];
+                qp.push_back(i);
+                qd.push_back(d+way[p][i]);
+            }   
+            else if (d+way[p][i]<P)
+            {
+                qp.push_back(i);
+                qd.push_back(d+way[p][i]);                
+            }
+        }
+    }
+    return 0;
+}
+
+int main()
+{
+    int i,j,k,t1,t2,t3;
+    scanf("%d%d%d",&N,&M,&P);
+    memset(way,0,sizeof(way));
+    qp.clear();
+    qd.clear();
+    for (i=0;i!=105;++i)
+        for (j=0;j!=105;++j)
+            min_d[i][j]=999999999;
+    while (scanf("%d%d%d",&t1,&t2,&t3)!=EOF)
+    {
+        way[t1][t2]=t3;
+    }
+    qp.push_back(1);
+    qd.push_back(0);
+    while (!qp.empty())
+    {
+        go(*(qp.begin()),*(qd.begin()));
+        qp.pop_front();
+        qd.pop_front();
+    }
+    if (re) printf("%d\n",min_d[N][P]);
+    else printf("0\n");
+    qd.clear();
+    qp.clear();
+    return 0;
+}

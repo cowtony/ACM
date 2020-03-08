@@ -1,0 +1,202 @@
+//其实是水题，二分图最大匹配，匈牙利算法。 
+//用的费马定理求的边权，其实还可以用三分法，懒得写…… 
+#include "iostream" 
+using namespace std; 
+#include "math.h" 
+#include <algorithm> 
+
+int p[101]; 
+int n; 
+int e; 
+double x[102],y[102]; 
+int leftv[102],rightv[102]; 
+double c[101],w[101]; 
+
+const int MAXN = 120; 
+int uN, vN; // u, v数目，要初始化！！！ 
+bool g[MAXN][MAXN]; // g[i][j] 表示xi与yj相连 
+int xM[MAXN], yM[MAXN]; // 输出量 
+bool chk[MAXN]; // 辅助量检查某轮y[v]是否被check 
+bool SearchPath(int u){ 
+int v; 
+for(v = 0; v < vN; v++) 
+if(g[u][v] && !chk[v]) 
+{ 
+chk[v] = true; 
+if(yM[v] == -1 || SearchPath(yM[v])) 
+{ 
+yM[v] = u; xM[u] = v; 
+return true ; 
+} 
+} 
+return false ; 
+} 
+int MaxMatch(){ 
+int u, ret = 0 ; 
+memset(xM, -1, sizeof (xM)); 
+memset(yM, -1, sizeof (yM)); 
+for(u = 0; u < uN; u++) 
+if(xM[u] == -1){ 
+memset(chk, false, sizeof (chk)); 
+if(SearchPath(u)) ret++; 
+} 
+return ret; 
+} 
+//判断点3是否在点1和点2连线下边 
+bool under(double x1,double y1,double x2,double y2,double x3,double y3) 
+{ 
+if(x1>x2) 
+{ 
+x1 = x1+x2,x2 = x1-x2,x1 = x1-x2; 
+y1 = y1+y2,y2 = y1-y2,y1 = y1-y2; 
+} 
+if(x3<=x1||x3>=x2) 
+return false; 
+if((x3-x1)*(y2-y3) - (y3-y1)*(x2-x3)>0) 
+return true; 
+return false; 
+} 
+void init() 
+{ 
+int i,j; 
+double l,r; 
+leftv[1] = x[0]; 
+rightv[n] = x[n+1]; 
+for(i=1;i<=n;i++) 
+{ 
+l = x[0]; 
+for(j=1;j<i;j++) 
+{ 
+if(under(l,0,x[i],y[i],x[j],y[j])) 
+{ 
+l = x[j] - (x[i] - x[j])*y[j]/(y[i] - y[j]); 
+} 
+} 
+leftv[i] = int(l); 
+if(l>double(leftv[i])) 
+leftv[i]++; 
+r = x[n+1]; 
+for(j=n;j>i;j--) 
+{ 
+if(under(x[i],y[i],r,0,x[j],y[j])) 
+{ 
+r = x[j] - (x[i] - x[j])*y[j]/(y[i] - y[j]); 
+} 
+} 
+rightv[i] = r; 
+} 
+} 
+//计算边权 
+double figtime(int s,int t) 
+{ 
+double x1; 
+double x2; 
+double c2 = c[s]*c[s]; 
+double w2 = w[s]*w[s]; 
+int xp,xn; 
+if(c[s]>=w[s]) 
+{ 
+x1 = p[s]; 
+} 
+else 
+{ 
+x2 = y[t]*y[t]*c2/(w2-c2); 
+x1 = sqrt(x2); 
+if(fabs(p[s]-x[t])<x1) 
+x1 = fabs(p[s]-x[t]); 
+if(p[s]<x[t]) 
+x1 = x[t] - x1; 
+else 
+x1 = x[t] + x1; 
+} 
+if(x1<leftv[t]) 
+x1 = leftv[t]; 
+if(x1>rightv[t]) 
+x1 = rightv[t]; 
+double t1,t2; 
+xp = x1; 
+xn = xp+1; 
+t1 = sqrt((x[t]-xp)*(x[t]-xp)+y[t]*y[t])/c[s]+fabs(xp-p[s])/w[s]; 
+t2 = sqrt((x[t]-xn)*(x[t]-xn)+y[t]*y[t])/c[s]+fabs(xn-p[s])/w[s]; 
+return t1<t2?t1:t2; 
+} 
+
+struct node 
+{ 
+int x,y; 
+double t; 
+}edge[12000]; 
+
+bool cmp(node a,node b) 
+{ 
+return a.t<b.t; 
+} 
+
+int main() 
+{ 
+bool uu[110]; 
+bool vv[110]; 
+while(scanf("%d",&n)==1) 
+{ 
+if(n==0)break; 
+int i,j; 
+for(i=0;i<=n+1;i++) 
+scanf("%lf%lf",&x[i],&y[i]); 
+for(i=1;i<=n;i++) 
+scanf("%lf%lf%d",&c[i],&w[i],&p[i]); 
+init(); 
+e = 0; 
+for(i=1;i<=n;i++) 
+for(j=1;j<=n;j++) 
+{ 
+edge[e].x=i-1; 
+edge[e].y=j-1; 
+edge[e].t=figtime(i,j);	
+e++; 
+} 
+sort(edge,edge+e,cmp); 
+uN = n; 
+vN = n; 
+int total = 0; 
+memset(g,false,sizeof(g)); 
+int now = 0; 
+total = 0; 
+memset(uu,false,sizeof(uu)); 
+memset(vv,false,sizeof(vv)); 
+while(total<uN+vN) 
+{ 
+g[edge[now].x][edge[now].y] = true; 
+if(!uu[edge[now].x]) 
+{ 
+total++; 
+uu[edge[now].x] = true; 
+} 
+if(!vv[edge[now].y]) 
+{ 
+total++; 
+vv[edge[now].y]= true; 
+} 
+now++; 
+if(now == n*n)break; 
+} 
+int tmp = MaxMatch(); 
+if(now!=n*n&&tmp!=n) 
+do 
+{ 
+g[edge[now].x][edge[now].y] = true; 
+now++; 
+for(i=0;i<n;i++) 
+if(xM[i]==-1) 
+{ 
+memset(chk, false, sizeof (chk)); 
+if(SearchPath(i)) tmp++; 
+} 
+if(now == n*n)break; 
+if(tmp==n)break; 
+}while(true); 
+
+
+printf("%.2lf\n",edge[now-1].t); 
+} 
+return 0; 
+} 

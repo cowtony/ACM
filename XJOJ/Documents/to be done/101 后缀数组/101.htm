@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0059)http://blog.csdn.net/ldyhot/archive/2008/10/30/3187345.aspx -->
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><TITLE>
+	
+        PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告
+        -
+        ldyhot的专栏
+        - CSDN博客
+</TITLE>
+
+    <SCRIPT type="text/javascript">
+        try { document.domain = "csdn.net"; } catch (ex) { }
+    </SCRIPT>
+
+    <SCRIPT src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/jquery.js" type="text/javascript"></SCRIPT>
+
+    <SCRIPT src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/jquery.highlighter.js" type="text/javascript"></SCRIPT>
+
+    <SCRIPT src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/highlighter.js" type="text/javascript"></SCRIPT>
+
+    <SCRIPT src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/common.js" type="text/javascript"></SCRIPT>
+
+    <SCRIPT src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/AreaCounter.js" type="text/javascript"></SCRIPT>
+
+    <SCRIPT type="text/javascript" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/feedback.js"></SCRIPT>
+
+    <SCRIPT type="text/javascript" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/relatedarticle.js"></SCRIPT>
+
+
+<SCRIPT type="text/javascript" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/google_service.js"></SCRIPT>
+<SCRIPT type="text/javascript">
+    GS_googleAddAdSenseService("ca-pub-1076724771190722");
+    GS_googleEnableAllServices();
+</SCRIPT><SCRIPT src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/google_ads.js"></SCRIPT>
+<SCRIPT type="text/javascript">
+    GA_googleAddSlot("ca-pub-1076724771190722", "blog_postpage_72890");
+</SCRIPT>
+<SCRIPT type="text/javascript">
+    GA_googleFetchAds();
+</SCRIPT>
+
+
+    <LINK href="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/Cogitation_1.css" type="text/css" rel="stylesheet" media="all"><LINK href="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/csdn_favbykimi.css" type="text/css" rel="stylesheet" media="all"><LINK rel="Shortcut Icon" href="http://profile.csdn.net/ldyhot/picture/1.ico"><LINK href="http://feeds.feedsky.com/csdn.net/ldyhot" title="RSS" type="application/rss+xml" rel="alternate"><LINK rel="stylesheet" type="text/css" href="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/pub_footerstyle.css"></HEAD><BODY id="defaultuser">
+    <DIV id="csdnblog_allwrap">
+        <DIV id="csdnblog_midwrap">
+            
+<SCRIPT src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/pub_topnav.js" type="text/javascript"></SCRIPT>
+<SCRIPT language="javascript" type="text/javascript">
+    // 页面加载完毕，脚本开始执行
+    $(document).ready(function() {
+        ChangeUserState();
+        $("#notice").find("a").click(HideNoticeInfo);
+    });
+    
+    var userName = getCookie("activeUserName");
+    var isGuest = !userName || userName == "Guest";
+    var delay = 20 * 60 * 1000;
+    var timer = 0;
+
+    function ChangeUserState() {        
+        clearInterval(timer);
+        if (isGuest) {
+            HideNoticeInfo();
+        }
+        else {
+            RefreshNoticeInfo();
+            timer = setInterval( RefreshNoticeInfo, delay);
+        }
+    }
+    
+    var apiUrl = "/!handler/NoticeHandler.ashx?jsoncallback=?";
+    function RefreshNoticeInfo() {
+        $.getJSON(apiUrl + "&_t=" + Math.random(), function(result) {
+            if (result.noticeNum) {
+                newNoticeCount = result.noticeNum;
+                if (newNoticeCount <= 0) {
+                    $("#notice").hide();
+                }
+                else {
+                    $("#noticeCount").text(newNoticeCount);
+                    $("#notice").show();
+                }
+            }
+        });
+    }
+    
+    function HideNoticeInfo() {
+        $("#notice").hide();
+    }
+</SCRIPT>
+
+<DIV id="csdnblog_header">
+    <H1>
+        <A href="http://blog.csdn.net/ldyhot">
+            ldyhot的专栏</A></H1>
+    <H2>
+        </H2>
+    <UL id="personalnav">
+        <LI style="display: none; " id="notice"><SPAN class="newnotice"><A class="red" href="http://hi.csdn.net/space-notice.html" target="_blank" onclick="LogClickCount(this,216);"><SPAN id="noticeCount"></SPAN>条新通知</A></SPAN></LI>
+        <LI style=""><A id="a_login" href="http://passport.csdn.net/UserLogin.aspx?from=http%3A%2F%2Fblog.csdn.net%2Fldyhot%2Farchive%2F2008%2F10%2F30%2F3187345.aspx">
+            登录</A></LI>
+        <LI style=""><A id="a_register" href="http://passport.csdn.net/CSDNUserRegister.aspx" target="_blank">注册</A></LI>
+        <LI style="display: none; "><A id="a_welcome" href="http://hi.csdn.net/" target="_blank">
+            欢迎</A></LI>
+        <LI style="display: none; "><A id="a_exit" href="http://writeblog.csdn.net/Signout.aspx">
+            退出</A></LI>
+        <LI style="display: none; "><A id="a_myblog" href="http://blog.csdn.net/">我的博客</A></LI>
+        <LI style="display: none; "><A id="a_configure" href="http://writeblog.csdn.net/configure.aspx" target="_blank">配置</A></LI>
+        <LI style="display: none; "><A id="a_postedit" href="http://writeblog.csdn.net/PostEdit.aspx" target="_blank">写文章</A></LI>
+        <LI style="display: none; "><A id="a_postlist" href="http://writeblog.csdn.net/PostList.aspx" target="_blank">文章管理</A></LI>
+        <LI><A id="a_bloghome" href="http://blog.csdn.net/" target="_blank">博客首页</A></LI>
+    </UL>
+    <UL id="blogsearchsty">
+        <LI>
+            <INPUT id="inputSearch" type="text" class="bolgsearch"></LI>
+        <LI class="selectsty">
+            <SELECT name="Search:ddlSearchScope" id="Search_ddlSearchScope">
+                <OPTION value="all">全站</OPTION>
+                <OPTION value="ldyhot">当前博客</OPTION>
+            </SELECT>
+        </LI>
+        <LI>
+            <INPUT type="button" id="buttonSearch" value="搜索" class="bolggobtn"></LI>
+    </UL>
+    <UL id="menu">
+        <LI><A href="http://hi.csdn.net/ldyhot" target="_blank">空间</A></LI>
+        <LI><A class="on" href="http://blog.csdn.net/ldyhot">博客</A></LI>
+        <LI><A href="http://hi.csdn.net/!s/friend/list/ldyhot" target="_blank">好友</A></LI>
+        <LI><A href="http://hi.csdn.net/!s/album/list/ldyhot" target="_blank">相册</A></LI>
+        <LI><A class="last" href="http://hi.csdn.net/!s/wall/to/ldyhot" target="_blank">
+            留言</A></LI>
+    </UL>
+</DIV>
+
+<SCRIPT type="text/javascript">
+    var CurrentUserName = 'ldyhot';
+</SCRIPT>
+
+
+            
+<DIV id="csdnblog_sidebar">
+	<DIV class="gutter">
+		<DIV class="aboutauthor">
+			<DL>
+				<DT style="text-align: left; ">用户操作</DT>
+				<DD class="middle">
+					<A href="http://hi.csdn.net/!s/wall/to/ldyhot" target="_blank">[留言]</A>&nbsp;
+					<A href="http://hi.csdn.net/!s/msg/to/ldyhot" target="_blank">[发消息]</A>&nbsp;
+					<A href="http://hi.csdn.net/!s/friend/add/ldyhot" target="_blank">[加为好友]</A>&nbsp;
+				</DD>
+				<DT style="text-align: left; ">竹苑<SPAN>ID：<A href="http://hi.csdn.net/ldyhot" target="_blank">ldyhot</A></SPAN></DT><DD class="middle"><A href="http://hi.csdn.net/ldyhot" target="_blank"><IMG class="avatar" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/1_ldyhot.jpg" alt="竹苑"></A></DD><DD style="text-align: left; ">共<EM>2277</EM>次访问，排名<EM>2万外</EM>，<A href="http://hi.csdn.net/!s/friend/list/ldyhot" target="_blank">好友</A><EM>0</EM>人，<A href="http://hi.csdn.net/!s/follow/list/ldyhot" target="_blank">关注者</A><EM>0</EM>人。</DD><DD style="text-align: left; ">阳光，喜欢运动。还是只无忧无虑的在校菜鸟~~~</DD><DT style="text-align: left; ">竹苑的文章</DT><DD style="text-align: left; ">原创 9 篇</DD><DD style="text-align: left; ">翻译 0 篇</DD><DD style="text-align: left; ">转载 0 篇</DD><DD style="text-align: left; ">评论 0 篇</DD>
+				<SPAN id="SubscriptionList">
+					<DT style="text-align: left; ">订阅我的博客</DT>
+					<DD style="text-align: left; ">
+						<A href="http://feeds.feedsky.com/csdn.net/ldyhot">
+							<IMG border="0" alt="XML聚合" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/gif">
+						</A>&nbsp;&nbsp;
+						<A href="http://feeds.feedsky.com/csdn.net/ldyhot" target="_blank">
+							<IMG border="0" alt="FeedSky" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/feedsky.gif">
+						</A>
+					</DD>
+					<DD style="text-align: left; ">
+						<A href="http://www.xianguo.com/subscribe.php?url=http://feeds.feedsky.com/csdn.net/ldyhot" target="_blank">
+							<IMG border="0" alt="订阅到鲜果" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/rss_xianguo.jpg">
+						</A>
+					</DD>
+					<DD style="text-align: left; ">
+						<A href="http://fusion.google.com/add?feedurl=http://feeds.feedsky.com/csdn.net/ldyhot" target="_blank">
+							<IMG border="0" alt="订阅到Google" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/rss_google.gif">
+						</A>
+					</DD>
+					<DD style="text-align: left; ">
+						<A href="http://www.zhuaxia.com/add_channel.php?url=http://feeds.feedsky.com/csdn.net/ldyhot" target="_blank">
+							<IMG border="0" alt="订阅到抓虾" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/rss_zhuaxia.gif">
+						</A>
+					</DD>
+				</SPAN>
+				<DT style="text-align: left; ">
+					<SPAN class="floatright" style="display:none;"><A class="a_edit" href="http://writeblog.csdn.net/configure.aspx" target="_blank">[编辑]</A></SPAN>ldyhot的公告
+				</DT>
+				<DD style="text-align: left; ">
+				<DT style="text-align: left; "><SPAN class="floatright" style="display:none;"><A class="a_edit" href="http://writeblog.csdn.net/EditCategories.aspx?catID=1" target="_blank">[编辑]</A></SPAN>文章分类</DT>
+				<DD style="text-align: left; ">
+					<DIV class="publiclist_sidebar">
+						<UL><LI><A href="http://blog.csdn.net/ldyhot/category/377989.aspx/rss"><IMG src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/rss.gif" alt="(RSS)"></A><A href="http://blog.csdn.net/ldyhot/category/377989.aspx">DP</A></LI><LI><A href="http://blog.csdn.net/ldyhot/category/486604.aspx/rss"><IMG src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/rss.gif" alt="(RSS)"></A><A href="http://blog.csdn.net/ldyhot/category/486604.aspx">排序</A></LI><LI><A href="http://blog.csdn.net/ldyhot/category/478495.aspx/rss"><IMG src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/rss.gif" alt="(RSS)"></A><A href="http://blog.csdn.net/ldyhot/category/478495.aspx">数据结构</A></LI><LI><A href="http://blog.csdn.net/ldyhot/category/378016.aspx/rss"><IMG src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/rss.gif" alt="(RSS)"></A><A href="http://blog.csdn.net/ldyhot/category/378016.aspx">数学推导</A></LI><LI><A href="http://blog.csdn.net/ldyhot/category/478814.aspx/rss"><IMG src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/rss.gif" alt="(RSS)"></A><A href="http://blog.csdn.net/ldyhot/category/478814.aspx">说三道四</A></LI></UL>
+					</DIV>
+				</DD>
+				
+				<DT style="text-align: left; "><SPAN class="floatright" style="display:none;"><A class="a_edit" href="http://writeblog.csdn.net/EditLinks.aspx" target="_blank">[编辑]</A></SPAN>友情链接</DT><DD style="text-align: left; "><A href="http://blog.csdn.net/Rappy" target="_blank">Rappy的专栏</A></DD>
+				<DT style="text-align: left; ">存档</DT>
+				<DD style="text-align: left; ">
+					<DIV class="publiclist_sidebar">
+						<UL><LI><A href="http://blog.csdn.net/ldyhot/archive/2008/11.aspx">2008年11月(2)</A></LI><LI><A href="http://blog.csdn.net/ldyhot/archive/2008/10.aspx">2008年10月(6)</A></LI><LI><A href="http://blog.csdn.net/ldyhot/archive/2008/04.aspx">2008年04月(1)</A></LI></UL>
+					</DIV>
+				</DD>
+			</DL>
+		</DIV>
+	</DIV>
+</DIV>
+
+            
+<DIV id="csdnblog_content">
+    <DIV class="gutter">
+        <DIV class="default_contents">
+            <DIV class="user_article">
+
+                <SCRIPT type="text/javascript" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/feedbackcount.js"></SCRIPT>
+
+                <H1 class="title_txt">
+                    <IMG src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/authorship.gif" border="0" width="15" height="15" alt="原创">&nbsp;
+                    PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告
+                    <CITE class="fav_csdnstylebykimi"><A href="JavaScript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(saveit=window.open('http://wz.csdn.net/storeit.aspx?t='+escape(d.title)+'&u='+escape(d.location.href)+'&c='+escape(t),'saveit','scrollbars=no,width=590,height=300,left=75,top=20,status=no,resizable=yes'));saveit.focus();" class="fav_csdnstylebykimi" title="收藏到我的网摘中，并分享给我的朋友">收藏</A> </CITE>
+                    
+                </H1>
+                <DIV class="blogstory">
+
+                    <SCRIPT type="text/javascript">
+                        document.body.oncopy = function() {
+                            if (window.clipboardData) {
+                                setTimeout(function() {
+                                    var text = clipboardData.getData("text");
+                                    if (text && text.length > 300) {
+                                        text = text + "\r\n\n本文来自CSDN博客，转载请标明出处：" + location.href;
+                                        clipboardData.setData("text", text);
+                                    }
+                                }, 100);
+                            }
+                        }
+					</SCRIPT>
+
+                    <SCRIPT type="text/javascript">                        function StorePage() { d = document; t = d.selection ? (d.selection.type != 'None' ? d.selection.createRange().text : '') : (d.getSelection ? d.getSelection() : ''); void (keyit = window.open('http://www.365key.com/storeit.aspx?t=' + escape(d.title) + '&u=' + escape(d.location.href) + '&c=' + escape(t), 'keyit', 'scrollbars=no,width=475,height=575,left=75,top=20,status=no,resizable=yes')); keyit.focus(); }</SCRIPT>
+
+                    PKU 3617和PKU 3623是一样的题，只是数据范围不同。<BR>3617是2000个字符，而3623是30000个字符。只是3623的时限比较松，贪心也可以过。<BR><BR>本题有两种解法，分别是贪心O(n^2)和后缀数组O(nlogn)<BR><BR>后缀数组法：<BR><BR><DIV class="highlighter"><OL class="highlighter-cpp" start="1"><LI><SPAN class="comment">/*</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;Title:&nbsp;Best&nbsp;Cow&nbsp;Line</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;Author:&nbsp;Jeff</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;Time:&nbsp;&nbsp;2008/10/30</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;Complexity:&nbsp;O(Nlog(N));</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;Result:&nbsp;2256K&nbsp;766MS/&nbsp;AC</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;Reference:&nbsp;</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;Description:&nbsp;</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;给定一个字符数组，可以从数组的开头或者结尾取出元素，</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按取出顺序排成一列，使得他的字典序最小。</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;Tips:</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;后缀数组&nbsp;</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将原字符数组和字符数组的逆序合在一次进行后缀数组排序，</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;然后对rank数组前N和后N个数进行比较，哪个小就输出相应的</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;字符值，同时对应的下标++，直到输出N个字符为止。&nbsp;&nbsp;</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;p.s.&nbsp;</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注意题目要求每一行输出80个字符。&nbsp;</SPAN></LI><LI class="alt"><SPAN class="comment">*/</SPAN><SPAN></SPAN></LI><LI><SPAN class="preprocessor">#include&nbsp;&lt;cstdio&gt;</SPAN><SPAN></SPAN></LI><LI class="alt"><SPAN></SPAN><SPAN class="preprocessor">#include&nbsp;&lt;cstring&gt;</SPAN><SPAN></SPAN></LI><LI><SPAN></SPAN><SPAN class="preprocessor">#include&nbsp;&lt;algorithm&gt;</SPAN><SPAN></SPAN></LI><LI class="alt"><SPAN></SPAN></LI><LI><SPAN></SPAN><SPAN class="keyword">using</SPAN><SPAN>&nbsp;</SPAN><SPAN class="keyword">namespace</SPAN><SPAN>&nbsp;std;</SPAN></LI><LI class="alt"><SPAN></SPAN><SPAN class="keyword">const</SPAN><SPAN>&nbsp;</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;MAX&nbsp;=&nbsp;30000;</SPAN></LI><LI><SPAN></SPAN></LI><LI class="alt"><SPAN></SPAN><SPAN class="keyword">struct</SPAN><SPAN>&nbsp;Sfx{</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;idx;</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;key[2];</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="datatypes">bool</SPAN><SPAN>&nbsp;operator&lt;(</SPAN><SPAN class="keyword">const</SPAN><SPAN>&nbsp;Sfx&nbsp;&amp;other)</SPAN><SPAN class="keyword">const</SPAN><SPAN>{</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">return</SPAN><SPAN>&nbsp;key[0]&nbsp;&lt;&nbsp;other.key[0]&nbsp;||&nbsp;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key[0]&nbsp;==&nbsp;other.key[0]&nbsp;&amp;&amp;&nbsp;key[1]&nbsp;&lt;&nbsp;other.key[1];&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></LI><LI><SPAN>};</SPAN></LI><LI class="alt"><SPAN></SPAN></LI><LI><SPAN></SPAN><SPAN class="datatypes">char</SPAN><SPAN>&nbsp;cow[MAX&nbsp;*&nbsp;2];</SPAN></LI><LI class="alt"><SPAN>Sfx&nbsp;sa[MAX&nbsp;*&nbsp;2],&nbsp;temp_sa[MAX&nbsp;*&nbsp;2];</SPAN></LI><LI><SPAN></SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;rank[MAX&nbsp;*&nbsp;2];</SPAN></LI><LI class="alt"><SPAN></SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;cnt[MAX&nbsp;*&nbsp;2];</SPAN></LI><LI><SPAN></SPAN></LI><LI class="alt"><SPAN></SPAN><SPAN class="keyword">void</SPAN><SPAN>&nbsp;cSort(Sfx&nbsp;*in,&nbsp;</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;key,&nbsp;</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;len,&nbsp;Sfx&nbsp;*out){</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;memset(cnt,&nbsp;0,&nbsp;</SPAN><SPAN class="keyword">sizeof</SPAN><SPAN>(cnt));</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">for</SPAN><SPAN>(</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;len;&nbsp;i++)cnt[&nbsp;in[i].key[key]&nbsp;]++;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">for</SPAN><SPAN>(</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;i&nbsp;=&nbsp;1;&nbsp;i&nbsp;&lt;&nbsp;len;&nbsp;i++)cnt[i]&nbsp;+=&nbsp;cnt[i&nbsp;-&nbsp;1];</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">for</SPAN><SPAN>(</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;i&nbsp;=&nbsp;len&nbsp;-&nbsp;1;&nbsp;i&nbsp;&gt;=&nbsp;0;&nbsp;i--)</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out[&nbsp;--cnt[in[i].key[key]]&nbsp;]&nbsp;=&nbsp;in[i];</SPAN></LI><LI class="alt"><SPAN>}</SPAN></LI><LI><SPAN></SPAN></LI><LI class="alt"><SPAN></SPAN><SPAN class="keyword">void</SPAN><SPAN>&nbsp;build_sfx(</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;len){</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">for</SPAN><SPAN>(</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;len;&nbsp;i++){</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa[i].idx&nbsp;=&nbsp;i;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa[i].key[0]&nbsp;=&nbsp;cow[i];</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa[i].key[1]&nbsp;=&nbsp;i;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;sort(sa,&nbsp;sa&nbsp;+&nbsp;len);</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">for</SPAN><SPAN>(</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;len;&nbsp;i++)sa[i].key[1]&nbsp;=&nbsp;0;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;wid&nbsp;=&nbsp;1;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">while</SPAN><SPAN>(wid&nbsp;&lt;&nbsp;len){</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rank[sa[0].idx]&nbsp;=&nbsp;0;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">for</SPAN><SPAN>(</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;i&nbsp;=&nbsp;1;&nbsp;i&nbsp;&lt;&nbsp;len;&nbsp;i++){</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rank[sa[i].idx]&nbsp;=&nbsp;rank[sa[i-1].idx];&nbsp;&nbsp;&nbsp;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">if</SPAN><SPAN>(sa[i-1]&nbsp;&lt;&nbsp;sa[i])rank[sa[i].idx]++;</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">for</SPAN><SPAN>(</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;len;&nbsp;i++){</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa[i].idx&nbsp;=&nbsp;i;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa[i].key[0]&nbsp;=&nbsp;rank[i];</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sa[i].key[1]&nbsp;=&nbsp;i&nbsp;+&nbsp;wid&nbsp;&lt;&nbsp;len&nbsp;?&nbsp;rank[i&nbsp;+&nbsp;wid]&nbsp;:&nbsp;0;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cSort(sa,&nbsp;1,&nbsp;len,&nbsp;temp_sa);&nbsp;cSort(temp_sa,&nbsp;0,&nbsp;len,&nbsp;sa);</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wid&nbsp;*=&nbsp;2;</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></LI><LI><SPAN>}</SPAN></LI><LI class="alt"><SPAN></SPAN></LI><LI><SPAN></SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;main(){</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;freopen(</SPAN><SPAN class="string">&quot;in.txt&quot;</SPAN><SPAN>,&nbsp;</SPAN><SPAN class="string">&quot;r&quot;</SPAN><SPAN>,&nbsp;stdin);</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;freopen(</SPAN><SPAN class="string">&quot;out.txt&quot;</SPAN><SPAN>,&nbsp;</SPAN><SPAN class="string">&quot;w&quot;</SPAN><SPAN>,&nbsp;stdout);</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;N;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">while</SPAN><SPAN>(scanf(</SPAN><SPAN class="string">&quot;&percnt;d&quot;</SPAN><SPAN>,&nbsp;&amp;N)&nbsp;!=&nbsp;EOF){</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;i,&nbsp;j,&nbsp;count;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">for</SPAN><SPAN>(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;N;&nbsp;i++)scanf(</SPAN><SPAN class="string">&quot;&percnt;s&quot;</SPAN><SPAN>,&nbsp;cow+i);</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">for</SPAN><SPAN>(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;N;&nbsp;i++)cow[2&nbsp;*&nbsp;N&nbsp;-&nbsp;1&nbsp;-&nbsp;i]&nbsp;=&nbsp;cow[i];</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;build_sfx(N&nbsp;*&nbsp;2);</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">for</SPAN><SPAN>(i&nbsp;=&nbsp;0,&nbsp;j&nbsp;=&nbsp;N,&nbsp;count&nbsp;=&nbsp;0;&nbsp;i&nbsp;+&nbsp;j&nbsp;&lt;&nbsp;2&nbsp;*&nbsp;N&nbsp;-&nbsp;1;&nbsp;count++){</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">if</SPAN><SPAN>(rank[i]&nbsp;&lt;&nbsp;rank[j]){</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(</SPAN><SPAN class="string">&quot;&percnt;c&quot;</SPAN><SPAN>,&nbsp;cow[i]);</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">else</SPAN><SPAN>{</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(</SPAN><SPAN class="string">&quot;&percnt;c&quot;</SPAN><SPAN>,&nbsp;cow[j]);</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j++;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">if</SPAN><SPAN>(count&nbsp;&percnt;&nbsp;80&nbsp;==&nbsp;79)printf(</SPAN><SPAN class="string">&quot;\n&quot;</SPAN><SPAN>);</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(</SPAN><SPAN class="string">&quot;&percnt;c\n&quot;</SPAN><SPAN>,&nbsp;cow[i]);</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">return</SPAN><SPAN>&nbsp;0;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></LI><LI><SPAN>}</SPAN></LI><LI class="alt"><SPAN></SPAN></LI></OL></DIV><BR><BR><BR>贪心法：<BR><DIV class="highlighter"><OL class="highlighter-cpp" start="1"><LI><SPAN class="comment">/*</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;Title:&nbsp;Best&nbsp;Cow&nbsp;Line</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;Author:&nbsp;Jeff</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;Time:&nbsp;&nbsp;2008/10/30</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;Complexity:&nbsp;O(N^2);</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;Result:&nbsp;344K&nbsp;&nbsp;2235MS/&nbsp;AC</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;Reference:&nbsp;</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;Description:&nbsp;</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;给定一个字符数组，可以从数组的开头或者结尾取出元素，</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按取出顺序排成一列，使得他的字典序最小。</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;Tips:</SPAN></LI><LI><SPAN class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贪心&nbsp;</SPAN></LI><LI class="alt"><SPAN class="comment">&nbsp;&nbsp;p.s.&nbsp;</SPAN></LI><LI><SPAN class="comment">*/</SPAN><SPAN></SPAN></LI><LI class="alt"><SPAN class="preprocessor">#include&nbsp;&lt;cstdio&gt;</SPAN><SPAN></SPAN></LI><LI><SPAN></SPAN><SPAN class="preprocessor">#include&nbsp;&lt;cstring&gt;</SPAN><SPAN></SPAN></LI><LI class="alt"><SPAN></SPAN></LI><LI><SPAN></SPAN><SPAN class="keyword">using</SPAN><SPAN>&nbsp;</SPAN><SPAN class="keyword">namespace</SPAN><SPAN>&nbsp;std;</SPAN></LI><LI class="alt"><SPAN></SPAN><SPAN class="keyword">const</SPAN><SPAN>&nbsp;</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;MAX&nbsp;=&nbsp;30000;</SPAN></LI><LI><SPAN></SPAN></LI><LI class="alt"><SPAN></SPAN><SPAN class="datatypes">char</SPAN><SPAN>&nbsp;cow[MAX+1];</SPAN></LI><LI><SPAN></SPAN></LI><LI class="alt"><SPAN></SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;main(){</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;freopen(</SPAN><SPAN class="string">&quot;in.txt&quot;</SPAN><SPAN>,&nbsp;</SPAN><SPAN class="string">&quot;r&quot;</SPAN><SPAN>,&nbsp;stdin);</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;freopen(</SPAN><SPAN class="string">&quot;out.txt&quot;</SPAN><SPAN>,&nbsp;</SPAN><SPAN class="string">&quot;w&quot;</SPAN><SPAN>,&nbsp;stdout);</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;N;</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">while</SPAN><SPAN>(scanf(</SPAN><SPAN class="string">&quot;&percnt;d&quot;</SPAN><SPAN>,&nbsp;&amp;N)&nbsp;!=&nbsp;EOF){</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;i,&nbsp;j,&nbsp;count;</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">for</SPAN><SPAN>(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;N;&nbsp;i++)scanf(</SPAN><SPAN class="string">&quot;&percnt;s&quot;</SPAN><SPAN>,&nbsp;cow+i);</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">for</SPAN><SPAN>(i&nbsp;=&nbsp;0,&nbsp;j&nbsp;=&nbsp;N-1,&nbsp;count&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;j;&nbsp;count++){</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="datatypes">int</SPAN><SPAN>&nbsp;ii,&nbsp;jj;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">for</SPAN><SPAN>(ii&nbsp;=&nbsp;i,&nbsp;jj&nbsp;=&nbsp;j;&nbsp;ii&nbsp;&lt;=&nbsp;j;&nbsp;ii++,&nbsp;jj--){</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">if</SPAN><SPAN>(cow[ii]&nbsp;&gt;&nbsp;cow[jj]){</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(</SPAN><SPAN class="string">&quot;&percnt;c&quot;</SPAN><SPAN>,&nbsp;cow[j]);</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j--;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">break</SPAN><SPAN>;</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">else</SPAN><SPAN>&nbsp;</SPAN><SPAN class="keyword">if</SPAN><SPAN>(cow[ii]&nbsp;&lt;&nbsp;cow[jj]){</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(</SPAN><SPAN class="string">&quot;&percnt;c&quot;</SPAN><SPAN>,&nbsp;cow[i]);</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">break</SPAN><SPAN>;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">if</SPAN><SPAN>(ii&nbsp;&gt;&nbsp;j){</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(</SPAN><SPAN class="string">&quot;&percnt;c&quot;</SPAN><SPAN>,&nbsp;cow[i]);&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++;</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">if</SPAN><SPAN>(count&nbsp;&percnt;&nbsp;80&nbsp;==&nbsp;79)printf(</SPAN><SPAN class="string">&quot;\n&quot;</SPAN><SPAN>);</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(</SPAN><SPAN class="string">&quot;&percnt;c\n&quot;</SPAN><SPAN>,&nbsp;cow[i]);</SPAN></LI><LI class="alt"><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;}</SPAN></LI><LI><SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN class="keyword">return</SPAN><SPAN>&nbsp;0;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></LI><LI class="alt"><SPAN>}</SPAN></LI><LI class="alt"><SPAN><BR></SPAN></LI></OL></DIV>
+                    <P class="right articalinfo">
+                        发表于 @
+                        2008年10月30日　20:59:00&nbsp;| <A id="a_comment" href="http://blog.csdn.net/ldyhot/archive/2008/10/30/3187345.aspx#FeedBack" title="评论">评论( <SPAN id="FeedbackCount_3187345">0</SPAN>
+
+                            <SCRIPT type="text/javascript">
+                                AddFeedbackCountStack("3187345")
+							</SCRIPT>
+
+                            ) </A>| <SPAN style="display: none;"><A class="a_edit" href="http://writeblog.csdn.net/PostEdit.aspx?entryId=3187345" title="编辑">编辑</A>|</SPAN> <A href="mailto:webmaster@csdn.net?subject=Article%20Report!!!&body=Author:ldyhot%0D%0AURL:http://blog.csdn.net/ArticleContent.aspx?UserName=ldyhot&Entryid=3187345">
+                                    举报</A>| <CITE class="fav_csdnstylebykimi"><A href="JavaScript:d=document;t=d.selection?(d.selection.type!='None'?d.selection.createRange().text:''):(d.getSelection?d.getSelection():'');void(saveit=window.open('http://wz.csdn.net/storeit.aspx?t='+escape(d.title)+'&u='+escape(d.location.href)+'&c='+escape(t),'saveit','scrollbars=no,width=590,height=300,left=75,top=20,status=no,resizable=yes'));saveit.focus();" class="fav_csdnstylebykimi" title="收藏到我的网摘中，并分享给我的朋友">收藏</A> </CITE>
+                    </P>
+                    <SPAN id="Post.ascx_ViewPost_PreviousAndNextEntriesDown">
+                        <H3 class="pagego">
+                            <A href="http://blog.csdn.net/ldyhot/archive/2008/10/29/3177978.aspx">旧一篇:POJ排名终于变3位数了~~~</A>&nbsp;|&nbsp;<A href="http://blog.csdn.net/ldyhot/archive/2008/10/31/3194946.aspx">新一篇:PKU 1743 Musical Theme 解题报告</A></H3>
+                    </SPAN>
+                    <DIV style="text-align: left;">
+
+<!-- ca-pub-1076724771190722/blog_postpage_72890 -->
+<SCRIPT type="text/javascript">
+    GA_googleFillSlot("blog_postpage_72890");
+</SCRIPT><SCRIPT src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/ads"></SCRIPT><DIV id="google_ads_div_blog_postpage_72890">
+<IFRAME id="google_ads_iframe_blog_postpage_72890" name="google_ads_iframe_blog_postpage_72890" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; "></IFRAME></DIV>
+<SCRIPT>GA_googleCreateDomIframe('google_ads_div_blog_postpage_72890' ,'blog_postpage_72890');</SCRIPT>
+
+                    </DIV>
+                    <DIV class="mutualitys" style="display: block; ">
+                        <DL>
+                            <DT><SPAN><A onclick="LogClickCount(this,215)" target="_blank" href="http://blog.csdn.net/">
+                                查看最新精华文章 请访问博客首页</A></SPAN>相关文章</DT>
+                        <DD><SPAN><A onclick="LogClickCount(this,183)" href="http://blog.csdn.net/HappyTree/archive/2007/01/07/1476104.aspx" target="_blank">最大堆及堆排序的实现</A></SPAN></DD><DD><SPAN><A onclick="LogClickCount(this,183)" href="http://blog.csdn.net/tengomi/archive/2007/07/25/1708096.aspx" target="_blank">利用后缀数组求解一个字符串中最长重复子串问题</A></SPAN></DD><DD><SPAN><A onclick="LogClickCount(this,183)" href="http://blog.csdn.net/milan_2008/archive/2008/09/16/2932436.aspx" target="_blank">PKU 3623 Best Cow Line, Gold</A></SPAN></DD><DD><SPAN><A onclick="LogClickCount(this,183)" href="http://blog.csdn.net/classfree/archive/2008/10/23/3123195.aspx" target="_blank">非同步HASH结构的简单实现</A></SPAN></DD><DD><SPAN><A onclick="LogClickCount(this,183)" href="http://blog.csdn.net/ldyhot/archive/2008/10/30/3177838.aspx" target="_blank">PKU 2774 Long Long Message 解题报告</A></SPAN></DD><DD><SPAN><A onclick="LogClickCount(this,183)" href="http://blog.csdn.net/tiaotiaoyly/archive/2008/11/06/3230530.aspx" target="_blank">PKU3261 Milk Pattern - 后缀数组+LCP</A></SPAN></DD><DD><SPAN><A onclick="LogClickCount(this,183)" href="http://blog.csdn.net/clearriver/archive/2009/08/09/4425860.aspx" target="_blank">排序算法&mdash;&mdash;计数排序</A></SPAN></DD><DD><SPAN><A onclick="LogClickCount(this,183)" href="http://blog.csdn.net/HuangLianzheng/archive/2009/11/16/4814016.aspx" target="_blank">POJ1007解题报告</A></SPAN></DD></DL>
+                    </DIV>
+                </DIV>
+            </DIV>
+            <A name="FeedBack"></A>
+
+            <SCRIPT type="text/javascript">
+                var CurrentEntryId = '3187345';
+                var CurArticleTitle = 'PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告';
+                var AllowComment = 'True';
+                var AllowAnonymousComment = /^true$/i.test('True');
+            </SCRIPT>
+
+            <DIV class="commentslist" id="commentslist">
+            </DIV>
+
+            <SCRIPT type="text/javascript" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/CsdnDialog.js"></SCRIPT>
+
+            <SCRIPT type="text/javascript">
+                function ChangeIdentifyingCode() {
+                    var url = $('#imgValidationCode').attr('src');
+                    if (!(/&d=[\d\.]+$/).test(url)) url += "&d=1";
+                    url = url.replace(/&d=[\d\.]+$/, "&d=" + Math.random());
+                    $('#imgValidationCode').attr('src', url);
+                }
+
+                function OpenLoginDialog() {
+                    element = document.getElementById("loginBtn");
+                    var position = absolutePoint(element);
+
+                    var dialogTop = position.y - 400;
+                    var dialogLeft = position.x - 220;
+                    var dialogWidth = 435;
+                    var dialogHeight = 420;
+
+                    showWindow({ url: 'http://passport.csdn.net/UserLogin.aspx?show=replyLogin&from=http%3a%2f%2fblog.csdn.net%2f!tools%2fLoginSussess.aspx'
+                        , title: '登录'
+                        , top: dialogTop
+                        , left: dialogLeft
+                        , width: dialogWidth
+                        , height: dialogHeight
+                    });
+                }
+
+                function closeDialog(needRefresh) {
+                    closeWindow();
+                    if (needRefresh) {
+                        var url = location.href;
+                        if ((/\?/g).test(url))
+                            url = url.replace(/\?.*$/g, ("?" + Math.random()).replace(/\./g, ""));
+                        else url += ("?" + Math.random()).replace(/\./g, "");
+                        location.href = url;
+                    }
+                    $("#SubmitFeedback").unbind("click");
+                    $("#SubmitFeedback").bind("click", PostContent);
+                }
+
+                function absolutePoint(element) {
+                    var result = { x: element.offsetLeft, y: element.offsetTop };
+                    element = element.offsetParent;
+                    while (element) {
+                        result.x += element.offsetLeft;
+                        result.y += element.offsetTop;
+                        element = element.offsetParent;
+                    }
+                    return result;
+                }
+            </SCRIPT>
+
+            <DIV class="commentnew">
+                <DL>
+                    <DT>
+                        <UL>
+                            <LI class="left">发表评论</LI>
+
+                            <SCRIPT src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/RandomColumnContentJS.aspx" type="text/javascript"></SCRIPT>
+
+                        </UL>
+                    </DT>
+                    <DD>
+                        <UL>
+                            <LI class="lefttop">表 情：</LI>
+                            <LI class="right"><A href="http://blog.csdn.net/ldyhot/archive/2008/10/30/3187345.aspx#" onclick="return false;">
+                                <IMG title="顶" alt="顶" class="brow" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/e01.gif"></A> <A href="http://blog.csdn.net/ldyhot/archive/2008/10/30/3187345.aspx#" onclick="return false;">
+                                    <IMG title="砸" alt="砸" class="brow" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/e02.gif"></A> <A href="http://blog.csdn.net/ldyhot/archive/2008/10/30/3187345.aspx#" onclick="return false;">
+                                        <IMG title="棒" alt="棒" class="brow" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/e03.gif"></A>
+                                <A href="http://blog.csdn.net/ldyhot/archive/2008/10/30/3187345.aspx#" onclick="return false;">
+                                    <IMG title="大笑" alt="大笑" class="brow" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/e04.gif"></A>
+                                <A href="http://blog.csdn.net/ldyhot/archive/2008/10/30/3187345.aspx#" onclick="return false;">
+                                    <IMG title="愤怒" alt="愤怒" class="brow" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/e05.gif"></A>
+                                <A href="http://blog.csdn.net/ldyhot/archive/2008/10/30/3187345.aspx#" onclick="return false;">
+                                    <IMG title="大哭" alt="大哭" class="brow" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/e06.gif"></A>
+                                <A href="http://blog.csdn.net/ldyhot/archive/2008/10/30/3187345.aspx#" onclick="return false;">
+                                    <IMG title="疑问" alt="疑问" class="brow" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/e07.gif"></A>
+                                <A href="http://blog.csdn.net/ldyhot/archive/2008/10/30/3187345.aspx#" onclick="return false;">
+                                    <IMG title="汗" alt="汗" class="brow" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/e08.gif"></A> <A href="http://blog.csdn.net/ldyhot/archive/2008/10/30/3187345.aspx#" onclick="return false;">
+                                        <IMG title="呕吐" alt="呕吐" class="brow" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/e09.gif"></A>
+                                <A href="http://blog.csdn.net/ldyhot/archive/2008/10/30/3187345.aspx#" onclick="return false;">
+                                    <IMG title="送花" alt="送花" class="brow" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/e10.gif"></A>
+                            </LI>
+                        </UL>
+                        <UL>
+                            <LI class="left">评论内容：</LI>
+                            <LI class="right">
+                                <TEXTAREA id="content" class="textarea" onkeydown="if(event.ctrlKey &amp;&amp; event.keyCode==13){return $(&#39;#SubmitFeedback&#39;).click();}"></TEXTAREA>
+                            </LI>
+                        </UL>
+                        <DIV>
+                            <UL>
+                                <LI class="left">用 户 名：</LI>
+                                <LI class="right"><SPAN id="loginTips" class="right" style=""><A href="javascript:void(0);" onclick="OpenLoginDialog(this);return false;" class="red" id="loginBtn">登录</A> <A href="http://passport.csdn.net/CSDNUserRegister.aspx" target="_blank" class="red">
+                                        注册</A> </SPAN><SPAN class="right" style="display: none; ">
+                                            <INPUT type="checkbox" id="anonymous" class="checkbox">匿名评论 </SPAN><SPAN id="commentUser" class="left">匿名用户</SPAN></LI>
+                            </UL>
+                        </DIV>
+                        <UL style="">
+                            <LI class="left">验 证 码：</LI>
+                            <LI class="right">
+                                <INPUT id="code" type="text" class="input">
+                                <A href="javascript:ChangeIdentifyingCode()">
+                                    <IMG id="imgValidationCode" alt="验证码" style="vertical-align: middle;" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/AntiBotImage.ashx"></A>
+                                <A href="javascript:ChangeIdentifyingCode()">重新获得验证码</A> </LI>
+                        </UL>
+                        <UL>
+                            <LI class="left">&nbsp;</LI>
+                            <LI class="right">
+                                <INPUT id="SubmitFeedback" type="button" value="发表评论" class="submitbtn">
+                                
+                            </LI>
+                        </UL>
+                    </DD>
+                    <DD style="float:left; text-align:left; padding-left:15px; width:300px;">
+
+                        <SCRIPT type="text/javascript"><!--
+                            google_ad_client = "pub-1076724771190722";
+                            google_ad_slot = "2166389617";
+                            google_ad_width = 300;
+                            google_ad_height = 250;
+                        //-->
+                        </SCRIPT>
+
+                        <SCRIPT type="text/javascript" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/show_ads.js">
+                        </SCRIPT><SCRIPT src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/test_domain.js"></SCRIPT><SCRIPT>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</SCRIPT><IFRAME name="google_ads_frame" width="300" height="250" frameborder="0" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/ads.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no"></IFRAME>
+
+                    </DD>
+                </DL>
+            </DIV>
+
+            <SCRIPT type="text/javascript">
+                LoadFeedbackCount();
+                document.write("<img src='http://counter.csdn.net/pv.aspx?id=24' border=0 width=0 height=0>");
+			</SCRIPT><IMG src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/pv.aspx" border="0" width="0" height="0">
+
+        </DIV>
+    </DIV>
+</DIV>
+
+            
+<SCRIPT src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/publib_footer.js" type="text/javascript"></SCRIPT><DIV class="pub_footerall"><DL><DT> <DD><A href="http://www.csdn.net/company/about.html" target="_blank">公司简介</A>|<A href="http://www.csdn.net/company/recruit.html" target="_blank">招贤纳士</A>|<A href="http://www.csdn.net/company/marketing.html" target="_blank">广告服务</A>|<A href="http://www.csdn.net/company/account.html" target="_blank">银行汇款帐号</A>|<A href="http://www.csdn.net/company/contact.html" target="_blank">联系方式</A>|<A href="http://www.csdn.net/company/statement.html" target="_blank">版权声明</A>|<A href="http://www.csdn.net/company/layer.html" target="_blank">法律顾问</A>|<A href="mailto:webmaster@csdn.net">问题报告</A></DD><DD>北京创新乐知广告有限公司 版权所有,&nbsp;京&nbsp;ICP&nbsp;证&nbsp;070598&nbsp;号</DD><DD>世纪乐知(北京)网络技术有限公司 提供技术支持</DD><DD><IMG src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/pic_email.gif" alt="" title=""> Email:webmaster@csdn.net</DD><DD>Copyright &copy; 1999-2010, CSDN.NET, All Rights Reserved</DD><DD><A href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001032100010" target="_blank"><IMG src="http://www.csdn.net/ui/images/gongshang_logos.gif" alt="GongshangLogo" title=""></A></DD></DL></DIV>
+<SCRIPT type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/ga.js"></SCRIPT>
+<SCRIPT type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-2688088-9");
+        pageTracker._trackPageview();
+    } catch (err) { }
+</SCRIPT>
+
+
+        </DIV>
+    </DIV>
+    <IMG src="./PKU 3617 Best Cow Line和PKU 3623 Best Cow Line 解题报告 - ldyhot的专栏 - CSDN博客_files/count.aspx" height="0" width="0">
+
+
+</BODY></HTML>

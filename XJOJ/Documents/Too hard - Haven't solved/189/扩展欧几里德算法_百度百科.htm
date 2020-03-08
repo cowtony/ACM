@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://baike.baidu.com/view/1478219.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<meta content="IE=7" http-equiv="X-UA-Compatible">
+<script src="./扩展欧几里德算法_百度百科_files/tangram-1.3.0.js" type="text/javascript"></script>
+<title>扩展欧几里德算法_百度百科 </title><link href="./扩展欧几里德算法_百度百科_files/bk.lemma.css" rel="stylesheet" type="text/css"><script src="./扩展欧几里德算法_百度百科_files/bk.lemma.js" type="text/javascript"></script><script type="text/javascript">baikeViewInfo={id:"1478219"};</script><script type="text/javascript" src="./扩展欧几里德算法_百度百科_files/ecom"></script><script type="text/javascript" src="./扩展欧几里德算法_百度百科_files/sug.js"></script><script type="text/javascript" src="./扩展欧几里德算法_百度百科_files/ms"></script><script type="text/javascript" src="./扩展欧几里德算法_百度百科_files/baikeDynamicData.js"></script></head>
+<body id="view">
+<div id="usrbar"><strong><a href="http://passport.baidu.com/center" target="_blank" id="login-user-name" class="nslog:80">cowtony</a></strong> 实习小编　一级<span id="mnum" class="nslog-area" data-nslog-type="85"><span class="usrbar-split">|</span><a href="http://msg.baidu.com/" class="bluelink" target="_blank">消息</a></span><span class="usrbar-split">|</span><span id="my_home_container"><a id="my_home" target="_blank" class="nslog:81" href="http://baike.baidu.com/uc/home">我的百科</a></span><span class="usrbar-split">|</span><a target="_blank" href="http://zhidao.baidu.com/q?ct=24&cm=16&tn=ucframework&fr=wk" class="nslog:84">我的知道</a><span class="usrbar-split">|</span><a href="http://www.baidu.com/" class="nslog:87">百度首页</a> <span class="usrbar-split">|</span> <a id="logout" target="_self" href="https://passport.baidu.com/?logout&u=http%3A//baike.baidu.com/view/1478219.htm" nslog:89"="">退出</a><div id="nav_extra" style="display:none"><div class="top"><a href="http://baike.baidu.com/uc/home" class="nslog:81" target="_blank">我的百科</a></div><div class="body"><div><a target="_blank" class="nslog:82" href="http://baike.baidu.com/uc/effort">我的贡献</a></div><div><a target="_blank" class="nslog:83" href="http://baike.baidu.com/uc/draft">草稿箱</a></div><div><a target="_blank" class="nslog:1003" href="http://baike.baidu.com/uc/task">我的任务</a></div><div><a target="_blank" class="nslog:1004" href="http://baike.baidu.com/uc/recommend">为我推荐</a></div></div></div></div> 
+<div id="wrap">
+<div id="header">
+<div id="search">
+<div id="logo">
+<a href="http://baike.baidu.com/"><img alt="到百科首页" border="0" class="nslog:1008" height="46" src="./扩展欧几里德算法_百度百科_files/logo-baike.gif" width="137"></a>
+</div>
+<div id="search-content">
+<p class="nv nslog-area" data-nslog-type="1009">
+<a href="http://news.baidu.com/ns?fr=bk&cl=2&rn=20&tn=news&word=%C0%A9%D5%B9%C5%B7%BC%B8%C0%EF%B5%C2%CB%E3%B7%A8">新闻</a><a href="http://www.baidu.com/s?fr=bk&cl=3&wd=%C0%A9%D5%B9%C5%B7%BC%B8%C0%EF%B5%C2%CB%E3%B7%A8&t=5">网页</a><a href="http://tieba.baidu.com/f?fr=bk&kw=%C0%A9%D5%B9%C5%B7%BC%B8%C0%EF%B5%C2%CB%E3%B7%A8">贴吧</a><a href="http://zhidao.baidu.com/q?fr=bk&ct=17&pn=0&tn=ikaslist&rn=10&word=%C0%A9%D5%B9%C5%B7%BC%B8%C0%EF%B5%C2%CB%E3%B7%A8">知道</a><a href="http://mp3.baidu.com/m?fr=bk&tn=baidump3&ct=134217728&lm=-1&word=%C0%A9%D5%B9%C5%B7%BC%B8%C0%EF%B5%C2%CB%E3%B7%A8">MP3</a><a href="http://image.baidu.com/i?fr=bk&tn=baiduimage&ct=201326592&lm=-1&cl=2&word=%C0%A9%D5%B9%C5%B7%BC%B8%C0%EF%B5%C2%CB%E3%B7%A8">图片</a><a href="http://video.baidu.com/v?fr=bk&ct=301989888&rn=20&pn=0&db=0&s=24&word=%C0%A9%D5%B9%C5%B7%BC%B8%C0%EF%B5%C2%CB%E3%B7%A8">视频</a><strong>百科</strong><a href="http://wenku.baidu.com/search?fr=bk&word=%C0%A9%D5%B9%C5%B7%BC%B8%C0%EF%B5%C2%CB%E3%B7%A8&lm=0&od=0">文库</a>
+</p>
+<form action="http://baike.baidu.com/searchword/" method="get" name="f1" target="_self">
+<input id="word" maxlength="400" name="word" tabindex="1" value="扩展欧几里德算法" autocomplete="off">
+<input class="search-btn nslog:1010" onclick="document.f1.pic.value=1;" tabindex="2" type="submit" value="进入词条"><input class="search-btn nslog:1011" onclick="document.f1.pic.value=2;" tabindex="3" type="submit" value="搜索词条">
+<input id="sw1" name="pic" type="hidden" value="1">
+<input name="sug" type="hidden" value="1">
+<input id="search-enc" name="enc" type="hidden" value="gbk">
+<iframe src="javascript:void(0)" class="tangram_sug_sd" style="display: none; position: absolute; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; "></iframe><div id="tangram_sug_1286333537583" class="tangram_sug_wpr" style="display: none; "></div></form>
+</div>
+<div id="help">
+<a class="nslog:1012" href="http://www.baidu.com/search/baike_help.html" target="_blank">帮助</a><a class="nslog:1013" href="http://baike.baidu.com/view/1478219.htm#" onclick="setSug();return false;">设置</a>
+</div>
+<div class="clear"></div>
+</div>
+<div class="nslog-area" data-nslog-type="1000" id="path">
+<ul class="clearfix">
+<li><a href="http://baike.baidu.com/?ref=view" target="_blank">首页</a></li>
+<li><a href="http://baike.baidu.com/ziran/?ref=view" target="_blank">自然</a></li>
+<li><a href="http://baike.baidu.com/wenhua/?ref=view" target="_blank">文化</a></li>
+<li><a href="http://baike.baidu.com/dili/?ref=view" target="_blank">地理</a></li>
+<li><a href="http://baike.baidu.com/lishi/?ref=view" target="_blank">历史</a></li>
+<li><a href="http://baike.baidu.com/shenghuo/?ref=view" target="_blank">生活</a></li>
+<li><a href="http://baike.baidu.com/shehui/?ref=view" target="_blank">社会</a></li>
+<li><a href="http://baike.baidu.com/yishu/?ref=view" target="_blank">艺术</a></li>
+<li><a href="http://baike.baidu.com/renwu/?ref=view" target="_blank">人物</a></li>
+<li><a href="http://baike.baidu.com/jingji/?ref=view" target="_blank">经济</a></li>
+<li><a href="http://baike.baidu.com/kexue/?ref=view" target="_blank">科学</a></li>
+<li><a href="http://baike.baidu.com/tiyu/?ref=view" target="_blank">体育</a></li>
+<li><a href="http://www.baidu.com/search/baike/zhuti-hongloumeng/" target="_blank">红楼梦</a></li>
+<li><a href="http://www.baidu.com/search/baike/zhuti-ssss/index.html" target="_blank">长假云游</a></li>
+<li id="nav-worldcup"><a href="http://baike.baidu.com/view/4077209.htm" target="_blank"><img align="absmiddle" class="icon" src="./扩展欧几里德算法_百度百科_files/blank.gif">欧冠</a></li>
+<style type="text/css">#nav-worldcup .icon{_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://img.baidu.com/img/baike/module/ball.png");background:url(http://img.baidu.com/img/baike/module/ball.png) no-repeat;_background:none;width:20px;height:15px;position:absolute;top:10px;left:0}li#nav-worldcup a{text-align:left;padding-left:22px;position:relative;display:block;width:60px;zoom:1}</style>
+</ul>
+</div>
+<div class="nav-ppqw-hot-wrapper"><div class="lemma-nav-ppqw-hot" id="lemma-nav-ppqw-hot"></div></div>
+</div>
+<div id="page">
+<div class="layout grid-m0s245 w1000" id="content-wrap">
+<div class="col-main article" id="content">
+<div class="main-wrap main-shadow">
+<div class="content-hd">
+<div class="content-hd-wrap"></div>
+</div>
+<div class="content-bd main-body">
+<div class="text">
+<span class="editable-lemma" data-edit-id="1478219"></span>
+<h1 class="title">扩展欧几里德算法</h1>
+<fieldset class="text_dir nslog-area" data-nslog-type="1016" id="catalog">
+<p>目录</p>
+<dl id="holder1" style="width: 331px; visibility: hidden; padding-bottom: 20px; ">
+<dd><a href="http://baike.baidu.com/view/1478219.htm#1" name="STAT_ONCLICK_UNSUBMIT_CATALOG">欧几里德算法</a><ol style="display: none; "><li><a href="http://baike.baidu.com/view/1478219.htm#1_1" name="STAT_ONCLICK_UNSUBMIT_CATALOG">欧几里德算法概述：</a></li><li><a href="http://baike.baidu.com/view/1478219.htm#1_2" name="STAT_ONCLICK_UNSUBMIT_CATALOG">欧几里得算法的公式表述</a></li><li><a href="http://baike.baidu.com/view/1478219.htm#1_3" name="STAT_ONCLICK_UNSUBMIT_CATALOG">欧几里德算法的C++语言描述</a></li></ol></dd><dd><a href="http://baike.baidu.com/view/1478219.htm#2" name="STAT_ONCLICK_UNSUBMIT_CATALOG">扩展欧几里德算法</a><ol style="display: none; "><li><a href="http://baike.baidu.com/view/1478219.htm#2_1" name="STAT_ONCLICK_UNSUBMIT_CATALOG">扩展欧几里德定理</a></li><li><a href="http://baike.baidu.com/view/1478219.htm#2_2" name="STAT_ONCLICK_UNSUBMIT_CATALOG">c++语言实现</a></li><li><a href="http://baike.baidu.com/view/1478219.htm#2_3" name="STAT_ONCLICK_UNSUBMIT_CATALOG">求解 x，y的方法的理解</a></li><li><a href="http://baike.baidu.com/view/1478219.htm#2_4" name="STAT_ONCLICK_UNSUBMIT_CATALOG">扩展欧几里德算法</a></li><li><a href="http://baike.baidu.com/view/1478219.htm#2_5" name="STAT_ONCLICK_UNSUBMIT_CATALOG">使用扩展欧几里德算法解决不定方程的办法</a></li><li><a href="http://baike.baidu.com/view/1478219.htm#2_6" name="STAT_ONCLICK_UNSUBMIT_CATALOG">欧几里德算法的扩展</a></li></ol></dd></dl>
+<dl id="holder2" style="width: 331px; display: block; " class="arr">
+<dd><a href="http://baike.baidu.com/view/1478219.htm#1" name="STAT_ONCLICK_UNSUBMIT_CATALOG">欧几里德算法</a><ol style="display: none; "><li><a href="http://baike.baidu.com/view/1478219.htm#1_1" name="STAT_ONCLICK_UNSUBMIT_CATALOG">欧几里德算法概述：</a></li><li><a href="http://baike.baidu.com/view/1478219.htm#1_2" name="STAT_ONCLICK_UNSUBMIT_CATALOG">欧几里得算法的公式表述</a></li><li><a href="http://baike.baidu.com/view/1478219.htm#1_3" name="STAT_ONCLICK_UNSUBMIT_CATALOG">欧几里德算法的C++语言描述</a></li></ol></dd><dd><a href="http://baike.baidu.com/view/1478219.htm#2" name="STAT_ONCLICK_UNSUBMIT_CATALOG">扩展欧几里德算法</a><ol style="display: none; "><li><a href="http://baike.baidu.com/view/1478219.htm#2_1" name="STAT_ONCLICK_UNSUBMIT_CATALOG">扩展欧几里德定理</a></li><li><a href="http://baike.baidu.com/view/1478219.htm#2_2" name="STAT_ONCLICK_UNSUBMIT_CATALOG">c++语言实现</a></li><li><a href="http://baike.baidu.com/view/1478219.htm#2_3" name="STAT_ONCLICK_UNSUBMIT_CATALOG">求解 x，y的方法的理解</a></li><li><a href="http://baike.baidu.com/view/1478219.htm#2_4" name="STAT_ONCLICK_UNSUBMIT_CATALOG">扩展欧几里德算法</a></li><li><a href="http://baike.baidu.com/view/1478219.htm#2_5" name="STAT_ONCLICK_UNSUBMIT_CATALOG">使用扩展欧几里德算法解决不定方程的办法</a></li><li><a href="http://baike.baidu.com/view/1478219.htm#2_6" name="STAT_ONCLICK_UNSUBMIT_CATALOG">欧几里德算法的扩展</a></li></ol></dd><div id="catalog-holder" class="nslog:1017">展开</div></dl>
+</fieldset>
+<div class="clear"></div>
+<script type="text/javascript">bk.view.catalog.start();nslog.set("catalogshow",1);</script>
+<div id="lemmaContent">
+<h2 class="first"><div class="text_edit editable-title" data-edit-id="1478219:1"><a href="http://baike.baidu.com/view/1478219.htm#" class="nslog:1019" onclick="bk.view.editLemma(&quot;/edit/&quot;,1478219,1);return false">编辑本段</a></div><a name="1"></a>欧几里德算法</h2><h3><a name="1_1"></a>欧几里德算法概述：</h3>　　欧几里德算法又称辗转相除法，用于计算两个整数a,b的最大公约数。其计算原理依赖于下面的定理：
+<div class="spctrl"></div>　　gcd函数就是用来求(a,b)的最大公约数的。
+<div class="spctrl"></div>　　gcd函数的基本性质：
+<div class="spctrl"></div>　　gcd(a,b)=gcd(b,a)=gcd(-a,b)=gcd(|a|,|b|)<h3><a name="1_2"></a>欧几里得算法的公式表述</h3>　　gcd(a,b)=gcd(b,a mod b)
+<div class="spctrl"></div>　　证明：a可以表示成a = kb + r，则r = a mod b
+<div class="spctrl"></div>　　假设d是a,b的一个公约数，则有
+<div class="spctrl"></div>　　d|a, d|b，而r = a - kb，因此d|r
+<div class="spctrl"></div>　　因此d是(b,a mod b)的公约数
+<div class="spctrl"></div>　　假设d 是(b,a mod b)的公约数，则
+<div class="spctrl"></div>　　d | b , d |r ，但是a = kb +r
+<div class="spctrl"></div>　　因此d也是(a,b)的公约数
+<div class="spctrl"></div>　　因此(a,b)和(b,a mod b)的公约数是一样的，其最大公约数也必然相等，得证<h3><a name="1_3"></a>欧几里德算法的C++语言描述</h3>　　int Gcd(int a, int b)
+<div class="spctrl"></div>　　{
+<div class="spctrl"></div>　　if(b == 0)
+<div class="spctrl"></div>　　return a;
+<div class="spctrl"></div>　　return Gcd(b, a % b);
+<div class="spctrl"></div>　　}
+<div class="spctrl"></div>　　当然你也可以写成迭代形式：
+<div class="spctrl"></div>　　int Gcd(int a, int b)
+<div class="spctrl"></div>　　{
+<div class="spctrl"></div>　　while(b != 0)
+<div class="spctrl"></div>　　{
+<div class="spctrl"></div>　　int r = b;
+<div class="spctrl"></div>　　b = a % b;
+<div class="spctrl"></div>　　a = r;
+<div class="spctrl"></div>　　}
+<div class="spctrl"></div>　　return a;
+<div class="spctrl"></div>　　}<div class="bpctrl"></div><h2 class=""><div class="text_edit editable-title" data-edit-id="1478219:2"><a href="http://baike.baidu.com/view/1478219.htm#" class="nslog:1019" onclick="bk.view.editLemma(&quot;/edit/&quot;,1478219,2);return false">编辑本段</a></div><a name="2"></a>扩展欧几里德算法</h2><h3><a name="2_1"></a>扩展欧几里德定理</h3>　　对于不完全为 0 的非负整数 a，b，gcd（a，b）表示 a，b 的最大公约数，必然存在整
+<div class="spctrl"></div>　　数对 x，y ，使得 gcd（a，b）=ax+by。<h3><a name="2_2"></a>c++语言实现</h3>　　#include &lt;iostream&gt;
+<div class="spctrl"></div>　　using namespace std;
+<div class="spctrl"></div>　　int x,y,q;
+<div class="spctrl"></div>　　void extend_Eulid(int a,int b)
+<div class="spctrl"></div>　　{
+<div class="spctrl"></div>　　if(b == 0)
+<div class="spctrl"></div>　　{
+<div class="spctrl"></div>　　x = 1;y = 0;q = a;
+<div class="spctrl"></div>　　}
+<div class="spctrl"></div>　　else
+<div class="spctrl"></div>　　{
+<div class="spctrl"></div>　　extend_Eulid(b,a%b);
+<div class="spctrl"></div>　　int temp = x;
+<div class="spctrl"></div>　　x = y; 
+<div class="spctrl"></div>　　y = temp - a/b*y;
+<div class="spctrl"></div>　　}
+<div class="spctrl"></div>　　}
+<div class="spctrl"></div>　　int main()
+<div class="spctrl"></div>　　{
+<div class="spctrl"></div>　　int a,b;
+<div class="spctrl"></div>　　cin&gt;&gt;a&gt;&gt;b;
+<div class="spctrl"></div>　　if(a &lt; b)
+<div class="spctrl"></div>　　swap(a,b);
+<div class="spctrl"></div>　　extend_Eulid(a,b);
+<div class="spctrl"></div>　　printf("%d=(%d)*%d+(%d)*%d\n",q,x,a,y,b); 
+<div class="spctrl"></div>　　return 0;
+<div class="spctrl"></div>　　}<h3><a name="2_3"></a>求解 x，y的方法的理解</h3>　　设 a&gt;b。 
+<div class="spctrl"></div>　　1，显然当 b=0，gcd（a，b）=a。此时 x=1，y=0； 
+<div class="spctrl"></div>　　2，ab&lt;&gt;0 时 
+<div class="spctrl"></div>　　设 ax1+by1=gcd(a,b); 
+<div class="spctrl"></div>　　bx2+(a mod b)y2=gcd(b,a mod b); 
+<div class="spctrl"></div>　　根据朴素的欧几里德原理有 gcd(a,b)=gcd(b,a mod b); 
+<div class="spctrl"></div>　　则:ax1+by1=bx2+(a mod b)y2; 
+<div class="spctrl"></div>　　即:ax1+by1=bx2+(a-(a/b)*b)y2=ay2+bx2-(a/b)*by2; 
+<div class="spctrl"></div>　　根据恒等定理得：x1=y2; y1=x2-(a/b)*y2; 
+<div class="spctrl"></div>　　这样我们就得到了求解 x1,y1 的方法：x1，y1 的值基于 x2，y2. 
+<div class="spctrl"></div>　　上面的思想是以递归定义的，因为 gcd 不断的递归求解一定会有个时候 b=0，所以递归可以
+<div class="spctrl"></div>　　结束。<h3><a name="2_4"></a>扩展欧几里德算法</h3>　　扩展欧几里德算法是用来在已知a, b求解一组p，q使得ax+by = Gcd(a, b) =d(解一定存在，根据数论中的相关定理)。扩展欧几里德常用在求解模线性方程及方程组中。下面是一个使用C++的实现：
+<div class="spctrl"></div>　　int exGcd(int a, int b, int &amp;x, int &amp;y)
+<div class="spctrl"></div>　　{
+<div class="spctrl"></div>　　if(b == 0)
+<div class="spctrl"></div>　　{
+<div class="spctrl"></div>　　x = 1;
+<div class="spctrl"></div>　　y = 0;
+<div class="spctrl"></div>　　return a; ---很难找出一个这么实现的价值，因为扩展欧几里得还有更大的用途；个人认为定义全局数组更好,不用return r。
+<div class="spctrl"></div>　　}
+<div class="spctrl"></div>　　int r = exGcd(b, a % b, x, y);
+<div class="spctrl"></div>　　int t = x;
+<div class="spctrl"></div>　　x = y;
+<div class="spctrl"></div>　　y = t - a / b * y;
+<div class="spctrl"></div>　　return r;
+<div class="spctrl"></div>　　}
+<div class="spctrl"></div>　　把这个实现和Gcd的递归实现相比，发现多了下面的x,y赋值过程，这就是扩展欧几里德算法的精髓。
+<div class="spctrl"></div>　　可以这样思考:
+<div class="spctrl"></div>　　对于a' = b, b' = a % b 而言，我们求得 x, y使得 a'x + b'y = Gcd(a', b')
+<div class="spctrl"></div>　　由于b' = a % b = a - a / b * b (注：这里的/是程序设计语言中的除法)
+<div class="spctrl"></div>　　那么可以得到:
+<div class="spctrl"></div>　　a'x + b'y = Gcd(a', b') ===&gt;
+<div class="spctrl"></div>　　bx + (a - a / b * b)y = Gcd(a', b') = Gcd(a, b) ===&gt;
+<div class="spctrl"></div>　　ay +b(x - a / b*y) = Gcd(a, b)
+<div class="spctrl"></div>　　因此对于a和b而言，他们的相对应的p，q分别是 y和(x-a/b*y)<h3><a name="2_5"></a>使用扩展欧几里德算法解决不定方程的办法</h3>　　对于不定整数方程pa+qb=c，若 c mod Gcd(a, b)=0,则该方程存在整数解，否则不存在整数解。
+<div class="spctrl"></div>　　上面已经列出找一个整数解的方法，在找到p * a+q * b = Gcd(a, b)的一组解p0,q0后， <b><i>/*</i></b> p * a+q * b = Gcd(a, b)的其他整数解满足：
+<div class="spctrl"></div>　　p = p0 + b/Gcd(a, b) * t 
+<div class="spctrl"></div>　　q = q0 - a/Gcd(a, b) * t(其中t为任意整数)
+<div class="spctrl"></div>　　至于pa+qb=c的整数解，只需将p * a+q * b = Gcd(a, b)的每个解乘上 c/Gcd(a, b) 即可。<b><i>*/有问题</i></b>
+<div class="spctrl"></div>　　在找到p * a+q * b = Gcd(a, b)的一组解p0,q0后，应该是
+<div class="spctrl"></div>　　得到p * a+q * b = c的一组解p1 = p0*(c/Gcd(a,b)),q1 = q0*(c/Gcd(a,b))，p * a+q * b = c的其他整数解满足：
+<div class="spctrl"></div>　　p = p1 + b/Gcd(a, b) * t
+<div class="spctrl"></div>　　q = q1 - a/Gcd(a, b) * t(其中t为任意整数)
+<div class="spctrl"></div>　　p 、q就是p * a+q * b = c的所有整数解。 
+<div class="spctrl"></div>　　“有问题”的一段已经标出
+<div class="spctrl"></div>　　也就是在得出p * a+q * b = Gcd(a, b)的解后是先乘上c/Gcd(a, b)从而导出p * a+q * b = c的其他整数解，
+<div class="spctrl"></div>　　还是先导出p * a+q * b = Gcd(a, b)的其他整数解再乘上c/Gcd(a, b)。
+<div class="spctrl"></div>　　编程时 exgcd 更多用于求解“中国余数定理”相关知识 举个例子 比如n除以5余2 除以13余3 那么n最小是多少，所有的n满足什么条件？
+<div class="spctrl"></div>　　n（min)=42
+<div class="spctrl"></div>　　n=23+k*65<h3><a name="2_6"></a>欧几里德算法的扩展</h3>　　扩展欧几里德算法不但能计算(a，b)的最大公约数，而且能计算a模b及b模a的乘法逆元，用C语言描述如下： 
+<div class="spctrl"></div>　　int gcd(int a， int b ， int&amp;； ar，int &amp;； br) 
+<div class="spctrl"></div>　　{ 
+<div class="spctrl"></div>　　int x1，x2，x3； 
+<div class="spctrl"></div>　　int y1，y2，y3； 
+<div class="spctrl"></div>　　int t1，t2，t3； 
+<div class="spctrl"></div>　　if(0 == a) 
+<div class="spctrl"></div>　　{//有一个数为0，就不存在乘法逆元 
+<div class="spctrl"></div>　　ar = 0； 
+<div class="spctrl"></div>　　br = 0 ； 
+<div class="spctrl"></div>　　return b； 
+<div class="spctrl"></div>　　} 
+<div class="spctrl"></div>　　if(0 == b) 
+<div class="spctrl"></div>　　{ 
+<div class="spctrl"></div>　　ar = 0； 
+<div class="spctrl"></div>　　br = 0 ； 
+<div class="spctrl"></div>　　return a； 
+<div class="spctrl"></div>　　} 
+<div class="spctrl"></div>　　x1 = 1； 
+<div class="spctrl"></div>　　x2 = 0； 
+<div class="spctrl"></div>　　x3 = a； 
+<div class="spctrl"></div>　　y1 = 0； 
+<div class="spctrl"></div>　　y2 = 1； 
+<div class="spctrl"></div>　　y3 = b； 
+<div class="spctrl"></div>　　int k； 
+<div class="spctrl"></div>　　for( t3 = x3 % y3 ； t3 ！= 0 ； t3 = x3 % y3) 
+<div class="spctrl"></div>　　{ 
+<div class="spctrl"></div>　　k = x3 / y3； 
+<div class="spctrl"></div>　　t2 = x2 - k * y2； 
+<div class="spctrl"></div>　　t1 = x1 - k * y1； 
+<div class="spctrl"></div>　　x1 = y1； 
+<div class="spctrl"></div>　　x1 = y2； 
+<div class="spctrl"></div>　　x3 = y3； 
+<div class="spctrl"></div>　　y1 = t1； 
+<div class="spctrl"></div>　　y2 = t2； 
+<div class="spctrl"></div>　　y3 = t3； 
+<div class="spctrl"></div>　　} 
+<div class="spctrl"></div>　　if( y3 == 1) 
+<div class="spctrl"></div>　　{ 
+<div class="spctrl"></div>　　//有乘法逆元 
+<div class="spctrl"></div>　　ar = y2； 
+<div class="spctrl"></div>　　br = x1； 
+<div class="spctrl"></div>　　return 1； 
+<div class="spctrl"></div>　　}else{ 
+<div class="spctrl"></div>　　//公约数不为1，无乘法逆元 
+<div class="spctrl"></div>　　ar = 0； 
+<div class="spctrl"></div>　　br = 0； 
+<div class="spctrl"></div>　　return y3； 
+<div class="spctrl"></div>　　} 
+<div class="spctrl"></div>　　} 
+<div class="spctrl"></div>　　扩展欧几里德算法对于最大公约数的计算和普通欧几里德算法是一致的。计算乘法逆元则显得很难明白。我想了半个小时才想出证明他的方法。 
+<div class="spctrl"></div>　　首先重复拙作整除中的一个论断： 
+<div class="spctrl"></div>　　如果gcd(a，b)=d，则存在m，n，使得d = ma + nb，称呼这种关系为a、b组合整数d，m，n称为组合系数。当d=1时，有 ma + nb = 1 ，此时可以看出m是a模b的乘法逆元，n是b模a的乘法逆元。 
+<div class="spctrl"></div>　　为了证明上面的结论，我们把上述计算中xi、yi看成ti的迭代初始值，考察一组数(t1，t2，t3)，用归纳法证明：当通过扩展欧几里德算法计算后，每一行都满足a×t1 + b×t2 = t3 
+<div class="spctrl"></div>　　第一行：1 × a + 0 × b = a成立 
+<div class="spctrl"></div>　　第二行：0 × a + 1 × b = b成立 
+<div class="spctrl"></div>　　假设前k行都成立，考察第k+1行 
+<div class="spctrl"></div>　　对于k-1行和k行有 
+<div class="spctrl"></div>　　t1(k-1) t2(k-1) t3(k-1) 
+<div class="spctrl"></div>　　t1(k) t2(k) t3(k) 
+<div class="spctrl"></div>　　分别满足： 
+<div class="spctrl"></div>　　t1(k-1) × a + t2(k-1) × b = t3(k-1) 
+<div class="spctrl"></div>　　t1(k) × a + t2(k) × b = t3(k) 
+<div class="spctrl"></div>　　根据扩展欧几里德算法，假设t3(k-1) = j t3(k) + r 
+<div class="spctrl"></div>　　则： 
+<div class="spctrl"></div>　　t3(k+1) = r 
+<div class="spctrl"></div>　　t2(k+1) = t2(k-1) - j × t2(k) 
+<div class="spctrl"></div>　　t1(k+1) = t1(k-1) - j × t1(k) 
+<div class="spctrl"></div>　　则 
+<div class="spctrl"></div>　　t1(k+1) × a + t2(k+1) × b 
+<div class="spctrl"></div>　　=t1(k-1) × a - j × t1(k) × a + 
+<div class="spctrl"></div>　　t2(k-1) × b - j × t2(k) × b 
+<div class="spctrl"></div>　　= t3(k-1) - j t3(k) = r 
+<div class="spctrl"></div>　　= t3(k+1) 
+<div class="spctrl"></div>　　得证 
+<div class="spctrl"></div>　　因此，当最终t3迭代计算到1时，有t1× a + t2 × b = 1，显然，t1是a模b的乘法逆元，t2是b模a的乘法逆元。<div class="bpctrl" style="clear:both"></div></div> 
+</div>
+</div>
+<div class="reinforce content-bd" id="lemmaExtend">
+<dl class="nslog-area" data-nslog-type="1" id="viewExtRead">
+<dt>扩展阅读：</dt>
+<dd class="reference">
+<ul>
+<li class="layout">
+<span class="ref-index"><span class="r-index">1</span><span class="slide s-right"></span></span>
+<p class="ref-bd line-1">《算法导论》 原书第二版</p>
+</li>
+</ul>
+</dd>
+</dl>
+<script>nslog.set("ext-reader",1);</script>
+<dl class="nslog-area" data-nslog-type="19" id="viewExtCati">
+<dt>开放分类：</dt>
+<dd>
+<a href="http://baike.baidu.com/taglist?tag=%CA%FD%D1%A7&tagfromview" target="_blank">数学</a>，<a href="http://baike.baidu.com/taglist?tag=%CB%E3%B7%A8&tagfromview" target="_blank">算法</a>，<a href="http://baike.baidu.com/taglist?tag=%C5%B7%BC%B8%C0%EF%B5%C2&tagfromview" target="_blank">欧几里德</a>，<a href="http://baike.baidu.com/taglist?tag=%C3%DC%C2%EB%D1%A7&tagfromview" target="_blank">密码学</a></dd>
+</dl>
+<script>nslog.set("module-tag",1);</script>
+<dl class="nslog-area" data-nslog-type="18" id="relatedLemmaDown">
+<dt>
+“扩展欧几里德算法”相关词条：
+</dt>
+<dd class="relative">
+<div class="clear"></div>
+<div>
+<a class="relatedhelp" href="http://www.baidu.com/search/baike_help.html#n18" target="_blank" title="什么是相关词条">什么是相关词条</a>
+<a class="myedit nslog:1005" href="http://baike.baidu.com/view/1478219.htm#" onclick="userlogin.check(bk.view.editRelated,false,&quot;editrelated&quot;);return false;">我来完善</a>
+</div>
+<div class="clear"></div>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="content-ft">
+<div class="end">
+<p class="declare">百度百科中的词条内容仅供参考，如果您需要解决具体问题（尤其在法律、医学等领域），建议您咨询相关领域专业人士。</p>
+<div class="text_vote1" id="vote_btn"><b id="vote_num">215</b><span id="vote_txt">本词条对我有帮助</span></div>
+</div>
+<div class="layout share">
+<div class="share-item-title">
+<a class="cang nslog:99" href="http://cang.baidu.com/do/add" onclick="window.open(&quot;http://cang.baidu.com/do/add?it=&quot;+encodeURIComponent(document.title)+&quot;&amp;iu=&quot;+encodeURIComponent(location.href)+&quot;&amp;tn=%E7%99%BE%E7%A7%91%E8%AF%8D%E6%9D%A1%2C&amp;fr=bk#nw=1&quot;,&quot;_s&quot;,&quot;scrollbars=no,width=600,height=450,left=75,top=20,status=no,resizable= yes&quot;);return false;" target="_blank" title="添加到搜藏">添加到搜藏</a>
+</div>
+<div class="share-item clearfix">
+<span class="share-tip">分享到:</span>
+<a class="itieBa nslog:97" href="http://tieba.baidu.com/i/sys/share?link=http%3A%2F%2Fbaike.baidu.com%2Fview%2F1478219.htm&type=text&title=%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%B7%E7%AE%97%E6%B3%95_%E7%99%BE%E5%BA%A6%E7%99%BE%E7%A7%91&content=%20%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%B7%E7%AE%97%E6%B3%95%E5%8F%88%E7%A7%B0%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95%EF%BC%8C%E7%94%A8%E4%BA%8E%E8%AE%A1%E7%AE%97%E4%B8%A4%E4%B8%AA%E6%95%B4%E6%95%B0a%2Cb%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E3%80%82%E5%85%B6%E8%AE%A1%E7%AE%97%E5%8E%9F%E7%90%86%E4%BE%9D%E8%B5%96%E4%BA%8E%E4%B8%8B%E9%9D%A2%E7%9A%84%E5%AE%9A%E7%90%86%EF%BC%9A%0D%0A%20gcd%E5%87%BD%E6%95%B0%E5%B0%B1%E6%98%AF%E7%94%A8%E6%9D%A5%E6%B1%82%28a%2Cb%29%E7%9A%84%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0%E7%9A%84%E3%80%82%0D%0A%20gcd%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8%EF%BC%9A%0D%0A%20gcd%28a%2Cb%29%3Dgcd%28b%2Ca%29%3Dgcd%28-a%2Cb%29%3Dgcd%28%7Ca%7C%2C%7Cb%7C%29%20gcd%28a%2Cb%29%3Dgcd%28b%2Ca%20mod%20b%29%0D%0A%20%E8%AF%81%E6%98%8E%EF%BC%9Aa%E5%8F%AF%E4%BB%A5%E8%A1%A8%E7%A4%BA%E6%88%90" target="_blank" title="分享到i贴吧"></a>
+<a class="itieBa nslog:359" href="http://apps.hi.baidu.com/share?url=http%3A%2F%2Fbaike.baidu.com%2Fview%2F1478219.htm" style="background-position:0 -271px" target="_blank" title="转贴到百度空间"></a>
+<a class="tsina" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?appkey=3417820038',u=z||d.location,p=['&url=',e(u),'&title=',e(t||d.title),'&source=',e(r),'&sourceUrl=',e(l),'&content=',c||'gb2312','&pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'BAIDUBAIKE','http://baike.baidu.com','','【扩展欧几里德算法_百度百科】  欧几里德算法又称辗转相除法，用于计算两个整数a,b的最大公约数。其计算原理依赖于下面的定......','http://baike.baidu.com/view/1478219.htm',''));nslog(location.href,94,{name:'tsina',id:'1478219',title:'扩展欧几里德算法'})" title="分享到新浪微博"></a>
+<a class="tdouban" href="javascript:void((function(s,d,e,r,l,p,t,ab,z,c){var%20f='http://www.douban.com/recommend/',u=z||d.location,p=['?&url=',e(u),'&title=',e(t||d.title),'&abstract=',e(ab||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'BAIDUBAIKE','http://baike.baidu.com','','【扩展欧几里德算法_百度百科】',' 欧几里德算法又称辗转相除法，用于计算两个整数a,b的最大公约数。其计算原理依赖于下面的定理：   gcd函数就是用来求(a,b)的最大公约数的。   gcd函数的基本性质： ......','http://baike.baidu.com/view/1478219.htm',''));nslog(location.href,257,{name:'tdouban',id:'1478219',title:'扩展欧几里德算法'})" title="分享到豆瓣网"></a>
+<a class="tsohu" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var f='http://t.sohu.com/third/post.jsp?',u=z||d.location,p=['&url=',e(u),'&title=',e(t||d.title),'&content=',c||'gb2312','&pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=660,height=470,left=',(s.width-660)/2,',top=',(s.height-470)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','','【扩展欧几里德算法_百度百科】  欧几里德算法又称辗转相除法，用于计算两个整数a,b的最大公约数。其计算原理依赖于下面的定......','http://baike.baidu.com/view/1478219.htm','utf-8'));nslog(location.href,327,{name:'tsohu',id:'1478219',title:'扩展欧几里德算法'})" title="分享到搜狐微博"></a>
+</div>
+</div>
+<div class="clear"></div>
+<dl class="lemma-ext-bottom nslog-area" data-nslog-type="16">
+<dt>合作编辑者</dt>
+<dd>
+<div class="onelineonly">
+<span id="co-editors">
+<span>
+<a target="_blank" href="http://passport.baidu.com/?business&aid=7&default_tab=2&un=%CE%D2%B2%BB%B9%DC%C0%B4%C1%CB#3">我不管来了</a></span>
+<span>
+，<a target="_blank" href="http://passport.baidu.com/?business&aid=7&default_tab=2&un=BIAOXYZ#3">BIAOXYZ</a></span>
+<span>
+，<a target="_blank" href="http://passport.baidu.com/?business&aid=7&default_tab=2&un=344749438#3">344749438</a></span>
+<span>
+，<a target="_blank" href="http://passport.baidu.com/?business&aid=7&default_tab=2&un=%D5%C5%D3%F0%B3%DA#3">张羽弛</a></span>
+<span>
+，<a target="_blank" href="http://passport.baidu.com/?business&aid=7&default_tab=2&un=%B0%D9%BF%C6ROBOT#3">百科ROBOT</a></span>
+<span>
+，<a target="_blank" href="http://passport.baidu.com/?business&aid=7&default_tab=2&un=chenkkkabc#3">chenkkkabc</a></span>
+<span>
+，<a target="_blank" href="http://passport.baidu.com/?business&aid=7&default_tab=2&un=%C9%F1%D7%E5%BB%C3%BD%A3#3">神族幻剑</a></span>
+
+
+
+</span>
+</div>
+<a class="f12 ref_more" href="http://baike.baidu.com/update/id=1478219?from=au" id="more-coeditor" style="" target="_blank">更多</a>
+<div class="clear"></div>
+<div class="try f12">如果您认为本词条还需进一步完善，百科欢迎您也来参与<a class="try-edit" href="http://baike.baidu.com/view/1478219.htm#" onclick="bk.view.editLemma(&quot;/edit/&quot;,&quot;1478219&quot;);return false;">编辑词条</a>在开始编辑前，您还可以先学习<a href="http://www.baidu.com/search/baike_help.html#n31" target="_blank">如何编辑词条</a></div>
+</dd>
+</dl>
+<p class="bk-feedback">
+如想投诉，请到<a class="nslog:1006" href="http://tousu.baidu.com/baike" target="_blank">百度百科投诉中心</a>；如想提出意见、建议，请到<a class="nslog:1007" href="http://tieba.baidu.com/f?kw=%b0%d9%b6%c8%b0%d9%bf%c6" target="_blank">百度百科吧</a>。
+</p>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<div class="col-sub" id="side">
+<div class="box2" id="userInfoDiv" style="display: block; ">
+<div class="box2-inner">
+<div id="userMessage">
+<a href="http://baike.baidu.com/uc/home" onclick="nslog(this.href,221);" target="_blank"><img height="68" id="userPic" width="68" src="./扩展欧几里德算法_百度百科_files/r0s1g1.gif"></a>
+<div id="userDetail">
+<div id="userTitle">
+<a href="http://www.baidu.com/search/baike/kedoutuan/index.html" id="kedoutuanPic" onclick="nslog(this.href,223);" target="_blank">
+<img src="./扩展欧几里德算法_百度百科_files/tadpole.gif" title="百科蝌蚪团">
+</a>
+<a href="http://baike.baidu.com/cms/topic/master/index.html" id="masterPic" target="_blank">
+<img alt="百科分类管理员" border="0" src="./扩展欧几里德算法_百度百科_files/icon1-channeladmin.png" title="百科分类管理员">
+</a>
+<a href="http://baike.baidu.com/uc/home" id="userTitleLink" onclick="nslog(this.href,222);" target="_blank">cowtony</a>
+</div>
+<p>
+<a href="http://www.baidu.com/search/baike_help.html#n5" target="_blank"><img align="absmiddle" id="userTitlePic" src="./扩展欧几里德算法_百度百科_files/blank.gif" class="usertitle level1">
+</a>
+<a href="http://www.baidu.com/search/baike_help.html#n19" id="highVersionLink" target="_blank" title="高质量版本"></a><span id="highVersionNum">0</span>
+<a href="http://www.baidu.com/search/baike_help.html#n19" id="goodVersionLink" target="_blank" title="优质版本"></a><span id="goodVersionNum">0</span>
+</p>
+<div id="userProcessBack"><div id="userProcess" style="width: 56%; "></div></div>
+</div>
+<div class="clear"></div>
+<div class="userin-split"></div>
+</div>
+<div id="effort">
+<h3>
+<a href="http://baike.baidu.com/uc/effort" onclick="nslog(this.href,241);" target="_blank">您的词条动态</a>
+<div class="clear"></div>
+</h3>
+<ul id="efforts">
+</ul>
+</div>
+<div id="hotWord">
+<h3>
+<a href="http://baike.baidu.com/uc/recommend" onclick="nslog(this.href,224);" target="_blank">等待您来编辑</a>
+<a href="http://www.baidu.com/search/baike/hothelp/" id="hotHelp" target="_blank"></a>
+<a href="javascript:void(0)" id="hotWordRefresh" onclick="showHotwords();nslog(this.href,225);"></a>
+<div class="clear"></div>
+</h3>
+<ul id="hotWords">
+</ul>
+<div class="tip" id="hotHelpTip"><div class="tipMain" id="hotHelpTipMain"><p>编辑热词可获得额外经验值</p></div></div>
+<div class="tip" id="completeTip"><div class="tipMain" id="completeTipMain"></div></div>
+<div class="tip reason-tip" id="hotReasonTip"><div class="tipMain" id="hotReasonTipMain"></div></div>
+</div>
+<div id="gotoBaike">
+<a href="http://baike.baidu.com/uc/home" id="goToUserCenterLink" onclick="nslog(this.href,227);" target="_blank">进入我的百科</a>
+</div>
+<div class="tip" id="userTip" style="display: none; "><div class="tipMain" id="userTipMain"><p>您目前的等级是<span id="userLevel">1</span>级<br>您目前的经验值是<span id="totalscore">57</span>点<br>您还需<span id="scorediff">43</span>点经验值即可升为<span id="nextlevel">2</span>级<br></p></div><div id="userTipArrow" style="left: 142px; "></div><div id="userTipBack"></div></div>
+</div>
+</div>
+<div class="box2" id="lemma-overview">
+<div class="box2-inner">
+<h2>词条统计</h2>
+<p class="info f12">
+浏览次数：约 <span id="viewPV">10106</span>
+次
+<br>
+编辑次数：13次 <a class="nslog:1021" href="http://baike.baidu.com/update/id=1478219" target="_blank">历史版本</a>
+<br>
+最近更新：<span id="lastModifyTime">2010-08-10</span>
+<br>
+创建者：<span class="nslog:1022"><a target="_blank" href="http://passport.baidu.com/?business&aid=7&default_tab=2&un=wangq008#3">wangq008</a></span>
+</p>
+</div>
+</div>
+<div class="box2" id="bkDynamic" style="">
+<div class="box2-inner">
+<h5 id="profileTitle">最新动态</h5>
+<div class="f12">
+<dl class="task nslog-area" data-nslog-type="1023" id="task" style=""><dt><strong>山山水水--中国的自然美景</strong>：<a href="http://www.baidu.com/search/baike/zhuti-ssss/index.html" target="_blank"></a></dt> <dd><a href="http://www.baidu.com/search/baike/zhuti-ssss/index.html" target="_blank"><img src="./扩展欧几里德算法_百度百科_files/16081.gif" width="160" height="81"></a></dd></dl>
+<dl class="notice nslog-area" data-nslog-type="1024" id="notice"><dt><strong>百科消息</strong>：</dt><dd><a href="http://research.baidu.com/index.php?sid=96698&lang=zh-Hans" target="_blank">百科大学生有奖调查</a></dd><dd><a href="http://baike.baidu.com/quanwei/" target="_blank">百度百科权威合作</a></dd><dd><a href="http://www.baidu.com/search/baike/zhuanke-chuanran/1.htm" target="_blank">警惕！来自异种的恐怖</a></dd><dd><a href="http://www.baidu.com/search/baike/zhuti-meishi/index.html" target="_blank">品味生活--八方美食大盘点</a></dd><dd><a href="http://www.baidu.com/search/baike/zhuti-shanghailvyou/index.html" target="_blank">沪上风情--新上海浪漫之旅</a></dd><dd><a href="http://www.baidu.com/search/baike/zhuanti-beijinglvyou/index.html" target="_blank">古都新貌--老北京新感受文化专题</a></dd><dd><a href="http://www.baidu.com/search/baike/zhuti-hongloumeng/" target="_blank">百度百科红楼梦专题</a></dd></dl>
+</div>
+</div>
+</div>
+<div class="box2" id="mabox" style="display:none">
+<div class="box2-inner" id="box2-inner">
+<script type="text/javascript">var arrBaiduAds=new Array();function BaiduAdsDisplay($){if(typeof(arrBaiduAds[$])=="undefined"||arrBaiduAds[$]==""){return;}G("mabox").style.display="";nslog.set("maad",1);G("box2-inner").innerHTML=arrBaiduAds[$];}</script>
+<script type="text/javascript">/*<![CDATA[*/baidu.sio.callByBrowser("http://a.baidu.com/ecom?di=216&tm=baiduASPT216S&tn=baidubaike_pg&word=%C0%A9%D5%B9%C5%B7%BC%B8%C0%EF%B5%C2%CB%E3%B7%A8",function(){BaiduAdsDisplay(216);});/*]]>*/</script>
+</div>
+</div>
+<div class="clear">
+</div>
+</div>
+</div><img src="./扩展欧几里德算法_百度百科_files/c.gif" style="display:none"><input id="titleVal" type="hidden" value="扩展欧几里德算法"><script type="text/javascript">nslog.set("page","view");nslog.set("lemmaid","1478219");nslog(location.href,11);</script><div id="sidecatalog" style="position: fixed; top: 484px; left: 716px; ">
+<div class="sidebar" id="sidebar"></div>
+<a class="gotop" href="http://baike.baidu.com/view/1478219.htm#" id="gotop" title="返回顶部"></a>
+</div><div id="side-catalog-content" style="display: none; position: fixed; overflow-x: hidden; overflow-y: hidden; height: 260px; top: 314px; left: 743px; "><div id="side-catalog-up"><div></div></div><div id="side-title-panel" style="height: 220px; "><div id="side-title-list"><h2><a href="http://baike.baidu.com/view/1478219.htm#" class="nslog:1026" data-index="0" title="欧几里德算法">欧几里德算法</a></h2><h3><a href="http://baike.baidu.com/view/1478219.htm#" class="nslog:1026" data-index="1" title="欧几里德算法概述：">欧几里德算法概述：</a></h3><h3><a href="http://baike.baidu.com/view/1478219.htm#" class="nslog:1026" data-index="2" title="欧几里得算法的公式表述">欧几里得算法的公式表述</a></h3><h3><a href="http://baike.baidu.com/view/1478219.htm#" class="nslog:1026" data-index="3" title="欧几里德算法的C++语言描述">欧几里德算法的C++语言描述</a></h3><h2><a href="http://baike.baidu.com/view/1478219.htm#" class="nslog:1026" data-index="4" title="扩展欧几里德算法">扩展欧几里德算法</a></h2><h3><a href="http://baike.baidu.com/view/1478219.htm#" class="nslog:1026" data-index="5" title="扩展欧几里德定理">扩展欧几里德定理</a></h3><h3><a href="http://baike.baidu.com/view/1478219.htm#" class="nslog:1026" data-index="6" title="c++语言实现">c++语言实现</a></h3><h3><a href="http://baike.baidu.com/view/1478219.htm#" class="nslog:1026" data-index="7" title="求解 x，y的方法的理解">求解 x，y的方法的理解</a></h3><h3><a href="http://baike.baidu.com/view/1478219.htm#" class="nslog:1026" data-index="8" title="扩展欧几里德算法">扩展欧几里德算法</a></h3><h3><a href="http://baike.baidu.com/view/1478219.htm#" class="nslog:1026" data-index="9" title="使用扩展欧几里德算法解决不定方程的办法">使用扩展欧几里德算法解决不定方程的办法</a></h3><h3><a href="http://baike.baidu.com/view/1478219.htm#" class="nslog:1026" data-index="10" title="欧几里德算法的扩展">欧几里德算法的扩展</a></h3></div></div><div id="side-catalog-down"><div></div></div></div>
+</div>
+<div class="nslog-area" data-nslog-type="1001" id="footer">
+&#169; 2010 Baidu <a href="http://www.baidu.com/search/baike_help.html#n10" target="_blank">权利声明</a>
+</div>
+</div>
+
+</body></html>

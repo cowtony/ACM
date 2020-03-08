@@ -1,0 +1,45 @@
+#include <cstdio>
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
+int n,m;
+int mx[10005];
+int my[10005];
+int mt[10005];
+vector<int> kill[10005];
+
+inline int abs_m(int a)
+{
+    if (a>0) return a;
+    else return -a;
+}
+
+int main()
+{
+    int i,j,k,t1,t2,t3=0;
+    scanf("%d %d",&n,&m);
+    for (i=0;i!=m+1;++i) kill[i].clear();
+    for (i=1;i!=m+1;++i)
+    {
+        scanf("%d %d %d",&mt[i],&mx[i],&my[i]);
+        if (t3==0) {kill[1].push_back(i);t3=1;continue;}
+        t1=0;
+        for (j=t3;j!=0 && t1==0;--j)
+        {
+            for (k=0;k!=kill[j].size() && t1==0;++k)
+            {
+                if (mt[i]-mt[kill[j][k]]>=abs_m(mx[i]-mx[kill[j][k]])+abs_m(my[i]-my[kill[j][k]]))
+                {
+                    kill[j+1].push_back(i);
+                    if (t3<j+1) t3=j+1;
+                    t1=1;
+                }
+            }
+        }
+        if (t1==0) kill[1].push_back(i);
+    }
+    printf("%d\n",t3);
+    return 0;
+}

@@ -1,0 +1,150 @@
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <deque>
+#include <string>
+
+using namespace std;
+struct p
+{
+    int x,y,s,st;
+    p () {s=-1;st=0;}
+    p(int x,int y):x(x),y(y) {s=-1;st=0;}
+};
+
+
+p map[55][55];
+int n,m,k;
+int x1,y1,x2,y2;
+deque<p> que;
+
+
+int inMap(p pn)
+{
+    if (pn.x>=0 && pn.x<m && pn.y>=0 && pn.y<n)
+        return map[pn.x][pn.y].st;
+    return 0;
+}
+
+int make(p &pn)
+{
+    //cout<<"now"<<pn.x<<pn.y<<map[pn.x][pn.y].s<<endl;
+    if (!inMap(pn)) return 0;
+    if (inMap(p(pn.x-1,pn.y))==1 && map[pn.x-1][pn.y].s<map[pn.x][pn.y].s)
+    {
+        map[pn.x-1][pn.y].s=map[pn.x][pn.y].s;
+        que.push_back(map[pn.x-1][pn.y]);
+    }
+    if (inMap(p(pn.x-1,pn.y))==2 && map[pn.x-1][pn.y].s<map[pn.x][pn.y].s-1)
+    {
+        map[pn.x-1][pn.y].s=map[pn.x][pn.y].s-1;
+        que.push_back(map[pn.x-1][pn.y]);
+    }
+    if (inMap(p(pn.x+1,pn.y))==1 && map[pn.x+1][pn.y].s<map[pn.x][pn.y].s)
+    {
+        map[pn.x+1][pn.y].s=map[pn.x][pn.y].s;
+        que.push_back(map[pn.x+1][pn.y]);
+    }
+    if (inMap(p(pn.x+1,pn.y))==2 && map[pn.x+1][pn.y].s<map[pn.x][pn.y].s-1)
+    {
+        map[pn.x+1][pn.y].s=map[pn.x][pn.y].s-1;
+        que.push_back(map[pn.x+1][pn.y]);
+    }
+    if (inMap(p(pn.x,pn.y-1))==1 && map[pn.x][pn.y-1].s<map[pn.x][pn.y].s)
+    {
+        map[pn.x][pn.y-1].s=map[pn.x][pn.y].s;
+        que.push_back(map[pn.x][pn.y-1]);
+    }
+    if (inMap(p(pn.x,pn.y-1))==2 && map[pn.x][pn.y-1].s<map[pn.x][pn.y].s-1)
+    {
+        map[pn.x][pn.y-1].s=map[pn.x][pn.y].s-1;
+        que.push_back(map[pn.x][pn.y-1]);
+    }
+    if (inMap(p(pn.x,pn.y+1))==1 && map[pn.x][pn.y+1].s<map[pn.x][pn.y].s)
+    {
+        map[pn.x][pn.y+1].s=map[pn.x][pn.y].s;
+        que.push_back(map[pn.x][pn.y+1]);
+    }
+    if (inMap(p(pn.x,pn.y+1))==2 && map[pn.x][pn.y+1].s<map[pn.x][pn.y].s-1)
+    {
+        map[pn.x][pn.y+1].s=map[pn.x][pn.y].s-1;
+        que.push_back(map[pn.x][pn.y+1]);
+    }
+}
+
+int BFS()
+{
+    que.clear();
+    map[x1][y1].s=k;
+    que.push_back(map[x1][y1]);
+    while (!que.empty())
+    {
+        make(*que.begin());
+        que.pop_front();
+    }
+    return map[x2][y2].s;
+}
+
+int main(int argc, char** argv) {
+    int i,j,t1,t2,t3;
+    scanf("%d%d",&n,&m);
+    scanf("%d%d%d%d",&y1,&x1,&y2,&x2);
+    --x1;
+    --y1;
+    --x2;
+    --y2;
+    scanf("%d",&k);
+    for (i=0;i!=55;++i)
+        for (j=0;j!=55;++j)
+        {
+            map[i][j].x=i;
+            map[i][j].y=j;
+            map[i][j].s=-1;
+            map[i][j].st=1;
+        }
+    char ss[100];
+    cin.getline(ss,100);
+    for (i=0;i!=n;++i)
+    {
+        cin.getline(ss,100);
+        for (j=0;j!=m;++j)
+        {
+            if (ss[j]=='0') map[j][i].st=0;
+            if (ss[j]==' ') ;
+            if (ss[j]=='<')
+            {
+                map[j][i].st=0;
+                if (inMap(p(j-1,i))) map[j-1][i].st=2;
+            }
+            if (ss[j]=='^')
+            {
+                map[j][i].st=0;
+                if (inMap(p(j,i-1))) map[j][i-1].st=2;
+            }
+            if (ss[j]=='V')
+            {
+                map[j][i].st=0;
+                if (inMap(p(j,i+1))) map[j][i+1].st=2;
+            }
+            if (ss[j]=='>')
+            {
+                map[j][i].st=0;
+                if (inMap(p(j+1,i))) map[j+1][i].st=2;
+            }
+        }
+    }
+    t1=BFS();
+    /*
+     for (i=0;i!=n;++i)
+    {
+        for (j=0;j!=m;++j)
+        {
+            cout<<map[j][i].st;
+        }
+        cout<<endl;
+    }*/
+    if (t1<0) printf("Bob lost his life in the forest.\n");
+    else printf("%d\n",k-t1);
+    return 0;
+}

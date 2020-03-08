@@ -1,0 +1,56 @@
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int way[35][35];
+int ways[35][35];
+int N;
+
+int main()
+{
+    int i,j,k,t1,t2,t3;
+    memset(way,0,sizeof(way));
+    memset(ways,0,sizeof(ways));
+    scanf("%d",&N);
+    t3=0;
+    for (i=0;i!=N;++i)
+    {
+        scanf("%d%d",&t1,&t2);
+        way[t1][t2]=1;
+        ways[t1][t2]=1;
+        if (t3<t1) t3=t1;
+        if (t3<t2) t3=t2;
+    }
+    N=t3;
+    for (j=0;j!=N+1;++j)
+    {
+        for (i=0;i!=N+1;++i)
+        {
+            for (k=0;k!=N+1;++k)
+            {
+                ways[i][k]+=ways[i][j]*ways[j][k];
+            }
+        }
+    }
+    for (j=0;j!=N+1;++j)
+    {
+        for (i=0;i!=N+1;++i)
+        {
+            for (k=0;k!=N+1;++k)
+            {
+                if ((ways[i][j]==-1 && ways[j][k]!=0) || (ways[j][k]==-1 && ways[i][j]!=0) || (i==k && ways[i][k]!=0))
+                    ways[i][k]=-1;
+            }
+        }
+    }
+    for (i=0;i!=N+1;++i)
+    {
+        for (j=0;j!=N+1;++j)
+        {
+            printf(" %d",ways[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}

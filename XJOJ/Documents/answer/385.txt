@@ -1,0 +1,48 @@
+#include <iostream>
+#include <cstdio>
+
+using namespace std;
+
+int N1,N2,V,M;
+int f[505];
+int v[505];
+int way[505][505];
+int re=0;
+
+int add(int a)
+{
+    int i,j,k,t1,t2,t3;
+    for (i=1;i!=N2+1;++i)
+    {
+        if (way[a][i]==1 && v[i]==0)
+        {
+            v[i]=1;
+            if (f[i]==0 || add(f[i]))
+            {
+                f[i]=a;
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+int main()
+{
+    int i,j,k,t1,t2,t3;
+    scanf("%d%d%d%d",&V,&N1,&N2,&M);
+    memset(way,0,sizeof(way));
+    for (i=0;i!=M;++i)
+    {
+        scanf("%d%d",&t1,&t2);
+        way[t1][t2]=1;
+    }
+    for (i=1;i!=N1+1;++i)
+    {
+        memset(v,0,sizeof(v));
+        if (add(i)==1) ++re;
+    }
+    re=N1+N2-re;
+    if (re>V+1) re=V+1;
+    printf("%d\n",re);
+}

@@ -1,0 +1,86 @@
+求逆序数的分治算法 收藏 
+给我们一个序列, 让我们求其逆序数:
+如3 2 1 4
+逆序数为: 2+1+0+0=3
+我们这样定义一个序列的逆序数: 序列a1 a2 a3 a2 ...an
+这个序列的逆序数C, 等于a1,a2...的逆序数的和.即 C=sum(Ci)
+Ci为满足ai > aj (j > i)的数的总的个数, 即Ci = sum(ai > aj) (j >i).
+我们一般写的算法一般会做N(N-1)/2次比较, 时间复杂度为: O(N^2).
+下面采用的分而治之的思想来改进:
+假设我们将序列a1 a2 a3 a2 ...an分成两份: B0=(a1 a2 an/2) B1 = (a (n/2+1)...an)
+那么C=C(B0)+C(B1)+C(B0B1)
+如果我们直接去计算C(B0B1), f(n) = 2*f(n/2)+c*n^2, 计算出来的结果是f(n)=n*f(1) + 2c*n^2 - 2c*n, 那么效率依然是O(N^2), 我们通过什么方式改进呢?
+那假如让B0,B1有序就好了! 嗯,对的. 我们在归并排序的过程先将B0,B1排成有序数列,再来求B0′B1′的逆序数, 这时求C(B0′B1′)效率就是O(N).
+即,C=C(B0′) + C(B1′) + C(B0′B1′).
+下面给出求C(B0′B1′)的代码, 你在下面的完整的求逆序数的算法中也可以找到:
+view plaincopy to clipboardprint?
+01.int i = x, j = m; //序列B0[x,y], B1[m, n]    
+02.for(i = x; i <= y; ++i)   
+03.{   
+04.    while(j <= n && arr[i] > arr[j])   
+05.        ++j;   
+06.    nOrder += j-m;   
+07.}  
+
+这时f(n) = 2*f(n/2)+c*n, 我计算出来的结果是f(n) = n*f(1) + c*n*log(n)
+
+时间复杂度O(N*logN)和空间复杂度O(N)都和归并算法一致, 只比比归并算法大了一个常数因子.
+
+欢迎抛砖.
+
+view plaincopy to clipboardprint?
+01.#include <iostream>   
+02.#include <algorithm>   
+03.using namespace std;   
+04.void swap(int *arr, int i, int j)   
+05.{   
+06.    int tmp = arr[i];   
+07.    arr[i] = arr[j];   
+08.    arr[j] = tmp;   
+09.}   
+10.int merge(int* temp, int *arr, int x, int y, int m, int n)   
+11.{   
+12.    int nOrder = 0;   
+13.    int i = x, j = m;   
+14.    for(i = x; i <= y; ++i)   
+15.    {   
+16.        while(j <= n && arr[i] > arr[j])   
+17.            ++j;   
+18.        nOrder += j-m;   
+19.    }   
+20.    int k = 0;   
+21.    i = x, j = m;   
+22.    while(i <= y && j <= n)   
+23.    {   
+24.        if(arr[i] <= arr[j])   
+25.            temp[k++] = arr[i++];   
+26.        else  
+27.            temp[k++] = arr[j++];   
+28.    }   
+29.    while(i <= y)   
+30.        temp[k++] = arr[i++];   
+31.    while(j <= n)   
+32.        temp[k++] = arr[j++];   
+33.    return nOrder;   
+34.}   
+35.int inversion_number(int *arr, int i, int j)   
+36.{   
+37.    if(i < j)   
+38.    {   
+39.        int mid = i+((j-i)>>1);   
+40.        int v1 = inversion_number(arr, i, mid);   
+41.        int v2  = inversion_number(arr, mid+1, j);   
+42.        int temp[10];   
+43.        int nValue = merge(temp, arr, i, mid, mid+1, j);   
+44.        memcpy(arr+i, temp, sizeof(int)*(j-i+1));   
+45.        return v1+v2+nValue;   
+46.    }   
+47.    else  
+48.        return 0;   
+49.}   
+50.int main()   
+51.{   
+52.    int arr[] = {5,3,3,3,3,3,3,3,3,3};   
+53.    cout << inversion_number(arr, 0, 9) << endl;   
+54.    return 0;   
+55.}  

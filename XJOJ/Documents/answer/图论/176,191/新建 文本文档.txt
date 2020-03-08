@@ -1,0 +1,133 @@
+Problem C: No Cheating
+    这题是很经典的一个问题，比赛的时候我竟然还不知道。
+将这个图上的点染成黑白两色，奇数列点染成黑色，偶数列点染成白色。所有冲突的点之间连一条边，我们发现只有黑色点和白色点之间有边。于是问题就转化成了求一个二分图的最大独立集。类似的匹配问题有很多，如PKU 3020 (最少边点覆盖)， PKU 3041(最少顶点覆盖)。
+ 
+我的代码忘了存了，这是bmerry的
+ 
+
+  1#include <string>
+  2#include <vector>
+  3#include <map>
+  4#include <cstdlib>
+  5#include <cstring>
+  6#include <cassert>
+  7#include <set>
+  8#include <iostream>
+  9#include <sstream>
+ 10#include <cstddef>
+ 11#include <algorithm>
+ 12#include <utility>
+ 13#include <iterator>
+ 14#include <numeric>
+ 15#include <list>
+ 16#include <complex>
+ 17#include <cstdio>
+ 18
+ 19using namespace std;
+ 20
+ 21typedef vector<int> vi;
+ 22typedef vector<string> vs;
+ 23typedef long long ll;
+ 24typedef complex<double> pnt;
+ 25typedef pair<int, int> pii;
+ 26
+ 27#define RA(x) (x).begin(), (x).end()
+ 28#define FE(i, x) for (typeof((x).begin()) i = (x).begin(); i != (x).end(); i++)
+ 29#define SZ(x) ((int) (x).size())
+ 30
+ 31template<class T>
+ 32void splitstr(const string &s, vector<T> &out)
+ 33{
+ 34    istringstream in(s);
+ 35    out.clear();
+ 36    copy(istream_iterator<T>(in), istream_iterator<T>(), back_inserter(out));
+ 37}
+ 38
+ 39template<class T> T gcd(T a, T b) { return b ? gcd(b, a % b) : a; }
+ 40
+ 41static bool done[10000];
+ 42static int back[10000];
+ 43static vector<int> edges[10000];
+ 44
+ 45static bool augment(int x)
+ 46{
+ 47    if (x == -1)
+ 48        return true;
+ 49    else if (done[x])
+ 50        return false;
+ 51    done[x] = true;
+ 52
+ 53    for (int i = 0; i < SZ(edges[x]); i++)
+ 54    {
+ 55        int y = edges[x][i];
+ 56        int old = back[y];
+ 57        back[y] = x;
+ 58        if (augment(old))
+ 59            return true;
+ 60        back[y] = old;
+ 61    }
+ 62    return false;
+ 63}
+ 64
+ 65int main()
+ 66{
+ 67    int cases;
+ 68    cin >> cases;
+ 69    for (int cas = 0; cas < cases; cas++)
+ 70    {
+ 71        int R, C;
+ 72        int id[100][100];
+ 73        int pool[2] = {0, 0};
+ 74        cin >> R >> C;
+ 75        for (int i = 0; i < R; i++)
+ 76        {
+ 77            string l;
+ 78            cin >> l;
+ 79            for (int j = 0; j < C; j++)
+ 80            {
+ 81                if (l[j] == '.')
+ 82                    id[i][j] = pool[j & 1]++;
+ 83                else
+ 84                    id[i][j] = -1;
+ 85            }
+ 86        }
+ 87        for (int i = 0; i < 10000; i++)
+ 88            edges[i].clear();
+ 89        for (int i = 0; i < R; i++)
+ 90            for (int j = 0; j < C; j += 2)
+ 91                if (id[i][j] != -1)
+ 92                {
+ 93                    int x = id[i][j];
+ 94                    if (j > 0 && id[i][j - 1] != -1)
+ 95                        edges[x].push_back(id[i][j - 1]);
+ 96                    if (j < C - 1 && id[i][j + 1] != -1)
+ 97                        edges[x].push_back(id[i][j + 1]);
+ 98                    if (i > 0)
+ 99                    {
+100                        if (j > 0 && id[i - 1][j - 1] != -1)
+101                            edges[x].push_back(id[i - 1][j - 1]);
+102                        if (j < C - 1 && id[i - 1][j + 1] != -1)
+103                            edges[x].push_back(id[i - 1][j + 1]);
+104                    }
+105                    if (i < R - 1)
+106                    {
+107                        if (j > 0 && id[i + 1][j - 1] != -1)
+108                            edges[x].push_back(id[i + 1][j - 1]);
+109                        if (j < C - 1 && id[i + 1][j + 1] != -1)
+110                            edges[x].push_back(id[i + 1][j + 1]);
+111                    }
+112                }
+113
+114        memset(back, -1, sizeof(back));
+115        int ans = pool[0] + pool[1];
+116        for (int i = 0; i < pool[0]; i++)
+117        {
+118            memset(done, 0, sizeof(done));
+119            if (augment(i))
+120                ans--;
+121        }
+122        printf("Case #%d: %d\n", cas + 1, ans);
+123    }
+124    return 0;
+125}
+126

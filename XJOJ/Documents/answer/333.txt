@@ -1,0 +1,68 @@
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int maxx[305][305];
+int N,M;
+int up[305];
+int down[305];
+
+int get(int nn,int mm)
+{
+    if (maxx[nn][mm]!=-1) return maxx[nn][mm];
+    int i,j,k,t1,t2,t3,t4;
+    t1=0;
+    for (t1=mm-1;t1!=0;--t1)
+    {
+        if (down[t1]==up[nn]) break;
+    }
+    for (t2=nn-1;t2!=0;--t2)
+    {
+        if (up[t2]==down[mm]) break;
+    }
+    if (up[nn]!=down[mm])
+    {
+        if (t1!=0 && t2!=0)
+        {
+            if (t1==1 && t2==1) maxx[nn][mm]=2;
+            else if (t1>1 && t2==1) maxx[nn][mm]=2;
+            else if (t1==1 && t2>1) maxx[nn][mm]=2;
+            else if (t1>1 && t2>1) maxx[nn][mm]=get(t2-1,t1-1)+2;
+        }
+    }
+    if (nn>1) if (get(nn-1,mm)>maxx[nn][mm]) maxx[nn][mm]=get(nn-1,mm);
+    if (mm>1) if (get(nn,mm-1)>maxx[nn][mm]) maxx[nn][mm]=get(nn,mm-1);    
+    if (maxx[nn][mm]==-1) maxx[nn][mm]=0;
+    return maxx[nn][mm];
+}
+
+int main()
+{
+    int i,j,k,t1,t2,t3=0;
+    memset(maxx,-1,sizeof(maxx));
+    scanf("%d%d",&N,&M);
+    for (i=1;i!=N+1;++i)
+    {
+        scanf("%d",&up[i]);
+    }
+    for (i=1;i!=M+1;++i)
+    {
+        scanf("%d",&down[i]);
+    }
+    maxx[0][0]=0;
+    t3=0;
+    for (i=1;i!=N+1;++i)
+    {
+        for (j=1;j!=M+1;++j)
+        {
+            if (get(i,j)>t3) t3=get(i,j);
+  //          printf("%d ",get(i,j));
+        }
+  //      printf("\n");
+    }
+    printf("%d\n",t3);
+    return 0;
+}

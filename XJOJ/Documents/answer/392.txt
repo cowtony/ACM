@@ -1,0 +1,75 @@
+#include <iostream>
+#include <cstdio>
+#include <cmath>
+#include <cstring>
+
+using namespace std;
+
+int zs[100005];
+int xx[1000005];
+int yy1[100005];
+int yy2[100005];
+int zsn=0;
+
+int init()
+{
+    memset(xx,0,sizeof(xx));
+    int i,j,k=0;    
+    for (i=2;i!=1000005;++i)
+    {
+        if (xx[i]==0)
+        {
+            for (j=i+i;j<=1000005;j+=i)
+            {
+                xx[j]=1;
+            }
+        }
+    }
+    for (i=2;i!=1000005;++i)
+    {
+        if (xx[i]==0) {zs[zsn]=i;++zsn;}
+    }
+   // cout<<zsn<<endl;
+}
+
+int main()
+{
+    int i,j,k,t1,t2,t3,t4,t5,t6,re;
+    init();
+    k=0;
+    while (scanf("%d%d",&t1,&t2) && t1!=0 && t2!=0)
+    {
+        ++k;
+        memset(yy1,0,sizeof(yy1));
+        memset(yy2,0,sizeof(yy2));
+        t4=t1;
+        for (i=0;i!=zsn && t4!=1;++i)
+        {
+            if (t4%zs[i]==0)
+            {
+                ++yy1[i];
+                t4=t4/zs[i];
+                --i;
+            }
+        }
+        t5=t2;
+        for (i=0;i!=zsn && t5!=1;++i)
+        {
+            if (t5%zs[i]==0)
+            {
+                ++yy2[i];
+                t5=t5/zs[i];
+                --i;
+            }
+        }
+        t6=0;
+        re=0;
+        for (i=0;i!=zsn;++i)
+        {
+            if (yy1[i]!=yy2[i]) re+=abs(yy1[i]-yy2[i]);
+            if (yy1[i]!=0 || yy2[i]!=0) ++t6;
+        }
+        printf("%d. %d:%d\n",k,t6,re);
+    }
+    return 0;
+}

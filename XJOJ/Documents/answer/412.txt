@@ -1,0 +1,110 @@
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+using namespace std;
+
+int n;
+int v[105];
+int way[105][105];
+int aa[105][105];
+int f[105];
+int vl[105];
+int vr[105];
+int li[105];
+int ri[105];
+
+int find(int a)
+{
+    int i,j,k;
+    li[a]=1;
+    for (i=0;i!=n;++i)
+    {
+        if (ri[i]==0 && vl[a]+vr[i]==way[a][i])
+        {
+            ri[i]=1;
+            if (f[i]==-1 || find(f[i])!=-1)
+            {
+                f[i]=a;
+                return i;
+            }
+        }
+    }
+    return -1;
+}
+
+int KM()
+{
+    int i,j,k,t1,t2,t3;
+    memset(f,-1,sizeof(f));
+    memset(vl,0,sizeof(vl));
+    memset(vr,0,sizeof(vr));
+    t2=0;
+    for (i=0;i!=n;++i)
+    {
+        t1=0;
+        for (j=0;j!=n;++j)
+        {
+            if (t1<way[i][j]) t1=way[i][j];
+        }
+        vl[i]=t1;
+        vr[i]=0;
+    }
+    for (t3=0;t3!=n;++t3)
+    {
+        while (true)
+        {
+            memset(li,0,sizeof(li));
+            memset(ri,0,sizeof(ri));
+            if (find(t3)!=-1) break;
+            k=999999;
+            for (i=0;i!=n;++i)
+            {
+                if (li[i]==0) continue;
+                for (j=0;j!=n;++j)
+                {
+                    if (ri[j]==0 && vl[i]+vr[j]-way[i][j]<k) k=vl[i]+vr[j]-way[i][j];
+                }
+            }
+            if (k==999999) break;
+            for (i=0;i!=n;++i)
+            {
+                if (li[i]==1) vl[i]-=k;
+                if (ri[i]==1) vr[i]+=k;
+            }
+        }
+    }
+}
+
+int main()
+{
+    int i,j,k,t1,t2,t3;
+    while (scanf("%d",&n)!=EOF && n!=0)
+    {
+        memset(way,0,sizeof(way));
+        memset(aa,0,sizeof(aa));
+        memset(v,0,sizeof(v));
+        for (i=0;i!=n;++i)
+        {
+            scanf("%d",&v[i]);
+        }
+        for (i=0;i!=n;++i)
+        {
+            for (j=0;j!=n;++j)
+            {
+                scanf("%c",&aa[i][j]);
+                if (aa[i][j]!='0' && aa[i][j]!='1') {--j;continue;}
+                aa[i][j]-='0';
+                if (aa[i][j]==1) way[i][j]=v[i]^v[j];
+            }
+        }
+        KM();
+        t1=0;
+        for (i=0;i!=n;++i)
+        {
+            if (f[i]!=-1) t1+=way[f[i]][i];
+        }
+        printf("%d\n",t1);
+    }
+    return 0;
+}

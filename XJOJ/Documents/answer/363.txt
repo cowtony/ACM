@@ -1,0 +1,55 @@
+#include <cstdio>
+#include <iostream>
+#include <vector>
+#include <cstring>
+
+using namespace std;
+
+int income[16005];
+vector<int> way[16005];
+int v[16005];
+int max_in[16005];
+int N;
+
+int get(int a)
+{
+    if (max_in[a]!=-999999999) return max_in[a];
+    vector<int>::iterator ii;
+    v[a]=1;
+    int i,j,k;
+    k=income[a];
+    for (ii=way[a].begin();ii!=way[a].end();++ii)
+    {
+        if (v[*ii]==0 && get(*ii)>0) k+=get(*ii);
+    }
+    max_in[a]=k;
+    return max_in[a];
+}
+
+int main()
+{
+    memset(income,0,sizeof(income));
+    memset(v,0,sizeof(v));
+    int i,j,k,t1,t2,t3;
+    for (i=0;i!=16005;++i) way[i].clear();
+    for (i=0;i!=16005;++i) max_in[i]=-999999999;
+    scanf("%d",&N);
+    for (i=1;i!=N+1;++i)
+    {
+        scanf("%d",&income[i]);
+    }
+    for (i=0;i!=N-1;++i)
+    {
+        scanf("%d%d",&t1,&t2);
+        way[t1].push_back(t2);
+        way[t2].push_back(t1);
+    }
+    get(1);
+    k=-99999999;
+    for (i=1;i!=N+1;++i)
+    {
+        if (get(i)>k) k=get(i);
+    }
+    printf("%d\n",k);
+    return 0;
+}

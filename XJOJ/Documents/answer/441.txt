@@ -1,0 +1,64 @@
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+using namespace std;
+
+int wn[25];
+int wt[25];
+int bn,n;
+int bt[25];
+int bc[25];
+int ob[25];
+
+int main()
+{
+    int i,j,k,t1,t2,t3;
+    while (scanf("%d%d",&bn,&n)!=EOF && bn && n)
+    {
+        bn=-bn;
+        for (i=0;i!=bn;++i)
+        {
+            scanf("%d%d",&bc[i],&bt[i]);
+        }
+        t3=0;
+        memset(wn,0,sizeof(wn));
+        memset(wt,0,sizeof(wt));
+        memset(ob,0,sizeof(ob));
+        wn[0]=n;
+        while (wn[bn]!=n)
+        {
+            for (i=bn-1;i!=-1;--i)
+            {
+                if (wt[i]==0 && wn[i]!=0 && bt[i]!=1)
+                {
+                    if (bc[i]<=wn[i]) t1=bc[i];
+                    else if (bc[i]>wn[i]) t1=wn[i];
+                    wn[i]-=t1;
+                    ob[i]+=t1;
+                    wt[i]+=1;
+                }
+                else if (wt[i]==0 && wn[i]!=0 && bt[i]==1)
+                {
+                    if (bc[i]<=wn[i]) t1=bc[i];
+                    else if (bc[i]>wn[i]) t1=wn[i];
+                    wn[i]-=t1;
+                    wn[i+1]+=t1;
+                }
+                else if (wt[i]!=0 && wt[i]!=bt[i]-1)
+                {
+                    ++wt[i];
+                }
+                else if (wt[i]==bt[i]-1)
+                {
+                    wt[i]=0;
+                    wn[i+1]+=ob[i];
+                    ob[i]=0;
+                }
+            }
+            ++t3;
+        }
+        printf("%d\n",t3);
+    }
+    return 0;
+}

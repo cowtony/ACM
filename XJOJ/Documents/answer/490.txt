@@ -1,0 +1,132 @@
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+
+using namespace std;
+
+int ni[11]={0,1,6,4,3,9,2,8,7,5,10};
+int y[1005];
+int v[1005];
+int s[1005][11];
+int n,sn,min_y;
+int s1[15],s2[15],s3[15];
+
+int swap(int a1,int a2)
+{
+	int i,t;
+	for (i=0;i!=11;++i)
+	{
+		t=s[a1][i];
+		s[a1][i]=s[a2][i];
+		s[a2][i]=t;
+	}
+	t=y[a1];
+	y[a1]=y[a2];
+	y[a2]=t;
+	return 0;
+}
+
+int y_sort()
+{
+	int i,j,k,t1,t2,t3;
+	for (i=1;i!=sn+1;++i)
+	{
+		t1=999999;
+		for (j=i;j!=sn+1;++j)
+		{
+		    if (y[j]<t1) {t1=y[j];t2=j;}
+		}
+		swap(i,t2);
+	}
+	return 1;
+}
+
+int check()
+{
+	int i;
+	for (i=0;i!=11;++i)
+	{
+		if (s[0][i]!=0) return 0;
+	}
+	return 1;
+}
+
+int make(int nn,int w)
+{
+	int i,j,k,t1,t2,t3;
+	t1=ni[s[nn][w]];
+	for (i=0;i!=11;++i)
+	{
+		s[nn][i]=(s[nn][i]*t1)%11;
+	}
+	return 1;
+}
+
+int get(int nn,int w)
+{
+	int i,j,k,t1,t2,t3;
+	for (i=0;i!=sn+1;++i)
+	{
+		if (s[i][w]!=0 && i!=nn)
+		{
+			t1=s[i][w];
+			for (j=0;j!=11;++j)
+			{
+				s[i][j]=(s[i][j]+(11-t1)*s[nn][j])%11;
+			}
+		}
+	}
+	return 1;
+}
+
+int main(int argc, char** argv)
+{
+	int i,j,k,t1,t2,t3;
+
+	scanf("%d",&n);
+	for (t3=0;t3!=n;++t3)
+	{
+		scanf("%d",&sn);
+		for (i=0;i!=11;++i)
+		{
+			scanf("%d",&s1[i]);
+		}
+		for (i=0;i!=11;++i)
+		{
+			scanf("%d",&s2[i]);
+		}
+		for (i=0;i!=11;++i)
+	    {
+	    	s[0][i]=(s2[i]-s1[i]+11)%11;
+		}
+		for (i=1;i!=sn+1;++i)
+		{
+			for (j=0;j!=11;++j)
+			{
+				scanf("%d",&s[i][j]);
+			}
+			scanf("%d",&y[i]);
+		}
+		min_y=0;
+		t1=0;
+		y_sort();
+		//for (i=1;i!=sn+1;++i) cout<<y[i]<<" y"<<endl;
+		for (i=1;i!=sn+1 && !t1;++i)
+		{
+			for (j=0;j!=11;++j)
+			{
+				if (s[i][j]!=0)
+				{
+					make(i,j);
+					get(i,j);
+					min_y=y[i];
+					if (check()==1) t1=1;
+					break;
+				}
+			}
+		}
+		if (t1==0) printf("unreachable\n");
+		else printf("%d\n",min_y);
+	}
+	return 0;
+}

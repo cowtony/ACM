@@ -1,0 +1,1885 @@
+
+<!-- saved from url=(0069)http://hi.baidu.com/tobenoone/blog/item/4a7e954f824a7830afc3abb9.html -->
+<HTML><HEAD><META http-equiv="Content-Type" content="text/html; charset=GBK"><TITLE>p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间      </TITLE>
+
+<STYLE type="text/css">
+
+.error{color:#FF0000;font-size:12px}
+.shareUser,.shareLastEditor{line-height:20px;color:#666666;text-align:left}
+.shareLastEditor{margin:5px 0 8px;}
+
+
+
+
+
+	
+
+
+
+
+
+</STYLE>
+
+<SCRIPT type="text/javascript" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/global.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/tangram-1.1.0.js"></SCRIPT>
+
+
+<SCRIPT type="text/javascript">
+var Session = {
+    isLogin:  true,
+    isHost: "",
+    userName: "ToBeNoOne",   
+    userPortrait:'1883546f42654e6f4f6e658703',
+    spaceURL: "/tobenoone",
+    spBasicURL:"tobenoone",
+    spBasicURLEnc:"tobenoone",
+    visitorName:    "cowtony",
+    visitorPortrait:'86ca636f77746f6e796900',
+    isActive: '',   
+    visitorURL: "/index.html",        // 
+    pageURL: "http://hi.baidu.com/tobenoone/blog/item/4a7e954f824a7830afc3abb9%2Ehtml",    
+    refer: "http://www.baidu.com/s?bs=%B4%F2%F7%FA%CA%F3&f=8&wd=%B4%F2%F7%FA%CA%F3+%B6%AF%CC%AC%B9%E6%BB%AE",
+    spToken: '340da78174c1aef81bc3b86d8c8adead', 
+    spFriendDomain: 'http://frd.baidu.com',
+    spSpaceDomain: 'http://hi.baidu.com',
+    spPortraitDomain: '',
+    spSpaceStaticDomain: 'http://hi.baidu.com' 
+
+    ,isDrag:  false  
+    ,isProfile:  false   
+    };
+</SCRIPT>
+
+<SCRIPT language="javascript" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/dialog.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/BdEditor-mined.js"></SCRIPT>
+
+<SCRIPT type="text/javascript" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/antiSpam.js"></SCRIPT>
+
+<SCRIPT language="JavaScript" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/g_spjs.js"></SCRIPT>
+
+<SCRIPT language="javascript">
+
+<!--
+
+
+(function(){var A=109;function C(D){var F="nslog__"+(new Date()).getTime();var E=window[F]=new Image();E.onload=(E.onerror=function(){window[F]=null});E.src="http://nsclick.baidu.com/v.gif?pid="+A+"&url="+encodeURIComponent(D)+"&type=0&_t="+Math.random();E=null}function B(F){F=F||event;var E=F.srcElement||F.target;if(E.nodeType!=1){E=E.parentNode}while(E&&E.tagName&&E.tagName.toUpperCase()!="A"){E=E.parentNode}if(E&&E.tagName&&E.tagName.toUpperCase()=="A"){if(E.protocol.indexOf("http")==0&&!/^([\w-]+\.)*?baidu\.com/i.test(E.host)){var D=E.href;setTimeout(function(){C(D)},1)}}E=null}if(document.attachEvent){document.attachEvent("onmousedown",B);window.attachEvent("onunload",function(){document.detachEvent("onmousedown",B)})}else{document.addEventListener("mousedown",B,false);window.addEventListener("unload",function(){document.removeEventListener("mousedown",B,false)},false)}})();
+
+var allkey="";
+
+var i=0;
+
+var flag=0;
+
+function setpv(allnum)
+
+{
+
+	var num = allnum.split('_');
+
+	document.getElementById("result").innerHTML=num[0];
+
+}
+
+
+
+function checkMail(s)
+
+{
+
+  	var pattern=/\w+@\w+\.[a-z]+/;
+
+  	if(pattern.test(s))
+
+    {
+
+       return true;
+
+    }
+
+  	else
+
+   {
+
+      return false;
+
+   }
+
+}
+
+
+
+
+
+function checkeandu(eanduid)
+
+{
+
+	var eanduvalue=G(eanduid).value;
+
+	var len=bytes(eanduvalue);
+
+	if(len>128)
+
+	{
+
+		showErr(2,"您输入的网址或邮箱太长，请保持在128字节以内。");
+
+		return false;
+
+	}
+
+	else
+
+	{
+
+		 return true;
+
+	}
+
+
+
+}
+
+
+
+function cmtdel(str)
+
+{
+
+	var pop=new Popup({ contentType:3,isReloadOnClose:false,width:340,height:80});
+
+	pop.setContent("title","删除评论");
+
+	pop.setContent("confirmCon","您确定要彻底删除这条评论吗？");
+
+	pop.setContent("callBack",delCallback2);
+
+	pop.setContent("parameter",{fid:str,popup:pop});
+
+	pop.build();
+
+	pop.show();
+
+	return false;
+
+}
+
+function delCallback2(para)
+
+{
+
+	var o_pop=para["popup"];
+
+	o_pop.config.contentType=1;
+
+	o_pop.setContent("contentUrl","");
+
+	o_pop.reBuild();
+
+	G(para["fid"]).target=o_pop.iframeIdName;
+
+	eval("document."+para["fid"]).submit();
+
+}
+
+
+
+String.prototype.byteLength = function() {
+
+    return this.replace(/[^\u0000-\u007f]/g,"\u0061\u0061").length;
+
+}
+
+
+
+function checkname(strid)
+
+{
+
+	var ele=document.getElementById(strid);
+
+	var len=bytes(ele.value);
+
+	if(len>49)
+
+	{
+
+		showErr(1,"您输入的姓名太长，请保持在49字节以内。");
+
+		return false;
+
+	}
+
+	else
+
+	{
+
+		if(len==0)
+
+		{
+
+			document.getElementById(strid).value="匿名网友";
+
+		}
+
+		 return true;
+
+	}
+
+
+
+}
+
+
+
+function checktext(textid)
+
+{
+
+        var tempStr='';
+
+        var isLightFont=false;
+
+		if(editor&&textid=="spBlogCmtText"){
+
+			//document.getElementById("spBlogCmtText").value=editor.getHtml();
+
+			tempStr=editor.getHtml();
+
+			tempStr=tempStr.replace(/<span style="filter:glow\(color=#([0-9a-z]{3,6}),strength=2\);height:0px;color:#([0-9a-z]{3,6})">/ig,'');
+
+			tempStr=tempStr.replace(/<\/span>/ig,'');
+
+			document.getElementById("spBlogCmtText").value=tempStr;
+
+            isLightFont=!(tempStr==editor.getHtml());
+
+        }
+
+		document.getElementById(textid).value=trimlr(textid);
+
+		var str=trimrn(textid);
+
+		len=str.length;
+
+		if(len==0 || ((/^[\s,　]+$/gi).test(str)) )
+
+		{
+
+			showErr(3,"您必须输入评论内容，请检查。");
+
+			return false;
+
+		}
+
+		else
+
+        {
+
+                len=str.byteLength();
+
+                var maxLength=isLightFont?916:1000;
+
+				if(len > maxLength)
+
+				{
+
+					showErr(3,"您输入的评论内容太长，请保持在500字以内。");
+
+					return false;
+
+				}
+
+				if(editor&&textid=="spBlogCmtText"){
+
+					document.getElementById("spBlogCmtText").value=editor.getHtml();
+
+					document.getElementById(textid).value=trimlr(textid);
+
+				}
+
+
+
+			return true;
+
+		}
+
+}
+
+
+
+function showErr(index,str)
+
+{
+
+	G(index+"_err").style.display="";
+
+	G(index+"_err_con").innerHTML=str;
+
+}
+
+function hidErr(index)
+
+{
+
+	G(index+"_err").style.display="none";
+
+	G(index+"_err_con").innerHTML="";
+
+}
+
+
+
+function alertPop(tit,con)
+
+{
+
+	var pop=new Popup({ contentType:4,isReloadOnClose:false,width:340,height:80});
+
+	pop.setContent("title",tit);
+
+	pop.setContent("alertCon",con);
+
+	pop.build();
+
+	pop.show();
+
+}
+
+
+
+function cmtfull()
+
+{
+
+	var cnum=0;
+
+	if(cnum>=50000)
+
+	{
+
+		alertPop("发表评论","单篇日志评论数最多为50000条.");
+
+		return false;
+
+	}
+
+	else
+
+	{
+
+		return true;
+
+	}
+
+}
+
+
+
+function checkcmtform()
+
+{
+
+	if(checkname("spBlogCmtor")&&checkeandu("spBlogCmtURL")&&checktext("spBlogCmtText")&&cmtfull())
+
+	{
+
+		submitForm();
+
+		return true;
+
+	}
+
+	else
+
+	{
+
+		return false;
+
+	}
+
+}
+
+
+
+var g_pop=null;
+
+function submitForm()
+
+{
+
+	g_pop=new Popup({ contentType:1,isReloadOnClose:false,width:340,height:80});
+
+	g_pop.setContent("title","添加评论");
+
+	g_pop.setContent("contentUrl","");
+
+	g_pop.setContent("someDisabledBtn","btn_ok");
+
+	g_pop.build();
+
+	G("popFormSubmit").target=g_pop.iframeIdName;
+
+	g_pop.show();
+
+}
+
+
+
+function g_close_pop()
+
+{
+
+	g_pop.close();
+
+}
+
+
+
+function formatonlinpic()
+
+{
+
+var picobj=document.getElementsByName("onlinepic");
+
+var picnum=picobj.length;
+
+
+
+	for(var i=0;i<picnum;i++)
+
+	{
+
+		if(picobj[i].width>200)
+
+		{
+
+			picobj[i].width=200;
+
+		}
+
+		if(picobj[i].height>200)
+
+		{
+
+			picobj[i].height=200;
+
+		}
+
+	}
+
+    try{document.getElementById("btn_ok").disabled = "";}catch(e){}
+
+}
+
+
+
+function addToFavor(){
+
+var blogTitle='p1441 打鼹鼠 AC!'.replace(/&#39;/g,'\'');
+
+window.open('http://cang.baidu.com/do/add?it='+encodeURIComponent(blogTitle+'_百度空间')+'&iu='+encodeURIComponent(location.href)+'&fr=sp#nw=1','_s','scrollbars=no,width=600,height=450,right=75,top=20,status=no,resizable=yes');
+
+return false;
+
+}
+
+function addToiTieba(){
+    var blogTitle='p1441 打鼹鼠 AC!'.replace(/&#39;/g,'\'');
+    window.open('http://tieba.baidu.com/i/sys/share?link='+encodeURIComponent('http://hi.baidu.com/tobenoone/blog/item/4a7e954f824a7830afc3abb9.html')+'&type=text&title='+encodeURIComponent(blogTitle)+'&content=');
+}
+
+function addToShare(){
+    window.open('http://apps.hi.baidu.com/share/?url='+encodeURIComponent('http://hi.baidu.com/tobenoone/blog/item/4a7e954f824a7830afc3abb9.html'));
+}
+
+
+var isIE = /*@cc_on!@*/false;
+
+function tracker(did,a){
+
+	return function(){
+
+		var t=new Date().getTime();
+
+		var href=a.href;
+
+        if(isIE){
+
+            var r = /href\s*=\s*("|')?([^\s]*)\1/gi;
+
+            if(r.test(a.outerHTML))
+
+                href = RegExp.$2;
+
+        }
+
+        new Image().src = "http://hi.baidu.com/sys/statlog/1.gif?m=" + did + "&v=" + encodeURIComponent(href) + "&c=" + encodeURIComponent(location.href) + "&t="+t;
+
+	}
+
+}
+
+
+
+function tracker_init(did){
+
+	var _s=document.getElementById(did);
+
+	var as = _s.getElementsByTagName('A');
+
+	for(var i = 0, j = as.length; i < j; i ++){
+
+		var a = as[i];
+
+		if(isIE){
+
+			a.attachEvent("onclick", tracker(did,a));
+
+		}else{
+
+			a.addEventListener("click", tracker(did,a), false);
+
+		}
+
+	}
+
+}
+
+
+
+
+
+/* some functions for cmt-reply */
+        var g_cmtorInfo = [];
+        function goCmtReply(cmtPorID){
+            cmtreply(g_cmtorInfo[cmtPorID],cmtPorID);
+        }
+		function cmtreply(cmtName,cmtPorID)
+
+		{
+
+			cmtName=cmtName.replace(/<|>/g,"");
+
+			window.location.hash="#send";
+
+			var cmtForm=document.form1;
+
+			cmtForm.cm.value="3";
+
+			if(!cmtForm.spReferTarget)
+
+			{
+
+				var ipt=document.createElement("input");
+
+				ipt.type="hidden";
+
+				ipt.name="spReferTarget";
+
+				ipt.value=cmtPorID;
+
+				cmtForm.appendChild(ipt);
+
+			}else cmtForm.spReferTarget.value=cmtPorID;
+
+
+
+
+
+			 //G("reTitle").innerHTML="回复"+cmtName+"：";
+
+			 G("cancleReLink").style.display="";
+
+			 cmtForm.btn_ok.value="回复评论";
+
+
+
+
+
+			 try{
+
+				editor.window.focus();
+
+                editor.window.document.body.innerHTML="回复"+cmtName+"：";
+
+
+
+                var w = editor.window;
+
+				if(w.getSelection){
+
+					var d = w.document;
+
+					var s = w.getSelection();
+
+					var r = d.createRange();
+
+					r.setStartAfter(d.body.firstChild);
+
+					r.setEndAfter(d.body.lastChild);
+
+					s.removeAllRanges();
+
+					s.addRange(r);
+
+				}
+
+			}catch(e){
+
+			 		try{
+
+				 		cmtForm.getElementsByTagName("textarea")[0].focus();
+
+				 		cmtForm.getElementsByTagName("textarea")[0].value="回复"+cmtName+"：";
+
+				 	}catch(e){}
+
+			}
+
+		}
+
+
+
+		function canclereply()
+
+		{
+
+			var cmtForm=document.form1;
+
+			cmtForm.cm.value="1";
+
+			try{cmtForm.removeChild(cmtForm.spReferTarget);}catch(e){}
+
+			/*
+
+			try{
+
+					var cmt=cmtForm.getElementsByTagName("textarea")[0]
+
+					cmt.value="";
+
+					cmt.focus();
+
+			}catch(e){}
+
+			*/
+
+
+
+			try{
+
+					var ed=editor.window.document.body;
+
+					ed.innerHTML="";
+
+					editor.window.focus();
+
+				}catch(e){
+
+					var cmt=cmtForm.getElementsByTagName("textarea")[0];
+
+					cmt.value="";
+
+					cmt.focus();
+
+			}
+
+
+
+			G("cancleReLink").style.display="none";
+
+			cmtForm.btn_ok.value="发表评论";
+
+		}
+
+
+
+		function gotoreply()
+
+		{//to checking whether reply cmt
+
+			if( window.location.hash.indexOf("&re=1")<0) return;
+
+			var cmtID=window.location.hash.split("&")[0].replace("#","");
+
+			var cmtlinks=document.getElementsByTagName("a");
+
+			for(var i=0,n=cmtlinks.length;i<n;i++)
+
+			{
+
+				if(cmtlinks[i].name==cmtID){ var rename=cmtlinks[i].getAttribute("rename");  repid=cmtlinks[i].getAttribute("repid"); break;}
+
+			}
+
+			if(typeof(rename)!="undefined"){
+
+				cmtreply(rename, repid);
+
+			}
+
+		}
+
+
+
+//-->
+
+</SCRIPT>
+
+
+<SCRIPT type="text/javascript">
+
+    /*<![CDATA[*/
+
+
+
+window.onerror=function(){return true;}
+
+
+
+var RelatedDocData = null, GetAndEval = false;
+
+(function(){
+
+	var xhr = BdAjax.getXHR();
+
+	if(xhr == null){
+
+		RelatedDocData = -1;
+
+		return;
+
+	}
+
+
+
+	xhr.open("GET", "/sys/search?type=8&word=p1441%20%B4%F2%F7%FA%CA%F3%20AC%21&item=4a7e954f824a7830afc3abb9&t=" + new Date().getTime(), true);
+
+	xhr.onreadystatechange = function(){
+
+		if(xhr.readyState == 4){
+
+			if(xhr.status == 0 || xhr.status == 200){
+
+				if(GetAndEval){
+
+					eval(xhr.responseText);
+
+				}else{
+
+					RelatedDocData = xhr.responseText;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	xhr.send(null);
+
+})();
+
+/*]]>*/
+
+</SCRIPT>
+
+
+
+<LINK type="text/css" rel="stylesheet" href="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/ucard.css"><SCRIPT type="text/javascript" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/ucard.js"></SCRIPT><SCRIPT type="text/javascript" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/check_baiduhi.js"></SCRIPT></HEAD><BODY onload="formatonlinpic();"><IFRAME frameborder="0" name="_BdPopupLayer_diplgy-s9udrbr977zs-nkjyhb" style="position:absolute; z-index:65001; display:none;" scrolling="no" id="_BdPopupLayer_diplgy-s9udrbr977zs-nkjyhb"></IFRAME><IFRAME frameborder="0" name="_BdPopupLayer_5fvow6-bpvvmosmqg32-k95oj0" style="position:absolute; z-index:65001; display:none;" scrolling="no" id="_BdPopupLayer_5fvow6-bpvvmosmqg32-k95oj0"></IFRAME><LINK href="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/bdeditor.css" type="text/css" rel="Stylesheet">
+
+<CENTER>
+
+<SCRIPT type="text/javascript">
+/*<![CDATA[*/
+if(top.location != self.location){
+	top.location = self.location;
+}
+var myref = encodeURIComponent("http://hi.baidu.com/tobenoone/blog/item/4a7e954f824a7830afc3abb9%2Ehtml");
+/*]]>*/
+</SCRIPT>
+<LINK rel="stylesheet" type="text/css" href="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/mods.css">
+
+<LINK rel="stylesheet" type="text/css" href="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/633c59fcef0b2982b901a05d.css">
+
+<LINK rel="stylesheet" type="text/css" href="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/space.css">
+
+<DIV class="userbar">
+    <DIV id="nav">
+        <A class="logo" href="http://hi.baidu.com/index.htm"><IMG src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/logo.gif" border="0" alt="图片"></A>
+
+
+    
+        <UL class="topmenu">
+ <!-- 未激活空间 -->
+            <LI><A href="http://hi.baidu.com/sys/reg/"><SPAN class="red">激活空间</SPAN></A></LI>
+                    
+        </UL>
+        <DIV class="manage"> 
+            <SPAN>cowtony</SPAN>|<A href="http://hi.baidu.com/index.html/modify/spmodules/0">装扮</A>|<A href="http://hi.baidu.com/index.html/ihome/basicconfig">设置</A>|<A href="https://passport.baidu.com/?logout&bdstoken=340da78174c1aef81bc3b86d8c8adead&u=">退出</A>
+        </DIV>
+
+    </DIV>
+</DIV>
+
+
+
+	
+    
+  
+
+
+
+
+<DIV id="main" align="left">
+
+<!--[if IE]>
+<script>
+var objmain = document.getElementById("main");
+function updatesize(){ var bodyw = window.document.body.offsetWidth; if(bodyw <= 790) objmain.style.width="772px"; else if(bodyw >= 1016) objmain.style.width="996px"; else objmain.style.width="100%"; }
+updatesize(); window.onresize = updatesize;
+</script>
+<![endif]-->
+
+	<DIV id="header">
+
+	<DIV class="lc"><DIV class="rc"></DIV></DIV>
+<DIV class="tit"><A href="http://hi.baidu.com/tobenoone/home" class="titlink" title="ToBeNoOne的空间 http://hi.baidu.com/tobenoone">我的路，向前-------------→</A></DIV>
+<DIV class="desc">来吧</DIV>
+<DIV id="tabline">&nbsp;</DIV>
+
+	<DIV id="tab"><A href="http://hi.baidu.com/tobenoone/home">主页</A><A href="http://hi.baidu.com/tobenoone/blog" class="on">博客</A><A href="http://hi.baidu.com/tobenoone/album">相册</A><SPAN>|</SPAN><A href="http://hi.baidu.com/tobenoone/profile">个人档案</A>
+
+	<SPAN>|</SPAN><A href="http://hi.baidu.com/tobenoone/friends">好友</A>
+
+
+
+
+
+
+
+	</DIV>
+
+</DIV>
+
+
+
+<DIV class="stage">
+
+<DIV class="stagepad">
+
+<DIV style="width:100%">
+
+
+
+
+
+	
+
+
+
+	<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" class="modth">
+
+	<TBODY><TR><TD class="modtl" width="7">&nbsp;</TD>
+
+	<TD class="modtc" nowrap=""><DIV class="modhead"><SPAN class="modtit">查看文章</SPAN></DIV></TD>
+
+	<TD class="modtc" nowrap="" align="right">
+
+	<TD class="modtr" width="7">&nbsp;</TD>
+
+	</TR></TBODY></TABLE>
+
+
+
+<DIV id="m_blog" class="modbox" style="overflow-x:hidden;">
+
+<DIV class="tit">
+
+p1441 打鼹鼠 AC!</DIV>
+
+<DIV class="date">2008-09-07  19:16</DIV>
+
+
+
+
+<TABLE style="table-layout:fixed;width:100%"><TBODY><TR><TD><DIV id="blog_text" class="cnt"><P><FONT size="3">真危险！用t=x[i]-x[j]&gt;0?t:-t 只能过3组，改成ABS刚刚过。。。第一次独立作出动态规划！<BR>
+<BR>
+不知还有什么可以优化的？</FONT></P>
+<P><FONT size="3">
+<TABLE cellspacing="0" cellpadding="0" bgcolor="#ffffff" border="0">
+    <TBODY>
+        <TR>
+            <TD background="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/Frame_r2_c1.gif"> </TD>
+            <TD valign="top" align="center" width="512" colspan="2">
+            <TABLE cellspacing="1" cellpadding="5" width="100%" bgcolor="#dfdfdf" border="0">
+                <TBODY>
+                    <TR align="center" bgcolor="#f5f5f5">
+                        <TD align="left" height="30"><FONT color="#ff6600"><STRONG>编译通过...</STRONG></FONT><BR>
+                        ├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>01：<FONT color="#cc3366">答案正确...</FONT> 0<FONT color="#000000"><EM>ms</EM></FONT><BR>
+                        ├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>02：<FONT color="#cc3366">答案正确...</FONT> 0<FONT color="#000000"><EM>ms</EM></FONT><BR>
+                        ├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>03：<FONT color="#cc3366">答案正确...</FONT> 0<FONT color="#000000"><EM>ms</EM></FONT><BR>
+                        ├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>04：<FONT color="#cc3366">答案正确...</FONT> 603<FONT color="#000000"><EM>ms</EM></FONT><BR>
+                        ├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>05：<FONT color="#cc3366">答案正确...</FONT> 588<FONT color="#000000"><EM>ms</EM></FONT><BR>
+                        ├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>06：<FONT color="#cc3366">答案正确...</FONT> 572<FONT color="#000000"><EM>ms</EM></FONT><BR>
+                        ├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>07：<FONT color="#cc3366">答案正确...</FONT> 572<FONT color="#000000"><EM>ms</EM></FONT><BR>
+                        ├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>08：<FONT color="#cc3366">答案正确...</FONT> 556<FONT color="#000000"><EM>ms</EM></FONT><BR>
+                        ├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>09：<FONT color="#cc3366">答案正确...</FONT> 588<FONT color="#000000"><EM>ms</EM></FONT><BR>
+                        ├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>10：<FONT color="#cc3366">答案正确...</FONT> 619<FONT color="#000000"><EM>ms</EM></FONT><BR>
+                        <STRONG>-------------------------</STRONG><BR>
+                        <FONT color="#ff0000"><STRONG>Accepted</STRONG></FONT> 有效得分：100 有效耗时：4098<FONT color="#000000"><EM>ms</EM></FONT></TD>
+                    </TR>
+                </TBODY>
+            </TABLE>
+            </TD>
+        </TR>
+    </TBODY>
+</TABLE>
+</FONT></P>
+<P><FONT size="5">#include &lt;stdio.h&gt;</FONT></P>
+<P><FONT size="5">int main()<BR>
+{<BR>
+&nbsp;&nbsp;&nbsp;  int i,j,n,m,time[10001],x[10001],y[10001],num[10001]={0};<BR>
+&nbsp;&nbsp;&nbsp;  int max=0;<BR>
+&nbsp;&nbsp;&nbsp;  scanf("%d %d",&amp;n,&amp;m);<BR>
+&nbsp;&nbsp;&nbsp;  for(i=1;i&lt;=m;i++)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {&nbsp;&nbsp;  scanf("%d %d %d",&amp;time[i],&amp;x[i],&amp;y[i]);&nbsp;&nbsp;&nbsp;&nbsp;  num[i]=1;}<BR>
+&nbsp;&nbsp;&nbsp;  <BR>
+&nbsp;&nbsp;&nbsp;  for(i=m;i&gt;=1;i--)<BR>
+&nbsp;&nbsp;&nbsp;  {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  for(j=i+1;j&lt;=m;j++)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  if(time[j]-time[i]&gt;=abs(y[i]-y[j])+abs(x[i]-x[j])&amp;&amp;num[i]&lt;num[j]+1)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  num[i]=num[j]+1;<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  }<BR>
+&nbsp;&nbsp;&nbsp;  }<BR>
+&nbsp;&nbsp;&nbsp;  <BR>
+&nbsp;&nbsp;&nbsp;  for(i=1;i&lt;=m/2;i++)<BR>
+&nbsp;&nbsp;&nbsp;  if(max&lt;num[i])<BR>
+&nbsp;&nbsp;&nbsp;  max=num[i];<BR>
+&nbsp;&nbsp;&nbsp;  <BR>
+&nbsp;&nbsp;&nbsp;  printf("%d",max);<BR>
+&nbsp;&nbsp;&nbsp;  <BR>
+&nbsp;&nbsp;&nbsp;  getchar();<BR>
+&nbsp;&nbsp;&nbsp;  getchar();<BR>
+}</FONT><BR>
+&nbsp;&nbsp;&nbsp;</P>
+<P> </P>
+<P>做个小测试，多一次循环</P>
+<P>scanf("%d %d",&amp;n,&amp;m);<BR>
+&nbsp;&nbsp;&nbsp;  for(i=1;i&lt;=m;i++)<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT color="#ff0000">&nbsp;&nbsp;  {&nbsp;&nbsp;  scanf("%d %d %d",&amp;time[i],&amp;x[i],&amp;y[i]);}<BR>
+&nbsp;&nbsp;&nbsp;  for(i=1;i&lt;=m;i++)  num[i]=1;</FONT><BR>
+&nbsp;&nbsp;&nbsp;  for(i=m;i&gt;=1;i--)</P>
+<P>结果。。。<IMG src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/j_0046.gif">├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>01：<FONT color="#cc3366">答案正确...</FONT> 0<FONT color="#000000"><EM>ms</EM></FONT><BR>
+├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>02：<FONT color="#cc3366">答案正确...</FONT> 0<FONT color="#000000"><EM>ms</EM></FONT><BR>
+├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>03：<FONT color="#cc3366">答案正确...</FONT> 0<FONT color="#000000"><EM>ms</EM></FONT><BR>
+├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>04：<FONT color="#cc3366">答案正确...</FONT> 572<FONT color="#000000"><EM>ms</EM></FONT><BR>
+├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>05：<FONT color="#996699">运行超时...</FONT><BR>
+├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>06：<FONT color="#cc3366">答案正确...</FONT> 603<FONT color="#000000"><EM>ms</EM></FONT><BR>
+├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>07：<FONT color="#996699">运行超时...</FONT><BR>
+├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>08：<FONT color="#cc3366">答案正确...</FONT> 525<FONT color="#000000"><EM>ms</EM></FONT><BR>
+├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>09：<FONT color="#cc3366">答案正确...</FONT> 588<FONT color="#000000"><EM>ms</EM></FONT><BR>
+├ <FONT color="#336699"><STRONG>测试数据 </STRONG></FONT>10：<FONT color="#cc3366">答案正确...</FONT> 650<FONT color="#000000"><EM>ms</EM></FONT></P>
+<P><FONT color="#000000"><EM>无语了，一个字都没改再递交，AC......而且总时间38xx。。。</EM></FONT></P></DIV></TD></TR></TBODY></TABLE>
+
+<BR>
+
+<DIV class="opt">
+
+<A href="http://hi.baidu.com/tobenoone/blog/category/Vijos" title="查看该分类中所有文章">类别：Vijos</A>
+
+| <A href="http://hi.baidu.com/tobenoone/blog/item/4a7e954f824a7830afc3abb9.html#" onclick="addToShare(); return false;" target="_blank"><IMG src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/share.gif" border="0" align="absbottom"></A>
+
+
+
+
+	
+
+	| <A title="将此文章添加到百度搜藏" href="http://cang.baidu.com/do/add" onclick="return addToFavor();" target="_blank">添加到搜藏</A>
+
+	
+    | <A title="将此文章分享到i贴吧" href="http://hi.baidu.com/tobenoone/blog/item/4a7e954f824a7830afc3abb9.html#" onclick="addToiTieba(); return false;" target="_blank">分享到i贴吧</A>
+
+
+    | 浏览(<SPAN id="result">89</SPAN>)
+
+	| <A href="http://hi.baidu.com/tobenoone/blog/item/4a7e954f824a7830afc3abb9.html#send">评论</A>&nbsp;(0)
+
+
+
+<SCRIPT language="javascript">
+
+/*<![CDATA[*/
+
+var pre = [true,'VIJOS P1439 区间 ...AC!', 'VIJOS P1439 区间 ...AC!','/tobenoone/blog/item/4c2ecf82c6795ea40cf4d294.html'];
+
+var post = [true,'a','a', '/tobenoone/blog/item/dbe9ac87be7faf2cc65cc335.html'];
+
+if(pre[0] || post[0]){
+
+	document.write('<div style="height:5px;line-height:5px;">&nbsp;</div><div id="in_nav">');
+
+	if(pre[0]){
+
+		document.write('上一篇：<a href="' + pre[3] + '" title="' + pre[1] + '">' +  pre[2] + '</a>&nbsp;&nbsp;&nbsp;&nbsp;');
+
+	}
+
+	if(post[0]){
+
+		document.write('下一篇：<a href="' + post[3] + '" title="' + post[1] + '">' +  post[2] + '</a>');
+
+	}
+
+	document.write('</div>');
+
+}
+
+/*]]>*/
+
+</SCRIPT><DIV style="height:5px;line-height:5px;">&nbsp;</DIV><DIV id="in_nav">上一篇：<A href="http://hi.baidu.com/tobenoone/blog/item/4c2ecf82c6795ea40cf4d294.html" title="VIJOS P1439 区间 ...AC!">VIJOS P1439 区间 ...AC!</A>&nbsp;&nbsp;&nbsp;&nbsp;下一篇：<A href="http://hi.baidu.com/tobenoone/blog/item/dbe9ac87be7faf2cc65cc335.html" title="a">a</A></DIV>
+
+
+
+</DIV>
+
+
+
+<DIV class="line">&nbsp;</DIV>
+
+
+
+
+
+
+
+    
+<STYLE type="text/css">
+
+/*<![CDATA[*/
+
+#in_related_doc a { text-decoration:none; }
+
+/*]]>*/
+
+</STYLE>
+
+<DIV id="in_related_tmp"></DIV>
+
+<SCRIPT language="javascript" type="text/javascript">
+
+/*<![CDATA[*/
+
+function HI_MOD_IN_RELATED_DOC_CALLBACK(arg){
+
+    if(arg.length <= 1) return false;
+
+    var hasMore = arg[0];
+
+    var D=function(A,B){A[A.length]=B;}
+
+    if(arg.length % 2 == 0) D(arg, ["","","",""]);
+
+
+
+    var html = ['<div id="in_related_doc"><div class="tit">相关文章：</div>'];
+
+    D(html, '<table cellpadding="0" cellspacing="3" border="0">');
+
+    for(var i = 1, j = arg.length; i < j; i += 2){
+
+        D(html, '<tr>');
+
+        D(html, '<td width="15px"><a style="font-size:25px" >&#8226;</a></td><td><a href="http://hi.baidu.com/' + arg[i][3] + '/blog/item/' + arg[i][2] + '.html" target="_blank" title="' + arg[i][0] + '">' + arg[i][1] + '</a>');
+
+        D(html, new Array(10).join('\u3000'));
+
+        D(html, '</td>');
+
+        if(arg[i + 1][0] != "")
+
+            D(html, '<td width="15px"><a style="font-size:25px" >&#8226;</a></td><td><a href="http://hi.baidu.com/' + arg[i + 1][3] + '/blog/item/' + arg[i + 1][2] + '.html" target="_blank" title="' + arg[i + 1][0] + '">' + arg[i + 1][1] + '</a></td>');
+
+        else
+
+            D(html, '<td>&nbsp;</td><td>&nbsp;</td>');
+
+        D(html, '</tr>');
+
+    }
+
+    if(hasMore) D(html, '<tr><td colspan="4"><a target="_blank" href="/sys/search?pageno=1&type=7&sort=1&word=p1441%20%B4%F2%F7%FA%CA%F3%20AC%21&item=4a7e954f824a7830afc3abb9">更多&gt;&gt;</a></td></tr>');
+
+    D(html, '</table></div><div class="line">&nbsp;</div>');
+
+
+
+    var div = document.getElementById('in_related_tmp');
+
+    if(div){
+
+        div.innerHTML = html.join('');
+
+        while(div.firstChild){
+
+            div.parentNode.insertBefore(div.firstChild, div);
+
+        }
+
+        div.parentNode.removeChild(div);
+
+    }
+
+	window.setTimeout("tracker_init('in_related_doc')",100);
+
+}
+
+
+
+if(RelatedDocData == -1){	// not supported xhr
+
+    var script = document.createElement('script');
+
+    script.type = 'text/javascript';
+
+    script.src = '/sys/search?type=8&word=p1441%20%B4%F2%F7%FA%CA%F3%20AC%21&item=4a7e954f824a7830afc3abb9&t=' + new Date().getTime();
+
+    document.getElementsByTagName('HEAD')[0].appendChild(script);
+
+}else if(RelatedDocData == null){
+
+	GetAndEval = true;
+
+}else{
+
+	eval(RelatedDocData);
+
+}
+
+
+
+/*]]>*/
+
+</SCRIPT>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<DIV id="in_reader">
+
+<DIV class="tit">最近读者：</DIV>
+
+
+
+<SCRIPT>
+
+
+
+	var g_spAnnony=false;
+
+
+
+
+
+var g_read=[
+
+
+
+["arorua%5F","2f3341726f7275615f8007","Arorua_"],
+
+
+
+["caojiahao2","c83863616f6a696168616f32ef07","caojiahao2"],
+
+
+
+["%B7%BD%B3%CC%D7%E9%B5%C4%BD%E2","6238b7bdb3ccd7e9b5c4bde26d08","方程组的解"],
+
+
+
+["swq27","099273777132375f05","swq27"],
+
+
+
+["fancyelysium","37385fbec5d3f05f2203","_九羽_"],
+
+
+
+["ericxieforever","7e3065726963786965666f72657665724104","ericxieforever"],
+
+
+
+["evil%5Fangel","90e5dbe0b1becdd8baa33c00","坂本拓海"],
+
+
+
+{}
+
+];
+
+g_read.length=g_read.length-1;
+
+
+
+var _rh1="";
+
+var _rh2="";
+
+
+
+function wrreader(){
+
+	_rh1 += '<table width="100%" ><tr>';
+
+	_rh2+='<tr>';
+
+	if(g_spAnnony){
+
+		_rh1+='<td align="center" width="10%" ><img border="0" width="55" height="55" src="http://img.baidu.com/hi/img/portraitn.jpg"></td>';
+
+		_rh2+='<td>&nbsp;</td>';
+
+		if(g_read.length>0){
+
+			_rh1+='<td align="left" width="12%">';
+
+		}else{
+
+			_rh1+='<td align="left" width="100%">';
+
+		}
+
+		_rh1+='<a href="https://passport.baidu.com/?login&tpl=sp&tpl_reg=sp&u='+myref+'" target="_self" onclick="BdUtil.relogin(); return false;">登录</a>后，您就出现在这里。</td>';
+
+		_rh2+='<td>&nbsp;</td>'
+
+	}
+
+	if(g_read.length==0){
+
+		if(!g_spAnnony){
+
+			_rh1+='<td align=left width="100%">最近还没有登录用户看过这篇文章……</td>';
+
+			_rh2+='<td>&nbsp;</td>';
+
+		}
+
+	}else{
+
+		for(i=0,len=g_read.length;i<len;i++){
+
+			_rh1+='<td align="center" valign="bottom" width="10%" class="user"><a href="/'+g_read[i][0]+'" target="_blank" class="ucard" pid='+g_read[i][1]+'><img border="0" src="http://tx.bdimg.com/sys/portraitn/item/'+g_read[i][1]+'.jpg"></a></td>';
+
+			_rh2+='<td align="center" valign="top" class="user"><a href="/'+g_read[i][0]+'" target="_blank" class="ucard" pid="'+g_read[i][1]+'">'+g_read[i][2]+'</a></td>';
+
+		}
+
+	}
+
+	_rh1+='<td width="100%"></td></tr>';
+
+	_rh2+='<td></td></tr></table>';
+
+	document.write(_rh1+_rh2);
+
+}
+
+
+
+wrreader();
+
+</SCRIPT><TABLE width="100%"><TBODY><TR><TD align="center" valign="bottom" width="10%" class="user"><A href="http://hi.baidu.com/arorua_" target="_blank" class="ucard" pid="2f3341726f7275615f8007"><IMG border="0" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/2f3341726f7275615f8007.jpg"></A></TD><TD align="center" valign="bottom" width="10%" class="user"><A href="http://hi.baidu.com/caojiahao2" target="_blank" class="ucard" pid="c83863616f6a696168616f32ef07"><IMG border="0" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/c83863616f6a696168616f32ef07.jpg"></A></TD><TD align="center" valign="bottom" width="10%" class="user"><A href="http://hi.baidu.com/%B7%BD%B3%CC%D7%E9%B5%C4%BD%E2" target="_blank" class="ucard" pid="6238b7bdb3ccd7e9b5c4bde26d08"><IMG border="0" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/6238b7bdb3ccd7e9b5c4bde26d08.jpg"></A></TD><TD align="center" valign="bottom" width="10%" class="user"><A href="http://hi.baidu.com/swq27" target="_blank" class="ucard" pid="099273777132375f05"><IMG border="0" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/099273777132375f05.jpg"></A></TD><TD align="center" valign="bottom" width="10%" class="user"><A href="http://hi.baidu.com/fancyelysium" target="_blank" class="ucard" pid="37385fbec5d3f05f2203"><IMG border="0" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/37385fbec5d3f05f2203.jpg"></A></TD><TD align="center" valign="bottom" width="10%" class="user"><A href="http://hi.baidu.com/ericxieforever" target="_blank" class="ucard" pid="7e3065726963786965666f72657665724104"><IMG border="0" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/7e3065726963786965666f72657665724104.jpg"></A></TD><TD align="center" valign="bottom" width="10%" class="user"><A href="http://hi.baidu.com/evil_angel" target="_blank" class="ucard" pid="90e5dbe0b1becdd8baa33c00"><IMG border="0" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/90e5dbe0b1becdd8baa33c00.jpg"></A></TD><TD width="100%"></TR><TR><TD align="center" valign="top" class="user"><A href="http://hi.baidu.com/arorua_" target="_blank" class="ucard" pid="2f3341726f7275615f8007">Arorua_</A></TD><TD align="center" valign="top" class="user"><A href="http://hi.baidu.com/caojiahao2" target="_blank" class="ucard" pid="c83863616f6a696168616f32ef07">caojiahao2</A></TD><TD align="center" valign="top" class="user"><A href="http://hi.baidu.com/%B7%BD%B3%CC%D7%E9%B5%C4%BD%E2" target="_blank" class="ucard" pid="6238b7bdb3ccd7e9b5c4bde26d08">方程组的解</A></TD><TD align="center" valign="top" class="user"><A href="http://hi.baidu.com/swq27" target="_blank" class="ucard" pid="099273777132375f05">swq27</A></TD><TD align="center" valign="top" class="user"><A href="http://hi.baidu.com/fancyelysium" target="_blank" class="ucard" pid="37385fbec5d3f05f2203">_九羽_</A></TD><TD align="center" valign="top" class="user"><A href="http://hi.baidu.com/ericxieforever" target="_blank" class="ucard" pid="7e3065726963786965666f72657665724104">ericxieforever</A></TD><TD align="center" valign="top" class="user"><A href="http://hi.baidu.com/evil_angel" target="_blank" class="ucard" pid="90e5dbe0b1becdd8baa33c00">坂本拓海</A></TD><TD></TR></TBODY></TABLE>
+
+
+
+
+
+
+
+
+
+
+
+	</DIV>
+
+
+
+<DIV class="line">&nbsp;</DIV>
+
+
+
+
+
+
+
+<SCRIPT language="JavaScript">
+
+allkey=allkey+"d4e070cd9a9308510fb34552_4a7e954f824a7830afc3abb9_";
+
+</SCRIPT>
+
+
+
+<DIV id="in_comment">
+
+<A name="comment"></A>
+
+<DIV class="tit">网友评论：</DIV>
+
+<SCRIPT>
+
+function writecmt(type,id,cmtname,cmturl,portraitId){
+
+	var html1="";
+
+	cmturl=cmturl.replace("https://","http://");
+
+	if(type==1){
+
+			html1="<a href='"+cmturl+"' target='_blank' class='ucard' pid="+portraitId+"><img  border='0' src='http://tx.bdimg.com/sys/portraitn/item/"+portraitId+".jpg'><br>"+cmtname+"</a>";
+
+	}else{
+
+		if(cmtname=="" || cmtname=="匿名网友"){
+
+			if(cmturl==""){
+
+				html1="<a>匿名网友</a>";
+
+			}else{
+
+				html1="<a href='"+cmturl+"' target='_blank' title='"+cmturl+"'>"+cmtname+"</a>";
+
+			}
+
+		}else{
+
+			if(cmturl==""){
+
+				html1="<div class='f14' style='display:inline'>网友:<a>"+cmtname+"</a></div>";
+
+			}else{
+
+				html1="<div class='f14' style='display:inline'>网友:<a href='"+cmturl+"' target='_blank' title='"+cmturl+"'>"+cmtname+"</a></div>";
+
+			}
+
+		}
+
+	}
+
+	document.write(html1);
+
+}
+
+function filterCmtContent(n){
+
+	if(!BdBrowser.isIE){
+
+		var defaultfilter1='<span style="filter:glow(color=#000000,strength=2);height:0px;color:#000000">';
+
+		var defaultfilter2='<span style="height: 0px; color: rgb(0, 0, 0);">';
+
+		var commentDiv=document.getElementById(n);
+
+		var divs=commentDiv.getElementsByTagName('div');
+
+		var d,tmp;
+
+		for( var i=0,len=divs.length;i<len;i++){
+
+			d=divs[i];
+
+			if(d.getAttribute('name')=='cmtcontent'){
+
+				tmp=d.innerHTML;
+
+				tmp=tmp.replace(/<span style="filter:glow\(color=#([0-9a-z]{3,6}),strength=2\);height:0px;color:#([0-9a-z]{3,6})">/ig,defaultfilter1);
+
+				tmp=tmp.replace('<span style="height: 0px; color: rgb(255, 255, 255);">',defaultfilter2);
+
+				d.innerHTML=tmp;
+
+			}
+
+		}
+
+	}
+
+}
+
+
+
+</SCRIPT>
+
+
+
+
+<DIV id="page"></DIV>
+
+
+
+</DIV>
+
+<SCRIPT>filterCmtContent('in_comment');</SCRIPT>
+
+
+
+
+
+
+<DIV id="in_send">
+
+<A name="send"></A>
+
+<FORM name="form1" id="popFormSubmit" action="http://hi.baidu.com/tobenoone/commit" method="post" onsubmit="return checkcmtform()">
+
+<INPUT type="hidden" name="bdstoken" value="340da78174c1aef81bc3b86d8c8adead">
+
+<INPUT type="hidden" name="ct" value="8">
+
+<INPUT type="hidden" name="cm" value="1">
+
+<INPUT type="hidden" name="spBlogID" value="4a7e954f824a7830afc3abb9">
+
+<INPUT type="hidden" name="spRefURL" id="spRefURL" value="http://hi.baidu.com/tobenoone/blog/item/4a7e954f824a7830afc3abb9.html">
+
+<SCRIPT>
+
+    document.getElementById("spRefURL").value = window.location.href;
+
+</SCRIPT>
+
+<DIV class="tit">发表评论：</DIV>
+
+<INPUT type="hidden" name="spBlogCmtURL" id="spBlogCmtURL" style="width:360px" maxlength="128" onchange="checkeandu(&quot;spBlogCmtURL&quot;)" value="http://passport.baidu.com/?business&amp;un=cowtony"><TABLE width="620" border="0" cellspacing="5" cellpadding="0">
+
+<TBODY><TR>
+
+
+
+<TD class="f14">姓　名：</TD>
+
+<TD>cowtony
+
+<INPUT type="text" name="spBlogCmtor" id="spBlogCmtor" style="display:none;" maxlength="50" value="cowtony"><DIV style="display:none" id="nmerror">*姓名最长为50字节</DIV>
+
+</TD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</TR>
+
+
+
+<TR id="2_err" style="display:none">
+
+<TD>&nbsp;</TD>
+
+<TD><DIV class="error" id="2_err_con"></DIV></TD>
+
+</TR>
+
+
+
+<TR>
+
+<TD valign="top" class="f14" id="reTitle">内　容：</TD>
+
+<TD>        <DIV id="bdeditor_container_d1wxp2-te0kj53cdyc8-kkamhv">            <TABLE width="100%" height="155px" cellpadding="0" cellspacing="0" border="0">                <TBODY><TR>                    <TD id="editor_toolbar_d1wxp2-te0kj53cdyc8-kkamhv" class="ToolbarContainer"><DIV class="ToolbarStrip"><TABLE border="0" cellspacing="0" cellpadding="0"><TBODY><TR><TD nowrap="nowrap"><DIV class="ToolbarItem" title="插入表情" id="ToolbarItem_lr8fc4-n2ev1bgq2sn2-u0vdsh" onclick="_Instance[&#39;lr8fc4-n2ev1bgq2sn2-u0vdsh&#39;].clickHandler(this)" onmouseup="_Instance[&#39;lr8fc4-n2ev1bgq2sn2-u0vdsh&#39;].mouseUpHandler(this)" onmousedown="_Instance[&#39;lr8fc4-n2ev1bgq2sn2-u0vdsh&#39;].mouseDownHandler(this)" onmouseout="_Instance[&#39;lr8fc4-n2ev1bgq2sn2-u0vdsh&#39;].mouseOutHandler(this)" onmouseover="_Instance[&#39;lr8fc4-n2ev1bgq2sn2-u0vdsh&#39;].mouseOverHandler(this)"><DIV class="img Smiley" alt="插入表情"><FONT style="font-size:12px">插入表情</FONT></DIV></DIV></TD></TR></TBODY></TABLE></DIV></TD>                </TR>                <TR>                    <TD id="editor_area_d1wxp2-te0kj53cdyc8-kkamhv" class="EditorContainer"><IFRAME width="100%" height="155px" frameborder="0" src="javascript:void(0)"></IFRAME></TD>                </TR>            </TBODY></TABLE>        </DIV>    <TEXTAREA name="spBlogCmtText" id="spBlogCmtText" style="width: 520px; height: 155px; display: none; " tabindex="3" onfocus="hidErr(3);"></TEXTAREA>
+
+<SCRIPT>
+
+	var editor=null;
+
+	try{
+
+		editor=new BdEditor("spBlogCmtText",{width:"100%",height:"155px"});
+
+		editor.onfocus = function(){hidErr(3);}
+
+		editor.render();
+
+	}catch(e){
+
+		var spBlogCmtText = document.getElementById("spBlogCmtText");
+
+		var p = spBlogCmtText.previousSibling;
+
+		while(p && p.nodeType != 1) p = p.previousSibling;
+
+		if(p && /bdeditor_container/.test(p.id)){
+
+			p.parentNode.removeChild(p);
+
+		}
+
+		spBlogCmtText.style.display = '';
+
+		editor=null;
+
+	}
+
+</SCRIPT>
+
+
+
+<SCRIPT>
+
+G("spBlogCmtor").value=G("spBlogCmtor").defaultValue;
+
+G("spBlogCmtText").value="";
+
+</SCRIPT>
+
+</TD>
+
+</TR>
+
+<TR id="3_err" style="display:none">
+
+<TD>&nbsp;</TD>
+
+<TD><DIV class="error" id="3_err_con"></DIV></TD>
+
+</TR>
+
+
+
+<TR id="vercode">
+
+<TD valign="top" class="f14">验证码：</TD>
+
+<TD valign="top"><INPUT type="hidden" name="spVcode" value="">
+
+<INPUT type="text" onfocus="f_focus()" id="spVerifyKey" name="spVerifyKey" size="6" maxlength="4" autocomplete="off" tabindex="4">  请点击后输入四位验证码，字母不区分大小写<BR>
+
+<SCRIPT type="text/javascript">
+
+/*<![CDATA[*/
+
+
+function f_focus(){
+	getVcode();
+}
+function getVcode(){
+	var url="http://hi.baidu.com/sys/file/getvcode?echoback=getVcodeDone&t="+(new Date().getTime());
+	BdAjax.loadJS(url)
+}
+
+function getVcodeDone(vcode){
+	document.form1.spVcode.value=vcode;
+	var imgsrc="http://hiup.baidu.com/cgi-bin/genimg?"+vcode;
+	G('verifypic').src=imgsrc;
+	G('yanzheng').style.display="block";
+}
+function newverifypic(){
+	getVcode();
+	return false;
+}
+
+/*]]>*/
+
+</SCRIPT>
+
+<DIV id="yanzheng" style="display:none">
+
+<IMG id="verifypic" width="120" height="40"><WBR><A onfocus="this.blur();" href="http://hi.baidu.com/tobenoone/blog/item/4a7e954f824a7830afc3abb9.html#" onclick="return newverifypic();" title="看不清左边的字符">看不清?</A>
+
+</DIV>
+
+</TD>
+
+</TR>
+
+
+
+
+
+<TR>
+
+<TD valign="top" class="f14">&nbsp;</TD>
+
+<TD valign="top" class="f14"><INPUT id="btn_ok" name="btn_ok" type="submit" value="发表评论" tabindex="5">&nbsp;&nbsp;&nbsp;&nbsp;<A href="http://hi.baidu.com/tobenoone/blog/item/4a7e954f824a7830afc3abb9.html#" id="cancleReLink" onclick="canclereply(); return false;" style="display:none; font-size:12px;color:#666;">取消回复</A></TD>
+
+</TR>
+
+</TBODY></TABLE>
+
+</FORM>
+
+</DIV>
+
+
+
+
+
+
+
+
+
+<BR>
+
+</DIV>
+
+
+
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0" height="8">
+
+<TBODY><TR><TD class="modbl" width="7">&nbsp;</TD>
+
+<TD class="modbc">&nbsp;</TD>
+
+<TD class="modbr" width="7">&nbsp;</TD>
+
+</TR></TBODY></TABLE>
+
+
+
+
+
+
+
+
+
+</DIV>
+
+</DIV>
+
+
+
+</DIV>
+
+
+
+</DIV>
+
+
+<SCRIPT src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/swf.js"></SCRIPT>
+<SCRIPT src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/fck_music_auto.js"></SCRIPT>
+
+<SCRIPT src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/bgmusic.js" language="javascript"></SCRIPT>
+<SCRIPT language="javascript">
+function initBlogTextForFCK(){
+	//fck init music
+	if(window.Node){Node.prototype.replaceNode=function(Node){this.parentNode.replaceChild(Node,this);}}
+	var imgBox=document.getElementsByName('musicName');
+	var isAutoPlay=true;
+	for(var i=0,n=imgBox.length;i<n;i++){
+		var img=imgBox[i];
+		if(img.getAttribute('rel')){
+			var musicSrc=img.getAttribute('rel');
+			var musicDiv = document.createElement("SPAN");
+			var tmp=musicSrc.substr (musicSrc.indexOf('#')+1, 1);
+			var tmpAutoPlay=(tmp=='1');
+			if(isAutoPlay&&tmpAutoPlay){
+				isAutoPlay=false;
+				tmpAutoPlay=true;
+			}else{
+				tmpAutoPlay=false;
+			}
+			var shtml=creatbgmusic(musicSrc.substr(0,musicSrc.indexOf('#')).replace(/[\s><()'"]+/g,''),1,true,false,tmpAutoPlay,tmpAutoPlay,'FckMusicHelper');
+			shtml=shtml.replace('width=100%','width=200').replace('width="100%"','width=200 height=45');			img.replaceNode(musicDiv);
+			musicDiv.innerHTML=shtml;
+			i--;n--;
+		}
+	}
+		//fck init vote
+	!function(){
+		var vote = document.getElementsByName('FCK_VOTE');
+		for(var i=0,len=vote.length,item,rel=0,cdiv;i<len;i++){
+			item = vote[0];
+			rel = item.getAttribute('rel')|0;
+			if(rel){
+				cdiv = document.createElement('span');
+				item.parentNode.replaceChild(cdiv,item);
+				baidu.swf.create({
+					"id": "VOTE_FLASH_"+i,
+					"width" : "585",
+					"height": "100",
+					"ver"   : "9.0.0",
+					"wmode" : document.all ? "opaque" : "window",
+					"allowscriptaccess" : "always",
+					"url"   : "http://static.hi.baidu.com/apps/appvote/spaceVote.swf?vote_id="+rel
+				},cdiv)
+
+			}
+		}
+	}()
+	//document.getElementById('blog_text').style.display='';
+}
+
+</SCRIPT>
+
+<SCRIPT language="javascript">
+
+<!--
+
+var hstr="/tobenoone/brwstat?key1=1";
+
+document.write("<script src='"+hstr+"&key2="+allkey+"'><\/script>");
+
+//-->
+
+</SCRIPT><SCRIPT src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/brwstat"></SCRIPT>
+
+<BR><CENTER><DIV id="ft">&#169;2010 Baidu</DIV></CENTER>
+<!-- user guide -->
+
+
+
+
+<SCRIPT>
+
+if(document.getElementById("m_blog"))
+
+{
+
+	var imgarray = document.getElementById("m_blog").getElementsByTagName('img');
+
+	var imgw = document.getElementById("m_blog").offsetWidth;
+
+	imgw =imgw-40;
+
+    for(var i=0; i<imgarray.length; i++){
+    	if(imgarray[i].className=="blogimg" && imgarray[i].width>=imgw) {
+	    	imgarray[i].width=imgw;
+        }
+    }
+}
+
+
+
+// Fix ff bugs
+
+var blog_text = document.getElementById('blog_text');
+
+blog_text.innerHTML = blog_text.innerHTML.replace(/href\s*=\s*("|')?(\.\.\/\.\.\/)/gi,"href=$1../$2");
+
+
+initBlogTextForFCK();
+gotoreply();
+
+</SCRIPT>
+
+</CENTER>
+
+
+
+<!--inc_getmsgnum.html-->
+<IMG src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/c.gif" style="display:none;">
+<IFRAME id="submitiframe" name="submitiframe" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/blank.htm" style="display:none;"></IFRAME>
+
+			
+
+
+<SCRIPT type="text/javascript">
+/*<![CDATA[*/
+
+var SP = SP || {};
+if(!SP.mycard){
+    SP.mycard = new (function(){
+        var me = this;
+        var _cancleAction = Session.isDrag;  
+        var _list = [];
+        var _sourceLoaded = false;    
+        me.bind = function (_id){
+            if(_cancleAction){  //abort
+                return;
+            }
+            if(!_sourceLoaded){
+                _list.push(_id);
+            } else {
+                baidu.space.mycard.bind(_id);
+            }
+        }
+        me.init = function (_config){
+            _cancleAction = !!_config.cancle;
+        }
+        me.onSourceLoaded = function (){
+            _sourceLoaded = true;
+            baidu.space.mycard.init({portrait: Session.visitorPortrait});
+            for(var i=0,len=_list.length; i<len; i++){
+                baidu.space.mycard.bind(_list[i]);
+            }
+        }
+    })();
+    baidu.dom.ready(function(){
+        BdAjax.loadCSS('/ui/css/ucard/ucard.css?v=020507100.css');
+        BdAjax.loadJS('/ui/scripts/ucard/ucard.js?v=020507100.js');
+    });
+}
+SP.mycard.bind('m_blog');  
+/*]]>*/
+</SCRIPT>
+
+
+	
+    
+<LINK rel="stylesheet" type="text/css" href="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/userset.css">
+<LINK rel="stylesheet" type="text/css" href="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/widget.css">
+
+<SCRIPT type="text/javascript" src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/default_user_suit.js"></SCRIPT>
+
+<SCRIPT type="text/javascript">
+//页面状态变量
+var Session = Session || {
+    spaceURL: "/tobenoone",
+    pageURL: "http://hi.baidu.com/tobenoone/blog/item/4a7e954f824a7830afc3abb9%2Ehtml",    //当前访问的url
+    isHost: "",         // 是否是空间主人
+    userName: "ToBeNoOne",   // 空间主人用户名
+    userNameEnc:    "ToBeNoOne", 
+    visitorName:    "cowtony",
+    visitorURL: "/index.html",        // 
+    refer: "http://www.baidu.com/s?bs=%B4%F2%F7%FA%CA%F3&f=8&wd=%B4%F2%F7%FA%CA%F3+%B6%AF%CC%AC%B9%E6%BB%AE",
+    spBasicURL:"tobenoone",
+    spBasicURLEnc:"tobenoone"
+};
+</SCRIPT>
+<SCRIPT src="./p1441 打鼹鼠 AC!_我的路，向前-------------→_百度空间_files/render.js" type="text/javascript"></SCRIPT>
+<SCRIPT type="text/javascript">
+baidu.dom.ready(function(){
+    if(typeof spBeautifyConfigData != 'undefined'){
+        var _installList = spBeautifyConfigData.list;
+    } else {
+        spBeautifyConfigData = {};
+        _installList = [];
+    }
+    spBeautifyConfigData.currentDate  = Math.round((new Date('2010/08/24')).getTime() / 1000);    
+    BeautifyWidget.init({timeStamp: spBeautifyConfigData.currentDate, env: 'sys'});
+    BeautifyWidget.render(_installList);
+});
+</SCRIPT>
+
+
+
+
+
+
+</BODY></HTML>

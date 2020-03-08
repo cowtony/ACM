@@ -1,0 +1,60 @@
+#include <cstdlib>
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+
+using namespace std;
+
+/*
+ * 
+ */
+long long s[505][505][25];
+long long re[505];
+
+long long get(long long a,long long ma,long long mn)
+{
+  long long i,j,k,t1,t2,t3;
+  if (s[a][ma][mn]!=-1) return s[a][ma][mn];
+  if (mn==0) {s[a][ma][mn]=0;return 0;}
+  if (mn==1 && a>ma) {s[a][ma][mn]=0;return 0;}
+  if (mn==1 && a<=ma) {s[a][ma][mn]=1;return 1;}
+  if (a==0) {s[a][ma][mn]=1;return 1;}
+  t1=0;
+  for (i=1;i!=a+1 && i!=ma+1;++i)
+  {
+    t1+=get(a-i,i,mn-1);
+  }
+  s[a][ma][mn]=t1;
+  return t1;
+}
+
+long long make(long long s)
+{
+  long long i,j,k,t1,t2,t3;
+  if (re[s]!=-1) return re[s];
+  t3=0;
+  t1=1;
+  for (i=1;t1<=s;++i,t1=i*i)
+  {
+    t2=s-t1;
+    if (t2%2==1) continue;
+    t2=t2/2;
+    t3+=get(t2,t2,i);
+  }
+  re[s]=t3;
+  return t3;
+}
+
+int main(int argc, char** argv) {
+    long long i,j,k,t1,t2,t3;
+    //scanf("%d",&t1);
+    cin>>t1;
+    memset(s,-1,sizeof(s));
+    memset(re,-1,sizeof(re));
+    t2=make(t1);
+    if (t2!=0) cout<<t2<<endl;
+    else if (t2==0) cout<<"NO ANSWER\n"<<endl;
+    //printf("%d\n",t2);
+    //for (i=1;i!=10;++i) printf("%d %d\n",i,make(i));
+    return 0;
+}
