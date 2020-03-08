@@ -1,6 +1,4 @@
-Problem Page:
-
-https://train.usaco.org/usacogate
+# [USACO](https://train.usaco.org/usacogate)
 
 Username: cowtony1
 Password: 19900525
@@ -22,5 +20,4 @@ int main()
     freopen("clocks.in","r",stdin);
     freopen("clocks.out","w",stdout);
 }
-
 ```

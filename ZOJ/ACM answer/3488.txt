@@ -1,0 +1,22 @@
+#include "stdio.h"
+#include "iostream"
+using namespace std;
+
+
+int main()
+{
+int t;
+scanf("%d",&t);
+while(t--)
+{
+double a,b,c,d,e,f;
+scanf("%lf%lf%lf%lf%lf%lf",&a,&b,&c,&d,&e,&f);
+if(a*c==0)
+printf("parabola\n");
+else if(a*c<0)
+printf("hyperbola\n");
+else if(a==c)
+printf("circle\n");
+else printf("ellipse\n");
+}
+}

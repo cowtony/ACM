@@ -1,0 +1,64 @@
+#include<iostream>
+#include<list>
+#include<algorithm>
+#define max(a,b) ((a)>(b)?(a):(b))
+#define MAXL 10000
+using namespace std;
+int q[MAXL+1][2],
+    p[2*MAXL+2], 
+    f[2*MAXL+2],
+    n; 
+list<int> front[2*MAXL+2];
+void init(){
+     int i,j,k,kq;
+     p[0]=0;
+     for(i=1;i<=n;i++){
+        scanf("%d%d",&q[i][0],&q[i][1]);
+        p[++p[0]]=q[i][0];
+        p[++p[0]]=q[i][1];
+     }
+     
+     sort(&p[1],&p[p[0]+1]);
+     k=1;
+     front[1].clear();
+     for(i=2;i<=p[0];i++){
+        if (p[i]!=p[k]) p[k++]=p[i-1];
+        front[i].clear();
+     }
+     p[k]=p[i-1];
+     p[0]=k;
+     
+     for(i=1;i<=n;i++){
+        k=lower_bound(&p[1],&p[p[0]+1],q[i][0])-p;
+   kq=lower_bound(&p[1],&p[p[0]+1],q[i][1])-p;
+        front[kq].push_back(k);
+     }
+
+}
+void proc(){
+     int i,j,k;
+     memset(f,0,sizeof(f));
+     for(i=1;i<=p[0];i++){
+        f[i]=f[i-1];                          
+        if (front[i].size()>0){
+            list<int>::iterator l
+                    ,lbegin=front[i].begin()
+                    ,lend=front[i].end();
+            for(l=lbegin;l!=lend;l++){
+               f[i]=max(f[i],f[*l]+1);
+            }
+        }
+     }
+}
+int main(){
+    int i,j,k;
+    //freopen("d:\\in.txt","r",stdin);
+    //freopen("d:\\out.txt","w",stdout);
+    while(scanf("%d",&n)!=EOF){
+         init();
+         proc();
+         printf("%d\n",n-f[p[0]]);
+    }
+    //    fclose(stdin);
+    //fclose(stdout);
+}

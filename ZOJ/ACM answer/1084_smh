@@ -1,0 +1,66 @@
+// 1084 Channel Allocation
+//170035 2003-06-11 12:19:10 Accepted 1084 C++ 00:00.00 384K NeedForSpeed
+
+// minimum vertax color.....
+// greedy  <not proofed>
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	int N, i, j, k, canput;
+	char c, str[36];
+	int m[26][26], colors[26];
+
+	#ifndef ONLINE_JUDGE
+	freopen("d:/in", "r", stdin);
+	freopen("d:/out","w", stdout);
+	#endif
+
+	while(scanf("%d", &N)!=EOF){
+		if (N==0) break;
+		gets(str);
+		memset(m, 0, sizeof(m));
+
+		for (i=0; i<N; i++){
+			gets(str);
+			char* p=str+2;
+			do{
+				//c=cin.get();
+				if (*p=='\0') break;
+				sscanf(p, "%c", &c);
+				if (c==0) break;
+				m[i][c-'A']=1;
+				p++;
+			}while(1);
+		}
+		memset(colors, 0, sizeof(colors));
+		int cnt=1;
+		for (i=0; i<N; i++){
+			if (!colors[i]){
+				colors[i]=cnt;
+				for (j=i+1; j<N; j++){
+					if (!colors[j]){
+						canput=1;
+						for (k=0; k<N; k++){
+							if (m[j][k]&&colors[k]==cnt){
+								canput=0;
+								break;
+							}
+						}
+						if (canput){
+							colors[j]=cnt;
+						}
+					}
+				}
+				cnt++;
+			}
+		}
+		cnt--;
+		printf("%d channel", cnt);
+		if (cnt>1) printf("s");
+		printf(" needed.\n");
+	}
+	return 0;
+}

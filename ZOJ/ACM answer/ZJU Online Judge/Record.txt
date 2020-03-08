@@ -1,0 +1,13 @@
+1439 - 1447	: WishingBone's First Contest *
+1632 - 1640	: Sunny Cup 2003 Final
+1582 - 1591	: Sunny Cup 2003 Preliminery
+1919		: 有向图的欧拉回路问题
+1992		: 混合图的欧拉回路问题
+1226 - 1231	: OIBH Online Programming Contest
+1232 - 1239	: OIBH Reminiscene Programming Contest
+1979		: 有向图强连通分量
+2026 - 2033	: November 2003 Monthly Contest
+2058 - 2065	: December 2003 Monthly Contest
+1649 - 1656	: October 2003 Monthly Contest
+1657 - 1664	: Tokyo 1998
+1182 - 1189	: East Central North America 1998

@@ -1,0 +1,18 @@
+http://hi.baidu.com/dinglinbin/blog/category/acm%20%B5%C4zju%B4%FA%C2%EB%C7%F8
+http://www.5177517.com/
+http://www.cppblog.com/superman/category/6341.html?Show=All
+http://www.cppblog.com/Yusi-Xiao/category/9923.html
+附录A  本人如何寻找合适的题目
+2. 打开一个Vol，点击AC排序，按照顺序开始做题，通常是由简而易。
+4. 逛逛相关论坛，若别人讨论的有兴趣，就做
+6. 看看推荐的经典题目，带有解法的不会也会了
+扫完一个vol的简单题之后，去下一个vol继续，等扫完一圈（我第一次用了将近一年，在zoj某次挂了之后，第二次半年，还未结束），水平已经上了一个台阶，再重新来一次，循环着。
+附录B 遇到不会做/莫名出错的题目
+1. 问别人
+2. 88－Algorithm-精华区
+3. 88/98提问
+4. baidu-zoj ****
+5. zoj forum
+6. 看出处，找数据或标程
+7. 再想想
+8. 放着，以后再说
