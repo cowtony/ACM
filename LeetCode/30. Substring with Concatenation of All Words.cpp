@@ -14,14 +14,14 @@ public:
         
         vector<int> ret;
         for (int i = 0; i + len * words.size() <= s.length(); i++) {
-            unordered_map<string, int> temp_m = m;
+            unordered_map<string, int> seen;
             for (int j = i, c = 0; c < words.size(); j += len, c++) {
                 string word = s.substr(j, len);
                 if (m.find(word) == m.end()) {
                     goto end;
                 }
-                temp_m[word]--;
-                if (temp_m[word] < 0) {
+                seen[word]++;
+                if (seen[word] > m[word]) {
                     goto end;
                 }
             }
