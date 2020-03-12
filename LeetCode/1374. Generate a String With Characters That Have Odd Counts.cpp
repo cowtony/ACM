@@ -6,15 +6,9 @@ public:
             return "";
         }
         if (n % 2 == 0) {
-            for (int i = 0; i < n - 1; i++) {
-                s += 'a';
-            }
-            return s + 'b';
+            return string(n - 1, 'a') + 'b';
         } else {
-            for (int i = 0; i < n; i++) {
-                s += 'a';
-            }
-            return s;
+            return string(n, 'a');
         }
     }
 };
