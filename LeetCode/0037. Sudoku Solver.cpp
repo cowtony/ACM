@@ -1,6 +1,6 @@
 // Reference: https://www.cnblogs.com/grenet/p/3145800.html
 // Reference: https://www.cnblogs.com/grenet/p/3163550.html
-class DancingLinksX {
+class DancingLinks {
     struct Node {
         Node(int c) : col(c) {
             column = up = down = left = right = this;
@@ -16,7 +16,7 @@ class DancingLinksX {
     };
     
   public:
-    DancingLinksX(int col_count) {
+    DancingLinks(int col_count) {
         head = new Node(0);
         column_nodes.push_back(head);
         // Index 0 is the head, 1 to col is each column.
@@ -31,7 +31,7 @@ class DancingLinksX {
         head->left = pre_node;
         pre_node->right = head;
     }
-    ~DancingLinksX() {
+    ~DancingLinks() {
         delete head; // This is not enough.
     }
     
@@ -161,7 +161,7 @@ public:
         // Third 9 * 9 columns: col i has number j.
         // Forth 9 * 9 columns: sub-box i has number j.
         
-        DancingLinksX dlx(4 * 9 * 9);
+        DancingLinks dlx(4 * 9 * 9);
 
         // Construct the matrix.
         for (int i = 0; i < 9; i++) {
