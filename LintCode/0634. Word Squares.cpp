@@ -1,14 +1,7 @@
-// LeetCode 425: https://leetcode.com/problems/word-squares/
 struct TrieNode {
-    TrieNode() {
-        sons = vector<TrieNode*>(26, nullptr);
-        is_word = false;
-        father = nullptr;
-    }
-    vector<TrieNode*> sons;
-    bool is_word;
+    unordered_map<char, TrieNode*> sons;
     string word;
-    TrieNode* father;
+    TrieNode* father = nullptr;
 };
 
 class Solution {
@@ -39,13 +32,12 @@ private:
     void addWord(const string& word) {
         TrieNode* node = root;
         for (char c : word) {
-            if (!node->sons[c - 'a']) {
-                node->sons[c - 'a'] = new TrieNode;
-                node->sons[c - 'a']->father = node;
+            if (node->sons.find(c) == node->sons.end()) {
+                node->sons[c] = new TrieNode;
+                node->sons[c]->father = node;
             }
-            node = node->sons[c - 'a'];
+            node = node->sons.at(c);
         }
-        node->is_word = true;
         node->word = word;
     }
     
@@ -67,7 +59,7 @@ private:
 
             // Proceed.
             for (int i = 0; i < answer.size(); i++) {
-                answer[i] = answer[i]->sons[word[i] - 'a'];
+                answer[i] = answer[i]->sons.at(word[i]);
             }
             dfs(answer, depth + 1);
             // Revert
@@ -81,24 +73,22 @@ private:
     vector<string> searchAll(TrieNode* node, int remain) const {
         vector<string> ret;
         if (remain == 0) {
-            if (node->is_word) {
+            if (!node->word.empty()) {
                 ret.push_back(node->word);
             }
             return ret;
         }
         
-        for (TrieNode* next : node->sons) {
-            if (next) {
-                vector<string> ans = searchAll(next, remain - 1);
-                ret.insert(ret.end(), ans.begin(), ans.end());
-            }
+        for (pair<char, TrieNode*> next : node->sons) {
+            vector<string> ans = searchAll(next.second, remain - 1);
+            ret.insert(ret.end(), ans.begin(), ans.end());
         }
         return ret;
     }
     
     bool isQualified(const vector<TrieNode*>& answer, const string& word, int depth = 0) const {
         for (int i = depth; i < word.length(); i++) {
-            if (!answer[i]->sons[word[i] - 'a']) {
+            if (answer[i]->sons.find(word[i]) == answer[i]->sons.end()) {
                 return false;
             }
         }
