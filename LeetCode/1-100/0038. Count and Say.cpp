@@ -1,5 +1,14 @@
 class Solution {
 public:
+    string countAndSay(int n) {
+        string result = "1";
+        for (int i = 1; i < n; i++)
+        {
+            result = say(result);
+        }
+        return result;
+    }
+    
     string say(string s)
     {
         string result = "";
@@ -17,16 +26,6 @@ public:
             result += to_string(count) + c;
         }
         
-        return result;
-    }
-    
-    
-    string countAndSay(int n) {
-        string result = "1";
-        for (int i = 1; i < n; i++)
-        {
-            result = say(result);
-        }
         return result;
     }
 };
