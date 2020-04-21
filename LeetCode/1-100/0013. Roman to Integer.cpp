@@ -1,31 +1,27 @@
 class Solution {
 public:
     int romanToInt(string s) {
+        const unordered_map<char, int> kMap = {{'I', 1},
+                                               {'V', 5},
+                                               {'X', 10},
+                                               {'L', 50},
+                                               {'C', 100},
+                                               {'D', 500},
+                                               {'M', 1000},};
         vector<int> series;
-        for (char c: s)
-        {
-            switch (c)
-            {
-                case 'I': series.push_back(1);    break;
-                case 'V': series.push_back(5);    break;
-                case 'X': series.push_back(10);   break;
-                case 'L': series.push_back(50);   break;
-                case 'C': series.push_back(100);  break;
-                case 'D': series.push_back(500);  break;
-                case 'M': series.push_back(1000); break;
-            }
+        for (char c : s) {
+            series.push_back(kMap.at(c));
         }
         
         int result = 0;
-        for (int i = 0; i < series.size(); i++)
-        {
-            if (i < series.size() - 1 && series[i] < series[i + 1])
-            {
+        for (int i = 0; i < series.size(); i++) {
+            if (i < series.size() - 1 && series[i] < series[i + 1]) {
                 result += series[i + 1] - series[i];
                 i++;
             }
-            else
+            else {
                 result += series[i];
+            }
         }
         
         return result;
