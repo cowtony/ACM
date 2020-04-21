@@ -3,7 +3,7 @@ public:
     int maxProfit(vector<int>& prices) {
         int minPrice = INT_MAX;
         int maxProfit = 0;
-        for (const int &price: prices)
+        for (int price : prices)
         {
             minPrice = min(minPrice, price);
             maxProfit = max(maxProfit, price - minPrice);
