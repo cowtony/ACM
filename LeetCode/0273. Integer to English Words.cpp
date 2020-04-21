@@ -13,14 +13,12 @@ public:
         
         string ret;
         int i = 0;
-        do {
+        for (int i = 0; num > 0; i++, num /= 1000) {
             string s = numberToWordsUnderThousand(num % 1000, kUnit.at(i));
             if (!s.empty()) {
                 ret = s + " " + ret;
             }
-            i++;
-            num /= 1000;
-        } while (num > 0);
+        }
         
         ret.pop_back();
         return ret;
