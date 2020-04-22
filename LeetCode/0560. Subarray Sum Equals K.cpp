@@ -6,7 +6,7 @@ public:
             sums[i + 1] = sums[i] + nums[i];
         }
         int count = 0;
-        map<int, int> m;
+        unordered_map<int, int> m;
         for (int i = 0; i < sums.size(); i++) {
             if (m.find(sums[i] - k) != m.end()) {
                 count += m.at(sums[i] - k);
