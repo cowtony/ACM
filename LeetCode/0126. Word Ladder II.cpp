@@ -6,7 +6,6 @@ public:
         if (dict.find(end) == dict.end()) {
             return {};
         }
-        dict.insert(end);
         
         // Dijkstra algorithm. (BFS)
         unordered_map<string, int> distance;
@@ -16,7 +15,6 @@ public:
         queue<string> q;
         q.push(end);
         dict.erase(end);
-        int depth = -1;
         while (!q.empty() and q.front() != start) {
             string current = q.front();
             q.pop();
