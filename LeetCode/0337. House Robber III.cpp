@@ -12,26 +12,23 @@
 class Solution {
 public:
     int rob(TreeNode* root) {
-        return max(dfs(root, true), dfs(root, false));
+        int rob, not_rob;
+        dfs(root, rob, not_rob);
+        return max(rob, not_rob);
     }
     
-    map<TreeNode*, map<bool, int>> dp;
-    int dfs(TreeNode* root, bool rob) {
+    void dfs(TreeNode* root, int& rob, int& not_rob) {
+        rob = 0;
+        not_rob = 0;
         if (!root) {
-            return 0;
+            return;
         }
-        if (dp.find(root) != dp.end() and dp.at(root).find(rob) != dp.at(root).end()) {
-            return dp[root][rob];
-        }
-        int sum = rob? root->val : 0;
-        if (rob) {
-            sum += dfs(root->left, false);
-            sum += dfs(root->right, false);
-        } else {
-            sum += max(dfs(root->left, true), dfs(root->left, false));
-            sum += max(dfs(root->right, true), dfs(root->right, false));
-        }
-        dp[root][rob] = sum;
-        return sum;
+        int rob_left, not_rob_left;
+        dfs(root->left, rob_left, not_rob_left);
+        int rob_right, not_rob_right;
+        dfs(root->right, rob_right, not_rob_right);
+        
+        rob = root->val + not_rob_left + not_rob_right;
+        not_rob = max(rob_left, not_rob_left) + max(rob_right, not_rob_right);
     }
 };
