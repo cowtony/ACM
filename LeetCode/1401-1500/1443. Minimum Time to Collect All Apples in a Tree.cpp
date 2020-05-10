@@ -1,24 +1,22 @@
 class Solution {
 public:
     int minTime(int n, vector<vector<int>>& edges, vector<bool>& hasApple) {
-        map<int, set<int>> tree;
-        for (vector<int> edge : edges) {
-            tree[edge[0]].insert(edge[1]);
+        unordered_map<int, int> parent;
+        for (const vector<int>& edge : edges) {
+            parent[edge.at(1)] = edge.at(0);
         }
-        return dfs(tree, hasApple, 0);
-    }
-    
-    int dfs(map<int, set<int>>& tree, const vector<bool>& hasApple, int node) {
-        int cost = 0;
-        if (tree.find(node) == tree.end()) {
-            return 0;
-        }
-        for (int son : tree.at(node)) { 
-            int c = dfs(tree, hasApple, son);
-            if (c > 0 or hasApple[son]) {
-                cost += 2 + c;
+        
+        unordered_set<int> used_node;
+        for (int node = 0; node < hasApple.size(); node++) {
+            if (hasApple[node]) {
+                int n = node;
+                while (parent.find(n) != parent.end() and 
+                       used_node.find(n) == used_node.end()) {
+                    used_node.insert(n);
+                    n = parent.at(n);
+                }
             }
         }
-        return cost;
+        return used_node.size() * 2;
     }
 };
