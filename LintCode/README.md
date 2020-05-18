@@ -116,6 +116,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |406|[Minimum Size Subarray Sum](https://www.lintcode.com/problem/minimum-size-subarray-sum/)|209|[Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)|
 |407|[Plus One](https://www.lintcode.com/problem/plus-one/)|66|[Plus One](https://leetcode.com/problems/plus-one/)|
 |411|[Gray Code](https://www.lintcode.com/problem/gray-code/)|89|[Gray Code](https://leetcode.com/problems/gray-code/)|
+|413|[Reverse Integer](https://www.lintcode.com/problem/reverse-integer/)|7|[Reverse Integer](https://leetcode.com/problems/reverse-integer/)|
 |414|[Divide Two Integers](https://www.lintcode.com/problem/divide-two-integers/)|29|[Divide Two Integers](https://leetcode.com/problems/divide-two-integers/)|
 |419|[Roman to Integer](https://www.lintcode.com/problem/roman-to-integer/)|13|[Roman to Integer](https://leetcode.com/problems/roman-to-integer/)|
 |420|[Count and Say](https://www.lintcode.com/problem/count-and-say/)|38|[Count and Say](https://leetcode.com/problems/count-and-say/)|
