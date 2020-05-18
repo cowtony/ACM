@@ -208,6 +208,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |640|[One Edit Distance](https://www.lintcode.com/problem/one-edit-distance/)|161|[One Edit Distance🔒](https://leetcode.com/problems/one-edit-distance/)|
 |641|[Missing Ranges](https://www.lintcode.com/problem/missing-ranges/)|163|[Missing Ranges🔒](https://leetcode.com/problems/missing-ranges/)|
 |643|[Longest Absolute File Path](https://www.lintcode.com/problem/longest-absolute-file-path/)|388|[Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/)|
+|647|[Find All Anagrams in a String](https://www.lintcode.com/problem/find-all-anagrams-in-a-string/)|438|[Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)|
 |654|[Sparse Matrix Multiplication](https://www.lintcode.com/problem/sparse-matrix-multiplication/)|311|[Sparse Matrix Multiplication🔒](https://leetcode.com/problems/sparse-matrix-multiplication/)|
 |655|[Add Strings](https://www.lintcode.com/problem/add-strings/)|||
 |665|[Range Sum Query 2D - Immutable](https://www.lintcode.com/problem/range-sum-query-2d-immutable/)|304|[Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/)|
