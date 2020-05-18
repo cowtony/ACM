@@ -189,6 +189,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |565|[Heart Beat🔒](https://www.lintcode.com/problem/heart-beat/)
 |566|[GFS Client🔒](https://www.lintcode.com/problem/gfs-client/)
 |570|[Find the Missing Number II](https://www.lintcode.com/problem/find-the-missing-number-ii/)
+|573|[Build Post Office II🔒](https://www.lintcode.com/problem/build-post-office-ii/)
 |574|[Build Post Office🔒](https://www.lintcode.com/problem/build-post-office/)
 |575|[Decode String](https://www.lintcode.com/problem/decode-string/)
 |586|[Sqrt(x) II🔒](https://www.lintcode.com/problem/sqrtx-ii/)
