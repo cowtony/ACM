@@ -194,6 +194,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |573|[Build Post Office II🔒](https://www.lintcode.com/problem/build-post-office-ii/)
 |574|[Build Post Office🔒](https://www.lintcode.com/problem/build-post-office/)
 |575|[Decode String](https://www.lintcode.com/problem/decode-string/)
+|581|[Longest Repeating Subsequence🔒](https://www.lintcode.com/problem/longest-repeating-subsequence/)
 |586|[Sqrt(x) II🔒](https://www.lintcode.com/problem/sqrtx-ii/)
 |589|[Connecting Graph🔒](https://www.lintcode.com/problem/connecting-graph/)
 |590|[Connecting Graph II🔒](https://www.lintcode.com/problem/connecting-graph-ii/)
