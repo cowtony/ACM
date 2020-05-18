@@ -267,6 +267,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |1350|[Excel Sheet Column Title](https://www.lintcode.com/problem/excel-sheet-column-title/)|168|[Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/)|
 |1357|[Path Sum II](https://www.lintcode.com/problem/path-sum-ii/)|113|[Path Sum II](https://leetcode.com/problems/path-sum-ii/)|
 |1361|[Text Justification](https://www.lintcode.com/problem/text-justification/)|68|[Text Justification](https://leetcode.com/problems/text-justification/)|
+|1363|[ZigZag Conversion](https://www.lintcode.com/problem/zigzag-conversion/)|6|[ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/)|
 |1364|[the minium distance](https://www.lintcode.com/problem/the-minium-distance/)
 |1379|[The Longest Scene🔒](https://www.lintcode.com/problem/the-longest-scene/)
 |1380|[Log Sorting🔒](https://www.lintcode.com/problem/log-sorting/)
