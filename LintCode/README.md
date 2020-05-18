@@ -254,6 +254,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |1139|[the kth subarray](https://www.lintcode.com/problem/the-kth-subarray/)
 |1151|[Tag Validator](https://www.lintcode.com/problem/tag-validator/)|591|[Tag Validator](https://leetcode.com/problems/tag-validator/)|
 |1154|[Attendance Judgment](https://www.lintcode.com/problem/attendance-judgment/)
+|1169|[Permutation in String](https://www.lintcode.com/problem/permutation-in-string/)|567|[Permutation in String](https://leetcode.com/problems/permutation-in-string/)|
 |1173|[Reverse Words in a String III](https://www.lintcode.com/problem/reverse-words-in-a-string-iii/)|557|[Reverse Words in a String III](https://leetcode.com/problems/reverse-words-in-a-string-iii/)|
 |1183|[Single Element in a Sorted Array](https://www.lintcode.com/problem/single-element-in-a-sorted-array/)|540|[Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/)|
 |1186|[Encode and Decode TinyURL](https://www.lintcode.com/problem/encode-and-decode-tinyurl/)|535|[Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/)|
