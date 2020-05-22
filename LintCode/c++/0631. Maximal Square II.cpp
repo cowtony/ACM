@@ -6,8 +6,11 @@ public:
      */
     int maxSquare2(vector<vector<int>> &matrix) {
         // Create 3 DP matrix:
+        // Left botton triangle of 0 size:
         vector<vector<int>> left(matrix.size(), vector<int>(matrix[0].size(), 0));
+        // Right top triangle of 0 size:
         vector<vector<int>> right(matrix.size(), vector<int>(matrix[0].size(), 0));
+        // Diagonal of 1 size:
         vector<vector<int>> diagonal(matrix.size(), vector<int>(matrix[0].size(), 0));
         
         int max_size = 0;
