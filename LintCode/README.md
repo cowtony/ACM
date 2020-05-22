@@ -208,6 +208,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |617|[Maximum Average Subarray II](https://www.lintcode.com/problem/maximum-average-subarray-ii/)|644|[Maximum Average Subarray II🔒](https://leetcode.com/problems/maximum-average-subarray-ii/)|
 |623|[K Edit Distance🔒](https://www.lintcode.com/problem/k-edit-distance/)|||
 |629|[Minimum Spanning Tree🔒](https://www.lintcode.com/problem/minimum-spanning-tree/)|1135|[Connecting Cities With Minimum Cost🔒](https://leetcode.com/problems/connecting-cities-with-minimum-cost/)|
+|631|[Maximal Square II🔒](https://www.lintcode.com/problem/maximal-square-ii/)
 |633|[Find the Duplicate Number](https://www.lintcode.com/problem/find-the-duplicate-number/)|287|[Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)|
 |634|[Word Squares](https://www.lintcode.com/problem/word-squares/)|||
 |640|[One Edit Distance](https://www.lintcode.com/problem/one-edit-distance/)|161|[One Edit Distance🔒](https://leetcode.com/problems/one-edit-distance/)|
