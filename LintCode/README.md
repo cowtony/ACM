@@ -252,6 +252,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |1070|[Accounts Merge](https://www.lintcode.com/problem/accounts-merge/)|721|[Accounts Merge](https://leetcode.com/problems/accounts-merge/)|
 |1092|[Cut Off Trees for Golf Event](https://www.lintcode.com/problem/cut-off-trees-for-golf-event/)|675|[Cut Off Trees for Golf Event](https://leetcode.com/problems/cut-off-trees-for-golf-event/)|
 |1106|[Maximum Binary Tree](https://www.lintcode.com/problem/maximum-binary-tree/)|654|[Maximum Binary Tree](https://leetcode.com/problems/maximum-binary-tree/)|
+|1131|[The Function in Permutations](https://www.lintcode.com/problem/the-function-in-permutations/)
 |1136|[High Click Induction Area](https://www.lintcode.com/problem/high-click-induction-area/)
 |1139|[the kth subarray](https://www.lintcode.com/problem/the-kth-subarray/)
 |1151|[Tag Validator](https://www.lintcode.com/problem/tag-validator/)|591|[Tag Validator](https://leetcode.com/problems/tag-validator/)|
