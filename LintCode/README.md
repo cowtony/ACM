@@ -313,3 +313,4 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |1897|[Meeting Room III](https://www.lintcode.com/problem/meeting-room-iii/)
 |1900|[Gene Similarity](https://www.lintcode.com/problem/gene-similarity/)
 |1903|[Department Statistics](https://www.lintcode.com/problem/department-statistics/)
+|1905|[Character deletion](https://www.lintcode.com/problem/character-deletion/)
