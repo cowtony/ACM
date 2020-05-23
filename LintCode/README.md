@@ -129,6 +129,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |432|[Find the Weak Connected Component in the Directed Graph🔒](https://www.lintcode.com/problem/find-the-weak-connected-component-in-the-directed-graph/)
 |433|[Number of Islands](https://www.lintcode.com/problem/number-of-islands/)|200|[Number of Islands🔒](https://leetcode.com/problems/number-of-islands/)|
 |434|[Number of Islands II](https://www.lintcode.com/problem/number-of-islands-ii/)|305|[Number of Islands II🔒](https://leetcode.com/problems/number-of-islands-ii/)|
+|435|[Post Office Problem🔒](https://www.lintcode.com/problem/post-office-problem/)
 |436|[Maximal Square](https://www.lintcode.com/problem/maximal-square/)|221|[Maximal Square](https://leetcode.com/problems/maximal-square/)|
 |437|[Copy Books](https://www.lintcode.com/problem/copy-books/)
 |438|[Copy Books II](https://www.lintcode.com/problem/copy-books-ii/)
