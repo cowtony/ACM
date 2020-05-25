@@ -90,6 +90,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |363|[Trapping Rain Water](https://www.lintcode.com/problem/trapping-rain-water/)|42|[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)|
 |364|[Trapping Rain Water II](https://www.lintcode.com/problem/trapping-rain-water-ii/)|407|[Trapping Rain Water II](https://leetcode.com/problems/trapping-rain-water-ii/)|
 |367|[Expression Tree Build](https://www.lintcode.com/problem/expression-tree-build/)
+|368|[Expression Evaluation](https://www.lintcode.com/problem/expression-evaluation/)
 |369|[Convert Expression to Polish Notation🔒](https://www.lintcode.com/problem/convert-expression-to-polish-notation/)
 |370|[Convert Expression to Reverse Polish Notation](https://www.lintcode.com/problem/convert-expression-to-reverse-polish-notation/)
 |372|[Delete Node in a Linked List](https://www.lintcode.com/problem/delete-node-in-a-linked-list/)|237|[Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)|
