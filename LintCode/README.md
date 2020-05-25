@@ -48,9 +48,10 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |121|[Word Ladder II](https://www.lintcode.com/problem/word-ladder-ii/)|126|[Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)|
 |122|[Largest Rectangle in Histogram](https://www.lintcode.com/problem/largest-rectangle-in-histogram/)|84|[Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)|
 |123|[Word Search](https://www.lintcode.com/problem/word-search/)|79|[Word Search](https://leetcode.com/problems/word-search/)|
-|125|[Backpack II](https://www.lintcode.com/problem/backpack-ii/)|||
-|126|[Max Tree🔒](https://www.lintcode.com/problem/max-tree/)|||
-|128|[Hash Function](https://www.lintcode.com/problem/hash-function/)|||
+|125|[Backpack II](https://www.lintcode.com/problem/backpack-ii/)
+|126|[Max Tree🔒](https://www.lintcode.com/problem/max-tree/)
+|128|[Hash Function](https://www.lintcode.com/problem/hash-function/)
+|130|[Heapify](https://www.lintcode.com/problem/heapify/)
 |131|[The Skyline Problem](https://www.lintcode.com/problem/the-skyline-problem/)|218|[The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/)|
 |132|[Word Search II](https://www.lintcode.com/problem/word-search-ii/)|212|[Word Search II](https://leetcode.com/problems/word-search-ii/)|
 |134|[LRU Cache](https://www.lintcode.com/problem/lru-cache/)|146|[LRU Cache](https://leetcode.com/problems/lru-cache/)|
