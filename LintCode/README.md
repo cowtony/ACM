@@ -211,7 +211,8 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |629|[Minimum Spanning Tree🔒](https://www.lintcode.com/problem/minimum-spanning-tree/)|1135|[Connecting Cities With Minimum Cost🔒](https://leetcode.com/problems/connecting-cities-with-minimum-cost/)|
 |631|[Maximal Square II🔒](https://www.lintcode.com/problem/maximal-square-ii/)
 |633|[Find the Duplicate Number](https://www.lintcode.com/problem/find-the-duplicate-number/)|287|[Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)|
-|634|[Word Squares](https://www.lintcode.com/problem/word-squares/)|||
+|634|[Word Squares](https://www.lintcode.com/problem/word-squares/)
+|635|[Boggle Game](https://www.lintcode.com/problem/boggle-game/)
 |640|[One Edit Distance](https://www.lintcode.com/problem/one-edit-distance/)|161|[One Edit Distance🔒](https://leetcode.com/problems/one-edit-distance/)|
 |641|[Missing Ranges](https://www.lintcode.com/problem/missing-ranges/)|163|[Missing Ranges🔒](https://leetcode.com/problems/missing-ranges/)|
 |643|[Longest Absolute File Path](https://www.lintcode.com/problem/longest-absolute-file-path/)|388|[Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/)|
