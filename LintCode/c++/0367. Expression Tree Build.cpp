@@ -11,7 +11,6 @@
  * }
  */
 
-
 class Solution {
 public:
     /*
@@ -23,72 +22,54 @@ public:
         expression.push_back(")");
         stack<ExpressionTreeNode*> s;
         for (const string& token : expression) {
-            if (token == "(") {
-                s.push(nullptr); // Use nullptr to represent "(", no need to delete later.
-            } else if (token == ")") {
-                while (!s.empty()) {
-                    ExpressionTreeNode* right = s.top();
-                    if (!right) { return nullptr; }
-                    s.pop();
-                    
-                    ExpressionTreeNode* mid = s.top();
-                    s.pop();
-                    if (!mid) {
-                        s.push(right);
-                        break;
-                    }
-                    
-                    ExpressionTreeNode* left = s.top();
-                    if (!left) { return nullptr; }
-                    s.pop();
-                    
-                    mid->left = left;
-                    mid->right = right;
-                    s.push(mid);
-                }
-            } else if (token == "*" or token == "/") {
-                s.push(new ExpressionTreeNode(token));
-            } else if (token == "+" or token == "-") {
+            if (priority(token) > 0) {
                 while (s.size() >= 3) {
                     ExpressionTreeNode* right = s.top();
-                    if (!right) { return nullptr; }
+                    if (right->symbol == "(") { return nullptr; }
                     s.pop();
                     
                     ExpressionTreeNode* mid = s.top();
-                    if (!mid) {
+                    if (priority(token) > priority(mid->symbol)) {
                         s.push(right);
                         break;
                     }
                     s.pop();
                     
                     ExpressionTreeNode* left = s.top();
-                    if (!left) { return nullptr; }
+                    if (left->symbol == "(") { return nullptr; }
                     s.pop();
                     
                     mid->left = left;
                     mid->right = right;
                     s.push(mid);
                 }
-                s.push(new ExpressionTreeNode(token));
-            } else {  // Number
-                ExpressionTreeNode* right = new ExpressionTreeNode(token);
-                if (s.size() >= 3 and s.top() and (s.top()->symbol == "*" or s.top()->symbol == "/")) {
-                    ExpressionTreeNode* mid = s.top();
+                if (token == ")") {
+                    ExpressionTreeNode* node = s.top();
                     s.pop();
-                    ExpressionTreeNode* left = s.top();
-                    if (!left) {
-                        return nullptr;
-                    }
+                    delete s.top();
                     s.pop();
-                    mid->left = left;
-                    mid->right = right;
-                    s.push(mid);
+                    s.push(node);
                 } else {
-                    s.push(right);
+                    s.push(new ExpressionTreeNode(token));
                 }
+            } else { // Number or "("
+                s.push(new ExpressionTreeNode(token));
             }
         }
-        
         return s.top();
+    }
+    
+    int priority(string s) {
+        if (s == "(") {
+            return 0;
+        } else if (s == ")") {
+            return 1;
+        } else if (s == "+" or s == "-") {
+            return 2;
+        } else if (s == "*" or s == "/") {
+            return 3;
+        } else {
+            return -1;
+        }
     }
 };
