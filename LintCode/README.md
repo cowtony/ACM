@@ -201,6 +201,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |575|[Decode String](https://www.lintcode.com/problem/decode-string/)
 |581|[Longest Repeating Subsequence🔒](https://www.lintcode.com/problem/longest-repeating-subsequence/)
 |586|[Sqrt(x) II🔒](https://www.lintcode.com/problem/sqrtx-ii/)
+|588|[Partition Equal Subset Sum](https://www.lintcode.com/problem/partition-equal-subset-sum/)|416|[Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)|
 |589|[Connecting Graph🔒](https://www.lintcode.com/problem/connecting-graph/)
 |590|[Connecting Graph II🔒](https://www.lintcode.com/problem/connecting-graph-ii/)
 |591|[Connecting Graph III](https://www.lintcode.com/problem/connecting-graph-iii/)
