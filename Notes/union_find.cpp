@@ -1,4 +1,4 @@
-template <class T>
+template <class T = int>
 class UnionFind {
 public:
     // The connect function will add new element automatically.

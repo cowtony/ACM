@@ -1,15 +1,16 @@
 Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/bbs/thread-453640-1-1.html)
 |ID|LintCode|ID|LeetCode|
 |:-:|-------|:-:|-------|
-|000|[Template](URL)|999|[Template](URL)|
+|000|[Template](URL)|999|[Template](URL)
 |1|[A + B Problem](https://www.lintcode.com/problem/a-b-problem/)
-|5|[Kth Largest Element](https://www.lintcode.com/problem/kth-largest-element/)|215|[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)|
-|7|[Serialize and Deserialize Binary Tree](https://www.lintcode.com/problem/serialize-and-deserialize-binary-tree/)|297|[Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)|
+|5|[Kth Largest Element](https://www.lintcode.com/problem/kth-largest-element/)|215|[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+|7|[Serialize and Deserialize Binary Tree](https://www.lintcode.com/problem/serialize-and-deserialize-binary-tree/)|297|[Serialize and Deserialize Binary Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/)
 |12|[Min Stack](https://www.lintcode.com/problem/min-stack/)|155|[Min Stack](https://leetcode.com/problems/min-stack/)|
 |13|[Implement strStr()](https://www.lintcode.com/problem/implement-strstr/)|28|[Implement strStr()](https://leetcode.com/problems/implement-strstr/)|
 |17|[Subsets](https://www.lintcode.com/problem/subsets/)|78|[Subsets](https://leetcode.com/problems/subsets/)|
 |18|[Subsets II](https://www.lintcode.com/problem/subsets-ii/)|90|[Subsets II](https://leetcode.com/problems/subsets-ii/)|
-|22|[Flatten List](https://www.lintcode.com/problem/flatten-list/)|||
+|21|[Moving Circle](https://www.lintcode.com/problem/moving-circle/)
+|22|[Flatten List](https://www.lintcode.com/problem/flatten-list/)
 |24|[LFU Cache](https://www.lintcode.com/problem/lfu-cache/)|460|[LFU Cache](https://leetcode.com/problems/lfu-cache/)|
 |29|[Interleaving String](https://www.lintcode.com/problem/interleaving-string/)|97|[Interleaving String](https://leetcode.com/problems/interleaving-string/)|
 |31|[Partition Array](https://www.lintcode.com/problem/partition-array/)
@@ -17,26 +18,26 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |35|[Reverse Linked List](https://www.lintcode.com/problem/reverse-linked-list/)|206|[Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)|
 |40|[Implement Queue by Two Stacks](https://www.lintcode.com/problem/implement-queue-by-two-stacks/)|232|[Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)|
 |41|[Maximum Subarray](https://www.lintcode.com/problem/maximum-subarray/)|53|[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)|
-|53|[Reverse Words in a String](https://www.lintcode.com/problem/reverse-words-in-a-string/)|151|[Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)|
-|56|[Two Sum](https://www.lintcode.com/problem/two-sum/)|1|[Two Sum](https://leetcode.com/problems/two-sum/)|
-|57|[3Sum](https://www.lintcode.com/problem/3sum/)|15|[3Sum](https://leetcode.com/problems/3sum/)|
-|63|[Search in Rotated Sorted Array II](https://www.lintcode.com/problem/search-in-rotated-sorted-array-ii/)|81|[Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)|
-|64|[Merge Sorted Array](https://www.lintcode.com/problem/merge-sorted-array/)|88|[Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)|
-|65|[Median of two Sorted Arrays](https://www.lintcode.com/problem/median-of-two-sorted-arrays/)|4|[Median of two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)|
-|67|[Binary Tree Inorder Traversal](https://www.lintcode.com/problem/binary-tree-inorder-traversal/)|94|[Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)|
-|69|[Binary Tree Level Order Traversal](https://www.lintcode.com/problem/binary-tree-level-order-traversal/)|102|[Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)|
-|72|[Construct Binary Tree from Inorder and Postorder Traversal](https://www.lintcode.com/problem/construct-binary-tree-from-inorder-and-postorder-traversal/)|106|[Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)|
-|73|[Construct Binary Tree from Preorder and Inorder Traversal](https://www.lintcode.com/problem/construct-binary-tree-from-preorder-and-inorder-traversal/)|105|[Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)|
-|74|[First Bad Version](https://www.lintcode.com/problem/first-bad-version/)|278|[First Bad Version](https://leetcode.com/problems/first-bad-version/)|
+|53|[Reverse Words in a String](https://www.lintcode.com/problem/reverse-words-in-a-string/)|151|[Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
+|56|[Two Sum](https://www.lintcode.com/problem/two-sum/)|1|[Two Sum](https://leetcode.com/problems/two-sum/)
+|57|[3Sum](https://www.lintcode.com/problem/3sum/)|15|[3Sum](https://leetcode.com/problems/3sum/)
+|63|[Search in Rotated Sorted Array II](https://www.lintcode.com/problem/search-in-rotated-sorted-array-ii/)|81|[Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)
+|64|[Merge Sorted Array](https://www.lintcode.com/problem/merge-sorted-array/)|88|[Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/)
+|65|[Median of two Sorted Arrays](https://www.lintcode.com/problem/median-of-two-sorted-arrays/)|4|[Median of two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+|67|[Binary Tree Inorder Traversal](https://www.lintcode.com/problem/binary-tree-inorder-traversal/)|94|[Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+|69|[Binary Tree Level Order Traversal](https://www.lintcode.com/problem/binary-tree-level-order-traversal/)|102|[Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+|72|[Construct Binary Tree from Inorder and Postorder Traversal](https://www.lintcode.com/problem/construct-binary-tree-from-inorder-and-postorder-traversal/)|106|[Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
+|73|[Construct Binary Tree from Preorder and Inorder Traversal](https://www.lintcode.com/problem/construct-binary-tree-from-preorder-and-inorder-traversal/)|105|[Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+|74|[First Bad Version](https://www.lintcode.com/problem/first-bad-version/)|278|[First Bad Version](https://leetcode.com/problems/first-bad-version/)
 |75|[Find Peak Element](https://www.lintcode.com/problem/find-peak-element/)|162|[Find Peak Element](https://leetcode.com/problems/find-peak-element/)|
-|75|[Find Peak Element](https://www.lintcode.com/problem/find-peak-element/)|852|[Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array/)|
-|76|[Longest Increasing Subsequence](https://www.lintcode.com/problem/longest-increasing-subsequence/)|300|[Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)|
-|77|[Longest Common Subsequence](https://www.lintcode.com/problem/longest-common-subsequence/)|||
-|81|[Find Median from Data Stream](https://www.lintcode.com/problem/find-median-from-data-stream/)|||
+|75|[Find Peak Element](https://www.lintcode.com/problem/find-peak-element/)|852|[Peak Index in a Mountain Array](https://leetcode.com/problems/peak-index-in-a-mountain-array/)
+|76|[Longest Increasing Subsequence](https://www.lintcode.com/problem/longest-increasing-subsequence/)|300|[Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
+|77|[Longest Common Subsequence](https://www.lintcode.com/problem/longest-common-subsequence/)
+|81|[Find Median from Data Stream](https://www.lintcode.com/problem/find-median-from-data-stream/)
 |82|[Single Number](https://www.lintcode.com/problem/single-number/)|136|[Single Number](https://leetcode.com/problems/single-number/)|
-|86|[Binary Search Tree Iterator](https://www.lintcode.com/problem/binary-search-tree-iterator/)|173|[Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/)|
-|89|[k Sum](https://www.lintcode.com/problem/k-sum/)|||
-|92|[Backpack](https://www.lintcode.com/problem/backpack/)|||
+|86|[Binary Search Tree Iterator](https://www.lintcode.com/problem/binary-search-tree-iterator/)|173|[Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/)
+|89|[k Sum](https://www.lintcode.com/problem/k-sum/)
+|92|[Backpack](https://www.lintcode.com/problem/backpack/)
 |97|[Maximum Depth of Binary Tree](https://www.lintcode.com/problem/maximum-depth-of-binary-tree/)|104|[Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)|
 |100|[Remove Duplicates from Sorted Array](https://www.lintcode.com/problem/remove-duplicates-from-sorted-array/)|26|[Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)|
 |102|[Linked List Cycle](https://www.lintcode.com/problem/linked-list-cycle/)|141|[Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)|
@@ -55,19 +56,22 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |131|[The Skyline Problem](https://www.lintcode.com/problem/the-skyline-problem/)|218|[The Skyline Problem](https://leetcode.com/problems/the-skyline-problem/)|
 |132|[Word Search II](https://www.lintcode.com/problem/word-search-ii/)|212|[Word Search II](https://leetcode.com/problems/word-search-ii/)|
 |134|[LRU Cache](https://www.lintcode.com/problem/lru-cache/)|146|[LRU Cache](https://leetcode.com/problems/lru-cache/)|
-|138|[Subarray Sum](https://www.lintcode.com/problem/subarray-sum/)|||
-|139|[Subarray Sum Closest](https://www.lintcode.com/problem/subarray-sum-closest/)|||
+|138|[Subarray Sum](https://www.lintcode.com/problem/subarray-sum/)
+|139|[Subarray Sum Closest](https://www.lintcode.com/problem/subarray-sum-closest/)
 |141|[Sqrt(x)](https://www.lintcode.com/problem/sqrtx/)|69|[Sqrt(x)](https://leetcode.com/problems/sqrtx/)|
 |149|[Best Time to Buy and Sell Stock](https://www.lintcode.com/problem/best-time-to-buy-and-sell-stock/)|121|[Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)|
+|153|[Combination Sum II](https://www.lintcode.com/problem/combination-sum-ii/)|40|[Combination Sum II](https://leetcode.com/problems/combination-sum-ii/)|
 |154|[Regular Expression Matching](https://www.lintcode.com/problem/regular-expression-matching/)|10|[Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/)|
 |156|[Merge Intervals](https://www.lintcode.com/problem/merge-intervals/)|56|[Merge Intervals](https://leetcode.com/problems/merge-intervals/)|
 |165|[Merge Two Sorted Lists](https://www.lintcode.com/problem/merge-two-sorted-lists/)|21|[Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)|
 |167|[Add Two Numbers](https://www.lintcode.com/problem/add-two-numbers/)|2|[Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)|
 |168|[Burst Balloons](https://www.lintcode.com/problem/burst-balloons/)|312|[Burst Balloons](https://leetcode.com/problems/burst-balloons/)|
-|178|[Graph Valid Tree](https://www.lintcode.com/problem/graph-valid-tree/)|261|[Graph Valid Tree🔒](https://leetcode.com/problems/graph-valid-tree/)|
-|183|[Wood Cut](https://www.lintcode.com/problem/wood-cut/)|||
+|178|[Graph Valid Tree](https://www.lintcode.com/problem/graph-valid-tree/)|261|[Graph Valid Tree](https://leetcode.com/problems/graph-valid-tree/)|
+|183|[Wood Cut](https://www.lintcode.com/problem/wood-cut/)
+|188|[Insert five](https://www.lintcode.com/problem/insert-five/)
 |191|[Maximum Product Subarray](https://www.lintcode.com/problem/maximum-product-subarray/)|152|[Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)|
 |192|[Wildcard Matching](https://www.lintcode.com/problem/wildcard-matching/)|44|[Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)|
+|199|[Judge Connection](https://www.lintcode.com/problem/judge-connection/)
 |200|[Longest Palindromic Substring](https://www.lintcode.com/problem/longest-palindromic-substring/)|5|[Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)|
 |201|[Segment Tree Build](https://www.lintcode.com/problem/segment-tree-build/)
 |202|[Segment Tree Query](https://www.lintcode.com/problem/segment-tree-query/)
@@ -75,19 +79,25 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |205|[Interval Minimum Number](https://www.lintcode.com/problem/interval-minimum-number/)
 |206|[Interval Sum](https://www.lintcode.com/problem/interval-sum/)
 |207|[Interval Sum II](https://www.lintcode.com/problem/interval-sum-ii/)
-|209|[First Unique Character in a String](https://www.lintcode.com/problem/first-unique-character-in-a-string/)|\*387|[First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)|
-|215|[Rate Limiter🔒](https://www.lintcode.com/problem/rate-limiter/)|359*|[Logger Rate Limiter🔒](https://leetcode.com/problems/logger-rate-limiter/)|
+|209|[First Unique Character in a String](https://www.lintcode.com/problem/first-unique-character-in-a-string/)|\*387|[First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)
+|215|[Rate Limiter🔒](https://www.lintcode.com/problem/rate-limiter/)
 |219|[Insert Node in Sorted Linked List](https://www.lintcode.com/problem/insert-node-in-sorted-linked-list/)
-|228|[Middle of Linked List](https://www.lintcode.com/problem/middle-of-linked-list/)|876|[Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)|
+|228|[Middle of Linked List](https://www.lintcode.com/problem/middle-of-linked-list/)|876|[Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
 |231|[Typeahead🔒](https://www.lintcode.com/problem/typeahead/)
 |232|[Tiny Url🔒](https://www.lintcode.com/problem/tiny-url/)|535|[Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/)|
 |234|[Web Crawler🔒](https://www.lintcode.com/problem/web-crawler/)
 |242|[Convert Binary Tree to Linked Lists by Depth](https://www.lintcode.com/problem/convert-binary-tree-to-linked-lists-by-depth/)
+|244|[Delete Char](https://www.lintcode.com/problem/delete-char/)
 |247|[Segment Tree Query II](https://www.lintcode.com/problem/segment-tree-query-ii/)
 |248|[Count of Smaller Number](https://www.lintcode.com/problem/count-of-smaller-number/)
-|360|[Sliding Window Median](https://www.lintcode.com/problem/sliding-window-median/)|480|[Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)|
-|362|[Sliding Window Maximum](https://www.lintcode.com/problem/sliding-window-maximum/)|239|[Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)|
-|363|[Trapping Rain Water](https://www.lintcode.com/problem/trapping-rain-water/)|42|[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)|
+|250|[Special Palindrome String](https://www.lintcode.com/problem/special-palindrome-string/)
+|253|[Minimum Type Way](https://www.lintcode.com/problem/minimum-type-way/)
+|258|[Map Jump](https://www.lintcode.com/problem/map-jump/)
+|259|[Find the largest Divisor](https://www.lintcode.com/problem/find-the-largest-divisor/)
+|260|[Same Diagonal Elements](https://www.lintcode.com/problem/same-diagonal-elements/)|766|[Toeplitz Matrix](https://leetcode.com/problems/toeplitz-matrix/)
+|360|[Sliding Window Median](https://www.lintcode.com/problem/sliding-window-median/)|480|[Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
+|362|[Sliding Window Maximum](https://www.lintcode.com/problem/sliding-window-maximum/)|239|[Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
+|363|[Trapping Rain Water](https://www.lintcode.com/problem/trapping-rain-water/)|42|[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 |364|[Trapping Rain Water II](https://www.lintcode.com/problem/trapping-rain-water-ii/)|407|[Trapping Rain Water II](https://leetcode.com/problems/trapping-rain-water-ii/)|
 |367|[Expression Tree Build](https://www.lintcode.com/problem/expression-tree-build/)
 |368|[Expression Evaluation](https://www.lintcode.com/problem/expression-evaluation/)
@@ -99,7 +109,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |380|[Intersection of Two Linked Lists](https://www.lintcode.com/problem/intersection-of-two-linked-lists/)|160|[Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)|
 |382|[Triangle Count🔒](https://www.lintcode.com/problem/triangle-count/)|||
 |384|[Longest Substring Without Repeating Characters](https://www.lintcode.com/problem/longest-substring-without-repeating-characters/)|3|[Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)|
-|386|[Longest Substring with At Most K Distinct Characters](https://www.lintcode.com/problem/longest-substring-with-at-most-k-distinct-characters/)|340|[Longest Substring with At Most K Distinct Characters🔒](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)|
+|386|[Longest Substring with At Most K Distinct Characters](https://www.lintcode.com/problem/longest-substring-with-at-most-k-distinct-characters/)|340|[Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)|
 |390|[Find Peak Element II🔒](https://www.lintcode.com/problem/find-peak-element-ii/)||
 |391|[Number of Airplanes in the Sky](https://www.lintcode.com/problem/number-of-airplanes-in-the-sky/)|||
 |392|[House Robber](https://www.lintcode.com/problem/house-robber/)|198|[House Robber](https://leetcode.com/problems/house-robber/)|
@@ -128,11 +138,11 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |427|[Generate Parentheses](https://www.lintcode.com/problem/generate-parentheses/)|22|[Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)|
 |428|[Pow(x, n)](https://www.lintcode.com/problem/powx-n/)|50|[Pow(x, n)](https://leetcode.com/problems/powx-n/)|
 |430|[Scramble String](https://www.lintcode.com/problem/scramble-string/)|87|[Scramble String](https://leetcode.com/problems/scramble-string/)|
-|431|[Connected Component in Undirected Graph](https://www.lintcode.com/problem/connected-component-in-undirected-graph/)|323|[Number of Connected Components in an Undirected Graph🔒](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)|
+|431|[Connected Component in Undirected Graph🔒](https://www.lintcode.com/problem/connected-component-in-undirected-graph/)|323*|[Number of Connected Components in an Undirected Graph](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)|
 |432|[Find the Weak Connected Component in the Directed Graph🔒](https://www.lintcode.com/problem/find-the-weak-connected-component-in-the-directed-graph/)
-|433|[Number of Islands](https://www.lintcode.com/problem/number-of-islands/)|200|[Number of Islands🔒](https://leetcode.com/problems/number-of-islands/)|
-|434|[Number of Islands II](https://www.lintcode.com/problem/number-of-islands-ii/)|305|[Number of Islands II🔒](https://leetcode.com/problems/number-of-islands-ii/)|
-|435|[Post Office Problem🔒](https://www.lintcode.com/problem/post-office-problem/)
+|433|[Number of Islands](https://www.lintcode.com/problem/number-of-islands/)|200|[Number of Islands](https://leetcode.com/problems/number-of-islands/)|
+|434|[Number of Islands II](https://www.lintcode.com/problem/number-of-islands-ii/)|305|[Number of Islands II](https://leetcode.com/problems/number-of-islands-ii/)|
+|435|[Post Office Problem🔒](https://www.lintcode.com/problem/post-office-problem/)|1478|[Allocate Mailboxes](https://leetcode.com/problems/allocate-mailboxes/)
 |436|[Maximal Square](https://www.lintcode.com/problem/maximal-square/)|221|[Maximal Square](https://leetcode.com/problems/maximal-square/)|
 |437|[Copy Books](https://www.lintcode.com/problem/copy-books/)
 |438|[Copy Books II](https://www.lintcode.com/problem/copy-books-ii/)
@@ -220,15 +230,19 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |635|[Boggle Game](https://www.lintcode.com/problem/boggle-game/)
 |640|[One Edit Distance](https://www.lintcode.com/problem/one-edit-distance/)|161|[One Edit Distance🔒](https://leetcode.com/problems/one-edit-distance/)|
 |641|[Missing Ranges](https://www.lintcode.com/problem/missing-ranges/)|163|[Missing Ranges🔒](https://leetcode.com/problems/missing-ranges/)|
-|643|[Longest Absolute File Path](https://www.lintcode.com/problem/longest-absolute-file-path/)|388|[Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/)|
-|647|[Find All Anagrams in a String](https://www.lintcode.com/problem/find-all-anagrams-in-a-string/)|438|[Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)|
-|654|[Sparse Matrix Multiplication](https://www.lintcode.com/problem/sparse-matrix-multiplication/)|311|[Sparse Matrix Multiplication🔒](https://leetcode.com/problems/sparse-matrix-multiplication/)|
-|655|[Add Strings](https://www.lintcode.com/problem/add-strings/)|||
-|665|[Range Sum Query 2D - Immutable](https://www.lintcode.com/problem/range-sum-query-2d-immutable/)|304|[Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/)|
+|643|[Longest Absolute File Path](https://www.lintcode.com/problem/longest-absolute-file-path/)|388|[Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/)
+|647|[Find All Anagrams in a String](https://www.lintcode.com/problem/find-all-anagrams-in-a-string/)|438|[Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
+|654|[Sparse Matrix Multiplication](https://www.lintcode.com/problem/sparse-matrix-multiplication/)|311|[Sparse Matrix Multiplication🔒](https://leetcode.com/problems/sparse-matrix-multiplication/)
+|655|[Add Strings](https://www.lintcode.com/problem/add-strings/)
+|659|[Encode and Decode Strings](https://www.lintcode.com/problem/encode-and-decode-strings/)|271|[Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)
+|665|[Range Sum Query 2D - Immutable](https://www.lintcode.com/problem/range-sum-query-2d-immutable/)|304|[Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/)
+|667|[Longest Palindromic Subsequence](https://www.lintcode.com/problem/longest-palindromic-subsequence/)|516|[Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/)
+|669|[Coin Change](https://www.lintcode.com/problem/coin-change/)|322|[Coin Change](https://leetcode.com/problems/coin-change/)
 |676|[Decode Ways II](https://www.lintcode.com/problem/decode-ways-ii/)|639|[Decode Ways II](https://leetcode.com/problems/decode-ways-ii/)|
 |703|[Folding Array](https://www.lintcode.com/problem/folding-array/)
 |707|[Optimal Account Balancing](https://www.lintcode.com/problem/optimal-account-balancing/)|465|[Optimal Account Balancing🔒](https://leetcode.com/problems/optimal-account-balancing/)|
 |722|[Maximum Subarray VI🔒](https://www.lintcode.com/problem/maximum-subarray-vi/)
+|740|[Coin Change 2](https://www.lintcode.com/problem/coin-change-2/)|518|[Coin Change 2](https://leetcode.com/problems/coin-change-2/)|
 |760|[Binary Tree Right Side View](https://www.lintcode.com/problem/binary-tree-right-side-view/)|199|[Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/)|
 |797|[Reach a Number](https://www.lintcode.com/problem/reach-a-number/)|754|[Reach a Number](https://leetcode.com/problems/reach-a-number/)|
 |804|[Number of Distinct Islands II](https://www.lintcode.com/problem/number-of-distinct-islands-ii/)|711|[Number of Distinct Islands II🔒](https://leetcode.com/problems/number-of-distinct-islands-ii/)|
@@ -310,13 +324,17 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |1786|[Pub Sub Pattern🔒](https://www.lintcode.com/problem/pub-sub-pattern/)
 |1787|[Google Suggestion (Map Reduce)](https://www.lintcode.com/problem/google-suggestion-map-reduce/)
 |1825|[Number Change](https://www.lintcode.com/problem/number-change/)
+|1828|[Lake Escape](https://www.lintcode.com/problem/lake-escape/)
 |1832|[Minimum Step](https://www.lintcode.com/problem/minimum-step/)
+|1872|[Minimum Cost to Connect Sticks](https://www.lintcode.com/problem/minimum-cost-to-connect-sticks/)|1167|[Minimum Cost to Connect Sticks](https://leetcode.com/problems/minimum-cost-to-connect-sticks/)|
 |1879|[Two Sum VII](https://www.lintcode.com/problem/two-sum-vii/)
+|1880|[Largest Number X Which Occurs X Times](https://www.lintcode.com/problem/largest-number-x-which-occurs-x-times/)
+|1882|[Fair Indexes](https://www.lintcode.com/problem/fair-indexes/)
 |1886|[Moving Target](https://www.lintcode.com/problem/moving-target/)
 |1888|[Shortest Path in Matrix](https://www.lintcode.com/problem/shortest-path-in-matrix/)
 |1889|[Interval Merge](https://www.lintcode.com/problem/interval-merge/)
 |1892|[Mine-sweeping](https://www.lintcode.com/problem/mine-sweeping/)
-|1895|[Arrange interview city](https://www.lintcode.com/problem/arrange-interview-city/)
+|1895|[Arrange interview city](https://www.lintcode.com/problem/arrange-interview-city/)|1029|[Two City Scheduling](https://leetcode.com/problems/two-city-scheduling/)|
 |1897|[Meeting Room III](https://www.lintcode.com/problem/meeting-room-iii/)
 |1900|[Gene Similarity](https://www.lintcode.com/problem/gene-similarity/)
 |1903|[Department Statistics](https://www.lintcode.com/problem/department-statistics/)

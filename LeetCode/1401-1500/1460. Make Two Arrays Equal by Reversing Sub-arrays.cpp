@@ -1,0 +1,16 @@
+class Solution {
+public:
+    bool canBeEqual(vector<int>& target, vector<int>& arr) {
+        unordered_map<int, int> count;
+        for (int num : target) {
+            count[num]++;
+        }
+        for (int num : arr) {
+            count[num]--;
+            if (count[num] < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+};

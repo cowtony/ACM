@@ -1,18 +1,18 @@
 class Solution {
 public:
     int leastInterval(vector<char>& tasks, int n) {
-        unordered_map<char, int> um;
+        unordered_map<char, int> count;
         for (char c : tasks) {
-            um[c]++;
+            count[c]++;
         }
         
         int max_repeat = 0;
-        for (auto p : um) {
+        for (auto p : count) {
             max_repeat = max(max_repeat, p.second);
         }
         
         int max_task_count = 0;
-        for (auto p : um) {
+        for (auto p : count) {
             if (max_repeat == p.second) {
                 max_task_count++;
             }

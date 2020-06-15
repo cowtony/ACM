@@ -20,20 +20,27 @@ vector<vector<int>> prefixSum(vector<vector<int>>& matrix) {
     return prefix_sum;
 }
 
-// Print
-void printMatrix(const vector<vector<int>>& matrix) {
-    for (int r = 0; r < matrix.size(); r++) {
-        for (int c = 0; c < matrix.at(r).size(); c++) {
-            cout << matrix.at(r).at(c) << ' ';
+// Next Premutation
+void next_permutation(vector<int>& nums) {
+    int i;
+    for (i = nums.size() - 2; i >= 0; i--) {
+        if (nums[i] < nums[i + 1]) {
+            break;
         }
-        cout << endl;
     }
+
+    // Exclude the case all numbers are decending and i = -1;
+    if (i >= 0) {
+        int j;
+        for (j = i + 1; j < nums.size() - 1; j++) {
+            if (nums[i] >= nums[j + 1]) {
+                break;
+            }
+        }
+        // Swap the two key values.
+        swap(nums[i], nums[j]);
+    }
+
+    // Reverse the rest line.
+    reverse(nums.begin() + i + 1, nums.end());
 }
-auto printMatrix = [](const vector<vector<int>>& A) {
-    for (int i = 0; i < A.size(); i++) {
-        for (int j = 0; j < A.at(i).size(); j++) {
-            cout << A.at(i).at(j) << ' ';
-        }
-        cout << endl;
-    }
-};

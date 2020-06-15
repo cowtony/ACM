@@ -1,61 +1,52 @@
-template <class T>
+template <class T = int>
 class UnionFind {
 public:
-    void add(const T& a) {
-        if (father_.find(a) == father_.end()) {
-            father_[a] = a;
-            count_++;
-        }
-    }
-    
+    // The connect function will add new element automatically.
     void connect(const T& a, const T& b) {
         T ra = root(a);
         T rb = root(b);
         if (ra != rb) {
-            father_[ra] = rb;
-            count_--;
+            roots[rb] += roots[ra];
+            father[ra] = rb;
+            roots.erase(ra);
         }
     }
     
-    int count() const {
-        return count_;
-    }
-    
-private:
-    int count_ = 0;
-    unordered_map<T, T> father_;
-    
+    // Find root with route compress.
     T root(const T& a) {
-        if (father_.find(a) == father_.end()) {
-            return a;
+        if (father.find(a) == father.end()) { 
+            father[a] = a;
+            roots[a] = 1;
         }
-        if (father_[a] == a) {
-            return a;
-        } else {
-            return father_[a] = root(father_[a]);
-        }
+        if (father[a] == a) { return a; } 
+        else { return father[a] = root(father[a]); }
     }
+    
+    // Store all roots and properties such as size, max_value.
+    unordered_map<T, int> roots;
+    unordered_map<T, T> father;
 };
 
 class Solution {
 public:
     int numIslands(vector<vector<char>>& grid) {
+        auto hash = [&grid](int r, int c){ return r * grid[0].size() + c; };
         UnionFind<int> uf;
-        for (int i = 0; i < grid.size(); i++) {
-            for (int j = 0; j < grid[0].size(); j++) {
-                if (grid[i][j] == '0') {
+        for (int r = 0; r < grid.size(); r++) {
+            for (int c = 0; c < grid[0].size(); c++) {
+                if (grid[r][c] == '0') {
                     continue;
                 }
-                uf.add(i * grid[0].size() + j);
-                if (i > 0 and grid[i - 1][j] == '1') {
-                    uf.connect(i * grid[0].size() + j, (i - 1) * grid[0].size() + j);
+                uf.root(hash(r, c));
+                if (r > 0 and grid[r - 1][c] == '1') {
+                    uf.connect(hash(r, c), hash(r - 1, c));
                 }
-                if (j > 0 and grid[i][j - 1] == '1') {
-                    uf.connect(i * grid[0].size() + j, i * grid[0].size() + j - 1);
+                if (c > 0 and grid[r][c - 1] == '1') {
+                    uf.connect(hash(r, c), hash(r, c - 1));
                 }
             }
         }
-        return uf.count();
+        return uf.roots.size();
     }
 };
 

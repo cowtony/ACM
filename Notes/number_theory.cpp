@@ -15,3 +15,14 @@ bool isPrime(int n) {
     }
     return true;
 }
+
+// Combinition
+long combinition(int from, int pick) {
+    pick = min(pick, from - pick);
+    long res = 1;
+    for (int i = 1, j = from; i <= pick; i++, j--) {
+        res *= j;
+        res /= i;
+    }
+    return res;
+}

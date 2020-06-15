@@ -8,56 +8,9 @@
 ## Linked List
 - Recursive.
 - [Trick] Slow-Fast pointer: when slow pointer move 1 step, fast pointer move 2 steps. Noramlly used for checking if a loop exist. [876](https://leetcode.com/problems/middle-of-the-linked-list/), [141](https://leetcode.com/problems/linked-list-cycle/), [202](https://leetcode.com/problems/happy-number/)
-```
-template <class T>
-struct DListNode {
-    T data;
-    DListNode* pre = nullptr;
-    DListNode* next = nullptr;
-};
-
-template <class T>
-class DLinkedList {
-public:
-    DListNode<T>* head() const { return head_; }
-    DListNode<T>* tail() const { return tail_; }
-    int size() const { return size_; }
-    bool empty() const { return head_ == nullptr; }
-    T pop_back(bool hard = false) { return erase(tail_, hard); }
-    
-    void push_front(DListNode<T>* node) {
-        if (node == nullptr) { return; }
-        node->pre = nullptr;
-        node->next = nullptr;
-        if (head_) {
-            head_->pre = node;
-            node->next = head_;
-            head_ = node;
-        } else {
-            head_ = node;
-            tail_ = node;
-        }
-        size_++;
-    }    
-    
-    T erase(DListNode<T>* node, bool hard = false) {
-        if (node == nullptr) { return T(); }
-        if (node->pre) { node->pre->next = node->next; } 
-        else { head_ = node->next; }
-        if (node->next) { node->next->pre = node->pre; }
-        else { tail_ = node->pre; }
-        T data = node->data;
-        if (hard) { delete node; }
-        size_--;
-        return data;
-    }
-
-private:
-    int size_ = 0;
-    DListNode<T> *head_ = nullptr, *tail_ = nullptr;
-};
-```
-### \*Dancing Links
+### [Doubly Linked List](doubly_linked_list.cpp)
+[LRU(Least recently used) Cache](https://leetcode.com/problems/lru-cache/), [LFU(Least frequently used) Cache](https://leetcode.com/problems/lfu-cache/): Combining with a hash map to store the key-value information.
+### [\*Dancing Links](dancing_links.cpp)
 - A data structure to use back tracking to solve **Exact Cover** problems. [Sudoku](https://leetcode.com/problems/sudoku-solver/), [N Queens](https://leetcode.com/problems/n-queens/)
 ## Tree
 - `Edge = Node - 1`
@@ -94,7 +47,7 @@ Traverse a binary tree without using recursive and stack, this is needed when me
 - DFS / Backtracking
 - Speed up: Memorize result. [87](https://leetcode.com/problems/scramble-string/)
 - Speed up: Use more global variable than pass by argument.
-## [Sort](Sort.cpp)
+## [Sort](sort.cpp)
 ### Bubble Sort O(n^2)
 ### Counting Sort O(n)
 Regular counting sort used when there are finite element types. [49](https://leetcode.com/problems/group-anagrams/), [75](https://leetcode.com/problems/sort-colors/)\
@@ -106,7 +59,7 @@ The follow sort algorithm break the finite element limitation:
 Merge sort will not change the order of the equal value. (Useful when compare by string length).
 ### Quick Sort O(n log(n))
 - Recursively perform partition.
-- [Partition / Quick Select O(n)](https://selfboot.cn/2016/09/01/lost_partition/): [Find Kth largest element](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+- [Partition / Quick Select O(n)](https://selfboot.cn/2016/09/01/lost_partition/): [Find Kth largest element](https://leetcode.com/problems/kth-largest-element-in-an-array/), [K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/)
     
 ## Binary Search
 - Search number from array.
@@ -130,28 +83,17 @@ General steps:
 ### Minimum Spanning Tree 最小生成树
 - Kruskal Algorithm: Greedy + Union Find
 - Prim Algorithm
-### Shortest Path
-- Floyd
-- Dijkstra
+### [Shortest Path](graph.cpp)
+- **Dijkstra:** One vertex to all other vertex. O((E+V)log(V))
+- **Floyd Warshall:** Each vertex to vertex. O(V^3)
+
+### [Topological Sort](graph_topological_sort.cpp)
+### Bipartite Graph
+- [Check if graph is bipartite](https://leetcode.com/problems/is-graph-bipartite/): Use BFS or DFS to color all nodes with only two colors.
+- [Matching](https://www.renfei.org/blog/bipartite-matching.html)
 ## String
+- [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/): Manacher algorithm O(n).
+- [Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/): 2-dimention DP
 ### \*[KMP (Knuth Morris Pratt)](https://blog.csdn.net/v_july_v/article/details/7041827) 
 Find longest prefix == suffix [1392](https://leetcode.com/problems/longest-happy-prefix/), [28](https://leetcode.com/problems/implement-strstr/)
-```
-vector<int> longestPrefix(string s) {
-    vector<int> next(s.length(), 0);
-    for (int i = 0; i < s.length(); i++) {
-        int pre = i;
-        do {
-            if (pre > 0) {
-                pre = next[pre - 1];
-                next[i] = pre + 1;
-            } else {
-                next[i] = 0;
-                break;
-            }
-        } while (s[i] != s[pre]);
-    }
-    return next;
-}
-```
 ## Sweep Line

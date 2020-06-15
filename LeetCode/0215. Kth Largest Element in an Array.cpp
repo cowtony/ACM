@@ -1,39 +1,37 @@
+template<class Iterator>
+Iterator partition(Iterator begin, Iterator end) {
+    static auto less = [](const typename Iterator::value_type& a, 
+                          const typename Iterator::value_type& b){
+        return a < b;
+    };
+    if (begin == end) { return begin; }
+    --end;
+    auto pivot = *begin;
+    while (begin != end) {
+        while (begin != end and !less(*end, pivot)) { --end; }
+        *begin = *end;
+        while (begin != end and less(*begin, pivot)) { ++begin; }
+        *end = *begin;
+    }
+    *begin = pivot;
+    return begin;
+}
+
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {
         // Convert k to start from 0 and smallest.
         k = nums.size() - k;
         
-        int lo = 0, hi = nums.size() - 1;
-        while (lo < hi) {
-            int curr = partition(nums, lo, hi);
-            if (curr > k) {
-                hi = curr - 1;
-            } else if (curr < k) {
-                lo = curr + 1;
-            } else {
-                return nums[curr];
+        auto lo = nums.begin(), hi = nums.end();
+        while (lo != hi) {
+            auto mid = partition(lo, hi);
+            if (mid - nums.begin() >= k) {
+                hi = mid;
+            } else if (mid - nums.begin() < k) {
+                lo = mid + 1;
             }
         }
-        return nums[lo];
-    }
-    
-    int partition(vector<int>& arr, int begin_idx, int end_idx)
-    {
-        int pivot = arr[begin_idx];
-        while(begin_idx < end_idx)
-        {
-            while(begin_idx < end_idx && arr[end_idx] >= pivot) {
-                --end_idx;
-            }
-            arr[begin_idx] = arr[end_idx];
-            
-            while(begin_idx < end_idx && arr[begin_idx] <= pivot) {
-                ++begin_idx;
-            }
-            arr[end_idx] = arr[begin_idx];
-        }
-        arr[begin_idx] = pivot;
-        return begin_idx;
+        return *lo;
     }
 };
