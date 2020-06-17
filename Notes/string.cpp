@@ -2,7 +2,7 @@
 vector<string> split(string s, string delimiter) {
     vector<string> res;
     size_t p = 0;
-    while (p < s.length()) {
+    while (p <= s.length()) {
         size_t pos = s.find(delimiter, p);
         if (pos == string::npos) {
             pos = s.length();
