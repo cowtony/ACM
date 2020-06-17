@@ -37,13 +37,10 @@ public:
     }
     
     bool validIPv4Number(string s) {
-        if (s.empty()) {
+        if (s.empty() or s.length() > 3) {
             return false;
         }
         if (s.length() > 1 and s.front() == '0') {
-            return false;
-        }
-        if (s.length() > 3) {
             return false;
         }
         for (char c : s) {
@@ -55,15 +52,11 @@ public:
     }
     
     bool validIPv6Number(string s) {
-        if (s.empty()) {
-            return false;
-        }
-        if (s.length() > 4) {
+        if (s.empty() or s.length() > 4) {
             return false;
         }
         for (char c : s) {
             if (c >= '0' and c <= '9' or c >= 'a' and c <= 'f' or c >= 'A' and c <= 'F') {
-                
             } else {
                 return false;
             }
