@@ -169,7 +169,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |504|[Inverted Index (Map Reduce)](https://www.lintcode.com/problem/inverted-index-map-reduce/)
 |505|[Web Logger🔒](https://www.lintcode.com/problem/web-logger/)|||
 |507|[Wiggle Sort II](https://www.lintcode.com/problem/wiggle-sort-ii/)|324|[Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/)|
-|508|[Wiggle Sort](https://www.lintcode.com/problem/wiggle-sort/)|280|[Wiggle Sort🔒](https://leetcode.com/problems/wiggle-sort/)|
+|508|[Wiggle Sort](https://www.lintcode.com/problem/wiggle-sort/)|280|[Wiggle Sort](https://leetcode.com/problems/wiggle-sort/)|
 |509|[Mini Yelp🔒](https://www.lintcode.com/problem/mini-yelp/)
 |510|[Maximal Rectangle](https://www.lintcode.com/problem/maximal-rectangle/)|85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)|
 |512|[Decode Ways](https://www.lintcode.com/problem/decode-ways/)|91|[Decode Ways](https://leetcode.com/problems/decode-ways/)|
