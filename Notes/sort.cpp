@@ -57,8 +57,8 @@ vector<T> mergeSortedArrays(vector<vector<T>>& arrays) {
     return ret;
 }
 
-// Partition
-int partition(vector<int>& array, int pivot) {
+// Partition (QuickSelect)
+int QuickSelect(vector<int>& array, int pivot) {
     int lo = 0, hi = array.size() - 1;
     while(lo <= hi) {
         while(lo <= hi && array[hi] >= pivot) { --hi; }
@@ -67,7 +67,7 @@ int partition(vector<int>& array, int pivot) {
     }
     return lo;
 }
-int partition(vector<int>& array, int lo, int hi) {
+int QuickSelect(vector<int>& array, int lo, int hi) {
     int pivot = array[lo];
     while(lo < hi) {
         // --hi must go before ++lo to make sure array[lo] can be first replaced.
@@ -80,7 +80,7 @@ int partition(vector<int>& array, int lo, int hi) {
     return lo;
 }
 template<class Iterator, class Compare>
-Iterator partition(Iterator begin, Iterator end, const Compare& compare) {
+Iterator quickSelect(Iterator begin, Iterator end, const Compare& compare) {
     if (begin == end--) { return begin; }
     auto pivot = *begin;
     while (begin != end) {
@@ -97,7 +97,7 @@ Iterator partition(Iterator begin, Iterator end, const Compare& compare) {
 template<class Iterator, class Compare>
 void nth_element(Iterator begin, Iterator nth, Iterator end, const Compare& compare) {
     while (begin != end) {
-        Iterator p = partition(begin, end, compare);
+        Iterator p = quickSelect(begin, end, compare);
         if (distance(begin, p) < distance(begin, nth)) { begin = p + 1; }
         else { end = p; }
     }
@@ -107,7 +107,7 @@ void nth_element(Iterator begin, Iterator nth, Iterator end, const Compare& comp
 template<class Iterator, class Compare>
 void quickSort(Iterator begin, Iterator end, const Compare& compare) {
     while (begin != end) {
-        auto mid = partition(begin, end, compare);
+        auto mid = quickSelect(begin, end, compare);
         if (mid - begin < end - mid) {
             quickSort(begin, mid, compare);
             begin = mid + 1;
