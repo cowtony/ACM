@@ -86,6 +86,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |231|[Typeahead🔒](https://www.lintcode.com/problem/typeahead/)
 |232|[Tiny Url🔒](https://www.lintcode.com/problem/tiny-url/)|535|[Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/)|
 |234|[Web Crawler🔒](https://www.lintcode.com/problem/web-crawler/)
+|240|[Program Check](https://www.lintcode.com/problem/program-check/)
 |242|[Convert Binary Tree to Linked Lists by Depth](https://www.lintcode.com/problem/convert-binary-tree-to-linked-lists-by-depth/)
 |244|[Delete Char](https://www.lintcode.com/problem/delete-char/)
 |247|[Segment Tree Query II](https://www.lintcode.com/problem/segment-tree-query-ii/)
