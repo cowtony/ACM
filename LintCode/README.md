@@ -96,6 +96,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |258|[Map Jump](https://www.lintcode.com/problem/map-jump/)
 |259|[Find the largest Divisor](https://www.lintcode.com/problem/find-the-largest-divisor/)
 |260|[Same Diagonal Elements](https://www.lintcode.com/problem/same-diagonal-elements/)|766|[Toeplitz Matrix](https://leetcode.com/problems/toeplitz-matrix/)
+|266|[Expect Distance](https://www.lintcode.com/problem/expect-distance/)
 |360|[Sliding Window Median](https://www.lintcode.com/problem/sliding-window-median/)|480|[Sliding Window Median](https://leetcode.com/problems/sliding-window-median/)
 |362|[Sliding Window Maximum](https://www.lintcode.com/problem/sliding-window-maximum/)|239|[Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
 |363|[Trapping Rain Water](https://www.lintcode.com/problem/trapping-rain-water/)|42|[Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
