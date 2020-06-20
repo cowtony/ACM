@@ -52,6 +52,5 @@ bool hasCycle(const vector<vector<int>>& adjacency_list, vector<bool>& visited, 
             return true;
         }
     }
-    visited[node] = false;
-    return false;
+    return visited[node] = false;
 }
