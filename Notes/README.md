@@ -17,13 +17,11 @@
 ### Binary Search Tree (BST)
 - BST to sorted array: Recursive. [1379](https://leetcode.com/problems/find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree/)
 - Balanced BST (Red-Black Tree): Sorted Array to BBST: Use binary search + recursive. [108](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/), [1379](https://leetcode.com/problems/find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree/)
-### Union Find 并查集 [589](https://www.lintcode.com/problem/connecting-graph/description) [590](https://www.lintcode.com/problem/connecting-graph-ii/description) [591](https://www.lintcode.com/problem/connecting-graph-iii/description)
+### [Union Find](Union_Find.h) [589](https://www.lintcode.com/problem/connecting-graph/description) [590](https://www.lintcode.com/problem/connecting-graph-ii/description) [591](https://www.lintcode.com/problem/connecting-graph-iii/description)
 - Data Storage: `father[i] = j;`, `father["child"] = "parent";`
 - 路径压缩：在找顶点的同时把经过的点都指向顶点 O(n)->O(1)
 - Store additional information at root. [Trick]: when node are positive integers, additional information can be stored as negative value.
 - Cannot delete an edge.
-
-[Code Template](Union_Find.cpp)
 
 ### Trie (Prefix Tree) 字典树 [442](https://www.lintcode.com/problem/implement-trie-prefix-tree/description)
 [Code template](Trie.cpp)
@@ -80,9 +78,9 @@ General steps:
 ### Knapsack
 - One dimention for capacity.
 ## Graph
-### Minimum Spanning Tree 最小生成树
-- Kruskal Algorithm: Greedy + Union Find
-- Prim Algorithm
+### [Minimum Spanning Tree](graph_minimum_spanning_tree.h)
+- Kruskal Algorithm: Greedy + Union Find, O(ElogE).
+- Prim Algorithm: Greedy
 ### [Shortest Path](graph.cpp)
 - **Dijkstra:** One vertex to all other vertex. O((E+V)log(V))
 - **Floyd Warshall:** Each vertex to vertex. O(V^3)
