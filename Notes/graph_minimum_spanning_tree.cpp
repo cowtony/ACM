@@ -12,5 +12,8 @@ int minimumSpanningTree(vector<vector<int>>& edges) {
             uf.connect(edge[0], edge[1]);
         }
     }
+    if (uf.roots.size() != 1) {
+        return INT_MAX;
+    }
     return weight;
 }
