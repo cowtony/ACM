@@ -1,5 +1,6 @@
 #include "union_find.h"
 
+// Kruskal Algorithm. O(ElogE)
 int minimumSpanningTree(vector<vector<int>>& edges) {
     sort(edges.begin(), edges.end(), [](const vector<int>& a, const vector<int>& b) {
         return a[2] < b[2];
