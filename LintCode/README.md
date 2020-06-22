@@ -177,7 +177,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |510|[Maximal Rectangle](https://www.lintcode.com/problem/maximal-rectangle/)|85|[Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)|
 |512|[Decode Ways](https://www.lintcode.com/problem/decode-ways/)|91|[Decode Ways](https://leetcode.com/problems/decode-ways/)|
 |514|[Paint Fence](https://www.lintcode.com/problem/paint-fence/)|276|[Paint Fence](https://leetcode.com/problems/paint-fence/)|
-|516|[Paint House II](https://www.lintcode.com/problem/paint-house-ii/)|265|[Paint House II🔒](https://leetcode.com/problems/paint-house-ii/)|
+|516|[Paint House II](https://www.lintcode.com/problem/paint-house-ii/)|265|[Paint House II](https://leetcode.com/problems/paint-house-ii/)|
 |519|[Consistent Hashing🔒](https://www.lintcode.com/problem/consistent-hashing/)
 |520|[Consistent Hashing II🔒](https://www.lintcode.com/problem/consistent-hashing-ii/)
 |521|[Remove Duplicate Numbers in Array🔒](https://www.lintcode.com/problem/remove-duplicate-numbers-in-array/)
