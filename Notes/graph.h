@@ -10,40 +10,28 @@ void floyd(vector<vector<int>>& adjacency_matrix) {
 }
 
 // Dijkstra O((E+V)log(V))
-int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int K) {
-    vector<vector<pair<int, int>>> graph(n); // Next node and cost.
-    for (auto edge : flights) {
-        graph[edge[0]].emplace_back(edge[1], edge[2]);
-    }
+template<class V, class W>
+unordered_map<V, W> dijkstra(const unordered_map<V, vector<pair<W, V>>>& edges, int from) {
+    unordered_map<V, W> distance;
+    distance[from] = 0;
+    unordered_map<V, V> previous;
 
-    typedef tuple<int, int, int> Node; // distance, vertex, edges.
-    priority_queue<Node, vector<Node>, greater<Node>> pq;
-    pq.emplace(0, src, 0);
+    priority_queue<pair<W, V>, vector<pair<W, V>>, greater<pair<W, V>>> pq;
+    pq.push({0, from});
     while (!pq.empty()) {
-        auto [distance, vertex, stops] = pq.top();
+        int next = pq.top().second;
         pq.pop();
 
-        if(vertex == dst) {
-            return distance;
-        }
-        if(stops > K) {
+        if (edges.find(next) == edges.end()) {
             continue;
         }
-        for(auto edge : graph[vertex]) {
-            auto [next, weight] = edge;
-            pq.emplace(distance + weight, next, stops + 1);
+        for (const auto& edge : edges.at(next)) {
+            if (distance.find(edge.second) == distance.end() or distance[edge.second] > distance[next] + edge.first) {
+                distance[edge.second] = distance[next] + edge.first;
+                pq.push(edge);
+            }
         }
     }
-
-    return -1;
-}
-
-template<class V, class D>
-unordered_map<V, D> dijkstra(const unordered_map<V, vector<pair<V, D>>>& edges, int from) {
-    unordered_map<V, D> distance;
-    distance[from] = 0;
-
-
     return distance;
 }
 
