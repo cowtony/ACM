@@ -38,6 +38,15 @@ int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int
     return -1;
 }
 
+template<class V, class D>
+unordered_map<V, D> dijkstra(const unordered_map<V, vector<pair<V, D>>>& edges, int from) {
+    unordered_map<V, D> distance;
+    distance[from] = 0;
+
+
+    return distance;
+}
+
 // Check if graph has cycle
 bool hasCycle(const vector<vector<int>>& adjacency_list, vector<bool>& visited, int node = 0) {
     if (node < 0 or node >= visited.size()) {
