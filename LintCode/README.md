@@ -198,7 +198,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |543|[Kth Largest in N Arrays🔒](https://www.lintcode.com/problem/kth-largest-in-n-arrays/)
 |549|[Top K Frequent Words (Map Reduce)](https://www.lintcode.com/problem/top-k-frequent-words-map-reduce/)
 |551|[Nested List Weight Sum](https://www.lintcode.com/problem/nested-list-weight-sum/)|339|[Nested List Weight Sum](https://leetcode.com/problems/nested-list-weight-sum/)|
-|553|[Bomb Enemy](https://www.lintcode.com/problem/bomb-enemy/)|361|[Bomb Enemy🔒](https://leetcode.com/problems/bomb-enemy/)|
+|553|[Bomb Enemy](https://www.lintcode.com/problem/bomb-enemy/)|361|[Bomb Enemy](https://leetcode.com/problems/bomb-enemy/)|
 |554|[Sort Integers (Map Reduce)](https://www.lintcode.com/problem/sort-integers-map-reduce/)
 |555|[Counting Bloom Filter🔒](https://www.lintcode.com/problem/counting-bloom-filter/)
 |556|[Standard Bloom Filter🔒](https://www.lintcode.com/problem/standard-bloom-filter/)
