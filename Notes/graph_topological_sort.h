@@ -33,7 +33,6 @@ public:
         }
         return res.size() != indegree.size()? vector<T>() : res;
     }
-    
 private:
     unordered_map<T, int> indegree;
     unordered_map<T, unordered_set<T>> graph;
