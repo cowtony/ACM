@@ -255,7 +255,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |822|[Reverse Order Storage](https://www.lintcode.com/problem/reverse-order-storage/)
 |840|[Range Sum Query - Mutable](https://www.lintcode.com/problem/range-sum-query-mutable/)|307|[Range Sum Query - Mutable](https://leetcode.com/problems/range-sum-query-mutable/)|
 |846|[Multi-keyword Sort](https://www.lintcode.com/problem/multi-keyword-sort/)
-|860|[Number of Distinct Islands](https://www.lintcode.com/problem/number-of-distinct-islands/)|694|[Number of Distinct Islands🔒](https://leetcode.com/problems/number-of-distinct-islands/)|
+|860|[Number of Distinct Islands](https://www.lintcode.com/problem/number-of-distinct-islands/)|694|[Number of Distinct Islands](https://leetcode.com/problems/number-of-distinct-islands/)|
 |868|[Maximum Average Subarray](https://www.lintcode.com/problem/maximum-average-subarray/)|643|[Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/)|
 |874|[Maximum Vacation Days](https://www.lintcode.com/problem/maximum-vacation-days/)|568|[Maximum Vacation Days🔒](https://leetcode.com/problems/maximum-vacation-days/)|
 |888|[Valid Word Square](https://www.lintcode.com/problem/valid-word-square/)|422|[Valid Word Square🔒](https://leetcode.com/problems/valid-word-square/)|
