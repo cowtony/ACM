@@ -193,7 +193,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |535|[House Robber III](https://www.lintcode.com/problem/house-robber-iii/)|337|[House Robber III](https://leetcode.com/problems/house-robber-iii/)|
 |537|[N-Gram (Map Reduce)](https://www.lintcode.com/problem/n-gram-map-reduce/)
 |538|[Memcache🔒](https://www.lintcode.com/problem/memcache/)
-|540|[Zigzag Iterator](https://www.lintcode.com/problem/zigzag-iterator/)|281|[Zigzag Iterator🔒](https://leetcode.com/problems/zigzag-iterator/)|
+|540|[Zigzag Iterator](https://www.lintcode.com/problem/zigzag-iterator/)|281|[Zigzag Iterator](https://leetcode.com/problems/zigzag-iterator/)|
 |541|[Zigzag Iterator II🔒](https://www.lintcode.com/problem/zigzag-iterator-ii/)
 |543|[Kth Largest in N Arrays🔒](https://www.lintcode.com/problem/kth-largest-in-n-arrays/)
 |549|[Top K Frequent Words (Map Reduce)](https://www.lintcode.com/problem/top-k-frequent-words-map-reduce/)
