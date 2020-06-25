@@ -1,9 +1,6 @@
 class Solution {
 public:
     vector<int> prisonAfterNDays(vector<int>& cells, int N) {
-        if (N == 0) {
-            return cells;
-        }
         N = (N - 1) % 14 + 1;
         while (N--) {
             vector<int> next(cells.size(), 0);
