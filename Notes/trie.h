@@ -1,20 +1,19 @@
 template<class T = string>
 class Trie {
 public:
-    Trie() { root = new TrieNode(); }
+    Trie() { root = new Node(); }
     
-    void insert(const string& word) {
-        TrieNode* node = root;
+    void insert(const string& word, T data = T()) {
+        Node* node = root;
         for (char c : word) {
-            if (node->sons.find(c) == node->sons.end()) {
-                node->sons[c] = new TrieNode;
-            }
-            node = node->sons.at(c);
+            node = next(node, c);
         }
-        node->data = word;  // Store data here.
+        node->data = data;  // Store data here.
+        node->word = word;
     }
+    
     T get(const string& word) const {
-        TrieNode* node = root;
+        Node* node = root;
         for (char c : word) {
             if (node->sons.find(c) == node->sons.end()) {
                 return T();
@@ -23,9 +22,10 @@ public:
         }
         return node->data;
     }
+    
     vector<T> getAllPrefix(const string& word) const {
         vector<T> res;
-        TrieNode* node = root;
+        Node* node = root;
         for (char c : word.substr(0, word.length() - 1)) {
             if (node->sons.find(c) == node->sons.end()) {
                 return res;
@@ -37,9 +37,19 @@ public:
         }
         return res;
     }
-private:
-    struct TrieNode {
-        unordered_map<char, TrieNode*> sons;
-        T data;
+    
+// private:
+    struct Node {
+        unordered_map<char, Node*> sons;
+        string word;
+        T data = T();
     }*root;
+    
+    static Node* next(Node* node, char c) {
+        if (!node) { return node; }
+        if (node->sons.find(c) == node->sons.end()) {
+            node->sons[c] = new Node;
+        }
+        return node->sons.at(c);
+    }
 };
