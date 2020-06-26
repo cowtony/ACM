@@ -262,7 +262,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |902|[Kth Smallest Element in a BST](https://www.lintcode.com/problem/kth-smallest-element-in-a-bst/)|230|[Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)|
 |911|[Maximum Size Subarray Sum Equals k](https://www.lintcode.com/problem/maximum-size-subarray-sum-equals-k/)|325|[Maximum Size Subarray Sum Equals k🔒](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)|
 |914|[Flip Game](https://www.lintcode.com/problem/flip-game/)|293|[Flip Game🔒](https://leetcode.com/problems/flip-game/)|
-|919|[Meeting Rooms II](https://www.lintcode.com/problem/meeting-rooms-ii/)|253|[Meeting Rooms II🔒](https://leetcode.com/problems/meeting-rooms-ii/)|
+|919|[Meeting Rooms II](https://www.lintcode.com/problem/meeting-rooms-ii/)|253|[Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)|
 |920|[Meeting Rooms](https://www.lintcode.com/problem/meeting-rooms/)|252|[Meeting Rooms🔒](https://leetcode.com/problems/meeting-rooms/)|
 |927|[Reverse Words in a String II](https://www.lintcode.com/problem/reverse-words-in-a-string-ii/)|186|[Reverse Words in a String II🔒](https://leetcode.com/problems/reverse-words-in-a-string-ii/)|
 |945|[Task Scheduler](https://www.lintcode.com/problem/task-scheduler/)|621|[Task Scheduler](https://leetcode.com/problems/task-scheduler/)|
