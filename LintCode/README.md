@@ -96,6 +96,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |258|[Map Jump](https://www.lintcode.com/problem/map-jump/)
 |259|[Find the largest Divisor](https://www.lintcode.com/problem/find-the-largest-divisor/)
 |260|[Same Diagonal Elements](https://www.lintcode.com/problem/same-diagonal-elements/)|766|[Toeplitz Matrix](https://leetcode.com/problems/toeplitz-matrix/)
+|261|[Maximum Connected Area](https://www.lintcode.com/problem/maximum-connected-area/)
 |264|[Counting Universal Subarrays](https://www.lintcode.com/problem/counting-universal-subarrays/)
 |265|[Maximum Non-Negative Subarray](https://www.lintcode.com/problem/maximum-non-negative-subarray/)
 |266|[Expect Distance](https://www.lintcode.com/problem/expect-distance/)
