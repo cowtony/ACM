@@ -227,7 +227,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |602|[Russian Doll Envelopes](https://www.lintcode.com/problem/russian-doll-envelopes/)|354|[Russian Doll Envelopes](https://leetcode.com/problems/russian-doll-envelopes/)|
 |608|[Two Sum II - Input array is sorted](https://www.lintcode.com/problem/two-sum-ii-input-array-is-sorted/)|167|[Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)|
 |609|[Two Sum - Less than or equal to target🔒](https://www.lintcode.com/problem/two-sum-less-than-or-equal-to-target/)|||
-|617|[Maximum Average Subarray II](https://www.lintcode.com/problem/maximum-average-subarray-ii/)|644|[Maximum Average Subarray II🔒](https://leetcode.com/problems/maximum-average-subarray-ii/)|
+|617|[Maximum Average Subarray II](https://www.lintcode.com/problem/maximum-average-subarray-ii/)|644|[Maximum Average Subarray II](https://leetcode.com/problems/maximum-average-subarray-ii/)|
 |623|[K Edit Distance🔒](https://www.lintcode.com/problem/k-edit-distance/)|||
 |629|[Minimum Spanning Tree🔒](https://www.lintcode.com/problem/minimum-spanning-tree/)|1135|[Connecting Cities With Minimum Cost🔒](https://leetcode.com/problems/connecting-cities-with-minimum-cost/)|
 |631|[Maximal Square II🔒](https://www.lintcode.com/problem/maximal-square-ii/)
