@@ -1,3 +1,4 @@
+// Union Find with unordered_map.
 template <class T = int>
 class UnionFind {
 public:
@@ -27,6 +28,7 @@ public:
     unordered_map<T, T> father;
 };
 
+// Union Find with vector.
 class UnionFind {
 public:
     UnionFind(int n) : father(n) {
