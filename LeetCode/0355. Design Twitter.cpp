@@ -1,90 +1,44 @@
-struct TweetNode {
-    TweetNode(int t, int tweet) : time(t), tweet_id(tweet) {}
-    int time;
-    int tweet_id;
-    TweetNode* next = nullptr;
-    TweetNode* pre = nullptr;
-};
-
-struct MyCompare {
-  bool operator()(TweetNode* a, TweetNode* b) {
-    return a->time < b->time;
-  }
-};
-
-class LinkedList {
-public:
-    TweetNode* head = nullptr;
-    TweetNode* tail = nullptr;
-    int length = 0;
-    
-    void push_back(TweetNode node) {
-        if (tail == nullptr) {
-            TweetNode* n = new TweetNode(node);
-            head = n;
-            tail = n;
-        } else {
-            tail->next = new TweetNode(node);
-            tail = tail->next;
-        }
-        length++;
-    }
-    void push_front(TweetNode node) {
-        TweetNode* n = new TweetNode(node);
-        n->next = head;
-        head = n;
-        length++;
-    }
-    void pop_back() {
-        if (tail) {
-            TweetNode* temp = tail;
-            tail = tail->pre;
-            length--;
-            delete temp;
-            if (tail == nullptr) {
-                head = nullptr;
-            }
-        }
-    }
-};
-
-// Pull model.
 class Twitter {
 public:
     /** Initialize your data structure here. */
-    Twitter() {
-        
-    }
+    Twitter() {}
     
     /** Compose a new tweet. */
     void postTweet(int userId, int tweetId) {
-        // Create new user if not exist.
-        follows[userId].insert(userId);
-        posts[userId].push_front(TweetNode(time++, tweetId));
-        if (posts[userId].length > 10) {
+        follows[userId].insert(userId);  // Create new user if not exist.
+        
+        posts[userId].push_front({time++, tweetId});
+        if (posts[userId].size() > 10) {
             posts[userId].pop_back();
         }
     }
     
     /** Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent. */
     vector<int> getNewsFeed(int userId) {
-        vector<int> ret;
-        priority_queue<TweetNode*, vector<TweetNode*>, MyCompare> pq;
+        struct Node {
+            list<Tweet>::const_iterator begin, end;
+            bool operator < (const Node& n) const {
+                return begin->time < n.begin->time;
+            }
+        };
+        priority_queue<Node> pq;
+        
         for (int followee : follows[userId]) {
-            if (posts[followee].head) {
-                pq.push(posts[followee].head);
+            if (posts[followee].begin() != posts[followee].end()) {
+                pq.push({posts[followee].begin(), posts[followee].end()});
             }
         }
+        
+        vector<int> res;
         for (int i = 0; i < 10 and !pq.empty(); i++) {
-            TweetNode* node = pq.top();
+            auto [begin, end] = pq.top();
             pq.pop();
-            ret.push_back(node->tweet_id);
-            node = node->next;
-            if (node) {
-                pq.push(node);
+            res.push_back(begin->tweet_id);
+            if (++begin != end) {
+                pq.push({begin, end});
             }
         }
-        return ret;
+        return res;
     }
     
     /** Follower follows a followee. If the operation is invalid, it should be a no-op. */
@@ -101,9 +55,14 @@ public:
     }
     
 private:
+    struct Tweet {
+        int time;
+        int tweet_id;
+    };
+    
     int time = 0; // Internal clock.
     unordered_map<int, unordered_set<int>> follows;
-    unordered_map<int, LinkedList> posts; // Key = userID, Value = list of <time, tweetID> nodes.
+    unordered_map<int, list<Tweet>> posts; // Key = userID, Value = list of <time, tweetID> nodes.
 };
 
 /**
