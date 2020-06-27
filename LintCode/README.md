@@ -93,6 +93,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |248|[Count of Smaller Number](https://www.lintcode.com/problem/count-of-smaller-number/)
 |250|[Special Palindrome String](https://www.lintcode.com/problem/special-palindrome-string/)
 |253|[Minimum Type Way](https://www.lintcode.com/problem/minimum-type-way/)
+|257|[Longest String Chain](https://www.lintcode.com/problem/longest-string-chain/)|1048|[Longest String Chain](https://leetcode.com/problems/longest-string-chain/)
 |258|[Map Jump](https://www.lintcode.com/problem/map-jump/)
 |259|[Find the largest Divisor](https://www.lintcode.com/problem/find-the-largest-divisor/)
 |260|[Same Diagonal Elements](https://www.lintcode.com/problem/same-diagonal-elements/)|766|[Toeplitz Matrix](https://leetcode.com/problems/toeplitz-matrix/)
