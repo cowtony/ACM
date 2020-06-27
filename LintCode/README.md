@@ -222,7 +222,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |590|[Connecting Graph II🔒](https://www.lintcode.com/problem/connecting-graph-ii/)
 |591|[Connecting Graph III](https://www.lintcode.com/problem/connecting-graph-iii/)
 |593|[Stone Game II🔒](https://www.lintcode.com/problem/stone-game-ii/)
-|600|[Smallest Rectangle Enclosing Black Pixels](https://www.lintcode.com/problem/smallest-rectangle-enclosing-black-pixels/)|302|[Smallest Rectangle Enclosing Black Pixels🔒](https://leetcode.com/problems/smallest-rectangle-enclosing-black-pixels/)|
+|600|[Smallest Rectangle Enclosing Black Pixels](https://www.lintcode.com/problem/smallest-rectangle-enclosing-black-pixels/)|302|[Smallest Rectangle Enclosing Black Pixels](https://leetcode.com/problems/smallest-rectangle-enclosing-black-pixels/)|
 |601|[Flatten 2D Vector](https://www.lintcode.com/problem/flatten-2d-vector/)|251|[Flatten 2D Vector🔒](https://leetcode.com/problems/flatten-2d-vector/)|
 |602|[Russian Doll Envelopes](https://www.lintcode.com/problem/russian-doll-envelopes/)|354|[Russian Doll Envelopes](https://leetcode.com/problems/russian-doll-envelopes/)|
 |608|[Two Sum II - Input array is sorted](https://www.lintcode.com/problem/two-sum-ii-input-array-is-sorted/)|167|[Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)|
