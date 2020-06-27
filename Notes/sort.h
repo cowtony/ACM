@@ -93,7 +93,7 @@ Iterator quickSelect(Iterator begin, Iterator end, const Compare& compare) {
     return begin;
 }
 
-// TODO: introselect
+// TODO: introselect (introspective selection) =  quickselect + median of medians
 template<class Iterator, class Compare>
 void nth_element(Iterator begin, Iterator nth, Iterator end, const Compare& compare) {
     while (begin != end) {
