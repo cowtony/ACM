@@ -9,10 +9,7 @@ public:
         if (data.find(key) == data.end()) {
             return V();
         }
-        auto it = data.at(key).first;
-        frequent.push_front(*it);
-        frequent.erase(it);
-        data[key].first = frequent.begin();
+        update(key);
         return data.at(key).second;
     }
     
@@ -25,7 +22,7 @@ public:
     
     void put(K key, V value) {
         if (data.find(key) != data.end()) {
-            get(key);
+            update(key);
             data[key].second = value;
             return;
         }
@@ -42,4 +39,11 @@ private:
     int max_size;
     unordered_map<K, pair<typename list<K>::iterator, V>> data; // <key, <iterator, value>>
     list<K> frequent; // Store keys as doublely linked list. newest->oldest
+    
+    void update(K key) {
+        auto it = data.at(key).first;
+        frequent.push_front(*it);
+        frequent.erase(it);
+        data[key].first = frequent.begin();
+    }
 };
