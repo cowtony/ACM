@@ -83,7 +83,7 @@ General steps:
 - Prim Algorithm: Greedy
 ### [Shortest Path](graph.cpp)
 - **Dijkstra:** One vertex to all other vertex. O((E+V)log(V))
-- **Floyd Warshall:** Each vertex to vertex. O($ {V^3} $)
+- **Floyd Warshall:** Each vertex to vertex. O(<img src="https://render.githubusercontent.com/render/math?math=V^3">)
 
 ### [Topological Sort](graph_topological_sort.cpp)
 ### [Bipartite Graph](graph_bipartite.h)
