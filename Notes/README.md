@@ -89,7 +89,7 @@ General steps:
 ### [Bipartite Graph](graph_bipartite.h)
 - [Check if graph is bipartite](https://leetcode.com/problems/is-graph-bipartite/): Use BFS or DFS to color all nodes with only two colors.
 - [Matching](https://www.renfei.org/blog/bipartite-matching.html)
-- Weight Matching: KM Algorithm. O(n^3)
+- Weight Matching: Hungarian algorithm, KM algorithm. O(n^3)
 ## String
 - [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/): Manacher algorithm O(n).
 - [Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/): 2-dimention DP
