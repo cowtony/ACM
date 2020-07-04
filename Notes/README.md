@@ -83,13 +83,13 @@ General steps:
 - Prim Algorithm: Greedy
 ### [Shortest Path](graph.cpp)
 - **Dijkstra:** One vertex to all other vertex. O((E+V)log(V))
-- **Floyd Warshall:** Each vertex to vertex. O(V^3)
+- **Floyd Warshall:** Each vertex to vertex. O($V^3$)
 
 ### [Topological Sort](graph_topological_sort.cpp)
 ### [Bipartite Graph](graph_bipartite.h)
 - [Check if graph is bipartite](https://leetcode.com/problems/is-graph-bipartite/): Use BFS or DFS to color all nodes with only two colors.
 - [Matching](https://www.renfei.org/blog/bipartite-matching.html)
-- Weight Matching: [Hungarian(Kuhn–Munkres) algorithm](https://en.wikipedia.org/wiki/Hungarian_algorithm), O(n^3)
+- Weight Matching: [Hungarian(Kuhn–Munkres) algorithm](https://en.wikipedia.org/wiki/Hungarian_algorithm), O($n^3$)
 ## String
 - [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/): Manacher algorithm O(n).
 - [Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/): 2-dimention DP
