@@ -45,8 +45,8 @@ void next_permutation(vector<int>& nums) {
     reverse(nums.begin() + i + 1, nums.end());
 }
 
-// Discretization the array to a 0 - U range. Example: {5, 3, 10, 3, -5} -> {2, 1, 3, 1, 0}.
-unordered_map<int, int> discretization(vector<int>& nums) {
+// Discretization the array to a 0 - U range. return the mapping. Example: {5, 3, 10, 3, -5} -> {2, 1, 3, 1, 0}.
+unordered_map<int, int> discretization(const vector<int>& nums) {
     vector<int> discrte = nums;
     sort(discrte.begin(), discrte.end());
     unordered_map<int, int> mapping;
@@ -54,9 +54,6 @@ unordered_map<int, int> discretization(vector<int>& nums) {
         if (mapping.find(d) == mapping.end()) {
             mapping[d] = mapping.size();
         }
-    }
-    for (int& num : nums) {
-        num = mapping.at(num);
     }
     return mapping;
 }
