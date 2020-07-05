@@ -33,13 +33,10 @@ private:
 
 class BinaryIndexedTree2D {
 public:
-    BinaryIndexedTree2D(const vector<vector<int>>& nums) {
-        bit = vector<vector<int>>(nums.size() + 1, vector<int>(nums[0].size() + 1, 0));
-        for (int i = 0; i < nums.size(); i++) {
-            for (int j = 0; j < nums[0].size(); j++) {
-                add(i, j, nums[i][j]);
-            }
-        }
+    BinaryIndexedTree2D(int row, int col): bit(row + 1, vector<int>(col + 1, 0)), array(row, vector<int>(col, 0)) {}
+    
+    void update(int row, int col, int value) {
+        add(row, col, value - array[row][col]);
     }
     
     void add(int row, int col, int delta) {
@@ -48,6 +45,7 @@ public:
                 bit[r][c] += delta;
             }
         }
+        array[row][col] += delta;
     }
     
     int prefixSum(int row, int col) {
@@ -60,5 +58,5 @@ public:
         return sum;
     }
 private:
-    vector<vector<int>> bit;
+    vector<vector<int>> bit, array;
 };
