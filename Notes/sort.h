@@ -11,9 +11,7 @@ template<class Iterator, class Compare>
 int inplace_merge(const Iterator& begin, const Iterator& mid, const Iterator& end, const Compare& compare) {
     std::vector<typename Iterator::value_type> temp;
     temp.reserve(std::distance(begin, end));
-    Iterator l = begin;
-    Iterator r = mid;
-
+    Iterator l = begin, r = mid;
     int count = 0;
     Iterator left = mid, right = mid; // Special code.
 
