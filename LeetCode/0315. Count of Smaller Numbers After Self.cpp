@@ -62,21 +62,21 @@ class Solution {
 public:
     vector<int> countSmaller(vector<int>& nums) {
         // Discretization, make the large min-max range to unique limited number.
-        int range = discretization(nums).size();
+        auto mapping = discretization(nums);
         
         // Segment tree solution:
-        SegmentTree<> tree(0, range);  // Store each unique value's occurance.
+        SegmentTree<> tree(0, mapping.size());  // Store each unique value's occurance.
         vector<int> res;
         for (int i = nums.size() - 1; i >= 0; i--) {
-            res.push_back(tree.query(0, nums[i] - 1));
-            tree.update(nums[i], 1);
+            res.push_back(tree.query(0, mapping[nums[i]] - 1));
+            tree.update(mapping[nums[i]], 1);
         }
         
         reverse(res.begin(), res.end());
         return res;
     }
     
-    unordered_map<int, int> discretization(vector<int>& nums) {
+    unordered_map<int, int> discretization(const vector<int>& nums) {
         vector<int> discrte = nums;
         sort(discrte.begin(), discrte.end());
         unordered_map<int, int> mapping;
@@ -84,9 +84,6 @@ public:
             if (mapping.find(d) == mapping.end()) {
                 mapping[d] = mapping.size();
             }
-        }
-        for (int& num : nums) {
-            num = mapping.at(num);
         }
         return mapping;
     }
