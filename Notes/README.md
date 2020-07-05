@@ -4,7 +4,8 @@
 |       |Init|Update|Query|
 |:-----:|:--:|:----:|:---:|
 |Regular|O(n)|O(n)|O(1)|
-|[Binary Indexed Tree (Fenwick Tree)](binary_indexed_tree.h)|O(n)|O(log n)|O(log n)|
+|[Binary Indexed Tree (Fenwick Tree)](binary_indexed_tree.h) [307](https://leetcode.com/problems/range-sum-query-mutable/)|O(n)|O(log(n))|O(log(n))|
+|Binary Indexed Tree 2D [308](https://leetcode.com/problems/range-sum-query-2d-mutable/)|O(mn log(m)log(n))|O(log(m)log(n))|O(log(m)log(n))|
 ### Binary Indexed Tree (Fenwick Tree)
 ## Linked List
 - Recursive.
