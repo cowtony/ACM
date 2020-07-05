@@ -1,56 +1,3 @@
-template <class T>
-struct DListNode {
-    T data;
-    DListNode* pre = nullptr;
-    DListNode* next = nullptr;
-};
-
-template <class T>
-class DLinkedList {
-public:
-    DListNode<T>* head() const { return head_; }
-    DListNode<T>* tail() const { return tail_; }
-    bool empty() const { return head_ == nullptr; }
-    T pop_back(bool hard = false) { return erase(tail_, hard); }
-    
-    void push_front(DListNode<T>* node) {
-        if (node == nullptr) {
-            return;
-        }
-        node->pre = nullptr;
-        node->next = nullptr;
-        if (head_) {
-            head_->pre = node;
-            node->next = head_;
-            head_ = node;
-        } else {
-            head_ = node;
-            tail_ = node;
-        }
-    }    
-    
-    T erase(DListNode<T>* node, bool hard = false) {
-        if (node->pre) {
-            node->pre->next = node->next;
-        } else {
-            head_ = node->next;
-        }
-        if (node->next) {
-            node->next->pre = node->pre;
-        } else {
-            tail_ = node->pre;
-        }
-        T data = node->data;
-        if (hard) {
-            delete node;
-        }
-        return data;
-    }
-
-private:
-    DListNode<T> *head_ = nullptr, *tail_ = nullptr;
-};
-
 class LFUCache {
 public:
     LFUCache(int capacity) {
@@ -61,14 +8,8 @@ public:
         if (data.find(key) == data.end()) {
             return -1;
         }
-        DListNode<N>* node = data.at(key);
-        frequency.at(node->data.frequency).erase(node);
-        if (frequency.at(node->data.frequency).empty()) {
-            frequency.erase(node->data.frequency);
-        }
-        node->data.frequency++;
-        frequency[node->data.frequency].push_front(node);
-        return node->data.value;
+        updateFrequency(key);
+        return data[key]->value;
     }
     
     void put(int key, int value) {
@@ -76,31 +17,56 @@ public:
             return;
         }
         if (data.find(key) != data.end()) {
-            get(key); // Add frequency by 1.
-            data[key]->data.value = value;
-            return;
+            updateFrequency(key);
+            data[key]->value = value;
+        } else {
+            if (data.size() == max_size) {
+                eraseNode(--frequency.at(min_frequency).end());
+            }
+            addNode({key, value, 1});
+            min_frequency = 1;
         }
-        if (data.size() == max_size) {
-            DListNode<N>* node = frequency.begin()->second.tail();
-            int freq = node->data.frequency;
-            data.erase(node->data.key);
-            frequency.at(freq).erase(node, true);
-        }
-        
-        DListNode<N>* node = new DListNode<N>{{key, value, 0}};
-        data[key] = node;
-        frequency[0].push_front(node);
     }
 
 private:
-    struct N {
+    struct Node {
         int key;
         int value;
-        int frequency = 0;
+        int frequency = 1;
     };
+    
     int max_size;
-    unordered_map<int, DListNode<N>*> data; // <key, Node*>
-    map<int, DLinkedList<N>> frequency; // <frequency, DLinkedList>
+    int min_frequency = 0;
+    unordered_map<int, list<Node>::iterator> data; // <key, Node*>
+    unordered_map<int, list<Node>> frequency; // <frequency, DLinkedList>
+    
+    void updateFrequency(int key) {
+        if (data.find(key) == data.end()) {
+            return;
+        }
+        list<Node>::const_iterator it = data.at(key);
+        Node node = *it; 
+        eraseNode(it);
+        node.frequency++;
+        addNode(node);
+    }
+    
+    void eraseNode(const list<Node>::const_iterator& it) {
+        int freq = it->frequency;
+        data.erase(it->key);
+        frequency[freq].erase(it);
+        if (frequency[freq].empty()) {
+            frequency.erase(freq);
+            if (freq == min_frequency) {
+                min_frequency++;
+            }
+        }
+    }
+    
+    void addNode(const Node& node) {
+        frequency[node.frequency].emplace_front(node);
+        data[node.key] = frequency[node.frequency].begin();
+    }
 };
 
 /**
