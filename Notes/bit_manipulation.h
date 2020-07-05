@@ -5,4 +5,4 @@ int bitCount(int n) {
           n &= n - 1; 
       }
       return res;
-  }
+}
