@@ -13,18 +13,13 @@ public:
             }
         }
     }
-    
-    void update(int idx, int value) {
-        add(idx, value - array[idx]);
-    }
-    
+    void update(int idx, int value) { add(idx, value - array[idx]); }
     void add(int idx, int delta) {
         for (int i = idx + 1; i < bit.size(); i += i & -i) {
             bit[i] += delta;
         }
         array[idx] += delta;
     }
-    
     int prefixSum(int idx) {
         int res = 0;
         for (int i = idx + 1; i > 0; i -= i & -i) {
@@ -33,8 +28,7 @@ public:
         return res;
     }
     
-private:
-    vector<int> bit, array;
+private: vector<int> bit, array;
 };
 
 class BinaryIndexedTree2D {
