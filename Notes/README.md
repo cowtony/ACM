@@ -1,10 +1,7 @@
 # Data Structure
-## Array
-### Prefix Sum
-1D template
-2D template
+## [Array](array.h)
+### Prefix Sum: 1D, 2D
 ### Binary Indexed Tree (Fenwick Tree)
-
 ## Linked List
 - Recursive.
 - [Trick] Slow-Fast pointer: when slow pointer move 1 step, fast pointer move 2 steps. Noramlly used for checking if a loop exist. [876](https://leetcode.com/problems/middle-of-the-linked-list/), [141](https://leetcode.com/problems/linked-list-cycle/), [202](https://leetcode.com/problems/happy-number/)
