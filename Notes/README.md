@@ -4,7 +4,7 @@
 |       |Init|Update|Query|
 |:-----:|:--:|:----:|:---:|
 |Regular|O(n)|O(n)|O(1)|
-|[Binary Indexed Tree (Fenwick Tree)](binary_index_tree.h)|O()|O(log n)|O(log n)|
+|[Binary Indexed Tree (Fenwick Tree)](binary_indexed_tree.h)|O()|O(log n)|O(log n)|
 ### Binary Indexed Tree (Fenwick Tree)
 ## Linked List
 - Recursive.
