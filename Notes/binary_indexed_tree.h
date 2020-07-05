@@ -1,12 +1,13 @@
 // Fenwick Tree
 class BinaryIndexedTree {
 public:
+    BinaryIndexedTree(int size) : bit(size + 1, 0) {}
     BinaryIndexedTree(const vector<int>& nums) : bit(nums.size() + 1, 0) {
         for (int i = 0; i < nums.size(); i++) {
-	    bit[i + 1] = nums[i];
+	        bit[i + 1] = nums[i];
         }
-	for (int i = 1; i < bit.size(); i++) {
-	    int j = i + (i & -i);
+	    for (int i = 1; i < bit.size(); i++) {
+	        int j = i + (i & -i);
             if (j < bit.size()) {
                 bit[j] += bit[i];
             }
@@ -58,7 +59,6 @@ public:
         }
         return sum;
     }
-    
 private:
     vector<vector<int>> bit;
 };
