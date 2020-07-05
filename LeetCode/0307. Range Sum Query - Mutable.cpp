@@ -1,31 +1,28 @@
 class BinaryIndexedTree {
 public:
+    BinaryIndexedTree(int size) : bit(size + 1, 0) {}
     BinaryIndexedTree(const vector<int>& nums) : bit(nums.size() + 1, 0) {
-		for (int i = 0; i < nums.size(); i++) {
-			bit[i + 1] = nums[i];
-		}
-		for (int i = 1; i < bit.size(); i++) {
-			int j = i + (i & -i);
-			if (j < bit.size()) {
-				bit[j] += bit[i];
-			}
-		}
+        for (int i = 0; i < nums.size(); i++) {
+	        bit[i + 1] = nums[i];
+        }
+	    for (int i = 1; i < bit.size(); i++) {
+	        int j = i + (i & -i);
+            if (j < bit.size()) {
+                bit[j] += bit[i];
+            }
+        }
     }
     
     void add(int idx, int delta) {
-        idx++;
-        while (idx < bit.size()) {
-            bit[idx] += delta;
-            idx += idx & -idx;
+        for (int i = idx + 1; i < bit.size(); i += i & -i) {
+            bit[i] += delta;
         }
     }
     
     int prefixSum(int idx) {
-        idx++;
         int res = 0;
-        while (idx > 0) {
-            res += bit[idx];
-            idx -= idx & -idx;
+        for (int i = idx + 1; i > 0; i -= i & -i) {
+            res += bit[i];
         }
         return res;
     }
