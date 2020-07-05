@@ -1,33 +1,32 @@
-template<class T = int>
+template<class R = int, class T = int>  // Range and data.
 class SegmentTree {
 public:
-    SegmentTree(int start, int end, T data = T()) {
+    SegmentTree(R start, R end, T data = T()) {
         root = build(start, end, data);
     }
-    void update(int a, T delta = T()) { update(root, a, delta); }
-    T query(int start, int end) { return query(root, start, end); }
+    void update(R pos, T delta = T()) { update(root, pos, delta); }
+    T query(R start, R end) { return query(root, start, end); }
     
 private:
-    struct SegmentTreeNode {
-        int start, end;
+    struct Node {
+        R start, end;
         T data; // min, max, count, etc.
-        SegmentTreeNode *left = nullptr, *right = nullptr;
-    };
-    SegmentTreeNode* root;
+        Node *left = nullptr, *right = nullptr;
+    }*root;
     
-    static SegmentTreeNode* build(int start, int end, T default_value) {
+    static Node* build(R start, R end, T default_value) {
         if (start > end) {
             return nullptr;
         }
-        SegmentTreeNode *root = new SegmentTreeNode{start, end, default_value};
+        Node *root = new Node{start, end, default_value};
         if (start < end) {
-            root->left = build(start, (start + end) / 2, default_value);
-            root->right = build((start + end) / 2 + 1, end, default_value);
+            root->left = build(start, start + (end - start) / 2, default_value);
+            root->right = build(start + (end - start) / 2 + 1, end, default_value);
         }
         return root;
     }
     
-    static void update(SegmentTreeNode* root, int pos, T delta) {
+    static void update(Node* root, R pos, T delta) {
         if (!root) { return; }
         if (pos < root->start or pos > root->end) {
             return;
@@ -43,7 +42,7 @@ private:
         }
     }
     
-    static T query(SegmentTreeNode* root, int start, int end) {
+    static T query(Node* root, R start, R end) {
         if (!root) { return T(); }
         if (start <= root->start and end >= root->end) {
             return root->data;
@@ -51,8 +50,10 @@ private:
         if (start > root->end or end < root->start) {
             return T(); // Sum Tree.
         }
-        T left = query(root->left, start, end);
-        T right = query(root->right, start, end);
+        return operation(query(root->left, start, end), query(root->right, start, end)); 
+    }
+    
+    static T operation(T left, T right) {
         return left + right; // Sum Tree.
     }
 };
@@ -61,7 +62,7 @@ class Solution {
 public:
     vector<int> countSmaller(vector<int>& nums) {
         // Discretization, make the large min-max range to unique limited number.
-        int range = discretization(nums);
+        int range = discretization(nums).size();
         
         // Segment tree solution:
         SegmentTree<> tree(0, range);  // Store each unique value's occurance.
@@ -75,19 +76,18 @@ public:
         return res;
     }
     
-    int discretization(vector<int>& nums) {
+    unordered_map<int, int> discretization(vector<int>& nums) {
         vector<int> discrte = nums;
         sort(discrte.begin(), discrte.end());
-        int unique = 0;
-        map<int, int> m;
+        unordered_map<int, int> mapping;
         for (int d : discrte) {
-            if (m.find(d) == m.end()) {
-                m[d] = unique++;
+            if (mapping.find(d) == mapping.end()) {
+                mapping[d] = mapping.size();
             }
         }
         for (int& num : nums) {
-            num = m.at(num);
+            num = mapping.at(num);
         }
-        return unique;
+        return mapping;
     }
 };
