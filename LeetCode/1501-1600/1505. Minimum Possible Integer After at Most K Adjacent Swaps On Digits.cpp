@@ -1,48 +1,62 @@
+class BinaryIndexedTree {
+public:
+    BinaryIndexedTree(int size) : bit(size + 1, 0) {}
+    BinaryIndexedTree(const vector<int>& nums) : bit(nums.size() + 1, 0) {
+        for (int i = 0; i < nums.size(); i++) {
+	        bit[i + 1] = nums[i];
+        }
+	    for (int i = 1; i < bit.size(); i++) {
+	        int j = i + (i & -i);
+            if (j < bit.size()) {
+                bit[j] += bit[i];
+            }
+        }
+    }
+    
+    void add(int idx, int delta) {
+        for (int i = idx + 1; i < bit.size(); i += i & -i) {
+            bit[i] += delta;
+        }
+    }
+    
+    int prefixSum(int idx) {
+        int res = 0;
+        for (int i = idx + 1; i > 0; i -= i & -i) {
+            res += bit[i];
+        }
+        return res;
+    }
+private:
+    vector<int> bit;
+};
+
 class Solution {
 public:
     string minInteger(string num, int k) {
-        if (k == 0 or num.empty()) {
-            return num;
-        }
-        char pivot = num[0];
-        vector<vector<int>> indexs(pivot - '0');
-        for (int i = 1; i < num.size(); i++) {
-            if (num[i] < pivot) {
-                indexs[num[i] - '0'].push_back(i);
-            }
+        vector<deque<int>> indexs(10);
+        for (int i = 0; i < num.size(); i++) {
+            indexs[num[i] - '0'].push_back(i);
         }
         
-        string head;
-        set<int> used;
-        for (int d = 0; d < pivot - '0'; d++) {
-            int count_pre = 0;
-            auto it = used.begin();
-            for (int idx : indexs[d]) {
-                while (it != used.end() and *it < idx) {
-                    it++;
-                    count_pre++;
+        BinaryIndexedTree bit(num.size());
+        
+        string res;
+        while (res.size() < num.size()) {
+            for (int digit = 0; digit <= 9; digit++) {
+                if (indexs[digit].empty()) {
+                    continue;
                 }
-                int move = idx - count_pre;
+                int idx = indexs[digit].front();
+                int move = idx - bit.prefixSum(idx);
                 if (move <= k) {
                     k -= move;
-                    head += char('0' + d);
-                    num[idx] = 'u'; // used
-                    used.insert(idx);
-                    count_pre++;
+                    res.push_back('0' + digit);
+                    bit.add(idx, 1);
+                    indexs[digit].pop_front();
+                    break;
                 }
             }
         }
-
-        if (head.empty()) {
-            return num[0] + minInteger(num.substr(1), k);
-        }
-        
-        string remain;
-        for (char c : num) {
-            if (c != 'u') {
-                remain += c;
-            }
-        }
-        return head + minInteger(remain, k);
+        return res;
     }
 };
