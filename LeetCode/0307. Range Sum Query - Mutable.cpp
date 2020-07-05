@@ -1,9 +1,9 @@
 class BinaryIndexedTree {
 public:
-    BinaryIndexedTree(int size) : bit(size + 1, 0) {}
-    BinaryIndexedTree(const vector<int>& nums) : bit(nums.size() + 1, 0) {
+    BinaryIndexedTree(int size) : bit(size + 1, 0), array(size, 0) {}
+    BinaryIndexedTree(const vector<int>& nums) : BinaryIndexedTree(nums.size()) {
         for (int i = 0; i < nums.size(); i++) {
-	        bit[i + 1] = nums[i];
+            bit[i + 1] = array[i] = nums[i];
         }
 	    for (int i = 1; i < bit.size(); i++) {
 	        int j = i + (i & -i);
@@ -13,10 +13,15 @@ public:
         }
     }
     
+    void update(int idx, int value) {
+        add(idx, value - array[idx]);
+    }
+    
     void add(int idx, int delta) {
         for (int i = idx + 1; i < bit.size(); i += i & -i) {
             bit[i] += delta;
         }
+        array[idx] += delta;
     }
     
     int prefixSum(int idx) {
@@ -26,26 +31,25 @@ public:
         }
         return res;
     }
+    
 private:
-    vector<int> bit;
+    vector<int> bit, array;
 };
 
 class NumArray {
 public:
-    NumArray(vector<int>& nums) : arr(nums), fenwick_tree(nums) {
+    NumArray(vector<int>& nums): fenwick_tree(nums) {
         
     }
     
     void update(int i, int val) {
-        fenwick_tree.add(i, val - arr[i]);
-        arr[i] = val;
+        fenwick_tree.update(i, val);
     }
     
     int sumRange(int i, int j) {
         return fenwick_tree.prefixSum(j) - fenwick_tree.prefixSum(i - 1); 
     }
 private:
-    vector<int>& arr;
     BinaryIndexedTree fenwick_tree;
 };
 
