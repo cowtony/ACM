@@ -212,13 +212,13 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |558|[Sliding Window Matrix Maximum🔒](https://www.lintcode.com/problem/sliding-window-matrix-maximum/)
 |559|[Trie Service🔒](https://www.lintcode.com/problem/trie-service/)
 |560|[Friendship Service🔒](https://www.lintcode.com/problem/friendship-service/)
-|564|[Combination Sum IV](https://www.lintcode.com/problem/combination-sum-iv/)|377|[Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)|
+|564|[Combination Sum IV](https://www.lintcode.com/problem/combination-sum-iv/)|377|[Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)
 |565|[Heart Beat🔒](https://www.lintcode.com/problem/heart-beat/)
 |566|[GFS Client🔒](https://www.lintcode.com/problem/gfs-client/)
 |570|[Find the Missing Number II](https://www.lintcode.com/problem/find-the-missing-number-ii/)
 |573|[Build Post Office II🔒](https://www.lintcode.com/problem/build-post-office-ii/)
 |574|[Build Post Office🔒](https://www.lintcode.com/problem/build-post-office/)
-|575|[Decode String](https://www.lintcode.com/problem/decode-string/)
+|575|[Decode String](https://www.lintcode.com/problem/decode-string/)|394|[Decode String](https://leetcode.com/problems/decode-string/)
 |581|[Longest Repeating Subsequence🔒](https://www.lintcode.com/problem/longest-repeating-subsequence/)
 |586|[Sqrt(x) II🔒](https://www.lintcode.com/problem/sqrtx-ii/)
 |588|[Partition Equal Subset Sum](https://www.lintcode.com/problem/partition-equal-subset-sum/)|416|[Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)|
