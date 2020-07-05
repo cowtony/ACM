@@ -20,8 +20,7 @@
 - Store additional information at root. [Trick]: when node are positive integers, additional information can be stored as negative value.
 - Cannot delete an edge.
 
-### Trie (Prefix Tree) 字典树 [442](https://www.lintcode.com/problem/implement-trie-prefix-tree/description)
-[Code template](Trie.cpp)
+### [Trie](trie.h) (Prefix Tree) [442](https://www.lintcode.com/problem/implement-trie-prefix-tree/)
 ### Segment Tree [LeetCode](https://leetcode.com/problemset/all/?topicSlugs=segment-tree)
 
 ### Inorder, Preorder, Postorder traversal [Template](tree.cpp)
