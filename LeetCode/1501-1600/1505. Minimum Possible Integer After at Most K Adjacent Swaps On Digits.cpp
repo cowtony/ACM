@@ -39,7 +39,6 @@ public:
         }
         
         BinaryIndexedTree bit(num.size());
-        
         string res;
         while (res.size() < num.size()) {
             for (int digit = 0; digit <= 9; digit++) {
