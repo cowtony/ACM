@@ -257,7 +257,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |797|[Reach a Number](https://www.lintcode.com/problem/reach-a-number/)|754|[Reach a Number](https://leetcode.com/problems/reach-a-number/)|
 |804|[Number of Distinct Islands II](https://www.lintcode.com/problem/number-of-distinct-islands-ii/)|711|[Number of Distinct Islands II🔒](https://leetcode.com/problems/number-of-distinct-islands-ii/)|
 |805|[Maximum Association Set🔒](https://www.lintcode.com/problem/maximum-association-set/)
-|817|[Range Sum Query 2D - Mutable](https://www.lintcode.com/problem/range-sum-query-2d-mutable/)|308|[Range Sum Query 2D - Mutable🔒](https://leetcode.com/problems/range-sum-query-2d-mutable/)|
+|817|[Range Sum Query 2D - Mutable](https://www.lintcode.com/problem/range-sum-query-2d-mutable/)|308|[Range Sum Query 2D - Mutable](https://leetcode.com/problems/range-sum-query-2d-mutable/)|
 |821|[Time Intersection🔒](https://www.lintcode.com/problem/time-intersection/)|986|[Interval List Intersections](https://leetcode.com/problems/interval-list-intersections/)|
 |822|[Reverse Order Storage](https://www.lintcode.com/problem/reverse-order-storage/)
 |840|[Range Sum Query - Mutable](https://www.lintcode.com/problem/range-sum-query-mutable/)|307|[Range Sum Query - Mutable](https://leetcode.com/problems/range-sum-query-mutable/)|
