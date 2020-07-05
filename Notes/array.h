@@ -44,3 +44,20 @@ void next_permutation(vector<int>& nums) {
     // Reverse the rest line.
     reverse(nums.begin() + i + 1, nums.end());
 }
+
+// Discretization the array to a 0 - U range. Example: {5, 3, 10, -5} -> {2, 1, 3, 0}.
+int discretization(vector<int>& nums) {
+    vector<int> discrte = nums;
+    sort(discrte.begin(), discrte.end());
+    int unique = 0;
+    map<int, int> m;
+    for (int d : discrte) {
+        if (m.find(d) == m.end()) {
+            m[d] = unique++;
+        }
+    }
+    for (int& num : nums) {
+        num = m.at(num);
+    }
+    return unique;
+}
