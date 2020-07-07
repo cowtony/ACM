@@ -12,23 +12,21 @@
 class Solution {
 public:
     int rob(TreeNode* root) {
-        int rob, not_rob;
-        dfs(root, rob, not_rob);
-        return max(rob, not_rob);
+        auto res = dfs(root);
+        return max(res.first, res.second);
     }
     
-    void dfs(TreeNode* root, int& rob, int& not_rob) {
-        rob = 0;
-        not_rob = 0;
+    pair<int, int> dfs(TreeNode* root) {
         if (!root) {
-            return;
+            return {0, 0};
         }
-        int rob_left, not_rob_left;
-        dfs(root->left, rob_left, not_rob_left);
-        int rob_right, not_rob_right;
-        dfs(root->right, rob_right, not_rob_right);
         
-        rob = root->val + not_rob_left + not_rob_right;
-        not_rob = max(rob_left, not_rob_left) + max(rob_right, not_rob_right);
+        auto left = dfs(root->left);
+        auto right = dfs(root->right);
+
+        int rob = root->val + left.second + right.second;
+        int skip = max(left.first, left.second) + max(right.first, right.second);
+        return {rob, skip};
+
     }
 };
