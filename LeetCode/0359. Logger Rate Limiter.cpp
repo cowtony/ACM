@@ -9,8 +9,8 @@ public:
         If this method returns false, the message will not be printed.
         The timestamp is in seconds granularity. */
     bool shouldPrintMessage(int timestamp, string message) {
-        if (um.find(message) == um.end() or timestamp - um[message] >= 10) {
-            um[message] = timestamp;
+        if (last_printed.find(message) == last_printed.end() or timestamp - last_printed[message] >= 10) {
+            last_printed[message] = timestamp;
             return true;
         } else {
             return false;
@@ -18,7 +18,7 @@ public:
     }
 
 private:
-    unordered_map<string, int> um;
+    unordered_map<string, int> last_printed;
 };
 
 /**
