@@ -1,16 +1,14 @@
 class Solution {
 public:
     int rob(vector<int>& nums) {
-        int yes = 0;
-        int no = 0;
-        int all_max = yes;
+        int robbed = 0;
+        int skipped = 0;
+
         for (int num : nums) {
-            int temp = yes;
-            yes = no + num;
-            no = max(no, temp);
-            all_max = max(all_max, yes);
-            all_max = max(all_max, no);
+            int previous_robbed = robbed;
+            robbed = skipped + num;
+            skipped = max(skipped, previous_robbed);
         }
-        return all_max;
+        return max(robbed, skipped);
     }
 };
