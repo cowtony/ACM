@@ -239,10 +239,10 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |634|[Word Squares](https://www.lintcode.com/problem/word-squares/)
 |635|[Boggle Game](https://www.lintcode.com/problem/boggle-game/)
 |640|[One Edit Distance](https://www.lintcode.com/problem/one-edit-distance/)|161|[One Edit Distance](https://leetcode.com/problems/one-edit-distance/)|
-|641|[Missing Ranges](https://www.lintcode.com/problem/missing-ranges/)|163|[Missing Ranges🔒](https://leetcode.com/problems/missing-ranges/)|
+|641|[Missing Ranges](https://www.lintcode.com/problem/missing-ranges/)|163|[Missing Ranges](https://leetcode.com/problems/missing-ranges/)|
 |643|[Longest Absolute File Path](https://www.lintcode.com/problem/longest-absolute-file-path/)|388|[Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/)
 |647|[Find All Anagrams in a String](https://www.lintcode.com/problem/find-all-anagrams-in-a-string/)|438|[Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
-|654|[Sparse Matrix Multiplication](https://www.lintcode.com/problem/sparse-matrix-multiplication/)|311|[Sparse Matrix Multiplication🔒](https://leetcode.com/problems/sparse-matrix-multiplication/)
+|654|[Sparse Matrix Multiplication](https://www.lintcode.com/problem/sparse-matrix-multiplication/)|311|[Sparse Matrix Multiplication](https://leetcode.com/problems/sparse-matrix-multiplication/)
 |655|[Add Strings](https://www.lintcode.com/problem/add-strings/)
 |659|[Encode and Decode Strings](https://www.lintcode.com/problem/encode-and-decode-strings/)|271|[Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)
 |665|[Range Sum Query 2D - Immutable](https://www.lintcode.com/problem/range-sum-query-2d-immutable/)|304|[Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/)
@@ -250,7 +250,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |669|[Coin Change](https://www.lintcode.com/problem/coin-change/)|322|[Coin Change](https://leetcode.com/problems/coin-change/)
 |676|[Decode Ways II](https://www.lintcode.com/problem/decode-ways-ii/)|639|[Decode Ways II](https://leetcode.com/problems/decode-ways-ii/)|
 |703|[Folding Array](https://www.lintcode.com/problem/folding-array/)
-|707|[Optimal Account Balancing](https://www.lintcode.com/problem/optimal-account-balancing/)|465|[Optimal Account Balancing🔒](https://leetcode.com/problems/optimal-account-balancing/)|
+|707|[Optimal Account Balancing](https://www.lintcode.com/problem/optimal-account-balancing/)|465|[Optimal Account Balancing](https://leetcode.com/problems/optimal-account-balancing/)|
 |722|[Maximum Subarray VI🔒](https://www.lintcode.com/problem/maximum-subarray-vi/)
 |740|[Coin Change 2](https://www.lintcode.com/problem/coin-change-2/)|518|[Coin Change 2](https://leetcode.com/problems/coin-change-2/)|
 |760|[Binary Tree Right Side View](https://www.lintcode.com/problem/binary-tree-right-side-view/)|199|[Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/)|
