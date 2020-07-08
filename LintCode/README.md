@@ -264,17 +264,17 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |846|[Multi-keyword Sort](https://www.lintcode.com/problem/multi-keyword-sort/)
 |860|[Number of Distinct Islands](https://www.lintcode.com/problem/number-of-distinct-islands/)|694|[Number of Distinct Islands](https://leetcode.com/problems/number-of-distinct-islands/)|
 |868|[Maximum Average Subarray](https://www.lintcode.com/problem/maximum-average-subarray/)|643|[Maximum Average Subarray I](https://leetcode.com/problems/maximum-average-subarray-i/)|
-|874|[Maximum Vacation Days](https://www.lintcode.com/problem/maximum-vacation-days/)|568|[Maximum Vacation Days🔒](https://leetcode.com/problems/maximum-vacation-days/)|
-|888|[Valid Word Square](https://www.lintcode.com/problem/valid-word-square/)|422|[Valid Word Square🔒](https://leetcode.com/problems/valid-word-square/)|
+|874|[Maximum Vacation Days](https://www.lintcode.com/problem/maximum-vacation-days/)|568|[Maximum Vacation Days](https://leetcode.com/problems/maximum-vacation-days/)|
+|888|[Valid Word Square](https://www.lintcode.com/problem/valid-word-square/)|422|[Valid Word Square](https://leetcode.com/problems/valid-word-square/)|
 |902|[Kth Smallest Element in a BST](https://www.lintcode.com/problem/kth-smallest-element-in-a-bst/)|230|[Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)|
-|911|[Maximum Size Subarray Sum Equals k](https://www.lintcode.com/problem/maximum-size-subarray-sum-equals-k/)|325|[Maximum Size Subarray Sum Equals k🔒](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)|
-|914|[Flip Game](https://www.lintcode.com/problem/flip-game/)|293|[Flip Game🔒](https://leetcode.com/problems/flip-game/)|
+|911|[Maximum Size Subarray Sum Equals k](https://www.lintcode.com/problem/maximum-size-subarray-sum-equals-k/)|325|[Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)|
+|914|[Flip Game](https://www.lintcode.com/problem/flip-game/)|293|[Flip Game](https://leetcode.com/problems/flip-game/)|
 |919|[Meeting Rooms II](https://www.lintcode.com/problem/meeting-rooms-ii/)|253|[Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)|
-|920|[Meeting Rooms](https://www.lintcode.com/problem/meeting-rooms/)|252|[Meeting Rooms🔒](https://leetcode.com/problems/meeting-rooms/)|
-|927|[Reverse Words in a String II](https://www.lintcode.com/problem/reverse-words-in-a-string-ii/)|186|[Reverse Words in a String II🔒](https://leetcode.com/problems/reverse-words-in-a-string-ii/)|
+|920|[Meeting Rooms](https://www.lintcode.com/problem/meeting-rooms/)|252|[Meeting Rooms](https://leetcode.com/problems/meeting-rooms/)|
+|927|[Reverse Words in a String II](https://www.lintcode.com/problem/reverse-words-in-a-string-ii/)|186|[Reverse Words in a String II](https://leetcode.com/problems/reverse-words-in-a-string-ii/)|
 |945|[Task Scheduler](https://www.lintcode.com/problem/task-scheduler/)|621|[Task Scheduler](https://leetcode.com/problems/task-scheduler/)|
 |990|[Beautiful Arrangement](https://www.lintcode.com/problem/beautiful-arrangement/)|526|[Beautiful Arrangement](https://leetcode.com/problems/beautiful-arrangement/)|
-|1017|[Similar RGB Color](https://www.lintcode.com/problem/similar-rgb-color/)|800|[Similar RGB Color🔒](https://leetcode.com/problems/similar-rgb-color/)|
+|1017|[Similar RGB Color](https://www.lintcode.com/problem/similar-rgb-color/)|800|[Similar RGB Color](https://leetcode.com/problems/similar-rgb-color/)|
 |1032|[Letter Case Permutation](https://www.lintcode.com/problem/letter-case-permutation/)|784|[Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)|
 |1038|[Jewels And Stones](https://www.lintcode.com/problem/jewels-and-stones/)|771|[Jewels And Stones](https://leetcode.com/problems/jewels-and-stones/)|
 |1042|[Toeplitz Matrix](https://www.lintcode.com/problem/toeplitz-matrix/)|766|[Toeplitz Matrix](https://leetcode.com/problems/toeplitz-matrix/)|
