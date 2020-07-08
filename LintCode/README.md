@@ -238,7 +238,7 @@ Reference: [LintCode LeetCode 对应题目全表](https://www.1point3acres.com/b
 |633|[Find the Duplicate Number](https://www.lintcode.com/problem/find-the-duplicate-number/)|287|[Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/)|
 |634|[Word Squares](https://www.lintcode.com/problem/word-squares/)
 |635|[Boggle Game](https://www.lintcode.com/problem/boggle-game/)
-|640|[One Edit Distance](https://www.lintcode.com/problem/one-edit-distance/)|161|[One Edit Distance🔒](https://leetcode.com/problems/one-edit-distance/)|
+|640|[One Edit Distance](https://www.lintcode.com/problem/one-edit-distance/)|161|[One Edit Distance](https://leetcode.com/problems/one-edit-distance/)|
 |641|[Missing Ranges](https://www.lintcode.com/problem/missing-ranges/)|163|[Missing Ranges🔒](https://leetcode.com/problems/missing-ranges/)|
 |643|[Longest Absolute File Path](https://www.lintcode.com/problem/longest-absolute-file-path/)|388|[Longest Absolute File Path](https://leetcode.com/problems/longest-absolute-file-path/)
 |647|[Find All Anagrams in a String](https://www.lintcode.com/problem/find-all-anagrams-in-a-string/)|438|[Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
