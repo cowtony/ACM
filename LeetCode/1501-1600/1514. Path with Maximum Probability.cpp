@@ -13,8 +13,6 @@ public:
         } else {
             return pow(2.7182818284590452353602874713527, -dist[end]);
         }
-        
-        
     }
     
     template<class V, class W>
@@ -28,11 +26,12 @@ public:
         while (!pq.empty()) {
             int next = pq.top().second;
             pq.pop();
-
-            for (const auto& edge : edges.at(next)) {
-                if (distance[edge.second] == 1e10 or distance[edge.second] > distance[next] + edge.first) {
-                    distance[edge.second] = distance[next] + edge.first;
-                    pq.push(edge);
+            if (distance[next] != 1e10) {
+                for (const auto& edge : edges.at(next)) {
+                    if (distance[edge.second] == 1e10 or distance[edge.second] > distance[next] + edge.first) {
+                        distance[edge.second] = distance[next] + edge.first;
+                        pq.push(edge);
+                    }
                 }
             }
         }
