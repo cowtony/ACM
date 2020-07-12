@@ -22,7 +22,7 @@ unordered_map<V, W> dijkstra(const unordered_map<V, vector<pair<W, V>>>& edges, 
         int next = pq.top().second;
         pq.pop();
 
-        if (edges.find(next) == edges.end()) {
+        if (edges.find(next) == edges.end() or distance.find(next) == distance.end()) {
             continue;
         }
         for (const auto& edge : edges.at(next)) {
