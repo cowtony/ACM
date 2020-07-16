@@ -3,7 +3,7 @@ public:
     double myPow(double x, int n) {
         double result = 1;
         if (n < 0) {
-            n = -n - 1;  // prevent n = -2^31
+            n = -1 - n;  // prevent n = -2^31
             x = 1 / x;
             result = x;
         }
