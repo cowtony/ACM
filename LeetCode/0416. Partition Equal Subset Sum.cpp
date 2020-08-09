@@ -10,16 +10,18 @@ public:
             return false;
         }
         target /= 2;
-        
-        vector<bool> dp(target + 1, false);
-        dp[0] = true;
 
-        for (int num : nums) {
-            for (int i = target; i >= num; i--) {
-                dp[i] = dp[i] or dp[i - num];
+        return knapsack01(nums, nums, target) == target;
+    }
+    
+    int knapsack01(const vector<int>& weight, const vector<int>& value, int capacity) {
+        vector<int> dp(capacity + 1, 0);
+        dp[0] = 0;
+        for(int i = 0; i < weight.size(); i++) {
+            for(int j = capacity; j >= weight[i]; j--) {
+                dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
             }
         }
-
-        return dp[target];
+        return dp[capacity];
     }
 };
