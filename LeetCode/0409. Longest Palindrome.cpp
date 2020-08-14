@@ -1,21 +1,19 @@
 class Solution {
 public:
     int longestPalindrome(string s) {
-        map<char, int> dict;
-        for (char c : s)
-        {
-            dict[c]++;
+        vector<int> count(256, 0);
+        for (char c : s) {
+            count[c]++;
         }
-
-        int hasOdd = 0;
-        int length = 0;
-        for (pair<char, int> p : dict)
-        {
-            length += (p.second / 2) * 2;
-
-            if (p.second % 2 == 1)
-                hasOdd = 1;
+        
+        bool hasOdd = false;
+        int res = 0;
+        for (int c : count) {
+            res += c - c % 2;
+            if (c % 2 == 1) {
+                hasOdd = true;
+            }
         }
-        return length + hasOdd;
+        return res + (hasOdd? 1 : 0);
     }
 };
