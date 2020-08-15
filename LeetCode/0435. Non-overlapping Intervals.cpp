@@ -5,15 +5,15 @@ public:
             return a[1] < b[1];
         });
         
-        int res = 0;
+        int res = intervals.size();
         int current_end = INT_MIN;
         for (auto interval : intervals) {
             if (interval[0] >= current_end) {
-                res++;
+                res--;
                 current_end = interval[1];
             }
         }
         
-        return intervals.size() - res;
+        return res;
     }
 };
