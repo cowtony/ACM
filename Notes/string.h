@@ -1,5 +1,5 @@
 // Split
-vector<string> split(string s, string delimiter) {
+vector<string> split(string s, string delimiter = " ") {
     vector<string> res;
     size_t p = 0;
     while (p <= s.length()) {
