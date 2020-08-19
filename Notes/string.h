@@ -14,13 +14,13 @@ vector<string> split(string s, string delimiter = " ") {
 }
 
 // Join
-string join(const vector<string>& words, const string& s) {
+string join(const vector<string>& words, const string& delimiter = " ") {
     if (words.empty()) {
         return "";
     }
     string res = words.at(0);
     for (int i = 1; i < words.size(); i++) {
-        res += s + words.at(i);
+        res += delimiter + words.at(i);
     }
     return res;
 }
