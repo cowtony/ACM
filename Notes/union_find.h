@@ -31,7 +31,7 @@ public:
 // Union Find with vector.
 class UnionFind {
 public:
-    UnionFind(int n) : father(n) {
+    UnionFind(int n) : father(n), data(n, 0) {
         for (int i = 0; i < father.size(); i++) {
             father[i] = i;
         }
@@ -41,6 +41,7 @@ public:
         int ra = root(a);
         int rb = root(b);
         if (ra != rb) {
+            data[rb] += data[ra];
             father[ra] = rb;
             count--;
         }
@@ -51,6 +52,6 @@ public:
     }
     
     int count;
-private:
     vector<int> father;
+    vector<int> data; // Store count of children.
 };
