@@ -50,6 +50,9 @@ public:
         if (father[a] == a) { return a; } 
         else { return father[a] = root(father[a]); }
     }
+    int getData(int a) {
+        return data[root(a)];
+    }
     
     int count;
     vector<int> father;
