@@ -6,7 +6,7 @@ public:
     void insert(const string& word, T data = T()) {
         Node* node = root;
         for (char c : word) {
-            node = next(node, c);
+            node = node->next(c, true);
         }
         node->data = data;  // Store data here.
         node->word = word;
@@ -15,10 +15,9 @@ public:
     T get(const string& word) const {
         Node* node = root;
         for (char c : word) {
-            if (node->sons.find(c) == node->sons.end()) {
+            if (!node = node->next(c)) {
                 return T();
             }
-            node = node->sons.at(c);
         }
         return node->data;
     }
@@ -27,10 +26,9 @@ public:
         vector<T> res;
         Node* node = root;
         for (char c : word.substr(0, word.length() - 1)) {
-            if (node->sons.find(c) == node->sons.end()) {
+            if (!node = node->next(c)) {
                 return res;
             }
-            node = node->sons.at(c);
             if (!node->data.empty()) {
                 res.push_back(node->data);
             }
@@ -40,16 +38,15 @@ public:
     
 // private:
     struct Node {
-        unordered_map<char, Node*> sons;
+        Node(): sons(256, nullptr) {}
+        vector<Node*> sons;
         string word;
         T data = T();
-    }*root;
-    
-    static Node* next(Node* node, char c) {
-        if (!node) { return node; }
-        if (node->sons.find(c) == node->sons.end()) {
-            node->sons[c] = new Node;
+        Node* next(char c, bool create = false) {
+            if (!sons.at(c) and create) {
+                sons[c] = new Node;
+            }
+            return sons.at(c);
         }
-        return node->sons.at(c);
-    }
+    }*root;
 };
