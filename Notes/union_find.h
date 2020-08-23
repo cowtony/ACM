@@ -7,9 +7,9 @@ public:
         T ra = root(a);
         T rb = root(b);
         if (ra != rb) {
-            roots[rb] += roots[ra];
+            root_data[rb] += root_data[ra];
             father[ra] = rb;
-            roots.erase(ra);
+            root_data.erase(ra);
         }
     }
     
@@ -17,14 +17,16 @@ public:
     T root(const T& a) {
         if (father.find(a) == father.end()) { 
             father[a] = a;
-            roots[a] = 1;
+            root_data[a] = 1;
         }
         if (father[a] == a) { return a; } 
         else { return father[a] = root(father[a]); }
     }
-    
+    int getData(const T& a) {
+        return root_data[root(a)];
+    }
     // Store all roots and properties such as size, max_value.
-    unordered_map<T, int> roots;
+    unordered_map<T, int> root_data;
     unordered_map<T, T> father;
 };
 
