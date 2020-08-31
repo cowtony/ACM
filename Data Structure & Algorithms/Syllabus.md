@@ -1,24 +1,24 @@
 # Data Structure & Algorithms Introduction
-**Course objective:**
+## Course objective:
 - Have a brief knowledge of the fundamental of data structure and algorithm.
 - Be able to prepare interviews for software engineer roles.
 - Be able to prepare algorithm contests such as the one from USACO, ACM-ICPC, Leetcode, etc.
 - This course will use mostly `easy` and few `medium` questions from Leetcode as practice or assignment.
 
-**Prerequisite:**
+## Prerequisite:
 - Familiar with one of the programming language syntax: Python, C++, JAVA.
 
-**Classes:**
+## Classes:
 - Introduction; time and space complexity analysis.
 
-  ***Data Structure:***
+**Data Structure:**
 - Array, linked list, doubly linked list.
 - Queue, stack.
 - Tree, binary tree.
 - Heap.
 - Hash table.
 
-  ***Algorithm:***
+**Algorithm:**
 - Sort
 - Binary search
 - Recursion / Backtracking
