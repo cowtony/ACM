@@ -11,14 +11,14 @@
 **Classes:**
 - Introduction; time and space complexity analysis.
 
-  Data Structure:
+  *Data Structure:*
 - Array, linked list, doubly linked list.
 - Queue, stack.
 - Tree, binary tree.
 - Heap.
 - Hash table.
 
-  Algorithm:
+  *Algorithm:*
 - Sort
 - Binary search
 - Recursion / Backtracking
