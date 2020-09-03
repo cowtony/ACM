@@ -26,7 +26,7 @@ string join(const vector<string>& words, const string& delimiter = " ") {
 }
 
 // KMP: Longest prefix == suffix
-vector<int> longestPrefix(string s) {
+vector<int> KMP(const string& s) {
     vector<int> next(s.length(), 0);
     for (int i = 0; i < s.length(); i++) {
         int pre = i;
