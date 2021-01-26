@@ -1,10 +1,10 @@
-// 1D Prefx Sum.
+// 1D Prefix Sum.
 vector<int> prefix_sum(nums.size() + 1, 0);
 for (int i = 0; i < nums.size(); i++) {
     prefix_sum[i + 1] = prefix_sum[i] + nums[i];
 }
 
-// 2D Prefx Sum.
+// 2D Prefix Sum.
 vector<vector<int>> prefixSum(vector<vector<int>>& matrix) {
     int R = matrix.size();
     int C = matrix.empty()? 0 : matrix[0].size();
