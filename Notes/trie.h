@@ -17,6 +17,7 @@ class Trie {
             node = node->children.at(c);
             node->data = data;
         }
+        node->word = word;
     }
     
     Data get(const string& word) const {
@@ -28,6 +29,7 @@ class Trie {
     
   private:
     vector<Trie*> children;
+    string word;
     Data data;
     
     const Trie* getNode(const string& prefix) const {
