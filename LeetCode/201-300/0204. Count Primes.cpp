@@ -1,27 +1,22 @@
 class Solution {
 public:
     int countPrimes(int n) {
-        if (n <= 2) {
+        if (n == 0) {
             return 0;
         }
+        
+        vector<bool> eratosthenes_sieve(n, true);
+        eratosthenes_sieve[0] = eratosthenes_sieve[1] = false;
+        
+        for (int factor = 2; factor * factor < n; factor++) {
+            if (!eratosthenes_sieve[factor]) {
+                continue;
+            }
+            for (int multiple = factor * 2; multiple < n; multiple += factor) {
+                eratosthenes_sieve[multiple] = false;
+            }
+        }
 
-        int count = 1;
-        for (int i = 3; i < n; i += 2) {
-            if (isPrime(i)) {
-                ++count;
-            }
-        }
-        return count;
-    }
-    
-    bool isPrime(int n) {
-        if (n < 2) { return false; }
-        if (n % 2 == 0) { return n == 2; }
-        for (int i = 3; i * i <= n; i += 2) {
-            if (n % i == 0) {
-                return false;
-            }
-        }
-        return true;
+        return std::count(eratosthenes_sieve.begin(), eratosthenes_sieve.end(), true);
     }
 };
