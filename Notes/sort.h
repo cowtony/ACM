@@ -1,9 +1,33 @@
 /*
+- STL sort()
 - Merge Sort.
 - Merge K Sorted Arrays.
 - Partition. (Quick Select): Get smallest/largest k elements.
 - Quick Sort.
 */
+
+// STL sort()
+sort(v.begin(), v.end(), std::less<T>());
+
+struct Student {
+	bool operator < (const Student& s) {
+		return this < s;
+	}
+};
+
+sort(v.begin(), v.end(), [](const T& a, const T& b){
+	return a > b;
+});
+
+template <class T>
+struct comapre {
+	bool operator() (const T& a, const T& b) {
+		return a > b;
+	}
+};
+sort(v.begin(), v.end(), compare());
+
+
 
 // Merge Sort.
 // 327: https://leetcode.com/problems/count-of-range-sum/
