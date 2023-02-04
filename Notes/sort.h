@@ -6,7 +6,9 @@
 - Quick Sort.
 */
 
-// STL sort()
+// TODO: Which sort will not change the order of equal element? For example: sort by string length.
+
+// Use STL sort()
 sort(v.begin(), v.end(), std::less<T>());
 
 struct Student {
