@@ -1,5 +1,4 @@
-
-// Standard BFS with Queue
+// Standard BFS using Queue, implementation with algorithm and model separation.
 struct State {
     T data;
 
