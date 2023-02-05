@@ -33,3 +33,8 @@ while (lo < hi) {
     }
 }
 return lo;
+
+/*
+ * Binary search the answer:
+ * LeetCode 2560: https://leetcode.com/problems/house-robber-iv/description/
+ */
