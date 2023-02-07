@@ -25,8 +25,18 @@ string join(const vector<string>& words, const string& delimiter = " ") {
     return res;
 }
 
-// KMP: Longest prefix == suffix
-vector<int> KMP(const string& s) {
+// KMP(Knuth-Morris-Pratt): Find string p in string s with O(s.len() + p.len()).
+// Longest prefix == suffix
+int KMP(const string& s, const string& p) {
+    vector<int> next = PMT(p);
+	for (int i = 0, j = 0; i < s.length(); i++, j++) {
+		if (s[i] != p[j]) {
+            
+		}
+	}
+	
+}
+vector<int> PMT(const string& s) {
     vector<int> next(s.length(), 0);
     for (int i = 0; i < s.length(); i++) {
         int pre = i;
