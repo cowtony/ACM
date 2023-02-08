@@ -57,6 +57,21 @@ class Trie {
 class Solution {
 public:
     vector<string> removeSubfolders(vector<string>& folder) {
+        sort(folder.begin(), folder.end());
+        vector<string> result;
+
+        for (const string& f : folder) {
+            if (result.empty() || 
+                f.length() < result.back().length() ||
+                result.back() != f.substr(0, result.back().length()) || 
+                f[result.back().length()] != '/') {
+                result.push_back(f);
+            }
+        }
+        return result;
+    }
+
+    vector<string> removeSubfolders2(vector<string>& folder) {
         Trie trie;
         for (const string& s : folder) {
             trie.insert(s);
