@@ -1,4 +1,4 @@
-template<class Data = string>
+template<class T = string>
 class Trie {
   public:
     Trie() : children(256, nullptr) {}
@@ -8,7 +8,7 @@ class Trie {
         }
     }
     
-    void insert(const string& word, const Data& data = Data()) {
+    void insert(const string& word, const T& data = T()) {
         Trie* node = this;
         for (const char c : word) {
             if (!node->children.at(c)) {
@@ -20,17 +20,17 @@ class Trie {
         node->word = word;
     }
     
-    Data get(const string& word) const {
+    T get(const string& word) const {
         if (const Trie* node = getNode(word)) {
             return node->data;
         }
-        return Data();
+        return T();
     }
     
   private:
     vector<Trie*> children;
     string word;
-    Data data;
+    T data;
     
     const Trie* getNode(const string& prefix) const {
         const Trie* node = this;
