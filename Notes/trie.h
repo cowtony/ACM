@@ -1,41 +1,41 @@
 template<class T = string>
 class Trie {
   public:
-    Trie() : children(256, nullptr) {}
+    Trie() : children_(256, nullptr) {}
     ~Trie() {
-        for (Trie* child : children) {
+        for (Trie* child : children_) {
             delete child;
         }
     }
     
     void insert(const string& word, const T& data = T()) {
         Trie* node = this;
-        for (const char c : word) {
-            if (!node->children.at(c)) {
-                node->children[c] = new Trie;
+        for (char c : word) {
+            if (!node->children_.at(c)) {
+                node->children_[c] = new Trie;
             }
-            node = node->children.at(c);
-            node->data = data;
+            node = node->children_.at(c);
+            node->data_ = data;
         }
-        node->word = word;
+        node->word_ = word;
     }
     
     T get(const string& word) const {
-        if (const Trie* node = getNode(word)) {
-            return node->data;
+        if (const Trie* node = getNode(word_)) {
+            return node->data_;
         }
         return T();
     }
     
   private:
-    vector<Trie*> children;
-    string word;
-    T data;
+    vector<Trie*> children_;
+    string word_;
+    T data_;
     
     const Trie* getNode(const string& prefix) const {
         const Trie* node = this;
-        for (const char c : prefix) {
-            if (!(node = node->children.at(c))) {
+        for (char c : prefix) {
+            if (!(node = node->children_.at(c))) {
                 return nullptr;
             }
         }
