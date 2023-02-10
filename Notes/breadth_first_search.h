@@ -1,11 +1,35 @@
 // Standard BFS using Queue, implementation with algorithm and model separation.
 struct State {
-    T data;
+    int row, col;
 
-    static State invalidState() const;
-    bool isInvalid() const;
-    bool isEndState(...) const;
-    vector<State> next(...) const;
+    static State invalidState() const {
+        return State{-1, -1};
+    }
+    bool isInvalid() const {
+        return row == -1;
+    }
+    bool isEndState() const {
+        return false;
+    }
+    vector<State> next(const vector<vector<int>>& grid) const {
+        vector<State> result;
+        if (row > 0) {
+            result.push_back({row - 1, col});
+        }
+        if (row < grid.size() - 1) {
+            result.push_back({row + 1, col});
+        }
+        if (col > 0) {
+            result.push_back({row, col - 1});
+        }
+        if (col < grid[0].size() - 1) {
+            result.push_back({row, col + 1});
+        }
+        return result;
+    }
+    bool visited(const vector<vector<int>>& grid) const {
+        return grid[row][col] != 0;
+    }
 };
 
 int BFS(...) {
@@ -13,7 +37,6 @@ int BFS(...) {
     bfs.push(State());  // Initial state.
     bfs.push(State::invalidState());  // A invalid state for step identifier.
     int step = 0;
-    unordered_set<State> visited;
     while (!bfs.empty()) {
         State state = bfs.front();
         bfs.pop();
@@ -26,17 +49,16 @@ int BFS(...) {
             }
             continue;
         }
-        if (state.isEnd(grid.size(), grid[0].size())) {
+        if (state.isEnd()) {
             return step;
         }
         for (const State& next : state.next(grid)) {
-            if (!visited.find(next) != visited.end()) {
+            if (!next.visited(grid)) {
                 bfs.push(next);
-                visited.insert(next);
+                grid[next.row][next.col] = step'
             }
         }
     }
-    return -1;
 }
 
 // When there is no way to create an invalid State as step identifier, other options are:
