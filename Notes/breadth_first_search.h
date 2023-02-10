@@ -2,7 +2,7 @@
 struct State {
     int row, col;
 
-    static State invalidState() const {
+    static State invalidState() {
         return State{-1, -1};
     }
     bool isInvalid() const {
