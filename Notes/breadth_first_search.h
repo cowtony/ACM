@@ -43,10 +43,10 @@ int BFS(...) {
 
         if (state.isInvalid()) {
             bfs.push(state);
-            step++;
             if (bfs.front().isInvalid()) {
                 break;
             }
+            step++;
             continue;
         }
         if (state.isEnd()) {
@@ -55,10 +55,11 @@ int BFS(...) {
         for (const State& next : state.next(grid)) {
             if (!next.visited(grid)) {
                 bfs.push(next);
-                grid[next.row][next.col] = step'
+                grid[next.row][next.col] = step;
             }
         }
     }
+    return -1;
 }
 
 // When there is no way to create an invalid State as step identifier, other options are:
