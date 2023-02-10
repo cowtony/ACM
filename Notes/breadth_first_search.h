@@ -8,7 +8,7 @@ struct State {
     bool isInvalid() const {
         return row == -1;
     }
-    bool isEndState() const {
+    bool isEnd() const {
         return false;
     }
     vector<State> next(const vector<vector<int>>& grid) const {
