@@ -1,18 +1,16 @@
+// hash map / set
 template<class Node = int>
 class TopologicalSort {
   public:
     void addNode(Node n) { indegree[n]; }
     
     void addEdge(Node from, Node to) {
-        addNode(from);
-        addNode(to);
         if (graph[from].find(to) == graph[from].end()) {
             ++indegree[to];
             graph[from].insert(to);
         }
     }
-    
-    // <node, rank>
+    // Return the node and it's rank <node, rank>
     vector<pair<Node, int>> sort() {
         vector<pair<Node, int>> result;
         queue<pair<Node, int>> q;
