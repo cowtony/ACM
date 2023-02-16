@@ -29,5 +29,5 @@ int knapsack01(const vector<int>& weight, const vector<int>& value, int capacity
     return dp[capacity];  // TODO: is it correct to return the dp[capacity]? or the largest value in dp[]?
 }
 
-// TODO: multiple items Knapsack
+// TODO: When each item can be choose multiple times
 
