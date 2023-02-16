@@ -1,39 +1,44 @@
-// Unordered_map.
-template<class T = int>
+template<class Node = int>
 class TopologicalSort {
-public:
-    void addNode(T n) { indegree[n]; }
+  public:
+    void addNode(Node n) { indegree[n]; }
     
-    void addEdge(T from, T to) {
+    void addEdge(Node from, Node to) {
+        addNode(from);
+        addNode(to);
         if (graph[from].find(to) == graph[from].end()) {
             ++indegree[to];
             graph[from].insert(to);
         }
     }
     
-    vector<T> tpologicalSort() {
-        vector<T> res;
-        queue<T> q;
-        for (auto p : indegree) {
-            if (p.second == 0) {
-                q.push(p.first);
+    // <node, rank>
+    vector<pair<Node, int>> sort() {
+        vector<pair<Node, int>> result;
+        queue<pair<Node, int>> q;
+        for (const auto& [node, val] : indegree) {
+            if (val == 0) {
+                q.push({node, 0});
             }
         }
         while (!q.empty()) {
-            T node = q.front();
+            auto [node, rank] = q.front();
             q.pop();
-            res.push_back(node);
-            for (T next : graph[node]) {
+            result.push_back({node, rank});
+            for (const Node& next : graph[node]) {
                 if (--indegree[next] == 0) {
-                    q.push(next);
+                    q.push({next, rank + 1});
                 }
             }
         }
-        return res.size() != indegree.size()? vector<T>() : res;
+        if (result.size() != indegree.size()) {
+            return {};
+        }
+        return result;
     }
-private:
-    unordered_map<T, int> indegree;
-    unordered_map<T, unordered_set<T>> graph;
+  private:
+    unordered_map<Node, int> indegree;
+    unordered_map<Node, unordered_set<Node>> graph;
 };
 
 // Vector
