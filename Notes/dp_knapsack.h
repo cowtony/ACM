@@ -28,6 +28,20 @@ int knapsack01(const vector<int>& weight, const vector<int>& value, int capacity
     }
     return dp[capacity];  // TODO: is it correct to return the dp[capacity]? or the largest value in dp[]?
 }
+// 2D problem: https://leetcode.com/problems/ones-and-zeroes/description/
+int findMaxForm(vector<string>& strs, int m, int n) {
+    vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+    for (const string& s : strs) {
+        int zero = count(s.begin(), s.end(), '0');
+        int one = s.length() - zero;
+        for (int i = m; i >= zero; i--) {
+            for (int j = n; j >= one; j--) {
+                dp[i][j] = max(dp[i][j], dp[i - zero][j - one] + 1);
+            }
+        }
+    }
+    return dp[m][n];
+}
 
 // TODO: When each item can be choose multiple times
 
