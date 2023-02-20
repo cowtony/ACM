@@ -32,32 +32,33 @@ public:
 
 // Union Find with vector.
 class UnionFind {
-public:
+  public:
     UnionFind(int n) : father(n), size(n, 1) {
-        for (int i = 0; i < father.size(); i++) {
+        for (int i = 0; i < father.size(); ++i) {
             father[i] = i;
         }
         count = n;
     }
     void connect(int a, int b) {
+        if (a > b) { swap(a, b); }
         int ra = root(a);
         int rb = root(b);
         if (ra != rb) {
-            size[rb] += size[ra];
+            size[ra] += size[rb];
             // TODO: process `data` here.
-            father[ra] = rb;
+            father[rb] = ra;
             count--;
         }
     }
-    int root(int a) {
-        if (father[a] == a) { return a; } 
-        else { return father[a] = root(father[a]); }
+    int root(int x) {
+        if (father[x] == x) { return x; } 
+        else { return father[x] = root(father[x]); }
     }
-    int getSize(int a) {
-        return size[root(a)];
+    int getSize(int x) {
+        return size[root(x)];
     }
-    
-    int count;
+  private:
+    int count;        // Number of distinct component.
     vector<int> father;
     vector<int> size; // Store count of the component.
     vector<int> data; // Can add other data here.
