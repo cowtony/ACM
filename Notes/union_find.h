@@ -1,33 +1,37 @@
 // Union Find with unordered_map.
-template <class T = int>
+template <class Node = int>
 class UnionFind {
-public:
+  public:
     // The connect function will add new element automatically.
-    void connect(const T& a, const T& b) {
-        T ra = root(a);
-        T rb = root(b);
+    Node connect(const Node& a, const Node& b) {
+        Node ra = root(a);
+        Node rb = root(b);
         if (ra != rb) {
-            root_data[rb] += root_data[ra];
             father[ra] = rb;
-            root_data.erase(ra);
+            for (const Node& n : component[ra]) {
+                component[rb].insert(n);
+            }
+            component.erase(ra);
         }
+        return rb;
     }
     
     // Find root with route compress.
-    T root(const T& a) {
-        if (father.find(a) == father.end()) { 
+    Node root(const Node& a) {
+        if (father.find(a) == father.end()) { // New node seen.
             father[a] = a;
-            root_data[a] = 1;
+            component[a].insert(a);
         }
         if (father[a] == a) { return a; } 
         else { return father[a] = root(father[a]); }
     }
-    int getData(const T& a) {
-        return root_data[root(a)];
-    }
-    // Store all roots and properties such as size, max_value.
-    unordered_map<T, int> root_data;
-    unordered_map<T, T> father;
+
+    int getSize(const Node& a) { return component[root(a)].size(); }
+    const unordered_set<Node>& getNodesOf(const Node& a) { return component[root(a)]; }
+
+  private:
+    unordered_map<Node, Node> father;
+    unordered_map<Node, unordered_set<Node>> component;  // Store all nodes connected as a component.
 };
 
 // Union Find with vector.
