@@ -1,4 +1,3 @@
-// Segment tree with Lazy Propogation.
 class SegmentTree {
 public:
     SegmentTree(int start, int end, const vector<int>& data) 
@@ -77,62 +76,26 @@ private:
 };
 
 
-template<class R = int, class T = int>  // Range and data.
-class SegmentTree {
+class Solution {
 public:
-    SegmentTree(R start, R end, T data = T()) {
-        root = build(start, end, data);
-    }
-    void update(R pos, T delta = T()) { update(root, pos, delta); }
-    T query(R start, R end) { return query(root, start, end); }
-    
-private:
-    struct Node {
-        R start, end;
-        T data; // min, max, count, etc.
-        Node *left = nullptr, *right = nullptr;
-    }*root;
-    
-    static Node* build(R start, R end, T default_value) {
-        if (start > end) {
-            return nullptr;
+    vector<long long> handleQuery(vector<int>& nums1, vector<int>& nums2, vector<vector<int>>& queries) {
+        long long sum_2 = 0;
+        for (int num : nums2) {
+            sum_2 += num;
         }
-        Node *root = new Node{start, end, default_value};
-        if (start < end) {
-            root->left = build(start, start + (end - start) / 2, default_value);
-            root->right = build(start + (end - start) / 2 + 1, end, default_value);
+        
+        SegmentTree seg_tree(0, nums1.size() - 1, nums1);
+        
+        vector<long long> result;
+        for (const auto& query : queries) {
+            if (query[0] == 1) {
+                seg_tree.update(query[1], query[2], 0);
+            } else if (query[0] == 2) {
+                sum_2 += seg_tree.query(0, nums1.size() - 1) * (long long)query[1];
+            } else if (query[0] == 3) {
+                result.push_back(sum_2);
+            }
         }
-        return root;
-    }
-    
-    static void update(Node* root, R pos, T delta) {
-        if (!root) { return; }
-        if (pos < root->start or pos > root->end) {
-            return;
-        }
-        root->data += delta;  // Sum Tree.
-        if (!root->left and !root->right) {
-            return;
-        }
-        if (pos <= root->left->end) {
-            update(root->left, pos, delta);
-        } else if (pos >= root->right->start) {
-            update(root->right, pos, delta);
-        }
-    }
-    
-    static T query(Node* root, R start, R end) {
-        if (!root) { return T(); }
-        if (start <= root->start and end >= root->end) {
-            return root->data;
-        }
-        if (start > root->end or end < root->start) {
-            return T(); // Sum Tree.
-        }
-        return operation(query(root->left, start, end), query(root->right, start, end)); 
-    }
-    
-    static T operation(T left, T right) {
-        return left + right; // Sum Tree.
+        return result;
     }
 };
