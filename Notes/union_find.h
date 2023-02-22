@@ -8,10 +8,10 @@ class UnionFind {
         Node rb = root(b);
         if (ra != rb) {
             father[ra] = rb;
-            for (const Node& n : component[ra]) {
-                component[rb].insert(n);
+            for (const Node& n : components[ra]) {
+                components[rb].insert(n);
             }
-            component.erase(ra);
+            components.erase(ra);
         }
         return rb;
     }
@@ -20,18 +20,18 @@ class UnionFind {
     Node root(const Node& a) {
         if (father.find(a) == father.end()) { // New node seen.
             father[a] = a;
-            component[a].insert(a);
+            components[a].insert(a);
         }
         if (father[a] == a) { return a; } 
         else { return father[a] = root(father[a]); }
     }
 
-    int getSize(const Node& a) { return component[root(a)].size(); }
-    const unordered_set<Node>& getNodesOf(const Node& a) { return component[root(a)]; }
+    int getSize(const Node& a) { return components[root(a)].size(); }
+    const unordered_set<Node>& getNodesOf(const Node& a) { return components[root(a)]; }
 
   private:
     unordered_map<Node, Node> father;
-    unordered_map<Node, unordered_set<Node>> component;  // Store all nodes connected as a component.
+    unordered_map<Node, unordered_set<Node>> components;  // Store all nodes connected as a component.
 };
 
 // Union Find with vector.
