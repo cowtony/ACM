@@ -1,3 +1,43 @@
+// Union Find with vector.
+class UnionFind {
+  public:
+    UnionFind(int n) : father(n), size(n, 1) {
+        for (int i = 0; i < father.size(); ++i) {
+            father[i] = i;
+        }
+        count = n;
+    }
+    void connect(int a, int b) {
+        if (a > b) { swap(a, b); }
+        int ra = root(a);
+        int rb = root(b);
+        if (ra != rb) {
+            father[rb] = ra;
+            size[ra] += size[rb];
+            // TODO: process `data` here.
+            count--;
+        }
+    }
+    int root(int x) {
+        if (father[x] == x) { return x; } 
+        else { return father[x] = root(father[x]); }
+    }
+    int getSize(int x) {
+        return size[root(x)];
+    }
+    unordered_map<int, vector<int>> getComponents() {
+        unordered_map<int, vector<int>> result;
+        for (int i = 0; i < father.size(); i++) {
+            result[root(i)].push_back(i);
+        }
+        return result;
+    }
+  private:
+    int count;        // Number of distinct component.
+    vector<int> father;
+    vector<int> size; // Store count of the component.
+};
+
 // Union Find with unordered_map.
 template <class Node = int>
 class UnionFind {
@@ -34,36 +74,4 @@ class UnionFind {
     unordered_map<Node, unordered_set<Node>> components;  // Store all nodes connected as a component.
 };
 
-// Union Find with vector.
-class UnionFind {
-  public:
-    UnionFind(int n) : father(n), size(n, 1) {
-        for (int i = 0; i < father.size(); ++i) {
-            father[i] = i;
-        }
-        count = n;
-    }
-    void connect(int a, int b) {
-        if (a > b) { swap(a, b); }
-        int ra = root(a);
-        int rb = root(b);
-        if (ra != rb) {
-            size[ra] += size[rb];
-            // TODO: process `data` here.
-            father[rb] = ra;
-            count--;
-        }
-    }
-    int root(int x) {
-        if (father[x] == x) { return x; } 
-        else { return father[x] = root(father[x]); }
-    }
-    int getSize(int x) {
-        return size[root(x)];
-    }
-  private:
-    int count;        // Number of distinct component.
-    vector<int> father;
-    vector<int> size; // Store count of the component.
-    vector<int> data; // Can add other data here.
-};
+
