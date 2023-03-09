@@ -20,11 +20,11 @@ public:
             if (num > maximum) {
                 return INT_MAX;
             }
-            if (sum + num > maximum) {
-                count++;
-                sum = 0;
-            }
             sum += num;
+            if (sum > maximum) {
+                count++;
+                sum = num;
+            }
         }
         return count;
     }
