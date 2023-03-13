@@ -8,23 +8,21 @@
  * };
  */
 class Solution {
-public:
-    bool DFS(TreeNode* left, TreeNode* right)
-    {
-        if (left && right)
-            return left->val == right->val
-                && DFS(left->left, right->right)
-                && DFS(left->right, right->left);
-        else
-            return left == right;
-    }
-    
+public:    
     bool isSymmetric(TreeNode* root) {
-        if (root == NULL)
+        if (!root) {
             return true;
-        if (root->left && root->right)
-            return DFS(root->left, root->right);
-        else
-            return root->left == root->right;
+        }
+        return isSymmetricSubTree(root->left, root->right);
+    }
+
+    bool isSymmetricSubTree(TreeNode* tree1, TreeNode* tree2) {
+        if (tree1 && tree2) {
+            return tree1->val == tree2->val
+                && isSymmetricSubTree(tree1->left, tree2->right)
+                && isSymmetricSubTree(tree1->right, tree2->left);
+        } else {
+            return tree1 == tree2; // == nullptr
+        }
     }
 };
