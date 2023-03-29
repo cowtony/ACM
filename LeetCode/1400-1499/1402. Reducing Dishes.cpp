@@ -1,12 +1,12 @@
 class Solution {
 public:
     int maxSatisfaction(vector<int>& satisfaction) {
-        sort(satisfaction.begin(), satisfaction.end(), greater());
+        sort(satisfaction.rbegin(), satisfaction.rend());
         
         int coefficient = 0;
         int sum = 0;
-        for (int n : satisfaction) {
-            sum += n;
+        for (int s : satisfaction) {
+            sum += s;
             if (sum < 0) {
                 break;
             }
