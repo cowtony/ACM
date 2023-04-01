@@ -12,17 +12,9 @@ public:
             count_1 = (min_count_1 + max_count_1) / 2;
             count_2 = kNumsOnLeft - count_1;
             
-            if (count_2 < 0) {
-                max_count_1 = count_1 - 1;
-                continue;
-            } else if (count_2 > nums2.size()) {
+            if (count_2 > 0 && count_1 < nums1.size() && nums1[count_1] < nums2[count_2 - 1]) {
                 min_count_1 = count_1 + 1;
-                continue;
-            }
-            
-            if (count_2 > 0 and count_1 < nums1.size() and nums1[count_1] < nums2[count_2 - 1]) {
-                min_count_1 = count_1 + 1;
-            } else if (count_1 > 0 and nums2[count_2] < nums1[count_1 - 1]) {
+            } else if (count_1 > 0 && nums2[count_2] < nums1[count_1 - 1]) {
                 max_count_1 = count_1 - 1;
             } else {
                 break;
