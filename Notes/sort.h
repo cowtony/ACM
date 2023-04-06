@@ -118,7 +118,7 @@ int QuickSelect(vector<int>& array, int lo, int hi) {
 template<class Iterator, class Compare>
 Iterator quickSelect(Iterator begin, Iterator end, const Compare& compare) {
     if (begin == end--) { return begin; }
-    auto pivot = *begin;
+    const auto pivot = *begin;
     while (begin != end) {
         while (begin != end and !compare(*end, pivot)) { --end; }
         *begin = *end;
