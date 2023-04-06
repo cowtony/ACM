@@ -142,15 +142,11 @@ void nth_element(Iterator begin, Iterator nth, Iterator end, const Compare& comp
 // Quick Sort (with tail recursion).
 template<class Iterator, class Compare>
 void quickSort(Iterator begin, Iterator end, const Compare& compare) {
-    while (begin != end) {
-        auto mid = quickSelect(begin, end, compare);
-        if (mid - begin < end - mid) {
-            quickSort(begin, mid, compare);
-            begin = mid + 1;
-        } else {
-            quickSort(mid + 1, end, compare);
-            end = mid;
-        }
+    if (begin == end) {
+        return;
     }
+    auto mid = partition(begin, end, compare);
+    quickSort(begin, mid, compare);
+    quickSort(mid + 1, end, compare);
 }
 
