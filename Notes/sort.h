@@ -94,6 +94,7 @@ vector<T> mergeSortedArrays(vector<vector<T>>& arrays) {
 }
 
 // Partition (QuickSelect)
+// TODO: this is buggy, for example: {8,1,2,4,9,8} when pivot = 8
 int QuickSelect(vector<int>& array, int pivot) {
     int lo = 0, hi = array.size() - 1;
     while(lo <= hi) {
