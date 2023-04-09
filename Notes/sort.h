@@ -94,16 +94,28 @@ vector<T> mergeSortedArrays(vector<vector<T>>& arrays) {
 }
 
 // Partition (QuickSelect)
-// TODO: this is buggy, for example: {8,1,2,4,9,8} when pivot = 8
-int QuickSelect(vector<int>& array, int pivot) {
+int QuickSelect(vector<int>& array, int pivot) {  // Not fully tested
+    int pivot_idx = 0;
+    for (int i = 0; i < array.size(); ++i) {
+        if (array[i] < pivot) {
+            pivot_idx++;
+        }
+    }
     int lo = 0, hi = array.size() - 1;
-    while(lo <= hi) {
-        while(lo <= hi && array[hi] >= pivot) { --hi; }
-        while(lo <= hi && array[lo] < pivot) { ++lo; }
-        if (lo < hi) { swap(array[lo++], array[hi--]); }
+    while (pivot_idx < hi) {
+        while (array[hi] == pivot) {
+            swap(array[hi], array[pivot_idx++]);
+        }
+        while (array[lo] == pivot) {
+            swap(array[lo], array[pivot_idx++]);
+        }
+        while(hi >= pivot_idx && array[hi] > pivot) { --hi; }
+        while(array[lo] < pivot) { ++lo; }
+        if (hi >= pivot_idx) { swap(array[lo++], array[hi--]); }
     }
     return lo;
 }
+
 int QuickSelect(vector<int>& array, int lo, int hi) {
     int pivot = array[lo];
     while(lo < hi) {
