@@ -9,11 +9,11 @@ int knapsack01(const vector<int>& weights, int capacity) {
             dp[i] = dp[i] || dp[i - weight];
         }
     }
-	for (int i = capacity; i >= weight[i]; i--) {
-		if (dp[i]) {
-			return i;
-		}
-	}
+    for (int i = capacity; i >= weight[i]; i--) {
+        if (dp[i]) {
+            return i;
+        }
+    }
     return 0;
 }
 
