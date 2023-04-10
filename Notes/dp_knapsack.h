@@ -2,7 +2,7 @@
 // Example: Divide the array into 2 so that their sum as close as possible.
 
 int knapsack01(const vector<int>& weights, int capacity) {
-	vector<bool> dp(capacity + 1, false);
+    vector<bool> dp(capacity + 1, false);
     dp[0] = true;
     for(int weight : weights) {
         for(int i = capacity; i >= weight; i--) {
