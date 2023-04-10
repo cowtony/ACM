@@ -26,8 +26,9 @@ int knapsack01(const vector<int>& weight, const vector<int>& value, int capacity
             dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);
         }
     }
-    return dp[capacity];  // TODO: is it correct to return the dp[capacity]? or the largest value in dp[]?
+    return dp[capacity];
 }
+
 // 2D problem: https://leetcode.com/problems/ones-and-zeroes/description/
 int findMaxForm(vector<string>& strs, int m, int n) {
     vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
