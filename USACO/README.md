@@ -17,5 +17,7 @@ using namespace std;
 int main() {
 	ifstream fin("combo.in");
     ofstream fout("combo.out");
+	
+	return 0;
 }
 ```
