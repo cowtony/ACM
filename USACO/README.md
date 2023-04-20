@@ -4,19 +4,18 @@ Username: cowtony1
 Password: 19900525
 
 # Template
-```
+
+```c++
 /*
 ID:cowtony1
-PROG:clocks
+PROG:combo
 LANG:C++
 */
-#include<iostream>
-#include<fstream>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-    freopen("clocks.in","r",stdin);
-    freopen("clocks.out","w",stdout);
+int main() {
+	ifstream fin("combo.in");
+    ofstream fout("combo.out");
 }
 ```
