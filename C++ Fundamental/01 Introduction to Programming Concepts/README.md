@@ -1,6 +1,12 @@
+# Prerequisit
+Install a C++ compiler (like GCC) and an IDE (like Code::Blocks or Visual Studio).
+
 # Topics
 
 - The goal of learning programming languages.
+
+
+- Feel free to stop me and ask questions.
 
 
 - What is programming? Why do we use programming languages, and why C++ specifically?
@@ -19,11 +25,6 @@
 
 - Introduction to primitive data types in C++:
   - integers
-    - `signed` and `unsigned`: 
-    - `short`:
-    - `int`:
-    - `long`:
-    - `long long`:
   - floating point numbers
   - characters
   - boolean
@@ -32,5 +33,5 @@
 
 - Writing a simple C++ program: "Hello World".
 
-Homework
-Install a C++ compiler (like GCC) and an IDE (like Code::Blocks or Visual Studio). Write, compile, and run the "Hello World" program. Experiment with outputting different text.
+# Homework
+Write, compile, and run the "Hello World" program. Experiment with outputting different data.
