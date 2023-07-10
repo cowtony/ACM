@@ -1,7 +1,6 @@
-Syllabus
+# Syllabus
 
 # Class 1 - Introduction to Programming Concepts
-
 - What is programming? Why do we use programming languages, and why C++ specifically?
 - Overview of different types of programming languages - high-level, low-level, interpreted, and compiled languages.
 - Discussion on the basic structure of a C++ program including header files, main function, and syntax.
@@ -12,7 +11,6 @@ Syllabus
 Install a C++ compiler (like GCC) and an IDE (like Code::Blocks or Visual Studio). Write, compile, and run the "Hello World" program. Experiment with outputting different text.
 
 # Class 2 - Variables, Constants, and Basic Input/Output
-
 - Explanation of what variables are and how they are used in C++.
 - Constants and their usage.
 - Basic input/output using `cin` and `cout`.
@@ -29,19 +27,19 @@ Write a program that asks the user for their name and age and prints a message w
 - Explanation of break and continue statements.
 
 ## Homework
-Write a program that solves a basic problem, like determining if a number is even or odd, or grading system based on marks, using conditional statements. Create a program to print the first n numbers in the Fibonacci series using loops.
+Write a program that solves a basic problem, like determining if a number is even or odd, or a grading system based on marks, using conditional statements. Create a program to print the first n numbers in the Fibonacci series using loops.
 
 # Class 4 - Arrays and Strings
 - Introduction to the concept of arrays and how to use them in C++.
 - Manipulation of arrays.
-- Introduction to C++ Strings, difference between C-style strings and C++ strings.
-- Common string manipulation functions - length, append, insert, erase, substr etc.
+- Introduction to C++ Strings, the difference between C-style strings and C++ strings.
+- Common string manipulation functions - length, append, insert, erase, `substr` etc.
 
 ## Homework
 Write a program that calculates the average of an array of numbers. Write a program that performs various string operations like reversing a string, finding a substring, etc.
 
 # Class 5 - Functions and Scope
-- Definition and use of functions, function parameters and return values.
+- Definition and use of functions, function parameters, and return values.
 - Understanding local and global scope.
 - Introduction to function overloading.
 
