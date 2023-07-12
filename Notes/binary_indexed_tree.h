@@ -1,14 +1,16 @@
+#include <vector>
+
 // Fenwick Tree
 class BinaryIndexedTree {
-  public:
-    BinaryIndexedTree(int size) : bit(size, 0), array(size, 0) {}
+public:
+    BinaryIndexedTree(int size) : bit(size + 1, 0), array(size, 0) {}
 
     void update(int idx, int value) { 
         add(idx, value - array[idx]);
     }
 
     void add(int idx, int increment) {
-        array[idx] += increment;
+        array[idx++] += increment;
         while (idx < bit.size()) {
             bit[idx] += increment;
             idx += idx & -idx;
@@ -17,20 +19,25 @@ class BinaryIndexedTree {
 
     int prefixSum(int idx) {
         int res = 0;
+        idx++;
         while (idx > 0) {
             res += bit[idx];
             idx -= idx & -idx;
         }
         return res;
     }
+
+    int query(int start, int end) {
+        return prefixSum(end) - (start == 0? 0 : prefixSum(start - 1));
+    }
     
-  private:
-    vector<int> bit, array;
+private:
+    std::vector<int> bit, array;
 };
 
 class BinaryIndexedTree2D {
 public:
-    BinaryIndexedTree2D(int row, int col): bit(row + 1, vector<int>(col + 1, 0)), array(row, vector<int>(col, 0)) {}
+    BinaryIndexedTree2D(int row, int col): bit(row + 1, std::vector<int>(col + 1, 0)), array(row, std::vector<int>(col, 0)) {}
     
     void update(int row, int col, int value) {
         add(row, col, value - array[row][col]);
@@ -55,5 +62,5 @@ public:
         return sum;
     }
 private:
-    vector<vector<int>> bit, array;
+    std::vector<std::vector<int>> bit, array;
 };
