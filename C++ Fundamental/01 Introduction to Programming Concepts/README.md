@@ -1,5 +1,7 @@
 # Prerequisit
 Install a C++ compiler (like GCC) and an IDE (like Code::Blocks or Visual Studio).
+- Code::Blocks: https://www.codeblocks.org/downloads/binaries/
+- 
 
 # Topics
 
