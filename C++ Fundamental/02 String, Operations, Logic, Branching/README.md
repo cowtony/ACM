@@ -81,6 +81,10 @@ cout << c;
   }
   ```
 
+    - `variable = (condition) ? expressionTrue : expressionFalse;`
+
+  - Kahoot!
+
   # Assignment:
   - Write a program that asks the user for two numbers and then tells the user which number is larger or if they are equal.
   - Write a program that asks the user for their age and whether they are a citizen (yes or no). The program should then tell the user whether they are eligible to vote. (In most places, you have to be at least 18 and a citizen to vote.)
