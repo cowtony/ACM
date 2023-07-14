@@ -31,8 +31,8 @@ cout << c;
   - Concatenation: `s1 + s2`, `s1.append(s2)`
   - Length: `s.size()` or `s.length()`
   - Access: `s[1]`
+  - Substring: `s.substr(from, len)`
   - Escape character: `'\"'`, `'\t'`, `'\n'`, `'\\'`
-  - 
 
 - basic arithmetic operators
   - Addition: `+` (overflow)
@@ -70,7 +70,7 @@ cout << c;
   ```
 
   ```C++
-  switch (integer) {
+  switch (expression) {
       case a:
           break;
       case b:
@@ -82,8 +82,6 @@ cout << c;
   ```
 
     - `variable = (condition) ? expressionTrue : expressionFalse;`
-
-  - Kahoot!
 
   # Assignment:
   - Write a program that asks the user for two numbers and then tells the user which number is larger or if they are equal.

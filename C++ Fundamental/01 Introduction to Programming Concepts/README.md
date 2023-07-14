@@ -3,8 +3,11 @@ Install a C++ compiler (like GCC) and an IDE (like Code::Blocks or Visual Studio
 
 - Code::Blocks: https://www.codeblocks.org/downloads/binaries/
 - [Visual Studio Code](https://code.visualstudio.com/)
+  - https://code.visualstudio.com/docs/languages/cpp
 - GitHub: https://github.com/
 - W3School: https://www.w3schools.com/cpp
+- Compiler:
+  - https://www.msys2.org/
 
 # Topics
 
