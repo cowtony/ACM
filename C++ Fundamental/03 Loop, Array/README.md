@@ -1,3 +1,11 @@
+# Recap
+
+- `std::string`
+  - `substr()`
+
+- Quality Assurance
+
+
 # Topics
 
 ## `while` loop
@@ -76,14 +84,19 @@ struct TypeName {
 - https://create.kahoot.it/details/946ba446-05be-4d6e-bdfa-8387a388e6bc
 
 ## Homework
-- **Fibonacci series:** Create a program to print the first n numbers in the Fibonacci series using loops.
-  - Create a program to print the Fibonacci series until n.
-- **Number Guessing Game:** greater or smaller?
-- **Prime Numbers Generator:** generate prime numbers up to n.
-- **Reverse a string**
-- **Palindrome Checker**
-- **Bubble Sort**
 
+- Single loop:
+  - Reverse a string
+  - Fibonacci series: Create a program to print the first n numbers in the Fibonacci series using loops.
+    - Create a program to print the Fibonacci series until n.
+  - Number Guessing Game: greater or smaller?
+  - Palindrome Checker: "abcba"
+
+- Nested loop:
+  - Prime Numbers Generator: generate prime numbers up to n. 
+  - Bubble Sort
+
+- **Bonus:** Try to swap two values WITHOUT a third argument.
 
 
 
