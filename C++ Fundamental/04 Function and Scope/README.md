@@ -64,9 +64,9 @@ int myFunction(int argument = 0) {
 
 Use function to factor out your past assignment:
 - Guessing number game
-- Reverse a string
 - Prime Numbers Generator
-- (Swap two values)
+- Reverse a string
 
 Recursive function:
 - Fibonacci series: use recursive to implement this problem.
+- Greatest common divisor (GCD): [Euclid's algorithm](https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm)
