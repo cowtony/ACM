@@ -39,7 +39,7 @@ y = 5;
 
 # Assignment
 - Try to use `Dynamic Memory Allocation` to write any one of the previous assignment.
-- Make the string upper case.
+- Make the string upper case (in-place).
 - Double the value of an array.
 - Bubble sort the array.
 - Extra: Linked List Implementation. (Maybe after learned struct)
