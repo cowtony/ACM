@@ -35,3 +35,30 @@ int main() {
   return 0;
 }
 ```
+
+
+- Compile time polymorphim
+- Run time polymorphim
+
+# Assignment
+Implement the following classes and write a main function to test:
+```C++
+class Shape {
+public:
+    double getCircumference() const = 0;
+    double getArea() const = 0;
+    void enlargeSize(double factor) = 0;
+};
+
+class Circle : public Shape {
+// Your implementation
+};
+
+class Rectangle : public Shape {
+// Your implementation
+};
+
+class Square : public Rectangle {
+// Your implementation
+};
+```
