@@ -41,28 +41,31 @@ class TopologicalSort {
 // Vector
 class TopologicalSort {
   public:
-    TopologicalSort(int n) : indegree(n, 0), graph(n) {}
+    TopologicalSort(int n) : indegree(n, 0), children(n) {}
     
     void addEdge(const int& from, const int& to) {
-        if (graph[from].find(to) == graph[from].end()) {
+        if (children[from].find(to) == children[from].end()) {
             indegree[to]++;
-            graph[from].insert(to);
+            children[from].insert(to);
         }
     }
     
-    vector<pair<int, int>> sort() {  // <node, rank>
+    vector<pair<int, int>> sort() {  // return [<node, rank>]
         vector<pair<int, int>> result;
         queue<pair<int, int>> q;
+
+        // Find all ancestors.
         for (int i = 0; i < indegree.size(); i++) {
             if (indegree[i] == 0) {
                 q.push({i, 0});
             }
         }
+        
         while (!q.empty()) {
             auto [node, rank] = q.front();
             q.pop();
             result.push_back({node, rank});
-            for (int next : graph[node]) {
+            for (int next : children[node]) {
                 if (--indegree[next] == 0) {
                     q.push({next, rank + 1});
                 }
@@ -76,5 +79,5 @@ class TopologicalSort {
 
   private:
     vector<int> indegree;
-    vector<unordered_set<int>> graph;
+    vector<unordered_set<int>> children;
 };
