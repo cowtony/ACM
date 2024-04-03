@@ -11,35 +11,32 @@ public:
         return false;
     }
     
-    const vector<int> kX = {0, 0, 1, -1};
-    const vector<int> kY = {1, -1, 0, 0};
-    
-    bool dfs(vector<vector<char>>& board, int row, int col, string word) {
+    bool dfs(vector<vector<char>>& board, int row, int col, string& word) {
+        if (word.back() != board[row][col]) {
+            return false;
+        } 
+
+        char last_letter = board[row][col];
+        word.pop_back();
+        board[row][col] = 0;
+
         if (word.empty()) {
             return true;
         }
-        if (word.front() != board[row][col]) {
-            return false;
-        } else if (word.length() == 1) {
-            return true;
-        }
         
-        board[row][col] = 0;
+        static const vector<int> kMove = {0, 1, 0, -1, 0};
         for (int i = 0; i < 4; i++) {
-            int r = row + kX.at(i);
-            int c = col + kY.at(i);
-            if (r < 0 or r >= board.size()) {
+            int r = row + kMove.at(i);
+            int c = col + kMove.at(i + 1);
+            if (r < 0 || r >= board.size() || c < 0 || c >= board[0].size()) {
                 continue;
             }
-            if (c < 0 or c >= board[0].size()) {
-                continue;
-            }
-            
-            if (dfs(board, r, c, word.substr(1))) {
+            if (dfs(board, r, c, word)) {
                 return true;
             }
         }
-        board[row][col] = word.front();
+        word.push_back(last_letter);
+        board[row][col] = last_letter;
         return word.empty();
     }
 };
