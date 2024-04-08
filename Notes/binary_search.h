@@ -18,7 +18,7 @@ Iterator lowerBound(Iterator begin, Iterator end, typename Iterator::value_type 
         Iterator mid = std::next(begin, std::distance(begin, end) / 2);
         if (*mid < target) {
             begin = mid + 1;
-        } else {  // *mid > target
+        } else {  // *mid >= target
             end = mid;
         }
     }
