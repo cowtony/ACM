@@ -1,11 +1,10 @@
 // Union Find with vector.
 class UnionFind {
   public:
-    UnionFind(int n) : father_(n), size_(n, 1) {
+    UnionFind(int n) : father_(n), size_(n, 1), count(n) {
         for (int i = 0; i < father_.size(); ++i) {
             father_[i] = i;
         }
-        count = n;
     }
     void connect(int a, int b) {
         if (a > b) { swap(a, b); }
