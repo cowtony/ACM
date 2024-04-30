@@ -1,10 +1,10 @@
 class Solution {
 public:
     long long wonderfulSubstrings(string word) {
-        vector<long> count(1024, 0);
-        count[0] = 1;
+        vector<int> count(1024, 0);
+        int mask = 0;
+        count[mask] = 1;
 
-        long mask = 0;
         long long result = 0;
         for (auto c : word) {
             mask ^= 1 << (c - 'a');
