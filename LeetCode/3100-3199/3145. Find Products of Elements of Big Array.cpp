@@ -13,14 +13,10 @@ public:
 
         vector<int> result;
         for (const auto& query : queries) {
-            vector<LL> count_1 = countBitsTillIndex(query[0]);
-            vector<LL> count_2 = countBitsTillIndex(query[1] + 1);
+            LL prefix_sum_1 = prefixSumTillIndex(query[0]);
+            LL prefix_sum_2 = prefixSumTillIndex(query[1] + 1);
 
-            LL sum_power = 0;
-            for (LL bit = 0; bit < kMaxBit; bit++) {
-                sum_power += bit * (count_2[bit] - count_1[bit]);
-            }
-            result.push_back(pow(2, sum_power, query[2]));
+            result.push_back(pow(2, prefix_sum_2 - prefix_sum_1, query[2]));
         }
 
         return result;
@@ -30,17 +26,17 @@ private:
     const int kMaxBit = 50;
 
     // Count the bits for all numbers from 1 to `value - 1`.
-    // Return the bit count and their sum.
-    pair<vector<LL>, LL> countBitsBeforeValue(LL value) {
-        vector<LL> count(kMaxBit, 0);
-        LL sum_bits = 0;
+    // Return the bit value sum and total count.
+    pair<LL, LL> sumAndCountBitsBeforeValue(LL value) {
+        LL bit_sum = 0;
+        LL bit_count = 0;
         for (LL bit = 0, power = 1; bit < kMaxBit; bit++, power <<= 1) {
             LL cur = (value >> (bit + 1)) << bit;
             cur += max(0LL, (value % (power << 1)) - power);
-            sum_bits += cur;
-            count[bit] = cur;
+            bit_count += cur;
+            bit_sum += bit * cur;
         }
-        return {count, sum_bits};
+        return {bit_sum, bit_count};
     }
 
     LL getValueFromIndex(LL index) {
@@ -49,7 +45,7 @@ private:
 
         while (low < high) {
             LL mid = low + (high - low) / 2;
-            if (countBitsBeforeValue(mid + 1).second < index) {
+            if (sumAndCountBitsBeforeValue(mid + 1).second < index) {
                 low = mid + 1;
             } else {
                 high = mid;
@@ -58,19 +54,17 @@ private:
         return low;
     }
 
-    vector<LL> countBitsTillIndex(LL index) {
+    LL prefixSumTillIndex(LL index) {
         LL value = getValueFromIndex(index);
-        auto [count, sum_bits] = countBitsBeforeValue(value);
+        auto [bit_sum, bit_count] = sumAndCountBitsBeforeValue(value);
         // Also include the last value's partial bits.
-        if (sum_bits < index) {  
-            int bit = 0;
-            while (sum_bits < index) {
-                count[bit++] += value & 1;
-                sum_bits += value & 1;
-                value >>= 1;
+        if (bit_count < index) {
+            for (int bit = 0; bit_count < index; bit++, value >>= 1) {
+                bit_sum += bit * (value % 2);
+                bit_count += value % 2;
             }
         }
-        return count;
+        return bit_sum;
     }
 
     // Calculate `(x ^ y) % mod` by converting the y into binary bits.
