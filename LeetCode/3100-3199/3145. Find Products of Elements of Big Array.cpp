@@ -2,7 +2,6 @@ using LL = long long;
 
 class Solution {
 public:
-
     vector<int> findProductsOfElements(vector<vector<LL>>& queries) {
         //  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14
         // [1, 2, 1, 2, 4, 1, 4, 2, 4, 1, 2, 4, 8, 1, 8, ...]  (2 ^ bit)
@@ -12,6 +11,7 @@ public:
         //  1  2   3    4   5     6       7     8
 
         vector<int> result;
+        result.reserve(queries.size());
         for (const auto& query : queries) {
             LL prefix_sum_1 = prefixSumTillIndex(query[0]);
             LL prefix_sum_2 = prefixSumTillIndex(query[1] + 1);
@@ -23,14 +23,12 @@ public:
     }
 
 private:
-    const int kMaxBit = 50;
-
     // Count the bits for all numbers from 1 to `value - 1`.
     // Return the bit value sum and total count.
     pair<LL, LL> sumAndCountBitsBeforeValue(LL value) {
         LL bit_sum = 0;
         LL bit_count = 0;
-        for (LL bit = 0, power = 1; bit < kMaxBit; bit++, power <<= 1) {
+        for (LL bit = 0, power = 1; power < value; bit++, power <<= 1) {
             LL cur = (value >> (bit + 1)) << bit;
             cur += max(0LL, (value % (power << 1)) - power);
             bit_count += cur;
@@ -41,7 +39,7 @@ private:
 
     LL getValueFromIndex(LL index) {
         index++;
-        LL low = 1, high = 1LL << kMaxBit;
+        LL low = 1, high = 1LL << 50;
 
         while (low < high) {
             LL mid = low + (high - low) / 2;
