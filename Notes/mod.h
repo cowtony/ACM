@@ -15,7 +15,7 @@ int multiply(LL x, LL y, int mod) {
 // Calculate `(x ^ y) % mod` by converting the y into binary bits.
 int pow(LL x, LL y, int mod) {
     if (y <= 0) {
-        return 1;
+        return 1 % mod;
     }
     x %= mod;
     LL result = 1;
