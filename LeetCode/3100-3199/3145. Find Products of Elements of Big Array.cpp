@@ -17,7 +17,7 @@ public:
             vector<LL> count_2 = countBitsTillIndex(query[1] + 1);
 
             LL sum_power = 0;
-            for (LL bit = 0, power = 1; bit < kMaxBit; bit++, power <<= 1) {
+            for (LL bit = 0; bit < kMaxBit; bit++) {
                 sum_power += bit * (count_2[bit] - count_1[bit]);
             }
             result.push_back(pow(2, sum_power, query[2]));
@@ -70,10 +70,6 @@ private:
                 value >>= 1;
             }
         }
-        for (LL c : count) {
-            cout << c << ' ';
-        }
-        cout << endl;
         return count;
     }
 
