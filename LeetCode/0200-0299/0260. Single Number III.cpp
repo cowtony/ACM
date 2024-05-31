@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> singleNumber(vector<int>& nums) {
         // get num_1 ^ num_2:
-        int diff = 0;
+        unsigned int diff = 0;
         for (int num : nums) {
             diff ^= num;
         }
