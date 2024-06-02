@@ -1,4 +1,4 @@
-// Combinition
+// Combination
 int64_t C(int total, int pick) {
     if (pick > total) {
         return 0;
