@@ -11,43 +11,51 @@
  */
 class Solution {
 public:
-    //     0
-    //    / \
-    //   0   1
-    //  / \ / \
-    // 0  1 2  3
+    /*
+           0
+          / \
+         0   1        left = root * 2, right = root * 2 + 1
+        / \ / \
+       0  1 2  3
+         /      \
+        2        7
+       / \      / \
+      4   5    14 15  (diff = 15 - 4 = 11)
+        0        5    (always set the left most index to 0 would avoid overflow)
+       / \      / \
+      0   1    10 11  (diff = 11 - 0 = 11)
+        
+    */
     int widthOfBinaryTree(TreeNode* root) {
         if (!root) {
             return 0;
         }
-        queue<tuple<TreeNode*, long double>> bfs;
-        bfs.emplace(root, 0);
-        bfs.emplace(nullptr, 0);
+
+        queue<pair<TreeNode*, long>> q;
+        q.emplace(root, 0);
+        q.emplace(nullptr, 0);
         
-        long double left = 1, right = 0;
-        long double res = 1;
-        while (!bfs.empty()) {
-            auto [node, index] = bfs.front();
-            bfs.pop();
+        long left = 1;
+        long res = 1;
+        while (!q.empty()) {
+            auto [node, index] = q.front();
+            q.pop();
             
             if (node == nullptr) {
-                bfs.push({nullptr, 0});
-                res = max(res, right - left + 1);
-                if (get<0>(bfs.front()) == nullptr) {
+                q.push({nullptr, 0});
+                if (q.front().first == nullptr) {
                     break;
                 }
-                left = right = get<1>(bfs.front());
+                left = q.front().second;
                 continue;
             }
-            // cout << node->val << ' ' << index << endl;
-            left = min(left, index);
-            right = max(right, index);
+            res = max(res, index - left + 1);
             
             if (node->left) {
-                bfs.emplace(node->left, index * 2);
+                q.push({node->left, (index - left) * 2 + 0});
             }
             if (node->right) {
-                bfs.emplace(node->right, index * 2 + 1);
+                q.push({node->right, (index - left) * 2 + 1});
             }
         }
         return res;
