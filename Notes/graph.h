@@ -1,8 +1,8 @@
 // Floyd Warshall O(V^3)
 void floyd(vector<vector<int>>& adjacency_matrix) {
-    for(int k = 0; k < 26; k ++) {
-        for(int i = 0; i < 26; i ++) {
-            for(int j = 0; j < 26; j ++) {
+    for(int k = 0; k < adjacency_matrix.size(); k++) {
+        for(int i = 0; i < adjacency_matrix.size(); i++) {
+            for(int j = 0; j < adjacency_matrix.size(); j++) {
                 adjacency_matrix[i][j] = min(adjacency_matrix[i][j], adjacency_matrix[i][k] + adjacency_matrix[k][j]);
             }
         }
