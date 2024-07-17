@@ -18,7 +18,7 @@ vector<long> dijkstra(const vector<vector<pair<int, long>>>& graph, int from_ver
         for (const auto& [node, weight] : graph[vertex]) {
             if (distance[vertex] != LONG_MAX && distance[node] > distance[vertex] + weight) {
                 distance[node] = distance[vertex] + weight;
-                pq.push({distance[node], node});
+                pq.emplace(distance[node], node);
             }
         }
     }
