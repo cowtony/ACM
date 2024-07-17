@@ -1,6 +1,6 @@
 // Dijkstra O((E+V) log(V))
 // For node from 0 to n:
-vector<long> dijkstra(const vector<vector<pair<int, long>>>& graph, int from_vertex) {
+vector<long> dijkstra(const vector<vector<pair<int, long>>>& graph, int from_vertex = 0) {
     vector<long> distance(graph.size(), INT_MAX);
     distance[from_vertex] = 0;
     vector<bool> visited(graph.size(), false);
