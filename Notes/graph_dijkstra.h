@@ -1,7 +1,7 @@
 // Dijkstra O((E+V) log(V))
 // For node from 0 to n:
 vector<long> dijkstra(const vector<vector<pair<int, long>>>& graph, int from_vertex = 0) {
-    vector<long> distance(graph.size(), INT_MAX);
+    vector<long> distance(graph.size(), LONG_MAX);
     distance[from_vertex] = 0;
     vector<bool> visited(graph.size(), false);
     
@@ -16,7 +16,7 @@ vector<long> dijkstra(const vector<vector<pair<int, long>>>& graph, int from_ver
         visited[vertex] = true;
       
         for (const auto& [node, weight] : graph[vertex]) {
-            if (distance[vertex] != INT_MAX && distance[node] > distance[vertex] + weight) {
+            if (distance[vertex] != LONG_MAX && distance[node] > distance[vertex] + weight) {
                 distance[node] = distance[vertex] + weight;
                 pq.push({distance[node], node});
             }
