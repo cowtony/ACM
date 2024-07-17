@@ -3,18 +3,16 @@
 vector<long> dijkstra(const vector<vector<pair<int, long>>>& graph, int from_vertex = 0) {
     vector<long> distance(graph.size(), LONG_MAX);
     distance[from_vertex] = 0;
-    vector<bool> visited(graph.size(), false);
     
     priority_queue<pair<long, int>, vector<pair<long, int>>, greater<pair<long, int>>> pq;
     pq.push({0, from_vertex});  
     while (!pq.empty()) {
-        int vertex = pq.top().second;
+        auto [t, vertex] = pq.top();
         pq.pop();
-        if (visited[vertex]) {
+        if (t != distance[vertex]) {
             continue;
         }
-        visited[vertex] = true;
-      
+
         for (const auto& [node, weight] : graph[vertex]) {
             if (distance[vertex] != LONG_MAX && distance[node] > distance[vertex] + weight) {
                 distance[node] = distance[vertex] + weight;
