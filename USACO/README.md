@@ -18,6 +18,6 @@ int main() {
     ifstream fin("combo.in");
     ofstream fout("combo.out");
 	
-	return 0;
+    return 0;
 }
 ```
