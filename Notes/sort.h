@@ -93,7 +93,7 @@ vector<T> mergeSortedArrays(vector<vector<T>>& arrays) {
     return ret;
 }
 
-// Partition (QuickSelect)
+// Partition & QuickSelect
 int QuickSelect(vector<int>& array, int pivot) {  // Not fully tested
     int pivot_idx = 0;
     for (int i = 0; i < array.size(); ++i) {
@@ -116,7 +116,7 @@ int QuickSelect(vector<int>& array, int pivot) {  // Not fully tested
     return lo;
 }
 
-int QuickSelect(vector<int>& array, int lo, int hi) {
+int partition(vector<int>& array, int lo, int hi) {
     int pivot = array[lo];
     while(lo < hi) {
         // --hi must go before ++lo to make sure array[lo] can be first replaced.
@@ -128,6 +128,7 @@ int QuickSelect(vector<int>& array, int lo, int hi) {
     array[lo] = pivot;
     return lo;
 }
+
 template<class Iterator, class Compare>
 Iterator quickSelect(Iterator begin, Iterator end, const Compare& compare) {
     if (begin == end--) { return begin; }
