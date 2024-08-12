@@ -16,7 +16,7 @@ public:
         updateInternal(left, right, delta, /*root*/1, kStart, kEnd);
     }
 
-    int query(int left, int right) {
+    int query(int left, int right) const {
         return queryInternal(left, right, /*root*/1, kStart, kEnd);
     }
 
@@ -44,7 +44,7 @@ protected:
         tree[node] = aggregate(tree[node * 2], tree[node * 2 + 1]);
     }
 
-    virtual int queryInternal(int left, int right, int node, int start, int end) {
+    virtual int queryInternal(int left, int right, int node, int start, int end) const {
         if (end < left || start > right) { return 0; }
         if (start >= left && end <= right) { return tree[node]; }
         int mid = (start + end) / 2;
