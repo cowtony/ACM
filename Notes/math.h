@@ -15,9 +15,14 @@ uint64_t C(int total, int pick) {
 }
 
 // Greatest Common Divisor
-int gcd(int a, int b) {
+int GCD(int a, int b) {
     if (a == 0) { return b; }
     return gcd(b % a, a);
+}
+
+// Least Common Multiple
+int LCM(int a, int b) {
+    return a * b / GCD(a, b);
 }
 
 // Check if it's prime number
