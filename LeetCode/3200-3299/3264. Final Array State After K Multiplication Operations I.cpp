@@ -1,21 +1,23 @@
 class Solution {
 public:
     vector<int> getFinalState(vector<int>& nums, int k, int multiplier) {
-        while (k--) {
-            int min_idx = findMinimum(nums);
-            nums[min_idx] *= multiplier;
-        }
-        return nums;
-    }
-
-    int findMinimum(const vector<int>& nums) {
-        int minimum = INT_MAX, idx = -1;
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> min_heap;
         for (int i = 0; i < nums.size(); i++) {
-            if (nums[i] < minimum) {
-                minimum = nums[i];
-                idx = i;
-            }
+            min_heap.push({nums[i], i});
         }
-        return idx;
+
+        while (k--) {
+            auto [val, idx] = min_heap.top();
+            min_heap.pop();
+            min_heap.push({val * multiplier, idx});
+        }
+
+        while (!min_heap.empty()) {
+            auto [val, idx] = min_heap.top();
+            min_heap.pop();
+            nums[idx] = val;
+        }
+
+        return nums;
     }
 };
