@@ -21,7 +21,7 @@ class UnionFind {
         if (father_[x] == x) { return x; } 
         else { return father_[x] = root(father_[x]); }
     }
-    int getSize(int x) {
+    int size(int x) {
         return size_[root(x)];
     }
     unordered_map<int, vector<int>> getComponents() {
@@ -67,7 +67,8 @@ class UnionFind {
         else { return father[a] = root(father[a]); }
     }
 
-    int getSize(const Node& a) { return components[root(a)].size(); }
+    int size() { return components.size(); }
+    int size(const Node& a) { return components[root(a)].size(); }
     const unordered_set<Node>& getNodesOf(const Node& a) { return components[root(a)]; }
 
   private:
