@@ -1,9 +1,7 @@
 template<class K = int, class V = int>
 class LRUCache {
 public:
-    LRUCache(int capacity) {
-        max_size = capacity;
-    }
+    LRUCache(int capacity): max_size(capacity) {}
     
     V get(K key) {
         if (data.find(key) == data.end()) {
